@@ -1,1 +1,2 @@
-* A personal site with family info
+#   A personal site with family info
+##  Built on Jekyll, for hosting with GitHub Pages
