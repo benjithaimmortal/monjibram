@@ -1,32 +1,92 @@
-.photos img {
-  /* Just in case there are inline attributes */
-  width: 100% !important;
-  height: auto !important;
-  line-height: 0;
-}
-
 .margin {
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
   .photos {
-  -moz-column-count:    3;
-  -webkit-column-count: 3;
-  column-count:         3;
+    display: none;
+  }
+
+  .img1 {
+    background: url(/assets/images/photos/19.jpg);
+    position: relative;
+    max-width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+  }
+  .img2 {
+    background: url(/assets/images/photos/6.jpg);
+    position: relative;
+    max-width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+  }
+  .img3 {
+    background: url(/assets/images/photos/24.jpg);
+    position: relative;
+    max-width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+  }
+  .img4 {
+    background: url(/assets/images/photos/14.jpg);
+    position: relative;
+    max-width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+  }
+  .img5 {
+    background: url(/assets/images/photos/8.jpg);
+    position: relative;
+    max-width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+  }
+  .img6 {
+    background: url(/assets/images/photos/18.jpg);
+    position: relative;
+    max-width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+  }
+
+  .splitter {
+    padding: 10px;
+    background-color: #4e4e4e;
   }
 }
-@media (max-width: 1000px) {
-  .photos {
-  -moz-column-count:    2;
-  -webkit-column-count: 2;
-  column-count:         2;
-  }
-}
+
 @media (max-width: 800px) {
-  .photos {
-  -moz-column-count:    1;
-  -webkit-column-count: 1;
-  column-count:         1;
+  .parallax {
+    background-attachment: scroll;
   }
+  .photos {
+    -moz-column-count:    2;
+    -webkit-column-count: 2;
+    column-count:         2;
+  }
+  .photos img {
+    /* Just in case there are inline attributes */
+    width: 100% !important;
+    height: auto !important;
+    line-height: 0;
+  }  
 }

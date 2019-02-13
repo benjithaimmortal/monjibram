@@ -55,8 +55,8 @@ html, body {
 }
 
 .container {
-  padding-top: 1em;
-  padding-bottom: 3em;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
   overflow: hidden;
   text-align: center;
   min-height: 50%;
@@ -108,50 +108,18 @@ html, body {
 }
 
 
-// About Page
+// About/Contact Page
 .about{
   background: url(/assets/images/Mandarins.jpg);
   background-size: cover;
   background-attachment: fixed;
-  padding-top: 80px;
+  padding-top: 110px;
   width: 100%;
   min-height: calc(100% - 110px);
   .pane {
     background: linear-gradient(rgba(88, 75, 29, 0.8), rgba(94, 78, 27, 0.8));
   }
 }
-
-
-// Portfolio Page
-.portfolio {
-  background:
-    linear-gradient(rgba(69,90,100, 0.4), rgba(69,90,100, 0.4)),
-    url(/assets/images/Seoul_Animation.gif);
-  background-size: cover;
-  background-attachment: fixed;
-  min-height: 100%;
-  border-top-style: solid;
-  border-color: #EEEEEE;
-  border-top-width: 10px;
-  p {
-    text-align: center;
-    a {
-      color: whitesmoke;
-      font-family: "Lato";
-    }
-  }
-  .flex-tray {
-    display: flex;
-    justify-content: center;
-  }
-  .f-img {
-    max-width: 50%;
-    height: auto;
-  }
-}
-
-
-// Contact Page
 .contact {
   background:
     linear-gradient(rgba(55, 88, 39, 0.2), rgba(55, 88, 39, 0.2)),
@@ -159,19 +127,46 @@ html, body {
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
+
   border-top-style: solid;
-  border-color: whitesmoke;
-  border-top-width: 10px;
-  p {
-    text-align: left;
-    text-indent: 1rem;
-    a {
-      color: whitesmoke;
-      font-family: "Lato";
-    }
-  }
+  border-color: #4e4e4e;
+  border-top-width: 30px;
   .pane {
     background: linear-gradient(rgba(55, 88, 39, 0.6), rgba(55, 88, 39, 0.6));
+    padding: 3rem;
+  }
+}
+
+// Portfolio Page
+.portfolio {
+  background:
+    linear-gradient(rgba(69,90,100, 0.4), rgba(69,90,100, 0.4)),
+    url(/assets/images/Hoi_An_Vietnam.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: calc(100% - 160px);
+  max-height: 100%;
+  padding-top: 100px;
+  
+  p {
+    text-align: center;
+  }
+  .column-tray {
+    -webkit-columns: 2 300px;
+       -moz-columns: 2 300px;
+            columns: 2 300px;
+      
+    -webkit-column-rule: 1px dotted #ddd;
+       -moz-column-rule: 1px dotted #ddd;
+            column-rule: 1px dotted #ddd;
+  }
+  .column-limiter {
+    -webkit-column-span: all; 
+            column-span: all;
+  }
+  
+  .portf-img {
+    max-width: 60%;
   }
 }
 
