@@ -108,6 +108,39 @@ html, body {
 }
 
 
+// Connect Page
+.connect {
+  background:
+    linear-gradient(rgba(245,127,23, 0.4), rgba(245,127,23, 0.4)),
+    url(/assets/images/Oxford.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 80%;
+  border-top-style: solid;
+  border-color: white;
+  border-top-width: 15px;
+  h1 {
+    font-size: calc(1rem + 1vw);
+    font-weight: 600;
+    letter-spacing: 10px;
+  }
+  p {
+    text-align: left;
+    text-indent: 1rem;
+    a {
+      color: whitesmoke;
+      font-family: "Permanent Marker";
+    }
+  }
+  .pane {
+    background: linear-gradient(rgba(245,127,23, 0.8), rgba(245,127,23, 0.8));
+    margin-top: 50px;
+    padding: 30px 0 10rem 0;
+  }
+}
+
+
 // About/Contact Page
 .about{
   background: url(/assets/images/Mandarins.jpg);
@@ -127,13 +160,14 @@ html, body {
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
-
+  min-height: 80%;
   border-top-style: solid;
   border-color: #4e4e4e;
   border-top-width: 30px;
   .pane {
     background: linear-gradient(rgba(55, 88, 39, 0.6), rgba(55, 88, 39, 0.6));
-    padding: 3rem;
+    margin-top: 50px;
+    padding: 30px 0 10rem 0;
   }
 }
 
@@ -145,7 +179,6 @@ html, body {
   background-size: cover;
   background-attachment: fixed;
   min-height: calc(100% - 160px);
-  max-height: 100%;
   padding-top: 100px;
   
   p {
@@ -169,31 +202,6 @@ html, body {
     max-width: 60%;
   }
 }
-
-// Connect Page
-.connect {
-  background:
-    linear-gradient(rgba(245,127,23, 0.4), rgba(245,127,23, 0.4)),
-    url(https://scontent-icn1-1.xx.fbcdn.net/v/t31.0-8/12068462_10109513671198544_8180787814607112719_o.jpg?_nc_cat=0&oh=ed9ad172b55840b346daa2967c000b17&oe=5BE57407);
-  background-size: cover;
-  background-attachment: fixed;
-  width: 100%;
-  border-top-style: solid;
-  border-color: white;
-  border-top-width: 15px;
-  p {
-    text-align: left;
-    text-indent: 1rem;
-    a {
-      color: whitesmoke;
-      font-family: "Permanent Marker";
-    }
-  }
-  .pane {
-    background: linear-gradient(rgba(245,127,23, 0.8), rgba(245,127,23, 0.8));
-  }
-}
-
 
 //Index Expanded Footer
 .main-footer {

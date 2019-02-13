@@ -2,6 +2,36 @@
   margin-top: 100px;
 }
 
+.photo-title {
+  float: right;
+  top: 75%;
+  right: 5%;
+  text-align: center;
+  font-size: calc(0.7rem + 0.5vw);
+  font-weight: 600;
+  letter-spacing: 10px;
+  border-radius: 15px;
+  font-family: "Lato", sans;
+  color: #37474F;
+  background-color: white;  
+  position: absolute;
+}
+
+.to-top {
+  float: right;
+  top: 75%;
+  right: 5%;
+  text-align: center;
+  font-size: calc(0.7rem + 0.5vw);
+  font-weight: 600;
+  letter-spacing: 10px;
+  border-radius: 15px;
+  font-family: "Lato", sans;
+  color: #37474F;
+  background-color: white;  
+  position: relative;
+}
+
 @media (min-width: 800px) {
   .photos {
     display: none;
