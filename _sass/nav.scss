@@ -1,0 +1,51 @@
+$nav_color: #151b1f;
+$nav_text_color: #E0E0E0;
+$nav_font: "Lato", "Helvetica", sans-serif;
+
+/* header */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  font-family: $nav_font;
+  color: $nav_text_color;
+  background: $nav_color;
+  z-index: 1;
+}
+.navbar-site-emblem {
+  float: left;
+  margin-right: auto;
+  color: $nav_text_color;
+  padding: 15px 1rem;
+}
+
+
+/* header drop-down menu */
+.dropdown {
+  float: right;
+  background-color: none;
+  border-radius: 10px;
+  padding: 15px;
+}
+.dropdown:hover .dropdown-nav {
+  color: white;
+  padding-bottom: 10px;
+}
+.dropdown:hover .dropdown-items {
+  display: inline-block;
+}
+.dropdown-items {
+  display: none;
+  margin-top: 14px;
+  right: 0;
+  font-size: 1.1em;
+  background: $nav_color;
+  position: absolute;
+  z-index: 1;
+}
+.drop-btn {
+  right: 10;
+  padding: 5px;
+}

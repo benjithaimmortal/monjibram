@@ -1,0 +1,238 @@
+$bg_color:    #151b1f;
+$link_color:  #a7b1c7;
+$p_color:  #e0e0e0;
+$font_fam:    "Lato", sans-serif;
+
+/* typography */
+html, body {
+  margin: 0;
+  height: 100%;
+  font: 400 15px/1.8 $font_fam;
+  color: $p_color;
+  
+  h1 {
+    text-align: center;
+    text-indent: 0;
+  }
+
+  a {
+    &:link {
+      color: $link_color;
+      text-decoration: none;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+    &:visited {
+      color: $link_color;
+    }
+  }
+
+  ul {
+    list-style: none inside;
+    padding: 0;
+  }
+}
+
+.fa {
+  text-indent: 0;
+}
+
+.post {
+  margin: 5px;
+  border: 7px solid whitesmoke;
+  background: whitesmoke;
+
+  .field {
+    float: left;
+    text-align: right;
+    width: 100px;
+  }
+    
+  .button {
+  }
+}
+
+.container {
+  padding-top: 1em;
+  padding-bottom: 3em;
+  overflow: hidden;
+  text-align: center;
+  min-height: 50%;
+}
+
+.pane {
+  margin: 0 5%;
+  padding-bottom: 1rem;
+  text-align: center;
+  text-indent: 1rem;
+}
+
+.white-border-box {
+  display: inline-block;
+  text-indent: 0;
+  // height: ;
+  border-color: whitesmoke;
+  border-style: solid;
+  padding: 10px;
+  border-width: 2px;
+}
+
+/* background */
+.title-img {
+  // position: relative;
+  background: url(/assets/images/Benjamin_Kostenbader.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100%;
+}
+.title-text {
+  position: absolute;
+  float: right;
+  top: 35%;
+  right: 5%;
+  text-align: center;
+  font-size: calc(1rem + 1vw);
+  font-weight: 600;
+  letter-spacing: 10px;
+  font-family: "Lato", sans;
+  color: #37474F;
+  background-color: white;
+  padding: 18px;
+  & a {
+    color: black;
+  }
+}
+
+
+// About Page
+.about{
+  background: url(/assets/images/Mandarins.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 80px;
+  width: 100%;
+  min-height: calc(100% - 110px);
+  .pane {
+    background: linear-gradient(rgba(88, 75, 29, 0.8), rgba(94, 78, 27, 0.8));
+  }
+}
+
+
+// Portfolio Page
+.portfolio {
+  background:
+    linear-gradient(rgba(69,90,100, 0.4), rgba(69,90,100, 0.4)),
+    url(/assets/images/Seoul_Animation.gif);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100%;
+  border-top-style: solid;
+  border-color: #EEEEEE;
+  border-top-width: 10px;
+  p {
+    text-align: center;
+    a {
+      color: whitesmoke;
+      font-family: "Lato";
+    }
+  }
+  .flex-tray {
+    display: flex;
+    justify-content: center;
+  }
+  .f-img {
+    max-width: 50%;
+    height: auto;
+  }
+}
+
+
+// Contact Page
+.contact {
+  background:
+    linear-gradient(rgba(55, 88, 39, 0.2), rgba(55, 88, 39, 0.2)),
+    url(/assets/images/Seoraksan_Korea.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  border-top-style: solid;
+  border-color: whitesmoke;
+  border-top-width: 10px;
+  p {
+    text-align: left;
+    text-indent: 1rem;
+    a {
+      color: whitesmoke;
+      font-family: "Lato";
+    }
+  }
+  .pane {
+    background: linear-gradient(rgba(55, 88, 39, 0.6), rgba(55, 88, 39, 0.6));
+  }
+}
+
+// Connect Page
+.connect {
+  background:
+    linear-gradient(rgba(245,127,23, 0.4), rgba(245,127,23, 0.4)),
+    url(https://scontent-icn1-1.xx.fbcdn.net/v/t31.0-8/12068462_10109513671198544_8180787814607112719_o.jpg?_nc_cat=0&oh=ed9ad172b55840b346daa2967c000b17&oe=5BE57407);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  border-top-style: solid;
+  border-color: white;
+  border-top-width: 15px;
+  p {
+    text-align: left;
+    text-indent: 1rem;
+    a {
+      color: whitesmoke;
+      font-family: "Permanent Marker";
+    }
+  }
+  .pane {
+    background: linear-gradient(rgba(245,127,23, 0.8), rgba(245,127,23, 0.8));
+  }
+}
+
+
+//Index Expanded Footer
+.main-footer {
+  background-color: #4e4e4e;
+  padding: 30px 30px 100px 30px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: left;
+  h3 {
+    color: #7ca6bb;
+    font-size: 14px;
+  }
+  p {
+    font-size: 12px;
+  }
+  .footer-child {
+    flex-grow: 1;
+    padding-left: 5%;
+    min-width: 100px;
+  }
+  @media (min-width: 600px) {
+    .footer-vert {
+      padding: 0 1px;
+      background: #7ca6bb;
+    }
+  }
+}
+
+//Every-page Footer
+.footer {
+  position: relative;
+  font-size: 10px;
+  color: #ddd;
+  text-align: left;
+  padding: 25px;
+  background-color: $bg_color;
+}
