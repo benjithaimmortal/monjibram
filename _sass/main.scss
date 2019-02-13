@@ -1,7 +1,7 @@
 $bg_color:    #151b1f;
 $link_color:  #a7b1c7;
-$p_color:  #e0e0e0;
-$font_fam:    "Lato", sans-serif;
+$p_color:     #e0e0e0;
+$font_fam:      "Lato", sans-serif;
 
 /* typography */
 html, body {
@@ -9,6 +9,7 @@ html, body {
   height: 100%;
   font: 400 15px/1.8 $font_fam;
   color: $p_color;
+  background: #4e4e4e;
   
   h1 {
     text-align: center;
@@ -81,7 +82,8 @@ html, body {
 /* background */
 .title-img {
   // position: relative;
-  background: url(/assets/images/Benjamin_Kostenbader.jpg);
+  background: url(/assets/images/Oxford.jpg);
+  // background: #4e4e4e; 
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
