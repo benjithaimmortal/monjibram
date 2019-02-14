@@ -49,9 +49,6 @@ html, body {
     text-align: right;
     width: 100px;
   }
-    
-  .button {
-  }
 }
 
 .container {
@@ -66,20 +63,18 @@ html, body {
   margin: 0 5%;
   padding-bottom: 1rem;
   text-align: center;
-  text-indent: 1rem;
 }
 
 .white-border-box {
   display: inline-block;
   text-indent: 0;
-  // height: ;
   border-color: whitesmoke;
   border-style: solid;
   padding: 10px;
   border-width: 2px;
 }
 
-/* background */
+// title/sample page
 .title-img {
   // position: relative;
   background: url(/assets/images/Oxford.jpg);
@@ -107,16 +102,15 @@ html, body {
   }
 }
 
-
-// Connect Page
-.connect {
+// sample
+.sample {
   background:
     linear-gradient(rgba(245,127,23, 0.4), rgba(245,127,23, 0.4)),
     url(/assets/images/Oxford.jpg);
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
-  min-height: 80%;
+  min-height: 90%;
   border-top-style: solid;
   border-color: white;
   border-top-width: 15px;
@@ -125,18 +119,15 @@ html, body {
     font-weight: 600;
     letter-spacing: 10px;
   }
-  p {
-    text-align: left;
-    text-indent: 1rem;
-    a {
-      color: whitesmoke;
-      font-family: "Permanent Marker";
-    }
-  }
   .pane {
     background: linear-gradient(rgba(245,127,23, 0.8), rgba(245,127,23, 0.8));
     margin-top: 50px;
     padding: 30px 0 10rem 0;
+  }
+  .flex {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
   }
 }
 
