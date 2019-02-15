@@ -74,6 +74,17 @@ html, body {
   border-width: 2px;
 }
 
+.column-tray {
+  -webkit-columns: 2 400px;
+     -moz-columns: 2 400px;
+          columns: 2 400px;
+}
+.column-limiter {
+  -webkit-column-span: all; 
+          column-span: all;
+}
+
+
 // title/sample page
 .title-img {
   // position: relative;
@@ -101,8 +112,6 @@ html, body {
     color: black;
   }
 }
-
-// sample
 .sample {
   background:
     linear-gradient(rgba(245,127,23, 0.4), rgba(245,127,23, 0.4)),
@@ -120,7 +129,7 @@ html, body {
     letter-spacing: 10px;
   }
   .pane {
-    background: linear-gradient(rgba(245,127,23, 0.8), rgba(245,127,23, 0.8));
+    // background: linear-gradient(rgba(245,127,23, 0.8), rgba(245,127,23, 0.8));
     margin-top: 50px;
     padding: 30px 0 10rem 0;
   }
@@ -128,6 +137,20 @@ html, body {
     display: flex;
     justify-content: space-evenly;
     flex-flow: row wrap;
+  }
+  .circle {
+    border-color: whitesmoke;
+    border-style: solid;
+    margin-top: 30px;
+    border-width: 2px;
+    border-radius: 150px;
+    font-size: 0;
+    width: calc(20% + 80px);
+  }
+  .circle-img {
+    border-radius: 150px;
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -138,10 +161,20 @@ html, body {
   background-size: cover;
   background-attachment: fixed;
   padding-top: 110px;
-  width: 100%;
-  min-height: calc(100% - 110px);
+  padding-bottom: 40px;
   .pane {
     background: linear-gradient(rgba(88, 75, 29, 0.8), rgba(94, 78, 27, 0.8));
+    height: calc(100% - 100px);
+  }
+  .column-tray {
+    -webkit-column-rule: 3px dotted #e0e0e0;
+       -moz-column-rule: 3px dotted #e0e0e0;
+            column-rule: 3px dotted #e0e0e0;
+  }
+  p {
+    max-width: 400px;
+    text-indent: 0;
+    display: inline-block;
   }
 }
 .contact {
@@ -158,7 +191,7 @@ html, body {
   .pane {
     background: linear-gradient(rgba(55, 88, 39, 0.6), rgba(55, 88, 39, 0.6));
     margin-top: 50px;
-    padding: 30px 0 10rem 0;
+    padding: 30px 0 10rem;
   }
 }
 
@@ -175,20 +208,6 @@ html, body {
   p {
     text-align: center;
   }
-  .column-tray {
-    -webkit-columns: 2 300px;
-       -moz-columns: 2 300px;
-            columns: 2 300px;
-      
-    -webkit-column-rule: 1px dotted #ddd;
-       -moz-column-rule: 1px dotted #ddd;
-            column-rule: 1px dotted #ddd;
-  }
-  .column-limiter {
-    -webkit-column-span: all; 
-            column-span: all;
-  }
-  
   .portf-img {
     max-width: 60%;
   }
