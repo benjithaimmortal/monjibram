@@ -4,7 +4,7 @@
 
 .photo-title {
   float: right;
-  top: 75%;
+  top: 80%;
   right: 5%;
   text-align: center;
   font-size: calc(0.7rem + 0.5vw);
@@ -15,11 +15,12 @@
   color: #37474F;
   background-color: white;  
   position: absolute;
+  z-index: 2;
 }
 
 .to-top {
   float: right;
-  top: 75%;
+  top: 80%;
   right: 5%;
   text-align: center;
   font-size: calc(0.7rem + 0.5vw);
@@ -29,7 +30,8 @@
   font-family: "Lato", sans;
   color: #37474F;
   background-color: white;  
-  position: relative;
+  position: fixed;
+  z-index: 1;
 }
 
 @media (min-width: 800px) {
