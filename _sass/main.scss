@@ -197,8 +197,8 @@ html, body {
 // Portfolio Page
 .portfolio {
   background:
-    linear-gradient(rgba(69,90,100, 0.4), rgba(69,90,100, 0.4)),
-    url(/assets/images/Hoi_An_Vietnam.jpg);
+    linear-gradient(rgba(69,90,100, 0.4), rgba(69,90,100, 0.4));
+    // url(/assets/images/Hoi_An_Vietnam.jpg);
   background-size: cover;
   background-attachment: fixed;
   min-height: calc(100% - 160px);
