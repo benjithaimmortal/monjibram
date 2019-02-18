@@ -41,10 +41,13 @@ permalink: /about/
       <div class="pane">
       <h1>Contact</h1>
       <div class="white-border-box">
-        <form action=#>
-          <input required  type=text     class="post field" placeholder="Your Email Address">
-          <input required  type=text     class="post field" placeholder="A Quick Note">
-          <button          type="submit" class="post button">Submit</button>
+        <form id="contactform" action="https://formspree.io/benjamin.kostenbader@gmail.com" method="POST">
+          <input  required class="post field"  type="text"   placeholder="Your name"           name="name"     id="name">
+          <input  required class="post field"  type="email"  placeholder="you@example.com"     name="_replyto" id="_replyto">
+          <input  required class="post field"  type="text"   placeholder="A Quick Note"        name ="message" id="message">
+          <input           class="hidden"      type="text"   name="_gotcha"  style="display:none">
+          <input           class="hidden"      type="hidden" name="_subject" value="Message via http://monjibram.com">
+          <button          class="post button" type="submit">Submit</button>
         </form>
       </div>
     </div>
