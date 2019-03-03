@@ -10,7 +10,24 @@ html, body {
   font: 400 15px/1.8 $font_fam;
   color: $p_color;
   background: #4e4e4e;
-  
+    
+  textarea {
+    font-family: $font_fam;
+  }
+  ::-webkit-input-placeholder {
+    font-family: $font_fam;
+  }
+  :-moz-placeholder {
+    font-family: $font_fam;
+  }
+  ::-moz-placeholder {
+    font-family: $font_fam;
+  }
+  :-ms-input-placeholder {
+    font-family: $font_fam;
+  } 
+
+
   h1 {
     text-align: center;
     text-indent: 0;
@@ -61,22 +78,6 @@ html, body {
   padding: 10px;
   border-width: 2px;
   margin: 0 50px 0 50px;
-}
-
-textarea {
-  font-family: $font_fam;
-}
-::-webkit-input-placeholder {
-  font-family: $font_fam;
-}
-:-moz-placeholder {
-  font-family: $font_fam;
-}
-::-moz-placeholder {
-  font-family: $font_fam;
-}
-:-ms-input-placeholder {
-  font-family: $font_fam;
 }
 
 .post {
@@ -200,8 +201,8 @@ textarea {
     display: flex;
     flex-direction: column;
   }
-
 }
+
 // .contact {
 //   background:
 //     linear-gradient(rgba(85, 85, 85, 0.63), rgba(55, 88, 39, 0.2)),
