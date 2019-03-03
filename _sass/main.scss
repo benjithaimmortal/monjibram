@@ -27,6 +27,10 @@ html, body {
     font-family: $font_fam;
   } 
 
+  form {
+    display: flex;
+  }
+
 
   h1 {
     text-align: center;
