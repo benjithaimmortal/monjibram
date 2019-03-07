@@ -10,22 +10,6 @@ html, body {
   font: 400 15px/1.8 $font_fam;
   color: $p_color;
   background: #4e4e4e;
-    
-  textarea {
-    font-family: $font_fam;
-  }
-  ::-webkit-input-placeholder {
-    font-family: $font_fam;
-  }
-  :-moz-placeholder {
-    font-family: $font_fam;
-  }
-  ::-moz-placeholder {
-    font-family: $font_fam;
-  }
-  :-ms-input-placeholder {
-    font-family: $font_fam;
-  } 
 
   form {
     display: flex;
@@ -81,7 +65,12 @@ html, body {
   border-style: solid;
   padding: 10px;
   border-width: 2px;
-  margin: 0 50px 0 50px;
+  &.textlet {
+    margin: 0 90px 0 90px;
+  }
+  &.contactf {
+    width: 80%;
+  }
 }
 
 .post {
@@ -92,10 +81,26 @@ html, body {
     margin: 0 auto;
     float: left;
     text-align: center;
-    width: 100px;
     outline: none;
   }
 }
+
+textarea {
+  font-family: $font_fam;
+  min-height: 70px;
+}
+::-webkit-input-placeholder {
+  font-family: $font_fam;
+}
+:-moz-placeholder {
+  font-family: $font_fam;
+}
+::-moz-placeholder {
+  font-family: $font_fam;
+}
+:-ms-input-placeholder {
+  font-family: $font_fam;
+} 
 
 .column-tray {
   -webkit-columns: 2 400px;
@@ -179,15 +184,15 @@ html, body {
 
 // About/Contact Page
 .about{
-  background: url(/assets/images/Mandarins.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  padding-top: 110px;
-  padding-bottom: 40px;
-  .pane {
-    background: linear-gradient(rgba(88, 75, 29, 0.8), rgba(94, 78, 27, 0.8));
-    height: calc(100% - 100px);
-  }
+  // background: url(/assets/images/Mandarins.jpg);
+  // background-size: cover;
+  // background-attachment: fixed;
+  // padding-top: 110px;
+  // padding-bottom: 40px;
+  // .pane {
+  //   background: linear-gradient(rgba(88, 75, 29, 0.8), rgba(94, 78, 27, 0.8));
+  //   height: calc(100% - 100px);
+  // }
   .header-indent {
     text-indent: 25px;
   }
@@ -207,23 +212,23 @@ html, body {
   }
 }
 
-// .contact {
-//   background:
-//     linear-gradient(rgba(85, 85, 85, 0.63), rgba(55, 88, 39, 0.2)),
-//     url(/assets/images/Seoraksan_Korea.jpg);
-//   background-size: cover;
-//   background-attachment: fixed;
-//   width: 100%;
-//   min-height: 80%;
-//   border-top-style: solid;
-//   border-color: #4e4e4e;
-//   border-top-width: 30px;
-//   .pane {
-//     background: linear-gradient(rgba(77, 77, 77, 0.7), rgba(77, 77, 77, 0.7));
-//     margin-top: 50px;
-//     padding: 30px 0 40px;
-//   }
-// }
+.about {
+  background:
+    linear-gradient(rgba(85, 85, 85, 0.63), rgba(55, 88, 39, 0.2)),
+    url(/assets/images/Seoraksan_Korea.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 80%;
+  padding-top: 110px;
+  padding-bottom: 40px;
+  border-top-width: 30px;
+  .pane {
+    background: linear-gradient(rgba(77, 77, 77, 0.7), rgba(77, 77, 77, 0.7));
+    margin-top: 50px;
+    padding: 30px 0 40px;
+  }
+}
 
 // Resume/PDFviewer
 .pdfview {
