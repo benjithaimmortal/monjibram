@@ -1,8 +1,10 @@
 ---
+title: Hard Hearts and the Exodus
+date: 2011-09-22 12:06:00 Z
+categories:
+- Hebrew
+- Exegesis
 layout: post
-title:  "Hard Hearts and the Exodus"
-date:   2011-09-22 07:06 -0500
-categories: Hebrew Exegesis
 author: Benji
 ---
 
