@@ -2,7 +2,7 @@
   margin-top: 100px;
 }
 
-.photo-title {
+.floaty-box {
   float: right;
   top: 80%;
   right: 5%;
@@ -11,25 +11,17 @@
   font-weight: 600;
   letter-spacing: 10px;
   border-radius: 15px;
-  font-family: "Lato", sans;
-  color: #37474F;
+  padding-left: 10px;
+  color: #326780;
   background-color: white;  
+}
+
+.photo-title {
   position: absolute;
   z-index: 2;
 }
 
 .to-top {
-  float: right;
-  top: 80%;
-  right: 5%;
-  text-align: center;
-  font-size: calc(0.7rem + 0.5vw);
-  font-weight: 600;
-  letter-spacing: 10px;
-  border-radius: 15px;
-  font-family: "Lato", sans;
-  color: #37474F;
-  background-color: white;  
   position: fixed;
   z-index: 1;
 }
@@ -40,7 +32,7 @@
   }
 
   .img1 {
-    background: url(/assets/images/photos/19.jpg);
+    background: url(/assets/images/Seoul_Korea.jpg);
     position: relative;
     max-width: 100%;
     background-attachment: fixed;
@@ -99,10 +91,50 @@
     background-size: cover;
     min-height: 100%;
   }
+  .img7 {
+    background: url(/assets/images/Hoi_An_Vietnam.jpg);
+    position: relative;
+    max-width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+  }
+  .img8 {
+    background: url(/assets/images/photos/19.jpg);
+    position: relative;
+    max-width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+  }
+  .img9 {
+    background: url(/assets/images/photos/26.jpg);
+    position: relative;
+    max-width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+  }
+  .img10 {
+    background: url(/assets/images/photos/2.jpg);
+    position: relative;
+    max-width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+  }
 
   .splitter {
     padding: 10px;
-    background-color: #4e4e4e;
+    background-color: $bg-color;
   }
 }
 
