@@ -1,7 +1,9 @@
-$bg_color:    #151b1f;
-$link_color:  #a7b1c7;
-$p_color:     #e0e0e0;
-$font_fam:      "Lato", sans-serif;
+// bg #151b1f link #a7b1c7 p #e0e0e0
+$bg_color:     #F5F5F5;
+$link_color:   #1a2130;
+$p_color:      black;
+$border-color: #173e43;
+$font_fam:      "Source Serif Pro", sans-serif;
 
 /* typography */
 html, body {
@@ -9,7 +11,7 @@ html, body {
   height: 100%;
   font: 400 15px/1.8 $font_fam;
   color: $p_color;
-  background: #4e4e4e;
+  background: $bg-color;
 
   form {
     display: flex;
@@ -44,14 +46,6 @@ html, body {
   text-indent: 0;
 }
 
-.container {
-  padding-top: 1rem;
-  padding-bottom: 3rem;
-  overflow: hidden;
-  text-align: center;
-  min-height: 50%;
-}
-
 .pane {
   margin: 0 5%;
   padding-bottom: 1rem;
@@ -61,7 +55,7 @@ html, body {
 .white-border-box {
   display: inline-block;
   text-indent: 0;
-  border-color: whitesmoke;
+  border-color: $border-color;
   border-style: solid;
   padding: 10px;
   border-width: 2px;
@@ -75,14 +69,18 @@ html, body {
 
 .post {
   margin: 5px;
-  border: 7px solid whitesmoke;
-  background: whitesmoke;
+  border: 7px solid $bg_color;
+  background: $bg_color;
   .field {
     margin: 0 auto;
     float: left;
     text-align: center;
     outline: none;
   }
+}
+
+.section-title {
+  margin-top: 40px;
 }
 
 textarea {
@@ -142,14 +140,15 @@ textarea {
 }
 .sample {
   background:
-    linear-gradient(rgba(245,127,23, 0.4), rgba(245,127,23, 0.4)),
+    linear-gradient(rgba(250, 229, 150, 0.4), rgba(250, 229, 150, 0.4)),
     url(/assets/images/Oxford.jpg);
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   width: 100%;
   min-height: 90%;
   border-top-style: solid;
-  border-color: white;
+  border-color: $border-color;
   border-top-width: 15px;
   h1 {
     font-size: calc(1rem + 1vw);
@@ -170,15 +169,20 @@ textarea {
     border-style: solid;
     margin-top: 30px;
     border-width: 2px;
-    border-radius: 150px;
+    border-radius: 50%;
     font-size: 0;
     width: calc(20% + 80px);
   }
   .circle-img {
-    border-radius: 150px;
+    border-radius: 50%;
     width: 100%;
     height: auto;
   }
+}
+
+.main-container {
+  padding-bottom: 3rem;
+  text-align: center;
 }
 
 
@@ -197,9 +201,9 @@ textarea {
     text-indent: 25px;
   }
   .column-tray {
-    -webkit-column-rule: 3px dotted #e0e0e0;
-       -moz-column-rule: 3px dotted #e0e0e0;
-            column-rule: 3px dotted #e0e0e0;
+    -webkit-column-rule: 3px dotted $border-color;
+       -moz-column-rule: 3px dotted $border-color;
+            column-rule: 3px dotted $border-color;
   }
   p {
     max-width: 400px;
@@ -216,7 +220,7 @@ textarea {
 // Alternate about page with mountain bckgrnd
 .about {
   background:
-    linear-gradient(rgba(85, 85, 85, 0.63), rgba(55, 88, 39, 0.2)),
+    linear-gradient(rgba(162, 177, 190, 0.60), rgba(162, 177, 190, 0.60)),
     url(/assets/images/Seoraksan_Korea.jpg);
   background-size: cover;
   background-attachment: fixed;
@@ -226,7 +230,7 @@ textarea {
   padding-bottom: 40px;
   border-top-width: 30px;
   .pane {
-    background: linear-gradient(rgba(77, 77, 77, 0.7), rgba(77, 77, 77, 0.7));
+    background: linear-gradient(rgba(190, 190, 190, 0.7), rgba(190, 190, 190, 0.7));
     margin-top: 50px;
     padding: 30px 0 40px;
   }
@@ -240,34 +244,39 @@ textarea {
 
 // Portfolio Page
 .portfolio {
-  background:
-    linear-gradient(rgba(44, 80, 97, 0.7), rgba(44, 80, 97, 0.7));
+  background: #173e43;
     // url(/assets/images/Hoi_An_Vietnam.jpg);
   background-size: cover;
   background-attachment: fixed;
   min-height: calc(100% - 160px);
   padding-top: 100px;
+  padding-bottom: 3rem;
+  color: $bg-color;
+  text-align: center;
   
   p {
-    text-align: center;
-    margin-top: 0;
+    margin-bottom: 0;
   }
   .portf-img {
     max-width: 60%;
+    overflow: auto;
+    -webkit-box-shadow: 5px 8px 8px -1px #666;
+       -moz-box-shadow: 5px 8px 8px -1px #666;
+            box-shadow: 5px 8px 8px -1px #666;
   }
 }
 
 //Index Expanded Footer
 .main-footer {
-  background-color: #4e4e4e;
-  padding: 30px 30px 100px 30px;
+  background-color: $bg-color;
+  padding: 30px 30px 50px 30px;
   position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   text-align: left;
   h3 {
-    color: #7ca6bb;
+    color: #326780;
     font-size: 14px;
   }
   p {
@@ -281,7 +290,7 @@ textarea {
   @media (min-width: 600px) {
     .footer-vert {
       padding: 0 1px;
-      background: #7ca6bb;
+      background: #326780;
     }
   }
 }
@@ -290,8 +299,12 @@ textarea {
 .footer {
   position: relative;
   font-size: 10px;
-  color: #ddd;
+  color: $p_color;
   text-align: left;
   padding: 25px;
-  background-color: $bg_color;
+  border-top: solid 5px #326780;
+  background: 
+    linear-gradient(rgba(63, 176, 172, 0.8), rgba(63, 176, 172, 0.8)),
+    url(/assets/images/nav-gradient.jpg);
+  background-position: right;
 }
