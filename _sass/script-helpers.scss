@@ -1,0 +1,11 @@
+// Headroom Nav Animation Settings
+.headroom {
+	transition: transform .25s ease-in-out;
+	will-change: transform;
+}
+.headroom--pinned{
+	transform: translateY(0);
+}
+.headroom--unpinned{
+	transform: translateY(-105%);
+}

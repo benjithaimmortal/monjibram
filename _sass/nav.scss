@@ -21,18 +21,6 @@ $nav_font: "Source Serif Pro", Helvetica, serif;
   // border-radius: 0% 0% 50% 50% / 0% 0% 50% 50%;
 }
 
-// Headroom Animation Settings
-.headroom {
-	transition: transform .25s ease-in-out;
-	will-change: transform;
-}
-.headroom--pinned{
-	transform: translateY(0);
-}
-.headroom--unpinned{
-	transform: translateY(-105%);
-}
-
 .navbar-site-emblem {
   margin-right: auto;
   font-family: Arial, Helvetica, sans-serif;

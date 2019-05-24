@@ -57,19 +57,5 @@
     {{ content }}
     {% include footer.html %}
   </body>
-  
-  <script src="https://unpkg.com/headroom.js"></script>
-  <script id="rendered-js">
-    var header = document.querySelector('.navbar');
-    var headroom = new Headroom(header, {
-      offset: 105,
-      tolerance: 2,
-      classes: {
-        initial:  "headroom",
-        pinned:   "headroom--pinned",
-        unpinned: "headroom--unpinned"
-      }
-    });
-    headroom.init();
-  </script>
+  <script src="/assets/javascripts/headroom-min.js"></script>
 </html>
