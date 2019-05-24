@@ -1,10 +1,10 @@
 .margin {
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .floaty-box {
   float: right;
-  top: 80%;
+  top: 87%;
   right: 5%;
   text-align: center;
   font-size: calc(0.7rem + 0.5vw);
@@ -12,7 +12,7 @@
   letter-spacing: 10px;
   border-radius: 15px;
   padding-left: 10px;
-  color: #326780;
+  color: $border-color;
   background-color: white;  
 }
 
@@ -21,10 +21,10 @@
   z-index: 2;
 }
 
-.to-top {
-  position: fixed;
-  z-index: 1;
-}
+// .to-top {
+//   position: fixed;
+//   z-index: 1;
+// }
 
 @media (min-width: 800px) {
   .photos {
@@ -39,7 +39,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100%;
+    min-height: 110%;
   }
   .img2 {
     background: url(/assets/images/photos/6.jpg);
