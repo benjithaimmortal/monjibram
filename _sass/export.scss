@@ -1,0 +1,43 @@
+/* Typography */
+@import url(https://fonts.googleapis.com/css?family=Arimo|Didact+Gothic);
+
+$h_font: "Didact Gothic", sans-serif;
+$body_font: "Arimo", sans-serif;
+
+html, body {
+  margin: 0;
+  height: 100%;
+	background: whitesmoke;
+	font-family: $body_font;
+}
+p {
+	font-family: $body_font;
+	// font-size: calc(12px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+	// line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+	// margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $h_font;
+  font-size: calc(32px + (32 - 18) * ((100vw - 300px) / (1600 - 300)));
+  line-height: calc(1.5em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+	text-align: center;
+	text-indent: 0;
+	font-weight: bold;
+}
+a {
+	&:link {
+		color: #00461A;
+		text-decoration: none;
+	}
+	&:hover {
+		text-decoration: underline;
+	}
+	&:visited {
+		color: tomato;
+	}
+}
+ul {
+	list-style: none inside;
+	padding: 0;
+}
