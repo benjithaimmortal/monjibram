@@ -1,16 +1,34 @@
+/* color variables */
 // bg #151b1f link #a7b1c7 p #e0e0e0
-$bg_color:     #F5F5F5;
-$link_color:   #1a2130;
-$p_color:      black;
-$border-color: #156671;
-$font_fam:      "Source Serif Pro", sans-serif;
+// 6.2019 nav 428e92 bg 006064 borders 00363a
+
+$light-cyan :   #428e92;
+$cyan:          #006064;
+$dark-cyan:     #00363a;
+
+
+$bg-color:      #F5F5F5;
+$dark-bg-color: $cyan;
+/* border-color was #156671 */
+$border-color:  $dark-cyan;
+
+// text variables
+$font-fam:      "Source Serif Pro", sans-serif;
+$link-color:    #1a2130;
+$p-color:       #000;
+
+// nav variables
+/* nav-color was #418E99 */
+$nav-color: #428e92cc;
+$nav-text-color: $p-color;
+$nav-font: "Source Serif Pro", Helvetica, serif;
 
 /* typography */
 html, body {
   margin: 0;
   height: 100%;
-  font: 400 15px/1.8 $font_fam;
-  color: $p_color;
+  font: 400 15px/1.8 $font-fam;
+  color: $p-color;
   background: $bg-color;
 
   form {
@@ -34,14 +52,14 @@ html, body {
 
   a {
     &:link {
-      color: $link_color;
+      color: $link-color;
       text-decoration: none;
     }
     &:hover {
       text-decoration: underline;
     }
     &:visited {
-      color: $link_color;
+      color: $link-color;
     }
   }
 
@@ -78,8 +96,8 @@ html, body {
 
 .post {
   margin: 5px;
-  border: 7px solid $bg_color;
-  background: $bg_color;
+  border: 7px solid $bg-color;
+  background: $bg-color;
   .field {
     margin: 0 auto;
     float: left;
@@ -93,20 +111,20 @@ html, body {
 }
 
 textarea {
-  font-family: $font_fam;
+  font-family: $font-fam;
   min-height: 70px;
 }
 ::-webkit-input-placeholder {
-  font-family: $font_fam;
+  font-family: $font-fam;
 }
 :-moz-placeholder {
-  font-family: $font_fam;
+  font-family: $font-fam;
 }
 ::-moz-placeholder {
-  font-family: $font_fam;
+  font-family: $font-fam;
 }
 :-ms-input-placeholder {
-  font-family: $font_fam;
+  font-family: $font-fam;
 } 
 
 .column-tray {
@@ -120,7 +138,7 @@ textarea {
 }
 
 
-// title/sample page
+// index title/sample
 .title-img {
   // position: relative;
   background: url(/assets/images/Oxford.jpg);
@@ -149,7 +167,7 @@ textarea {
 }
 .sample {
   background:
-    linear-gradient(rgba(250, 174, 104, 0.4), rgba(250, 174, 104, 0.4)),
+    linear-gradient(#ffcc8066, #ffcc8066),
     url(/assets/images/Oxford.jpg);
   background-size: cover;
   background-position: center;
@@ -206,6 +224,21 @@ textarea {
   //   background: linear-gradient(rgba(88, 75, 29, 0.8), rgba(94, 78, 27, 0.8));
   //   height: calc(100% - 100px);
   // }
+  background:
+    linear-gradient(#a2b1be66, #a2b1be66),
+    url(/assets/images/BenjiandAbram.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 80%;
+  padding-top: 110px;
+  padding-bottom: 40px;
+  border-top-width: 30px;
+  .pane {
+    background: linear-gradient(#bebebeb3, #bebebeb3);
+    margin-top: 50px;
+    padding: 30px 0 40px;
+  }
   .header-indent {
     text-indent: 25px;
   }
@@ -225,26 +258,6 @@ textarea {
   }
 }
 
-
-// Alternate about page with Abram background
-.about {
-  background:
-    linear-gradient(rgba(162, 177, 190, 0.40), rgba(162, 177, 190, 0.40)),
-    url(/assets/images/BenjiandAbram.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  width: 100%;
-  min-height: 80%;
-  padding-top: 110px;
-  padding-bottom: 40px;
-  border-top-width: 30px;
-  .pane {
-    background: linear-gradient(rgba(190, 190, 190, 0.7), rgba(190, 190, 190, 0.7));
-    margin-top: 50px;
-    padding: 30px 0 40px;
-  }
-}
-
 // Resume/PDFviewer
 .pdfview {
   height: 99.5%;
@@ -253,11 +266,7 @@ textarea {
 
 // Portfolio Page
 .portfolio {
-  background: #156671;
-    // url(/assets/images/Hoi_An_Vietnam.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  min-height: calc(100% - 160px);
+  background: $dark-bg-color;
   padding-top: 100px;
   padding-bottom: 3rem;
   color: $bg-color;
@@ -304,7 +313,7 @@ textarea {
   flex-wrap: wrap;
   text-align: left;
   h3 {
-    color: #326780;
+    color: $border-color;
     font-size: 14px;
   }
   p {
@@ -318,7 +327,7 @@ textarea {
   @media (min-width: 600px) {
     .footer-vert {
       padding: 0 1px;
-      background: #326780;
+      background: $border-color;
     }
   }
 }
@@ -327,12 +336,14 @@ textarea {
 .footer {
   position: relative;
   font-size: 10px;
-  color: $p_color;
+  color: #fff;
   text-align: left;
-  padding: 25px;
-  border-top: solid 5px #326780;
-  background: 
-    linear-gradient(rgba(63, 176, 172, 0.8), rgba(63, 176, 172, 0.8)),
+  padding: 10px 25px;
+  border-top: solid 5px $nav-color;
+  
+  /* was #3fb0accc */
+  background:
+    linear-gradient($border-color, $border-color),
     url(/assets/images/nav-gradient.jpg);
   background-position: right;
 }

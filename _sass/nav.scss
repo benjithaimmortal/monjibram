@@ -1,18 +1,14 @@
-$nav_color: #418E99;
-$nav_text_color: black;
-$nav_font: "Source Serif Pro", Helvetica, serif;
-
 /* header */
 .navbar {
   position: fixed;
   top: 0;
   height: 80px;
   width: 100%;
-  font-family: $nav_font;
+  font-family: $nav-font;
   font-weight: 600;
-  color: $nav_text_color;
+  color: $nav-text-color;
   background: 
-    linear-gradient(rgba(65, 141, 153, 0.8), rgba(65, 141, 153, 0.8)),
+    linear-gradient($nav-color, $nav-color),
     url(/assets/images/nav-gradient.jpg);
   background-position: right;
   z-index: 1;
@@ -23,9 +19,9 @@ $nav_font: "Source Serif Pro", Helvetica, serif;
 
 .navbar-site-emblem {
   margin-right: auto;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   a:link a:visited {
-    color: $nav_text_color;
+    color: $nav-text-color;
   }
 }
 
@@ -83,7 +79,7 @@ $nav_font: "Source Serif Pro", Helvetica, serif;
     right: 0;
     font-size: 1.1rem;
     background: 
-      linear-gradient(rgba(65, 141, 153, 0.8), rgba(65, 141, 153, 0.8)),
+      linear-gradient(nav-color, $nav-color),
       url(/assets/images/nav-gradient.jpg);
     background-position: right;
     position: absolute;
