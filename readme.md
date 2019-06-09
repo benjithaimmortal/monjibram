@@ -1,2 +1,2 @@
-#   A personal site with family info
-##  Built on Jekyll, for hosting with GitHub Pages
+#   A personal site with resume, portfolio, etc
+##  Built on Jekyll, hosted with GitHub Pages
