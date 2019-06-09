@@ -2,24 +2,26 @@
 // bg #151b1f link #a7b1c7 p #e0e0e0
 // 6.2019 nav 428e92 bg 006064 borders 00363a
 
-$light-cyan :   #428e92;
-$cyan:          #006064;
-$dark-cyan:     #00363a;
+$light-cyan :   #3CBCC3;
+$light-green:   #438945;
+$light-yellow:  #EBA63F;
+$light-red:     #E40C2B;
+$cyan:          #1C595C;
 
 
-$bg-color:      #F5F5F5;
-$dark-bg-color: $cyan;
-/* border-color was #156671 */
-$border-color:  $dark-cyan;
+$dark-bg-blue:  #1D1D2C;
+$bg-color:      #F7F4E9;
+/* border-color was #156671 at one time */
+$border-color:  $dark-bg-blue;
 
 // text variables
 $font-fam:      "Source Serif Pro", sans-serif;
-$link-color:    #1a2130;
+$link-color:    #1D1D2C;
 $p-color:       #000;
 
 // nav variables
-/* nav-color was #418E99 */
-$nav-color: #428e92cc;
+/* nav-color was #418E99 at one time */
+$nav-color: #3cbcc3cc;
 $nav-text-color: $p-color;
 $nav-font: "Source Serif Pro", Helvetica, serif;
 
@@ -96,8 +98,8 @@ html, body {
 
 .post {
   margin: 5px;
-  border: 7px solid $bg-color;
-  background: $bg-color;
+  border: 7px solid white;
+  background: white;
   .field {
     margin: 0 auto;
     float: left;
@@ -139,10 +141,10 @@ textarea {
 
 
 // index title/sample
-.title-img {
-  // position: relative;
+.title-bg {
+  position: relative;
   background: url(/assets/images/Oxford.jpg);
-  // background: #4e4e4e; 
+  // background: $bg-color;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -153,21 +155,19 @@ textarea {
   float: right;
   top: 35%;
   right: 5%;
+  min-width: 400px;
   text-align: center;
   font-size: calc(1rem + 1vw);
   font-weight: 600;
   letter-spacing: 10px;
-  font-family: "Lato", sans;
-  color: #37474F;
-  background-color: white;
+  font-family: "Lato", "Arial", sans;
+  color: $dark-bg-blue;
+  background: $bg-color;
   padding: 18px;
-  & a {
-    color: black;
-  }
 }
 .sample {
   background:
-    linear-gradient(#ffcc8066, #ffcc8066),
+    linear-gradient(#EBA63F88, #EBA63F88),
     url(/assets/images/Oxford.jpg);
   background-size: cover;
   background-position: center;
@@ -192,10 +192,10 @@ textarea {
     flex-flow: row wrap;
   }
   .circle {
-    border-color: whitesmoke;
+    border-color: $bg-color;
     border-style: solid;
     margin-top: 30px;
-    border-width: 2px;
+    border-width: 4px;
     border-radius: 50%;
     font-size: 0;
     width: calc(20% + 80px);
@@ -225,19 +225,19 @@ textarea {
   //   height: calc(100% - 100px);
   // }
   background:
-    linear-gradient(#a2b1be66, #a2b1be66),
+    linear-gradient(#f7f4e966, #F7F4E966),
     url(/assets/images/BenjiandAbram.jpg);
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
   min-height: 80%;
-  padding-top: 110px;
+  padding-top: 120px;
   padding-bottom: 40px;
   border-top-width: 30px;
   .pane {
-    background: linear-gradient(#bebebeb3, #bebebeb3);
-    margin-top: 50px;
-    padding: 30px 0 40px;
+    background: linear-gradient(#f7f4e9b3, #f7f4e9b3);
+    // margin-top: 10px;
+    padding: 20px 0px 60px;
   }
   .header-indent {
     text-indent: 25px;
@@ -266,42 +266,134 @@ textarea {
 
 // Portfolio Page
 .portfolio {
-  background: $dark-bg-color;
+  background: $dark-bg-blue;
   padding-top: 100px;
   padding-bottom: 3rem;
   color: $bg-color;
-  text-align: center;
-  
-  p {
-    margin-bottom: 0;
+  h1 {
+    text-align: center;
   }
-  // .portf-item {
-  //   margin: 0 10% 0 10%;
-  //   -moz-column-count:    3;
-  //   -webkit-column-count: 3;
-  //   column-count:         3;
-  // }
-  // .portf-item img {
-  //   /* Just in case there are inline attributes */
-  //   width: 100% !important;
-  //   height: auto !important;
-  //   line-height: 0;
-  // }
-  // .portf-item a {
-  //   /* Just in case there are inline attributes */
-  //   width: 100% !important;
-  //   height: auto !important;
-  //   line-height: 0;
-  // }
+	a {
+    color: $bg-color !important;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .project-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .project {
+    margin: 2rem 0.5rem;
+    padding: 2rem 4rem 1rem;
+    height: 300px;
+    width: 250px;
+    transition: background 0.7s;
+    &:hover {
+      h2, h6, p, .split {
+        display: none;
+      }
+    }
+    .project-name {
+      letter-spacing: 5px;
+    }
+    .split {
+      margin: 20px 0;
+      border-bottom: solid 1.5px;
+      max-width: 50px;
+    }
+    h6 {
+      letter-spacing: 3px;
+    }
+  }
 
-  .portf-img {
-    max-width: 60%;
-    overflow: auto;
-    -webkit-box-shadow: 2px 3px 5px 0px $border-color;
-       -moz-box-shadow: 2px 3px 5px 0px $border-color;
-            box-shadow: 2px 3px 5px 0px $border-color;
+  .p1 {
+    background: $light-cyan;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    &:hover {
+      background: url("/assets/images/portfolio/systema-dev.png");
+      background-size: cover;
+    }
   }
-}
+  .p2 {
+    background: $light-yellow;
+    border-radius: 42% 58% 29% 71% / 69% 70% 30% 31%;
+    &:hover {
+      background: url("/assets/images/portfolio/Squash-Ranker.jpg");
+      background-size: cover;
+	  }
+  }
+  .p3 {
+    background: $light-green;
+    border-radius: 35% 65% 30% 70% / 40% 60% 40% 60%;
+    &:hover {
+      background: url("/assets/images/portfolio/slice.png");
+      background-size: cover;
+	  }
+  }
+  .p4 {
+    background: $light-red;
+    border-radius: 10% 90% 71% 29% / 12% 83% 17% 88%;
+    &:hover {
+      background: url("/assets/images/portfolio/studio.png");
+      background-size: cover;
+	  }
+  }
+  .p5 {
+    background: $light-cyan;
+    border-radius: 70% 30% 30% 70% / 40% 60% 40% 60%;
+    &:hover {
+      background: url("/assets/images/portfolio/gwangju.png");
+      background-size: cover;
+	  }
+  }
+  .p6 {
+    background: $light-yellow;
+    border-radius: 78% 22% 65% 35% / 25% 20% 80% 75%;
+    &:hover {
+      background: url("/assets/images/portfolio/Rails\ Sample\ App\ 2.jpg");
+      background-size: cover;
+	  }
+  }
+  .p7 {
+    background: $light-green;
+    border-radius: 78% 22% 65% 35% / 25% 20% 80% 75%;
+    &:hover {
+      background: url("/assets/images/portfolio/Honorary-Citizenship.jpg");
+      background-size: cover;
+	  }
+  }
+  .p8 {
+    background: $light-red;
+    border-radius: 35% 65% 30% 70% / 40% 60% 40% 60%;
+    &:hover {
+      background: url("/assets/images/portfolio/Munhwa.jpg");
+      background-size: cover;
+	  }
+  }
+  .p9 {
+    background: $light-cyan;
+    border-radius: 42% 58% 29% 71% / 69% 70% 30% 31%;
+    &:hover {
+      background: url("/assets/images/portfolio/Mobeum-Weigukin.jpg");
+      background-size: cover;
+	  }
+  }
+  .p10 {
+    background: $light-yellow;
+    border-radius: 10% 90% 71% 29% / 12% 83% 17% 88%;
+    &:hover {
+      background: url("/assets/images/portfolio");
+      background-size: cover;
+	  }
+  }
+
+  // p {
+  //   margin-bottom: 0;
+  // }
+}  
 
 //Index Expanded Footer
 .main-footer {
@@ -336,10 +428,10 @@ textarea {
 .footer {
   position: relative;
   font-size: 10px;
-  color: #fff;
+  color: $bg-color;
   text-align: left;
   padding: 10px 25px;
-  border-top: solid 5px $nav-color;
+  border-top: solid 5px $light-yellow;
   
   /* was #3fb0accc */
   background:
