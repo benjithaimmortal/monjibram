@@ -309,6 +309,7 @@ textarea {
     }
   }
 
+  //systema
   .p1 {
     background: $light-cyan;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
@@ -317,6 +318,8 @@ textarea {
       background-size: cover;
     }
   }
+
+  //squashable
   .p2 {
     background: $light-yellow;
     border-radius: 42% 58% 29% 71% / 69% 70% 30% 31%;
@@ -325,6 +328,8 @@ textarea {
       background-size: cover;
 	  }
   }
+
+  //slice
   .p3 {
     background: $light-green;
     border-radius: 35% 65% 30% 70% / 40% 60% 40% 60%;
@@ -333,56 +338,81 @@ textarea {
       background-size: cover;
 	  }
   }
-  .p4 {
+
+  
+  //popup blocks
+  .p11 {
     background: $light-red;
+    border-radius: 42% 58% 29% 71% / 69% 70% 30% 31%;
+    &:hover {
+      background: url("/assets/images/portfolio/Pop-up\ Blocks.png");
+      background-size: cover;
+    }
+  }
+
+  //steel house
+  .p4 {
+    background: $light-cyan;
     border-radius: 10% 90% 71% 29% / 12% 83% 17% 88%;
     &:hover {
       background: url("/assets/images/portfolio/studio.png");
       background-size: cover;
 	  }
   }
+
+  //gwangju
   .p5 {
-    background: $light-cyan;
+    background: $light-yellow;
     border-radius: 70% 30% 30% 70% / 40% 60% 40% 60%;
     &:hover {
       background: url("/assets/images/portfolio/gwangju.png");
       background-size: cover;
 	  }
   }
+
+  //auth
   .p6 {
-    background: $light-yellow;
+    background: $light-green;
     border-radius: 78% 22% 65% 35% / 25% 20% 80% 75%;
     &:hover {
       background: url("/assets/images/portfolio/Rails\ Sample\ App\ 2.jpg");
       background-size: cover;
 	  }
   }
+
+  //myeongye
   .p7 {
-    background: $light-green;
+    background: $light-red;
     border-radius: 78% 22% 65% 35% / 25% 20% 80% 75%;
     &:hover {
       background: url("/assets/images/portfolio/Honorary-Citizenship.jpg");
       background-size: cover;
 	  }
   }
+
+  //seoulite
   .p8 {
-    background: $light-red;
+    background: $light-cyan;
     border-radius: 35% 65% 30% 70% / 40% 60% 40% 60%;
     &:hover {
       background: url("/assets/images/portfolio/Munhwa.jpg");
       background-size: cover;
 	  }
   }
+
+  //mobeum
   .p9 {
-    background: $light-cyan;
+    background: $light-yellow;
     border-radius: 42% 58% 29% 71% / 69% 70% 30% 31%;
     &:hover {
       background: url("/assets/images/portfolio/Mobeum-Weigukin.jpg");
       background-size: cover;
 	  }
   }
+
+  //program
   .p10 {
-    background: $light-yellow;
+    background: $light-green;
     border-radius: 10% 90% 71% 29% / 12% 83% 17% 88%;
     &:hover {
       background: url("/assets/images/portfolio/Boat-Race.jpg");
