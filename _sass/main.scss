@@ -2,26 +2,39 @@
 // bg #151b1f link #a7b1c7 p #e0e0e0
 // 6.2019 nav 428e92 bg 006064 borders 00363a
 
+
+/* the best color scheme ever
 $light-cyan :   #3CBCC3;
 $light-green:   #438945;
 $light-yellow:  #EBA63F;
 $light-red:     #E40C2B;
 $cyan:          #1C595C;
+*/
 
+$light-green:   #264E36;
+$light-cyan:    #2A4B7C;
+$light-yellow:  #F96714;
+$light-red:     #9B1B30;
+$cyan:          #77212E;
 
-$dark-bg-blue:  #1D1D2C;
-$bg-color:      #F7F4E9;
+// $dark-bg-blue:  #1D1D2C;
+// $bg-color:      #F5D6C6;
+//oxford:
+$dark-bg-blue: #002147;
+$bg-color: white;
 /* border-color was #156671 at one time */
 $border-color:  $dark-bg-blue;
 
 // text variables
 $font-fam:      "Source Serif Pro", sans-serif;
-$link-color:    #1D1D2C;
-$p-color:       #000;
+$link-color:      #fff;
+$link-dark-color: $cyan;
+$p-color:         #fff;
+$p-dark-color:    $cyan;
 
 // nav variables
 /* nav-color was #418E99 at one time */
-$nav-color: #3cbcc3cc;
+$nav-color: $light-cyan;
 $nav-text-color: $p-color;
 $nav-font: "Source Serif Pro", Helvetica, serif;
 
@@ -71,6 +84,12 @@ html, body {
   }
 }
 
+.wrapper {
+  max-width: 95%;
+  width: 1280px;
+  margin: 0 auto;
+}
+
 .fa {
   text-indent: 0;
 }
@@ -89,7 +108,7 @@ html, body {
   padding: 10px;
   border-width: 2px;
   &.textlet {
-    margin: 0 90px 0 90px;
+    margin: 0 10%;
   }
   &.contactf {
     width: 80%;
@@ -152,22 +171,21 @@ textarea {
 }
 .title-text {
   position: absolute;
-  float: right;
-  top: 35%;
-  right: 5%;
-  min-width: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   font-size: calc(1rem + 1vw);
   font-weight: 600;
   letter-spacing: 10px;
   font-family: "Lato", "Arial", sans;
-  color: $dark-bg-blue;
-  background: $bg-color;
+  color: $p-color;
+  // background: #fefefe;
   padding: 18px;
 }
 .sample {
   background:
-    linear-gradient(#EBA63F88, #EBA63F88),
+    linear-gradient(#FFFFFF88 65%, #00214788),
     url(/assets/images/Oxford.jpg);
   background-size: cover;
   background-position: center;
@@ -178,6 +196,7 @@ textarea {
   border-color: $border-color;
   border-top-width: 15px;
   h1 {
+    color: $border-color;
     font-size: calc(1rem + 1vw);
     font-weight: 600;
     letter-spacing: 10px;
@@ -192,7 +211,7 @@ textarea {
     flex-flow: row wrap;
   }
   .circle {
-    border-color: $bg-color;
+    border-color: $p-color;
     border-style: solid;
     margin-top: 30px;
     border-width: 4px;
@@ -225,22 +244,34 @@ textarea {
   //   height: calc(100% - 100px);
   // }
   background:
-    linear-gradient(#f7f4e966, #F7F4E966),
-    url(/assets/images/BenjiandAbram.jpg);
-  background-size: cover;
+    linear-gradient(#f7f4e911, #F7F4E911),
+    url(/assets/images/BenjiandAbram.jpg)
+    left center / cover
+    no-repeat;
   background-attachment: fixed;
   width: 100%;
-  min-height: 80%;
-  padding-top: 120px;
-  padding-bottom: 40px;
+  // height: calc(100% - 43px);
+  min-height: calc(100% - 43px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-top-width: 30px;
   .pane {
     background: linear-gradient(#f7f4e9b3, #f7f4e9b3);
-    // margin-top: 10px;
+    margin: calc(300px - 10%) auto 100px;
     padding: 20px 0px 60px;
+    max-width: 90%;
+    width: 1050px;
   }
   .header-indent {
-    text-indent: 25px;
+    display: flex;
+    justify-content: center;
+    color: $p-dark-color;
+    span {
+      margin: 0 15px;
+      width: 103px;
+      text-align: right;
+    }
   }
   .column-tray {
     -webkit-column-rule: 3px dotted $border-color;
@@ -248,13 +279,18 @@ textarea {
             column-rule: 3px dotted $border-color;
   }
   p {
-    max-width: 400px;
+    color: $p-dark-color;
+    width: 400px;
+    max-width: 90%;
     text-indent: 0;
     display: inline-block;
   }
   .contactform {
     display: flex;
     flex-direction: column;
+  }
+  strong {
+    color: $p-dark-color;
   }
 }
 
@@ -269,12 +305,12 @@ textarea {
   background: $dark-bg-blue;
   padding-top: 100px;
   padding-bottom: 3rem;
-  color: $bg-color;
+  color: $p-color;
   h1 {
     text-align: center;
   }
 	a {
-    color: $bg-color !important;
+    color: $p-color !important;
     &:hover {
       text-decoration: none;
     }
@@ -290,8 +326,9 @@ textarea {
     padding: 2rem 4rem 1rem;
     height: 300px;
     width: 250px;
-    transition: background 0.7s;
+    transition: ease all 0.7s;
     &:hover {
+      transition: ease all .2s;
       h2, h6, p, .split {
         display: none;
       }
@@ -380,14 +417,18 @@ textarea {
 	  }
   }
 
-  //myeongye
+  //myeongye & snake.dev
   .p7 {
     background: $light-red;
     border-radius: 78% 22% 65% 35% / 25% 20% 80% 75%;
-    &:hover {
-      background: url("/assets/images/portfolio/Honorary-Citizenship.jpg");
-      background-size: cover;
-	  }
+  }
+  .snake:hover {
+    background: url("/assets/images/portfolio/snakedev1.png");
+    background-size: cover;
+  }
+  .myeongye:hover {
+    background: url("/assets/images/portfolio/Honorary-Citizenship.jpg");
+    background-size: cover;
   }
 
   //seoulite
@@ -410,14 +451,18 @@ textarea {
 	  }
   }
 
-  //program
+  //AJAX & developer
   .p10 {
-    background: $light-green;
+    background-color: $light-green;
     border-radius: 10% 90% 71% 29% / 12% 83% 17% 88%;
-    &:hover {
-      background: url("/assets/images/portfolio/Boat-Race.jpg");
-      background-size: cover;
-	  }
+  }
+  .ajax:hover {
+    background: url("/assets/images/portfolio/AJAX.png");
+    background-size: cover;
+  }
+  .developer:hover {
+    background: url("/assets/images/portfolio/Boat-Race.jpg");
+    background-size: cover;
   }
 
   // p {
@@ -427,31 +472,94 @@ textarea {
 
 //Index Expanded Footer
 .main-footer {
+  margin: 30px auto 50px;
+  width: 1280px;
+  max-width: 100%;
   background-color: $bg-color;
-  padding: 30px 30px 50px 30px;
+  // padding: 30px 30px 50px 30px;
   position: relative;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   text-align: left;
+  .cont {
+    height: 100%;
+    width: 1100px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "b c p l" "b c p l" "b c p l" "b c p l";
+  }
+  @media (max-width: 800px) {
+    .cont {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: "b c" "b c" "b c" "b c" "p l" "p l" "p l" "p l";
+    }
+    .footer-child.c {
+      border-right: none;
+      &:after {
+        content: '';
+        display: block;
+        width: 70%;
+        border-bottom: solid 2px $border-color;
+      }
+    }
+    .footer-child.b:after { 
+      content: '';
+      display: block;
+      width: 70%;
+      border-bottom: solid 2px $border-color; 
+    }
+
+  }
+  .b { grid-area: b; }
+  .p { grid-area: p; }
+  .c { grid-area: c; }
+  .l { grid-area: l; }
   h3 {
     color: $border-color;
     font-size: 14px;
+    width: 123px;
   }
   p {
     font-size: 12px;
+    width: 123px;
+  }
+  .block {
+    display: flex;
+    // flex-wrap: nowrap;
+    min-width: 200px;
   }
   .footer-child {
-    flex-grow: 1;
-    padding-left: 5%;
+    // flex-grow: 1;
+    // padding-left: 5%;
+    padding: 0 10%;
+    height: 100%;
     min-width: 100px;
-  }
-  @media (min-width: 600px) {
-    .footer-vert {
-      padding: 0 1px;
-      background: $border-color;
+    border-right: solid 2px $border-color;
+    &:last-of-type {
+      border-right: none;
+    }
+    p {
+      color: $p-dark-color;
+    }
+    a:link, a:visited, a:hover {
+      color: $link-dark-color;
     }
   }
+  .footer-vert {
+    width: 2px;
+    margin: -1px;
+    height: 100%;
+    background-color: $border-color;
+  }
+
 }
 
 //Every-page Footer
