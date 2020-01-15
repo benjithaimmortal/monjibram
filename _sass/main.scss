@@ -194,10 +194,10 @@ textarea {
 .title-text {
   position: fixed;
   z-index: 2;
-  bottom: 10%;
+  bottom: 30%;
   left: 80%;
   min-width: 200px;
-  transform: translate(-80%, 10%);
+  transform: translate(-80%, 30%);
   text-align: center;
   font-size: calc(1rem + 1vw);
   font-weight: 600;
@@ -208,6 +208,12 @@ textarea {
   padding: 8px;
   border-radius: 0 35px 35px 35px;
 }
+@media (min-width: 1400px) {
+.title-text { bottom: 10%; transform: translate(-80%, 10%); }
+}
+@media (max-width: 1000px) {
+.title-text { bottom: 45%; left: 95%; transform: translate(-95%, 45%); }
+}
 a.title-text:visited, a.title-text:hover, a.title-text:link {
   color: $nav-text-color;
   text-decoration: none;
@@ -216,7 +222,7 @@ a.title-text:visited, a.title-text:hover, a.title-text:link {
   z-index: 2;
   position: relative;
   width: 100%;
-  min-height: 90%;
+  min-height: 70%;
   border-top-style: solid;
   border-color: $border-color;
   border-top-width: 15px;
@@ -228,7 +234,24 @@ a.title-text:visited, a.title-text:hover, a.title-text:link {
     width: 100%;
     height: 100%;
     z-index: 1;
+    &.fade .inside-parallax:before {
+      opacity: 1;
+      transition-duration: .5s;
+    }
+    // this next line is where I got sooo lazy
+    &.fade + div h1 { color: white; }
+    // as is the :before statement here
     .inside-parallax{
+      &:before {
+        transition: ease all .2s;
+        opacity: 0;
+        content: '';
+        display: block;
+        position: fixed;
+        top: 0; left: 0;
+        height: 100%; width: 100%;
+        background: #00214782;
+      }  
       position: fixed;
       display: block;
       top: 0;
@@ -272,7 +295,6 @@ a.title-text:visited, a.title-text:hover, a.title-text:link {
     border-radius: 50%;
     font-size: 0;
     width: calc(20% + 80px);
-    transition: ease all .3s;
     &:hover {
       box-shadow: 5px 0px 10px 0px #002147;
       transform: perspective(1500px) rotateY(-10deg);
@@ -282,6 +304,35 @@ a.title-text:visited, a.title-text:hover, a.title-text:link {
     border-radius: 50%;
     width: 100%;
     height: auto;
+  }
+
+    
+  .animation-element {
+    opacity: 0;
+    transition: opacity .7s ease, transform .3s ease;
+    -moz-transform: translate3d(0px, 200px, 0px);
+    -webkit-transform: translate3d(0px, 200px, 0px);
+    -o-transform: translate(0px, 200px);
+    -ms-transform: translate(0px, 200px);
+    transform: translate3d(0px, 200, 0px);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .animation-element.in-view {
+    opacity: 1;
+    -moz-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
+    &:nth-child(n + 2) {
+      transition-delay: .2s;
+    }
+    &:nth-child(n + 3) {
+      transition-delay: .4s;
+    }
   }
 }
 
@@ -317,7 +368,8 @@ a.title-text:visited, a.title-text:hover, a.title-text:link {
   border-top-width: 30px;
   .progeny-tag {
     display: none;
-    position: absolute;
+    position: fixed;
+    z-index: 1;
     top: 18%;
     left: 630px;
     transform: translate(35%, -20%);
@@ -328,6 +380,8 @@ a.title-text:visited, a.title-text:hover, a.title-text:link {
   }
   @media (max-width:1420px) and (min-width:1100px) {.progeny-tag {display: block;}}
   .pane {
+    position: relative;
+    z-index: 2;
     background: linear-gradient(#f7f4e94f, #f7f4e9b3);
     margin: calc(380px - 10%) auto 100px;
     padding: 20px 0px 60px;
