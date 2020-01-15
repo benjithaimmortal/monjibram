@@ -26,17 +26,19 @@ $bg-color: white;
 $border-color:  $dark-bg-blue;
 
 // text variables
-$font-fam:      "Source Serif Pro", sans-serif;
-$link-color:      #fff;
+$font-fam:      "Zilla Slab", sans-serif;
+$link-color:      $dark-bg-blue;
 $link-dark-color: $cyan;
 $p-color:         #fff;
 $p-dark-color:    $cyan;
 
 // nav variables
 /* nav-color was #418E99 at one time */
-$nav-color: $light-cyan;
-$nav-text-color: $p-color;
-$nav-font: "Source Serif Pro", Helvetica, serif;
+$nav-color: #fff;
+$nav-text-color: $dark-bg-blue;
+$nav-link-color: $nav-text-color;
+$nav-logo-color: $light-yellow;
+$nav-font: "Zilla Slab", Helvetica, serif;
 
 /* typography */
 html, body {
@@ -162,39 +164,88 @@ textarea {
 // index title/sample
 .title-bg {
   position: relative;
-  background: url(/assets/images/Oxford.jpg);
-  // background: $bg-color;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   min-height: 100%;
+  .parallax {
+    clip: rect(0,auto,auto,0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    .inside-parallax {
+      position: fixed;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: translateZ(0);
+      will-change: transform;
+      z-index: 1;
+      background: url(/assets/images/pixld1.png);
+      // background: $bg-color;
+      background-size: cover;
+      background-position: center 15%;
+      background-repeat: no-repeat;
+    }
+  }
 }
 .title-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: fixed;
+  z-index: 2;
+  bottom: 10%;
+  left: 80%;
+  min-width: 200px;
+  transform: translate(-80%, 10%);
   text-align: center;
   font-size: calc(1rem + 1vw);
   font-weight: 600;
   letter-spacing: 10px;
   font-family: "Lato", "Arial", sans;
-  color: $p-color;
-  // background: #fefefe;
-  padding: 18px;
+  color: $nav-text-color;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 0 35px 35px 35px;
+}
+a.title-text:visited, a.title-text:hover, a.title-text:link {
+  color: $nav-text-color;
+  text-decoration: none;
 }
 .sample {
-  background:
-    linear-gradient(#FFFFFF88 65%, #00214788),
-    url(/assets/images/Oxford.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  z-index: 2;
+  position: relative;
   width: 100%;
   min-height: 90%;
   border-top-style: solid;
   border-color: $border-color;
   border-top-width: 15px;
+  .parallax {
+    clip: rect(0,auto,auto,0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    .inside-parallax{
+      position: fixed;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: translateZ(0);
+      will-change: transform;
+      z-index: 1;
+      background:
+        linear-gradient(#FFFFFF88 65%, #00214788),
+        url(/assets/images/unpixd.jpg);
+      background-size: cover;
+      background-position: center 15%;
+      background-repeat: no-repeat;
+    }
+  }
   h1 {
     color: $border-color;
     font-size: calc(1rem + 1vw);
@@ -202,6 +253,8 @@ textarea {
     letter-spacing: 10px;
   }
   .pane {
+    position: relative;
+    z-index: 1;
     margin-top: 50px;
     padding: 30px 0 10rem 0;
   }
@@ -212,12 +265,18 @@ textarea {
   }
   .circle {
     border-color: $p-color;
+    box-shadow: none;
     border-style: solid;
     margin-top: 30px;
     border-width: 4px;
     border-radius: 50%;
     font-size: 0;
     width: calc(20% + 80px);
+    transition: ease all .3s;
+    &:hover {
+      box-shadow: 5px 0px 10px 0px #002147;
+      transform: perspective(1500px) rotateY(-10deg);
+    }
   }
   .circle-img {
     border-radius: 50%;
@@ -245,7 +304,7 @@ textarea {
   // }
   background:
     linear-gradient(#f7f4e911, #F7F4E911),
-    url(/assets/images/BenjiandAbram.jpg)
+    url(/assets/images/pixld2.png)
     left center / cover
     no-repeat;
   background-attachment: fixed;
@@ -256,9 +315,21 @@ textarea {
   flex-direction: column;
   justify-content: center;
   border-top-width: 30px;
+  .progeny-tag {
+    display: none;
+    position: absolute;
+    top: 18%;
+    left: 630px;
+    transform: translate(35%, -20%);
+    border: solid 1px #fff;
+    border-radius: 45px 45px 45px 0;
+    padding: 10px;
+    background-color: #002247;
+  }
+  @media (max-width:1420px) and (min-width:1100px) {.progeny-tag {display: block;}}
   .pane {
-    background: linear-gradient(#f7f4e9b3, #f7f4e9b3);
-    margin: calc(300px - 10%) auto 100px;
+    background: linear-gradient(#f7f4e94f, #f7f4e9b3);
+    margin: calc(380px - 10%) auto 100px;
     padding: 20px 0px 60px;
     max-width: 90%;
     width: 1050px;
@@ -471,8 +542,11 @@ textarea {
 }  
 
 //Index Expanded Footer
+.footer-white-bg { background-color: #fff; width: 100%; z-index: 2;}
 .main-footer {
-  margin: 30px auto 50px;
+  z-index: 2;
+  margin: 0 auto;
+  padding: 30px 0 50px;
   width: 1280px;
   max-width: 100%;
   background-color: $bg-color;
@@ -565,6 +639,7 @@ textarea {
 //Every-page Footer
 .footer {
   position: relative;
+  z-index: 99;
   font-size: 10px;
   color: $bg-color;
   text-align: left;
