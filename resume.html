@@ -54,6 +54,20 @@ title: Resume | Benjamin Kostenbader
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <embed src="/assets/files/Kostenbader-CV.pdf" class="pdfview" type="application/pdf">
+    <div class="popup">
+      <h3 class="popup-text">This looks cooler <br>on <a href="https://codepen.io/benjithaimmortal/full/dyPgwMv" target="_blank" rel="noopener noreferrer">CodePen</a></h3>
+      <div class="exit"><span></span><span></span></div>
+    </div>
+    <embed src="/assets/files/Kostenbader - Web Developer Resume.pdf" class="pdfview" type="application/pdf">
   </body>
 </html>
+
+<script>
+  /* We don't need no freaking JQuery */
+  window.addEventListener('load', function(){
+    document.querySelector(".popup").classList.add("shown");
+    document.querySelector(".exit").addEventListener('click', function(){
+      document.querySelector(".popup").classList.remove("shown");      
+    });
+  });
+</script>
