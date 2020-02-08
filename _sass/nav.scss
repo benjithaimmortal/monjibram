@@ -5,7 +5,7 @@
   height: 80px;
   width: 100%;
   font-family: $nav-font;
-  font-weight: 600;
+  font-weight: 400;
   color: $nav-text-color;
   background: $nav-color;
     // linear-gradient($nav-color, $nav-color),
@@ -20,6 +20,7 @@
 .navbar-site-emblem {
   margin-right: auto;
   font-family: Arial, sans-serif;
+  font-weight: 400;
   a:link a:visited {
     color: $nav-link-color;
   }
@@ -96,7 +97,7 @@
   .dropdown-nav {
     color: $nav-text-color;
     position: absolute;
-    top: 63px;
+    top: 60px;
     max-height: 0;
     overflow: hidden;
     transition: ease all .5s;

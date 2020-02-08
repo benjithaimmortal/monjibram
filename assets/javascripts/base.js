@@ -10,7 +10,12 @@ $(document).ready(function(){
     }
   });
 
+  // this is the best thing ever, trust me
+  $(window).scroll(function(){
+    $(".invisicheck").prop("checked", false);
+  });
 
+  // and this is just silly
   function check_if_in_view() {
     var window_height = $(window).height();
     var window_top_position = $(window).scrollTop();
@@ -29,6 +34,7 @@ $(document).ready(function(){
         $element.addClass('in-view');
         $(".sample .parallax").addClass("fade");
       } else {
+        // turn back on to make the animations happen again and again and ... so forth
         // $element.removeClass('in-view');
         // $(".sample .parallax").removeClass("fade");
       }
