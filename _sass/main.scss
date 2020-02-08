@@ -403,7 +403,7 @@ a.title-text:visited, a.title-text:hover, a.title-text:link {
   .pane {
     max-width: 90%;
     margin: 0 auto;
-    width: 1280px;
+    width: 1100px;
     padding-top: 120px;
     text-align: left;
     display: flex;
@@ -414,6 +414,7 @@ a.title-text:visited, a.title-text:hover, a.title-text:link {
   }
   // breaks at 875px
   .text-left {
+    cursor: pointer;
     width: 400px;
     margin-right: auto;
     font-family: $serif-font;
@@ -448,7 +449,7 @@ a.title-text:visited, a.title-text:hover, a.title-text:link {
     color: $p-color;
     max-width: 90%;
     margin: 0 auto;
-    width: 1280px;
+    width: 1100px;
     font-size: 4rem;
     span {
       margin: 0 15px;
