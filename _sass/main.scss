@@ -880,7 +880,7 @@ a.title-text:visited, a.title-text:hover, a.title-text:link {
 
 @media (max-height: 600px) {
   .title-bg {
-    .parallax .inside-parallax { background-size: auto calc(100% - 80px); }
+    .parallax .inside-parallax { background-size: auto calc(100% - 80px); background-position: 0 bottom; }
     .mobile-gone { display: none; }
   }
 }
