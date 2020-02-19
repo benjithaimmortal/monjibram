@@ -189,7 +189,7 @@ textarea {
       z-index: 1;
       background: url(/assets/images/Backgroundless.png);
       // background: $bg-color;
-      background-size: 200px auto;
+      background-size: 450px auto;
       background-position: 5% bottom;
       background-repeat: no-repeat;
     }
@@ -808,7 +808,8 @@ a.title-text:visited, a.title-text:hover, a.title-text:link {
 
 @media (max-width: 800px) {
   .title-bg .parallax .inside-parallax {
-    background-size: 200px auto;
+    background-size: 420px auto;
+    background-position: -79px bottom;
   }
   .title-text {
     left: 235px;
