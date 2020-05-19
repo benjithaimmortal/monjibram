@@ -36,9 +36,9 @@ title: Monjibram
 email: benji@monjibram.com
 description: >- # this means to ignore newlines until "baseurl:"
   Benjamin Kostenbader is the award-winning co-developer of the Seongdong Global Experience Centers in Seoul, South Korea. He is also a proud father, software developer, cyclist, and squash enthusiast.
-baseurl: "/monjiredes" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 # url: "https://www.monjibram.com" # the base hostname & protocol for your site, e.g. http://example.com
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://monjibram.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  benjithaimmortal
 
 # Build settings
