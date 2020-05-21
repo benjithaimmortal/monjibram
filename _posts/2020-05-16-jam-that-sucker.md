@@ -16,7 +16,7 @@ Top Hat makes custom WordPress sites that are both deliciously beautiful and inc
 **Enter your hosting fee here, then click the button**
 
 <div> <span>$ </span>
-  <input type="number" class='doesnt-matter' placeholder=40 style="padding: 5px 0;">
+  <input type="number" class='doesnt-matter' placeholder=40 style="padding: 5px 0;"/>
   <button onclick="alert('Too much :(')" style="padding: 5px; border: none; background: #d8acb2;">How much?</button>
 </div>
 
