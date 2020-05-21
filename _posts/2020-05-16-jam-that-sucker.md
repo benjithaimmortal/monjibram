@@ -15,8 +15,10 @@ Top Hat makes custom WordPress sites that are both deliciously beautiful and inc
 
 **Enter your hosting fee here, then click the button**
 
-$ <input type="number" class='doesnt-matter' placeholder=40 style="padding: 5px 0;">
-<button onclick="alert('Too much :(')" style="padding: 5px; border: none; background: #d8acb2;">How much?</button>
+<div> $
+  <input type="number" class='doesnt-matter' placeholder=40 style="padding: 5px 0;">
+  <button onclick="alert('Too much :(')" style="padding: 5px; border: none; background: #d8acb2;">How much?</button>
+</div>
 
 There's got to be a catch, you say. I get what I pay for. I'm going to drop quality somewhere. Maybe I won't get a custom url? Maybe I have to choose from a gaudy design template, or worse, use a clunky website editor like it's 2005 and I'm building a MySpace profile. Is it going to be slow? It'll probably be really slow.
 
