@@ -1,5 +1,5 @@
 ---
-title: "How I Paginated this Blog"
+title: "Paginate This Blog"
 date: 2020/05/17 12:07:00 Z
 categories:
 - Tutorials

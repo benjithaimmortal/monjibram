@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://monjibram.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://monjibram.com/" rel="alternate" type="text/html" /><updated>2020-05-19T00:06:22-04:00</updated><id>https://monjibram.com/feed.xml</id><title type="html">Monjibram</title><subtitle>Benjamin Kostenbader is the award-winning co-developer of the Seongdong Global Experience Centers in Seoul, South Korea. He is also a proud father, software developer, cyclist, and squash enthusiast.</subtitle><entry><title type="html">You Should Probably JAM-Stack That</title><link href="https://monjibram.com/jam-that-sucker/" rel="alternate" type="text/html" title="You Should Probably JAM-Stack That" /><published>2020-05-17T08:09:00-04:00</published><updated>2020-05-17T08:09:00-04:00</updated><id>https://monjibram.com/jam-that-sucker</id><content type="html" xml:base="https://monjibram.com/jam-that-sucker/">&lt;p&gt;I use WordPress all day every day. It’s extremely customizable and easy for both web administrators and developers. But you don’t need WordPress. You need JAM-stack.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-05-20T22:48:16-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Monjibram</title><subtitle>Benjamin Kostenbader is the award-winning co-developer of the Seongdong Global Experience Centers in Seoul, South Korea. He is also a proud father, software developer, cyclist, and squash enthusiast.</subtitle><entry><title type="html">You Should Probably JAM-Stack That</title><link href="http://localhost:4000/jam-that-sucker/" rel="alternate" type="text/html" title="You Should Probably JAM-Stack That" /><published>2020-05-17T08:09:00-04:00</published><updated>2020-05-17T08:09:00-04:00</updated><id>http://localhost:4000/jam-that-sucker</id><content type="html" xml:base="http://localhost:4000/jam-that-sucker/">&lt;p&gt;I use WordPress all day every day. It’s extremely customizable and easy for both web administrators and developers. But you don’t need WordPress. You need JAM-stack.&lt;/p&gt;
 
 &lt;p&gt;Top Hat makes custom WordPress sites that are both deliciously beautiful and incredibly easy to use. I work with a lot of small- and medium-sized businesses and their marketing sites. I also freelance for up-and-coming businesses and people who consider their budgets a bit lower. I’m even a participating member of WP Pittsburgh, the group for small business owners and developers who study and practice all things WordPress. But I’m still here telling you that … you probably don’t need it.&lt;/p&gt;
 
@@ -51,7 +51,66 @@
 
 &lt;p&gt;So that’s &lt;strong&gt;JAM-stack&lt;/strong&gt;, and it’s going to separate you from your competition. All you need is &lt;a href=&quot;/contact/&quot;&gt;the right developer&lt;/a&gt;. And save all of the hosting costs! That hosting money is much better spent on web consultancy, or invested in the development of the site itself.&lt;/p&gt;
 
-&lt;p&gt;After that it’s 100% yours. You can build out additional pages to your needs, and fill it up with content that will directly attract your clientele. You can even sell products. All without that monthly hosting fee.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">I use WordPress all day every day. It’s extremely customizable and easy for both web administrators and developers. But you don’t need WordPress. You need JAM-stack.</summary></entry><entry><title type="html">How I Paginated this Blog</title><link href="https://monjibram.com/paginate-with-jekyll/" rel="alternate" type="text/html" title="How I Paginated this Blog" /><published>2020-05-17T08:07:00-04:00</published><updated>2020-05-17T08:07:00-04:00</updated><id>https://monjibram.com/paginate-with-jekyll</id><content type="html" xml:base="https://monjibram.com/paginate-with-jekyll/">&lt;p&gt;I used the following code in &lt;code class=&quot;highlighter-rouge&quot;&gt;/config.yml&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;After that it’s 100% yours. You can build out additional pages to your needs, and fill it up with content that will directly attract your clientele. You can even sell products. All without that monthly hosting fee.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">I use WordPress all day every day. It’s extremely customizable and easy for both web administrators and developers. But you don’t need WordPress. You need JAM-stack.</summary></entry><entry><title type="html">Pay for Web Development</title><link href="http://localhost:4000/why-you-should-pay-a-developer/" rel="alternate" type="text/html" title="Pay for Web Development" /><published>2020-05-17T08:09:00-04:00</published><updated>2020-05-17T08:09:00-04:00</updated><id>http://localhost:4000/why-you-should-pay-a-developer</id><content type="html" xml:base="http://localhost:4000/why-you-should-pay-a-developer/">&lt;p&gt;My first ‘official’ web project was for an old friend, a successful musician with a 5-year-old single page with some links. I was so confident in my delivery that I told him I’d do the project for free! This is bad business, but it wasn’t the worst part. After hours and hours of collaborative design ideation and development, &lt;em&gt;he went out and bought a subscription to a site generator&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Every developer you know has a similar story. There’s something ephemeral and subjective about web design and development. It’s not a physical product that you can be proud to walk home with, and the difference between success and failure feels technical and difficult to quantify.
+&lt;!-- It's usually when a client asks why they should pay for a custom site when other options are out there for $50 a month. --&gt;&lt;/p&gt;
+
+&lt;p&gt;It probably feels like that because small businesses are &lt;a href=&quot;http://paulgraham.com/ds.html&quot;&gt;long-term investments&lt;/a&gt;, and the impacts of marketing &lt;a href=&quot;https://www.sprk-d.com/blog/how-long-does-it-really-take-for-content-marketing-to-work&quot;&gt;don’t increase revenue immediately&lt;/a&gt;. There are actually plenty of ways to show how better development affects your business. I’ll list a few here.&lt;/p&gt;
+
+&lt;h2 id=&quot;time&quot;&gt;Time&lt;/h2&gt;
+
+&lt;p&gt;This is the most easily quantifiable value when it comes to your site. A quick search will tell you that 0.9 seconds will slice off &lt;a href=&quot;https://www.cloudflare.com/learning/performance/more/website-performance-conversion-rates/&quot;&gt;&lt;em&gt;a quarter&lt;/em&gt; of your user conversion rates&lt;/a&gt;. But skimming 0.9 seconds is rarely straightforward. Here’s a short list of custom troubleshooting thoughts that a web developer naturally has when it comes to speed:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Server calls&lt;/li&gt;
+  &lt;li&gt;Server allocation&lt;/li&gt;
+  &lt;li&gt;Caching: server-side and browser-side&lt;/li&gt;
+  &lt;li&gt;Session maintenance&lt;/li&gt;
+  &lt;li&gt;Content Delivery Networks&lt;/li&gt;
+  &lt;li&gt;Enqueuing and script bloat&lt;/li&gt;
+  &lt;li&gt;Browser support&lt;/li&gt;
+  &lt;li&gt;Webpacking, autoprefixing, and minification&lt;/li&gt;
+  &lt;li&gt;Limited redirection&lt;/li&gt;
+  &lt;li&gt;Image Optimization&lt;/li&gt;
+  &lt;li&gt;Preloading&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Sure, we developers think of all of these things on almost every site, but the true beauty of custom web development is that it’s straight up impossible to match all of that customization with a website generator. The premise alone means your site will be built on a server, with inevitable work-arounds for pre-compiling the styles you choose to your specifications.&lt;/p&gt;
+
+&lt;p&gt;That’s one of the reasons I say &lt;a href=&quot;/jam-that-sucker/&quot;&gt;WordPress probably isn’t for you&lt;/a&gt;. A big, multi-tool site is naturally going to be slower and clunkier.&lt;/p&gt;
+
+&lt;h2 id=&quot;accessibility&quot;&gt;Accessibility&lt;/h2&gt;
+
+&lt;p&gt;The common consensus is that 20% of people who use the internet have a form of disability. The most common accessibility issues come from mouse use and visibility. Without tools for screen readers and proper mapping and organization, your site will literally stop a fifth of your viewers from accessing the content.&lt;/p&gt;
+
+&lt;p&gt;Building a properly accessible site is notoriously difficult. Go to a site like &lt;a href=&quot;https://www.amazon.com&quot; target=&quot;_blank&quot;&gt;Amazon&lt;/a&gt; and try to navigate with only your keyboard. Now go to your favorite blog and try it. This level of accessibility and site architecture &lt;em&gt;requires&lt;/em&gt; a tailored approach.&lt;/p&gt;
+
+&lt;h2 id=&quot;money&quot;&gt;Money&lt;/h2&gt;
+
+&lt;p&gt;This blog started when that developer’s friend said “but why does it cost more than [WYSIWYG site generator].” But your long term costs will actually shrink when you do the job right the first time. Site generating services intentionally charge an extra few dollars more per month. They’re in it for the long game.&lt;/p&gt;
+
+&lt;p&gt;Compound that with licensed code that you may not reuse or download. Proprietary domain names that you can’t take with you. And generally terrible migrations. Check the fine print before you sign! It’s like renting an apartment - you’re not allowed to take it with you when you leave.&lt;/p&gt;
+
+&lt;p&gt;There are degrees of separation to be sure. Want a cheap site? Hire a new developer! But be forewarned: make sure that even that budget developer knows what she or he is doing. Development consultants charge incredibly high premiums for ‘cave dives’ into other developers’ code. Cheap code &lt;a href=&quot;https://en.wikipedia.org/wiki/Code_smell&quot;&gt;smells&lt;/a&gt; like bigger problems.&lt;/p&gt;
+
+&lt;h2 id=&quot;your-seongsu-style&quot;&gt;Your “Seongsu Style”&lt;/h2&gt;
+
+&lt;p&gt;When I was doing a very different kind of program development in Seoul, South Korea, I had the opportunity to work directly with a few of the country’s best interior designers and architects. They walked into hollow shells of construction sites and saw things that noone else could see. They came back with plans that brought out the best parts of a space. Everything they did seemed so … apparent! But without them it would have never been done.&lt;/p&gt;
+
+&lt;p&gt;You are a unique individual, with a unique business. Highlighting your value and talent is a web developer’s job. It might make perfect sense after it’s all done, but it took work and experience. The addage goes something like this: “You’re only paying me for 5 hours, but you’re asking me for 5 years’ experience.”&lt;/p&gt;
+
+&lt;p&gt;And there’s going to be something you want to change, just the eensiest, tiniest bit. If you haven’t contracted someone who can smooth that out, that little thing is going to bother you every time you visit your own site.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Remember, you will be your site’s top visitor. It’s about you after all!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;were-not-only-here-for-the-main-project&quot;&gt;We’re Not Only Here for the Main Project&lt;/h2&gt;
+
+&lt;p&gt;Hiring a professional to design and develop will make a huge difference in the lasting success of your site. It’s faster, more accessible, and often a more accurate representation of your business needs and goals.&lt;/p&gt;
+
+&lt;p&gt;Every situation is unique, and the choice is a major one. It’s a big decision, and one you need to make with all the facts. If you’re on the fence about it, &lt;a href=&quot;/contact/&quot;&gt;hire a consult&lt;/a&gt;! The fee for a recommendation will be significantly cheaper than the cost of fixing a mistake.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">My first ‘official’ web project was for an old friend, a successful musician with a 5-year-old single page with some links. I was so confident in my delivery that I told him I’d do the project for free! This is bad business, but it wasn’t the worst part. After hours and hours of collaborative design ideation and development, he went out and bought a subscription to a site generator.</summary></entry><entry><title type="html">Paginate This Blog</title><link href="http://localhost:4000/paginate-with-jekyll/" rel="alternate" type="text/html" title="Paginate This Blog" /><published>2020-05-17T08:07:00-04:00</published><updated>2020-05-17T08:07:00-04:00</updated><id>http://localhost:4000/paginate-with-jekyll</id><content type="html" xml:base="http://localhost:4000/paginate-with-jekyll/">&lt;p&gt;I used the following code in &lt;code class=&quot;highlighter-rouge&quot;&gt;/config.yml&lt;/code&gt;:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;paginate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;paginate_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/blog/:num/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -60,7 +119,7 @@
 
 &lt;p&gt;Oh dear, and I’ll likely do &lt;a href=&quot;https://eduardoboucas.com/blog/2014/11/05/adding-ajax-pagination-to-jekyll.html&quot;&gt;this&lt;/a&gt; next…&lt;/p&gt;
 
-&lt;p&gt;The End.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">I used the following code in /config.yml:</summary></entry><entry><title type="html">AJAX from the Beginning</title><link href="https://monjibram.com/ajax-part-1/" rel="alternate" type="text/html" title="AJAX from the Beginning" /><published>2020-05-17T08:06:00-04:00</published><updated>2020-05-17T08:06:00-04:00</updated><id>https://monjibram.com/ajax-part-1</id><content type="html" xml:base="https://monjibram.com/ajax-part-1/">&lt;p&gt;I’m going to let you in on a secret superpower I have. With a small string of text, I can download any website in the world. OK, so maybe it’s not very super. It’s called an HTTP request and your browser does this all the time. But what if you could do it &lt;em&gt;yourself&lt;/em&gt;? We call that AJAX.&lt;/p&gt;
+&lt;p&gt;The End.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">I used the following code in /config.yml:</summary></entry><entry><title type="html">Learn AJAX: Part 1</title><link href="http://localhost:4000/ajax-part-1/" rel="alternate" type="text/html" title="Learn AJAX: Part 1" /><published>2020-05-17T08:06:00-04:00</published><updated>2020-05-17T08:06:00-04:00</updated><id>http://localhost:4000/ajax-part-1</id><content type="html" xml:base="http://localhost:4000/ajax-part-1/">&lt;p&gt;I’m going to let you in on a secret superpower I have. With a small string of text, I can download any website in the world. OK, so maybe it’s not very super. It’s called an HTTP request and your browser does this all the time. But what if you could do it &lt;em&gt;yourself&lt;/em&gt;? We call that AJAX.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;Disclaimer!&lt;/strong&gt; &lt;em&gt;This article assumes a basic knowledge of HTTP’s structure. If you know the meaning of GET and POST, read on! Otherwise, I highly recommend going straight to the &lt;a href=&quot;https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods&quot;&gt;Wikipedia source&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;

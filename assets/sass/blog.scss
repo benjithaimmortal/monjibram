@@ -69,9 +69,20 @@
       padding: 0 20px 28px;
       margin-top: -10px;
     }
-    li {
-      list-style: unset;
-      list-style-position: inside;
+    ol li {
+      list-style: unset inside;
+    }
+    ul li {
+      list-style: none inside;
+      &:before {
+        content: '';
+        display: inline-block;
+        height: 0;
+        border: solid transparent 5px;
+        border-left: solid $light-yellow 8px;
+        padding-right: 5px;
+        border-radius: 50%;
+      }
     }
     dl {
       padding-bottom: 28px;
