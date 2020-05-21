@@ -13,12 +13,8 @@ I use WordPress all day every day. It's extremely customizable and easy for both
 
 Top Hat makes custom WordPress sites that are both deliciously beautiful and incredibly easy to use. I work with a lot of small- and medium-sized businesses and their marketing sites. I also freelance for up-and-coming businesses and people who consider their budgets a bit lower. I'm even a participating member of WP Pittsburgh, the group for small business owners and developers who study and practice all things WordPress. But I'm still here telling you that ... you probably don't need it.
 
-**Enter your hosting fee here, then click the button**
-
-<div> <span>$ </span>
-  <input type="number" class='doesnt-matter' placeholder=40 style="padding: 5px 0;"/>
-  <button onclick="alert('Too much :(')" style="padding: 5px; border: none; background: #d8acb2;">How much?</button>
-</div>
+**Write your hosting fee on a piece of paper. Then click the button**
+<button onclick="alert('Too much :(')" style="padding: 5px; border: none; background: #d8acb2;">How much do you pay?</button>
 
 There's got to be a catch, you say. I get what I pay for. I'm going to drop quality somewhere. Maybe I won't get a custom url? Maybe I have to choose from a gaudy design template, or worse, use a clunky website editor like it's 2005 and I'm building a MySpace profile. Is it going to be slow? It'll probably be really slow.
 
