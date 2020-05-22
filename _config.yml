@@ -34,8 +34,46 @@ sass:
 
 title: Monjibram
 email: benji@monjibram.com
-description: >- # this means to ignore newlines until "baseurl:"
+tagline: Benji makes your website better. See more!
+description: >- # this means to ignore newlines until "author:"
   Benjamin Kostenbader is the award-winning co-developer of the Seongdong Global Experience Centers in Seoul, South Korea. He is also a proud father, software developer, cyclist, and squash enthusiast.
+author: Benjamin Kostenbader
+facebook:
+  publisher: THEimmortal
+  admins: THEimmortal
+logo: assets/images/Benji.jpg
+social:
+  name: Benjamin Kostenbader
+  links:
+    - https://www.linkedin.com/in/benjamin-kostenbader-18499836/
+    - https://www.facebook.com/THEimmortal
+    - https://codepen.io/benjithaimmortal
+    - https://github.com/benjithaimmortal
+google_site_verification: OTG5c_uywRHQgQpvdcwgCYY02h8ofndgJq_kGPt1l_I
+# google_site_verification: google-site-verification=OTG5c_uywRHQgQpvdcwgCYY02h8ofndgJq_kGPt1l_I
+lang: en_US
+
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: Benji
+      hero: pages.jpg
+      image: assets/images/pages.jpg
+  # -
+  #   scope:
+  #     path: ""
+  #     type: pages
+  #   values:
+
+
+
+
+
 baseurl: "" # the subpath of your site, e.g. /blog
 # url: "https://www.monjibram.com" # the base hostname & protocol for your site, e.g. http://example.com
 url: "https://monjibram.com" # the base hostname & protocol for your site, e.g. http://example.com

@@ -7,6 +7,7 @@ categories:
 layout: post
 author: Benji
 hero: jam.jpg
+image: assets/images/jam.jpg
 ---
 
 I use WordPress all day every day. It's extremely customizable and easy for both web administrators and developers. But you don't need WordPress. You need JAM-stack.
