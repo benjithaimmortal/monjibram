@@ -36,7 +36,7 @@ title: Monjibram
 email: benji@monjibram.com
 tagline: Benji makes your website better. See more!
 description: >- # this means to ignore newlines until "author:"
-  Benjamin Kostenbader is the award-winning co-developer of the Seongdong Global Experience Centers in Seoul, South Korea. He is also a proud father, software developer, cyclist, and squash enthusiast.
+  Benjamin Kostenbader is Front-End Developer at Top Hat. He is also a proud father, cyclist, and squash enthusiast.
 author: Benjamin Kostenbader
 facebook:
   publisher: THEimmortal
@@ -52,7 +52,6 @@ social:
 google_site_verification: OTG5c_uywRHQgQpvdcwgCYY02h8ofndgJq_kGPt1l_I
 # google_site_verification: google-site-verification=OTG5c_uywRHQgQpvdcwgCYY02h8ofndgJq_kGPt1l_I
 lang: en_US
-type: website
 
 
 defaults:
