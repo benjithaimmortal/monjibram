@@ -52,6 +52,7 @@ social:
 google_site_verification: OTG5c_uywRHQgQpvdcwgCYY02h8ofndgJq_kGPt1l_I
 # google_site_verification: google-site-verification=OTG5c_uywRHQgQpvdcwgCYY02h8ofndgJq_kGPt1l_I
 lang: en_US
+type: website
 
 
 defaults:
@@ -64,11 +65,14 @@ defaults:
       author: Benji
       hero: pages.jpg
       image: assets/images/pages.jpg
-  # -
-  #   scope:
-  #     path: ""
-  #     type: pages
-  #   values:
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: base
+      image: assets/images/Benji.jpg
+      author: Benji
 
 
 
