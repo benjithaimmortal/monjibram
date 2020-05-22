@@ -1,0 +1,19 @@
+---
+label: Blog Index
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+- type: text
+  name: title
+  label: title
+- type: text
+  name: seo_paginator_message
+  label: seo_paginator_message
+- type: text
+  name: canonical_url
+  label: canonical_url
+- type: file
+  name: image
+  label: image
