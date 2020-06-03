@@ -2,7 +2,7 @@
 title: You Should Probably JAMstack That
 date: 2020/05/17 12:09:00 Z
 categories:
-- JAM-stack
+- JAMstack
 - Static Sites
 layout: post
 author: Benji
@@ -10,7 +10,7 @@ hero: jam.jpg
 image: assets/images/jam.jpg
 ---
 
-I use WordPress all day every day. It's extremely customizable and easy for both web administrators and developers. But you don't need WordPress. You need JAM-stack.
+I use WordPress all day every day. It's extremely customizable and easy for both web administrators and developers. But you don't need WordPress. You need JAMstack.
 
 Top Hat makes custom WordPress sites that are both deliciously beautiful and incredibly easy to use. I work with a lot of small- and medium-sized businesses and their marketing sites. I also freelance for up-and-coming businesses and people who consider their budgets a bit lower. I'm even a participating member of WP Pittsburgh, the group for small business owners and developers who study and practice all things WordPress. But I'm still here telling you that ... you probably don't need it.
 
@@ -58,6 +58,6 @@ A savvy developer could template and build a lightweight, fully custom site to y
 I strongly encourage you to hit F12 and take a look at all the crazy things a simple blog like this needs to load and give to every browser that visits. Search engine meta, styles, JS libraries to make things scroll smoothly... on a standard hosted site it will all load again on every click. Storing it properly and only loading *new* things adds serious speed. I'm talking [blazingly](https://www.shopflamingo.com), [ludicrously](https://ca.braun.com/en-ca) [fast](https://airbnb.io/).
 
 
-So that's **JAM-stack**, and it's going to separate you from your competition. All you need is [the right developer]({% link contact.html %}). And save all of the hosting costs! That hosting money is much better spent on web consultancy, or invested in the development of the site itself.
+So that's **JAMstack**, and it's going to separate you from your competition. All you need is [the right developer]({% link contact.html %}). And save all of the hosting costs! That hosting money is much better spent on web consultancy, or invested in the development of the site itself.
 
 After that it's 100% yours. You can build out additional pages to your needs, and fill it up with content that will directly attract your clientele. You can even sell products. All without that monthly hosting fee.
