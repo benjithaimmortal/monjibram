@@ -55,6 +55,11 @@
     }
   }
   .content {
+    img {
+      width: 100%;
+      height: auto;
+      max-width: unset;
+    }
     h1, h2, h3, h4, h5, h6 {
       margin-top: 30px;
     }
@@ -165,6 +170,8 @@
   .blog-post {
     .title { font-size: 28px; }
     .hero { margin-right: unset; }
+    .highlight { width: 95%; }
+    .outer-hero { display: none; }
   }
 }
 @media (max-width: 650px) {
