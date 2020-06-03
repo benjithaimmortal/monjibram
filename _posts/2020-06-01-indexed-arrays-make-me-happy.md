@@ -13,9 +13,9 @@ JSON is cool because it helps me to organize my thoughts and store them. Or mayb
 
 I'm going to primarily reference JavaScript here but because an [associative array / map / symbol table / dictionary] is an [abstract data type](https://en.wikipedia.org/wiki/Abstract_data_type), we could happily discuss this in all of the languages.
 
-![Yes, all of them]({{ site.baseurl }}/assets/images/blog/all-the-things.png "Yes, all of them.")
+<!-- ![Yes, all of them]({{ site.baseurl }}/assets/images/blog/all-the-things.png "Yes, all of them.") -->
 
-Here are some languages.
+## Here are some languages.
 
 ### a Ruby Hash
 {% highlight rb %}
