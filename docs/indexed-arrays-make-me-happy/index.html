@@ -49,7 +49,7 @@
 <meta property="article:publisher" content="THEimmortal" />
 <meta name="google-site-verification" content="OTG5c_uywRHQgQpvdcwgCYY02h8ofndgJq_kGPt1l_I" />
 <script type="application/ld+json">
-{"image":"http://localhost:4000/assets/images/hash.jpg","description":"Let’s talk about my best friend, JavaScript Object Notation. You probably call that jay-son. If you’re really particular or feeling a little bit French, maybe you call it jase-on. Whichever way you call it, you’re talking about an associative array.","@type":"BlogPosting","headline":"An Ode to the Array","url":"http://localhost:4000/indexed-arrays-make-me-happy/","datePublished":"2020-06-01T08:09:00-04:00","dateModified":"2020-06-01T08:09:00-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/indexed-arrays-make-me-happy/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/Benji.jpg"},"name":"Benji"},"author":{"@type":"Person","name":"Benji"},"@context":"https://schema.org"}</script>
+{"image":"http://localhost:4000/assets/images/hash.jpg","description":"Let’s talk about my best friend, JavaScript Object Notation. You probably call that jay-son. If you’re really particular or feeling a little bit French, maybe you call it jase-on. Whichever way you call it, you’re talking about an associative array.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/Benji.jpg"},"name":"Benji"},"@type":"BlogPosting","url":"http://localhost:4000/indexed-arrays-make-me-happy/","headline":"An Ode to the Array","dateModified":"2020-06-01T08:09:00-04:00","datePublished":"2020-06-01T08:09:00-04:00","author":{"@type":"Person","name":"Benji"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/indexed-arrays-make-me-happy/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     <meta property="og:type"             content="website" />
@@ -114,7 +114,7 @@
 
 <p>I’m going to primarily reference JavaScript here but because an [associative array / map / symbol table / dictionary] is an <a href="https://en.wikipedia.org/wiki/Abstract_data_type">abstract data type</a>, we could happily discuss this in all of the languages.</p>
 
-<p><img src="/assets/images/blog/all-the-things.png" alt="Yes, all of them" title="Yes, all of them." /></p>
+<!-- ![Yes, all of them](/assets/images/blog/all-the-things.png "Yes, all of them.") -->
 
 <h2 id="here-are-some-languages">Here are some languages.</h2>
 
@@ -196,7 +196,7 @@
   <span class="na">thing</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">a-ruby-hash</span><span class="dl">'</span><span class="p">),</span>
   <span class="na">notherThing</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">a-python-dict</span><span class="dl">'</span><span class="p">)</span>
 <span class="p">};</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">thing</span><span class="p">);</span></code></pre></figure>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">notherThing</span><span class="p">);</span></code></pre></figure>
 
 <h2 id="everything-is-objects">Everything is Objects!</h2>
 <p>Hurray! Life is fun again, water tastes sweet, the sun is shining. But JSON is also an array. I can do all of the important array things, like <strong>iterate</strong> 🦹‍♂️</p>
@@ -207,7 +207,7 @@
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">json</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>So that’s pretty much how I made <a href="/blog/">this blog index</a>. I was using Ruby at the time, but it is a very common part of my day-to-day.</p>
+<p>That’s pretty much how I made <a href="/blog/">this blog index</a>. I was using Ruby at the time, but it is a very common part of my day-to-day.</p>
 
 <figure class="highlight"><pre><code class="language-rb" data-lang="rb"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
@@ -265,7 +265,7 @@
 <span class="kd">let</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#mydiv</span><span class="dl">'</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="dl">'</span><span class="s1">json</span><span class="dl">'</span><span class="p">);</span>    <span class="c1">// retrieve</span>
 
 <span class="c1">// Vanilla</span>
-<span class="kd">let</span> <span class="nx">selector</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">#mydiv</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">selector</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">mydiv</span><span class="dl">'</span><span class="p">);</span>
 <span class="nx">selector</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">json</span> <span class="o">=</span> <span class="nx">myJson</span><span class="p">;</span>        <span class="c1">// set</span>
 <span class="kd">let</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">selector</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">json</span><span class="p">;</span>      <span class="c1">// retrieve</span></code></pre></figure>
 
@@ -275,6 +275,8 @@
   <span class="nt">&lt;p&gt;</span>Just like that ^^<span class="nt">&lt;/p&gt;</span>
 <span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
+<h2 id="theres-probably-going-to-be-another-blog-about-data-attributes-soon">There’s probably going to be another blog about data attributes soon.</h2>
+<p>Because I write blogs! Check back soon.</p>
 
     </section>
   </article>

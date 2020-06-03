@@ -13,7 +13,7 @@ JSON is cool because it helps me to organize my thoughts and store them. Or mayb
 
 I'm going to primarily reference JavaScript here but because an [associative array / map / symbol table / dictionary] is an [abstract data type](https://en.wikipedia.org/wiki/Abstract_data_type), we could happily discuss this in all of the languages.
 
-![Yes, all of them]({{ site.baseurl }}/assets/images/blog/all-the-things.png "Yes, all of them.")
+<!-- ![Yes, all of them]({{ site.baseurl }}/assets/images/blog/all-the-things.png "Yes, all of them.") -->
 
 ## Here are some languages.
 
@@ -107,7 +107,7 @@ let a = {
   thing: document.getElementById('a-ruby-hash'),
   notherThing: document.getElementById('a-python-dict')
 };
-console.log(a.thing);
+console.log(a.notherThing);
 {% endhighlight %}
 
 
@@ -123,7 +123,7 @@ for (let i = 0; i < json.length; i++) {
 {% endhighlight %}
 
 
-So that's pretty much how I made [this blog index]({% link blog/index.html %}). I was using Ruby at the time, but it is a very common part of my day-to-day.
+That's pretty much how I made [this blog index]({% link blog/index.html %}). I was using Ruby at the time, but it is a very common part of my day-to-day.
 
 {% highlight rb linenos %}
 if paginator.total_pages > 1        # start thinking about pages of results
@@ -161,7 +161,7 @@ $('#mydiv').attr('data-json', myJson);  // set
 let json = $('#mydiv').data('json');    // retrieve
 
 // Vanilla
-let selector = document.getElementById('#mydiv');
+let selector = document.getElementById('mydiv');
 selector.dataset.json = myJson;        // set
 let json = selector.dataset.json;      // retrieve
 {% endhighlight %}
@@ -172,3 +172,7 @@ You can store it visibly on the HTML as well. But ***make sure you only surround
   <p>Just like that ^^</p>
 </div>
 {% endhighlight %}
+
+
+## There's probably going to be another blog about data attributes soon.
+Because I write blogs! Check back soon.
