@@ -22,8 +22,8 @@ There's got to be a catch, you say. I get what I pay for. I'm going to drop qual
 It's true that if you're paying for a little server you're probably not getting the maximum speed out of your site. And if you're hosting tons and tons of data like a forum or a video library you will need a place to store it (and that gets expensive in its own right). But why use a server at all? This is the year of STATIC SITES.
 
 Static Site
-: A website that doesn't need to send data back and forth to your browser to provide its content [browser-based]
-: A website that can connect to everything without a server [serverless]
+: A website that downloads everything to your browser [browser-based]
+: A website that can connect to everything without querying a hosting server many times [serverless]
 
 
 #### M[arkup]
