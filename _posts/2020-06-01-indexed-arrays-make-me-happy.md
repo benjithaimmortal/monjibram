@@ -3,6 +3,7 @@ title: An Ode to the Array
 date: 2020/06/01 12:09:00 Z
 categories:
 - Tutorials
+hero: hash.jpg
 image: assets/images/hash.jpg
 ---
 
