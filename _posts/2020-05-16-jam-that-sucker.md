@@ -1,5 +1,5 @@
 ---
-title: You Should Probably JAM-Stack That
+title: You Should Probably JAMstack That
 date: 2020/05/17 12:09:00 Z
 categories:
 - JAM-stack
