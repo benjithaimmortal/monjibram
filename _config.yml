@@ -77,6 +77,11 @@ defaults:
       path: assets/*
     values:
       sitemap: false
+  -
+    scope:
+      path: docs/*
+    values:
+      sitemap: false
 
 
 
