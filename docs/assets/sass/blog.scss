@@ -44,6 +44,7 @@
     margin-right: -150px;
     width: calc(100% - 450px); // that's 650 + 50 margin - 150 of the right part of the grid
     height: calc(100vh - 60px); // that's the height of the screen - top margin
+    max-height: 700px;
     background: $white;
     .hero {
       width: 100%;
@@ -61,7 +62,7 @@
       max-width: unset;
     }
     h1, h2, h3, h4, h5, h6 {
-      margin-top: 30px;
+      padding-top: 30px;
     }
     h4 {
       font-size: 32px;
