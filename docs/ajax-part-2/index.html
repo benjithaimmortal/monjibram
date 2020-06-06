@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    
+    <meta charset="utf-8">
+
+
+    <!-- favicons -->
+    <link rel="apple-touch-icon"      sizes="57x57"   href="/assets/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"      sizes="60x60"   href="/assets/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"      sizes="72x72"   href="/assets/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"      sizes="76x76"   href="/assets/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"      sizes="114x114" href="/assets/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"      sizes="120x120" href="/assets/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"      sizes="144x144" href="/assets/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"      sizes="152x152" href="/assets/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"      sizes="180x180" href="/assets/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"   href="/assets/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest"                              href="/assets/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color"             content="#ffffff">
+
+    <title>Learn AJAX: Part 2</title>
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- force mobile to use mobile viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Learn AJAX: Part 2 | Monjibram</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Learn AJAX: Part 2" />
+<meta name="author" content="Benji" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The universally supported base method for AJAX is called XMLHttpRequest(). We often shorten that to XHR. It is so very much harder for AJAX newcomers to grasp, mostly because the many parts of the HTTP request get separated out into separate pieces of the XHR. If you mess up any of those parts, you won’t have your data. People want their data. People should read this blog." />
+<meta property="og:description" content="The universally supported base method for AJAX is called XMLHttpRequest(). We often shorten that to XHR. It is so very much harder for AJAX newcomers to grasp, mostly because the many parts of the HTTP request get separated out into separate pieces of the XHR. If you mess up any of those parts, you won’t have your data. People want their data. People should read this blog." />
+<link rel="canonical" href="http://localhost:4000/ajax-part-2/" />
+<meta property="og:url" content="http://localhost:4000/ajax-part-2/" />
+<meta property="og:site_name" content="Monjibram" />
+<meta property="og:image" content="http://localhost:4000/assets/images/pages.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-05T08:06:00-04:00" />
+<meta property="fb:admins" content="THEimmortal" />
+<meta property="article:publisher" content="THEimmortal" />
+<meta name="google-site-verification" content="OTG5c_uywRHQgQpvdcwgCYY02h8ofndgJq_kGPt1l_I" />
+<script type="application/ld+json">
+{"image":"http://localhost:4000/assets/images/pages.jpg","description":"The universally supported base method for AJAX is called XMLHttpRequest(). We often shorten that to XHR. It is so very much harder for AJAX newcomers to grasp, mostly because the many parts of the HTTP request get separated out into separate pieces of the XHR. If you mess up any of those parts, you won’t have your data. People want their data. People should read this blog.","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/Benji.jpg"},"name":"Benji"},"@type":"BlogPosting","url":"http://localhost:4000/ajax-part-2/","headline":"Learn AJAX: Part 2","dateModified":"2020-06-05T08:06:00-04:00","datePublished":"2020-06-05T08:06:00-04:00","author":{"@type":"Person","name":"Benji"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ajax-part-2/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta property="og:type"             content="website" />
+    <meta property="og:image:type"       content="image/jpeg" />
+    <meta property="og:image:alt"        content="Benjamin Kostenbader" />
+  </head>
+  <body>
+    <section class="main-grid">
+      <nav>
+
+  <a href="/index.html" class="navbar-site-emblem">
+    <i class="fa fa-behance-square fa-lg"></i>nji
+  </a>
+  <!-- If PC/Large Resolution -->
+  <div class="big-nav">
+    <div class="nav-links"><a href="/blog/">     Blog</a></div>
+    <div class="nav-links"><a href="/portfolio/">Portfolio</a></div>
+    <div class="nav-links"><a href="/resume/">   Resume</a></div>
+    <div class="nav-links"><a href="/contact/">  Contact</a></div>
+  </div>
+  
+</nav>
+
+
+
+  <!-- If Mobile/Tablet -->
+  <label class="dropdown">
+    <input type="checkbox" class="invisicheck" name="" id="pagestopper" style="display: none;">
+    <div class="dropdown-btn" id="">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="dropdown-nav">
+      <!-- <div class="fa fa-align-justify fa-lg dropdown-nav"></div> -->
+      <!-- <li class="drop-btn"><a href="/">    Home</a></li> -->
+      <li class="drop-btn"><a href="/blog/">    Blog</a></li>
+      <li class="drop-btn"><a href="/portfolio/">Portfolio</a></li>
+      <li class="drop-btn"><a href="/resume/">      Resume</a></li>
+      <li class="drop-btn"><a href="/contact/">    Contact</a></li>
+    </ul>
+  </label>
+      <div class="inner">
+        <div class="blog-post">
+  <article class="article">
+    <div class='blog-info'>
+      <div class='demos'>
+        
+        
+          <div class="cat" href="blog/categories/#Tutorials">Tutorials</div>
+          
+        
+        <div class='datetime'>05 Jun 2020</div>
+      </div>
+      <h1 class='title'>Learn AJAX: Part 2</h1>
+      
+        <div class='auth'>By Benji</div>
+      
+    </div>
+    <section class='content'>
+      <p>The <a href="https://caniuse.com/#feat=mdn-api_xmlhttprequest">universally supported</a> base method for AJAX is called <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/XMLHttpRequest"><code class="highlighter-rouge">XMLHttpRequest()</code></a>. We often shorten that to XHR. It is so very much harder for AJAX newcomers to grasp, mostly because the many parts of the HTTP request get separated out into separate pieces of the XHR. If you mess up any of those parts, you won’t have your data. People want their data. People should read this blog.</p>
+
+<p><em>This is Part 2 of a tutorial on the basics of AJAX, for beginners. You might want to start at <a href="/ajax-part-1/">Part 1</a> if you haven’t already.</em></p>
+
+<blockquote>
+  <p><strong>Disclaimer!</strong> <em>This article is for beginners, but it does assume a basic knowledge of HTTP’s structure. If you know the meaning of GET and POST, read on! Otherwise, I highly recommend going straight to the <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods">Wikipedia source</a> and boning up.</em></p>
+</blockquote>
+
+<p>While I do expect you to know what HTTP requests are, I’m not expecting you to be familiar with our forefathers and their seminal work on making HTTP requests by hand with web servers. You are not (yet) that server gal 🧛‍♀️. You are not (yet) Richmond.</p>
+
+<p><img src="/assets/images/blog/richmond.gif" alt="An Ill Wind is Blowing" title="You might not even know who he is." /></p>
+
+<p>In the beginning, there was a thing called cURL. It underpins a lot of HTTP requests from languages like PHP. It still exists, and it’s used in many places. But it can also be a command line tool, which lets you build custom HTTP requests from your terminal! Part of it is worth explaining, but the rest can always be found <a href="https://curl.haxx.se/docs/httpscripting.html">here</a>.</p>
+
+<p>cURL is cool because it’s a playground for talking to the internet without a GUI. cURL is a good place to learn about HTTP, which you already know, right? I hope so.</p>
+
+<p>For each section of an HTTP request, cURL has an option. So there are naturally many options. They are grouped by type, like <code class="highlighter-rouge">headers</code>, <code class="highlighter-rouge">cookies</code>, <code class="highlighter-rouge">urls</code>, <code class="highlighter-rouge">post-types</code>, and <code class="highlighter-rouge">ports</code>. There are many defaults, but it’s common to need to set more than one of these before executing the actual request. It’s the same in XHR.</p>
+
+<h2 id="a-short-rant">A Short Rant</h2>
+<p>This was, naturally, the way I think you should learn about XHR. On the other hand, <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest">this is how Mozilla thinks you should do it</a>. It is by far the most obtuse example, using only GET. It contains no single example of a POST request, but instead jumps off on a multi-section tangent about recreating native form submissions. You don’t need that, because you prevented the default form submission with <code class="highlighter-rouge">event.preventDefault()</code>.</p>
+
+    </section>
+  </article>
+  <div class='outer-hero'>
+    <div class='hero' style="background-image: url(/assets/images/ajax-bottle2.jpg)"></div>
+  </div>
+</div>
+      </div>
+    </section>
+    <div class="footer-white-bg">
+  <div class="main-footer">
+    <div class="cont">
+      <div class="b footer-child">
+        <h3>BENJI</h3>
+        <p><a href="/blog/">        blog</a></p>
+        <p><a href="/resume/">        resume</a></p>
+        <p><a href="/portfolio/#news"> news</a></p>
+      </div>
+      <div class="c footer-child">
+        <h3>CODE</h3>
+        <p><a href="/portfolio/#code">                     portfolio</a></p>
+        <p><a href="http://github.com/benjithaimmortal">  github</a></p>
+        <p><a href="http://codepen.io/benjithaimmortal">  codepen</a></p>
+      </div>
+      <div class="p footer-child">
+        <h3>PHOTOGRAPHY</h3>
+        <!-- <p><a href="{/% link photos.html %}"> portfolio</a></p> -->
+        <p><a href="/contact/">contact</a></p>
+      </div>
+      <div class="l footer-child">
+        <h3>LICENSE</h3>
+        <p>all rights reserved</p>
+        <p>copyright &copy;	2020</p>
+        <p>Benjamin Kostenbader</p>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  made with love by Benji &hearts;
+</footer>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      var stopper = document.getElementById("pagestopper")
+      stopper.addEventListener("change", function(){
+        if (stopper.checked) {
+          document.body.classList.add("locked");
+        } else {
+          document.body.classList.remove("locked");
+        }
+        // console.log("this did something");
+      });
+    });
+  </script>
+</html>
