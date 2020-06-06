@@ -120,14 +120,119 @@
 
 <p><img src="/assets/images/blog/richmond.gif" alt="An Ill Wind is Blowing" title="You might not even know who he is." /></p>
 
-<p>In the beginning, there was a thing called cURL. It underpins a lot of HTTP requests from languages like PHP. It still exists, and it’s used in many places. But it can also be a command line tool, which lets you build custom HTTP requests from your terminal! Part of it is worth explaining, but the rest can always be found <a href="https://curl.haxx.se/docs/httpscripting.html">here</a>.</p>
+<h2 id="curl-is-really-capitalized-like-that">cURL is Really Capitalized Like That</h2>
+<p>In the beginning, there was a thing called cURL. It underpins a lot of HTTP requests from languages like PHP. It still exists, and it’s used in many places. Part of it is worth explaining here, but the rest can always be found <a href="https://curl.haxx.se/docs/httpscripting.html">here</a>.</p>
 
-<p>cURL is cool because it’s a playground for talking to the internet without a GUI. cURL is a good place to learn about HTTP, which you already know, right? I hope so.</p>
+<p>cURL is cool because it’s a playground for talking to the internet without a GUI. It can be used as a command line tool, and it lets you build custom HTTP requests from your terminal! cURL is a good place to learn about HTTP, which you already know, right? I hope so.</p>
 
-<p>For each section of an HTTP request, cURL has an option. So there are naturally many options. They are grouped by type, like <code class="highlighter-rouge">headers</code>, <code class="highlighter-rouge">cookies</code>, <code class="highlighter-rouge">urls</code>, <code class="highlighter-rouge">post-types</code>, and <code class="highlighter-rouge">ports</code>. There are many defaults, but it’s common to need to set more than one of these before executing the actual request. It’s the same in XHR.</p>
+<p>For each section of an HTTP request, cURL has an option. There are naturally many options. They are grouped by type, like <code class="highlighter-rouge">headers</code>, <code class="highlighter-rouge">cookies</code>, <code class="highlighter-rouge">urls</code>, <code class="highlighter-rouge">post-types</code>, and <code class="highlighter-rouge">ports</code>. There are many defaults, but it’s common to need to set more than one of these before executing the actual request. It’s similar in XHR.</p>
+
+<h2 id="but-first-you-must-instantiate">But First, You Must Instantiate!</h2>
+<p>In my opinion, XHR is the closest thing that old-timey JavaScript can have to a class. It has a lot of sensitive settings, and there can be more than one at a time, so the first thing you’ll do is use the <code class="highlighter-rouge">XMLHttpRequest()</code> cookie cutter and stamp out a new Object.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>                   <span class="c1">// assign this to a variable to instantiate it</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">POST</span><span class="p">,</span> <span class="nx">yoururl</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">something</span><span class="p">.</span><span class="nx">json</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span> <span class="c1">// request-type, url, async (true/false)</span></code></pre></figure>
+
+<h2 id="tell-it-what-you-want">Tell It What You Want</h2>
+<p>The next part of a POST request will often require specific headers. It’s possible and common to use these headers to set encoded OAuth keys and values into the request to open up gateways with APIs. It’s also common to use headers to define your data. You know, normal HTTP header things go here. Naturally, this must always be done <em>after</em> you <code class="highlighter-rouge">.open()</code> your request and <em>before</em> you <code class="highlighter-rouge">.send()</code> it.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="c1">// What was that .... you wanted more than one header field? Easy, do it as many times as you need:</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Cookie</span><span class="dl">"</span><span class="p">,</span> <span class="dl">'</span><span class="s1">siteName=Monjibram</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Referer</span><span class="dl">"</span><span class="p">,</span> <span class="dl">'</span><span class="s1">https://www.monjibram.com</span><span class="dl">'</span><span class="p">);</span></code></pre></figure>
+
+<h2 id="make-it-an-event">Make It An Event</h2>
+<p>Your response is now today years old! But what happens when it grows up, travels the world, and returns home? You can set your event handler next, with any callbacks you need.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">xhr</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// in plain English: if the request is finished and it received a 200 status</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">DONE</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Request finished. Process asynchronously from here with a callback.</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// There could be a multitude of reasons that something failed. Error log here.</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="wrap-things-up">Wrap Things Up</h2>
+<p>All that to send some <code class="highlighter-rouge">formData</code>. If you recall from <a href="/ajax-part-1/">Part 1</a>, we were attempting to AJAX this wee little form:</p>
+
+<form onsubmit="validateAndAjax(event)" style="padding-bottom: 30px;">
+  <input id="email" type="email" placeholder="Email!" />
+  <input id="submit" type="submit" value="Submit!" />
+</form>
+
+<p>Of course you’re welcome to send any sort of data string you please via HTTP. With the <code class="highlighter-rouge">URLSearchParams()</code> API you can even transform JSON and JS Objects into useful parameters.</p>
+
+<p>Whatever happens, you’re now ready to send that little form’s contents out into the big, big world. Give it the boot with <code class="highlighter-rouge">.send()</code>. If this were a GET request, <code class="highlighter-rouge">.send()</code> would accept the parameters on the url you’re looking to pull from. It can also accept <code class="highlighter-rouge">null</code>.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URLSearchParams</span><span class="p">({</span>
+  <span class="na">email</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">email</span><span class="dl">'</span><span class="p">).</span><span class="nx">value</span><span class="p">,</span>
+  <span class="na">foo</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Benji</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// and more</span>
+  <span class="na">bar</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;3</span><span class="dl">"</span><span class="p">,</span>    <span class="c1">// and more</span>
+  <span class="na">baz</span><span class="p">:</span> <span class="dl">"</span><span class="s2">AJAX</span><span class="dl">"</span><span class="p">,</span>  <span class="c1">// and more!</span>
+<span class="p">});</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span></code></pre></figure>
+
+<h2 id="examples-of-xhr-with-get-and-post">Examples of XHR with GET and POST</h2>
+<h3 id="post">POST</h3>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">POST</span><span class="p">,</span> <span class="nx">yoururl</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">something</span><span class="p">.</span><span class="nx">json</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="dl">"</span><span class="s2">Content-Type</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">application/json</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// in plain English: if the request is finished and it received a 200 status</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">DONE</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Request finished. Process asynchronously from here with a callback.</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">response</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1">// There could be a multitude of reasons that something failed. Error log here.</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">URLSearchParams</span><span class="p">({</span>
+  <span class="na">email</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">email</span><span class="dl">'</span><span class="p">).</span><span class="nx">value</span><span class="p">,</span>
+  <span class="na">foo</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Benji</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// and more</span>
+  <span class="na">bar</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;3</span><span class="dl">"</span><span class="p">,</span>    <span class="c1">// and more</span>
+  <span class="na">baz</span><span class="p">:</span> <span class="dl">"</span><span class="s2">AJAX</span><span class="dl">"</span><span class="p">,</span>  <span class="c1">// and more!</span>
+<span class="p">});</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span></code></pre></figure>
+
+<h3 id="get">GET</h3>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">https://feed.podbean.com/covertocredits/feed.xml</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">status</span> <span class="o">==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">podcastAttributes</span> <span class="o">=</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">responseXML</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">'</span><span class="s1">item</span><span class="dl">'</span><span class="p">);</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">podcastAttributes</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Failed to receive RSS file from the server - file not found.</span><span class="dl">"</span><span class="p">);</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Error code </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">status</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> received: </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">statusText</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span></code></pre></figure>
 
 <h2 id="a-short-rant">A Short Rant</h2>
-<p>This was, naturally, the way I think you should learn about XHR. On the other hand, <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest">this is how Mozilla thinks you should do it</a>. It is by far the most obtuse example, using only GET. It contains no single example of a POST request, but instead jumps off on a multi-section tangent about recreating native form submissions. You don’t need that, because you prevented the default form submission with <code class="highlighter-rouge">event.preventDefault()</code>.</p>
+<p>This was the way I think you should learn about XHR. After jQuery, and before Fetch and Axios.</p>
+
+<p>On the other hand, <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/">this is how Mozilla thinks you should learn XHR</a>. There are no base examples, only a long list of properties and methods. Navigating to <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest">Using XHR</a> is a real doozy. It contains no single example of a POST request, but instead jumps off on a multi-section tangent about recreating native form submissions. I usually highly recommend the Moz Docs, but in this case you should approach with caution.</p>
 
     </section>
   </article>
