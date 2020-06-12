@@ -54,7 +54,27 @@ google_site_verification: OTG5c_uywRHQgQpvdcwgCYY02h8ofndgJq_kGPt1l_I
 lang: en_US
 
 
+# collections:
+#   projects:
+#     output: true
+#     img:    true
+#     title:  true
+#     date:   true
+#     layout: true
+
+
+
+
 defaults:
+  # -
+  #   scope:
+  #     path: ""
+  #     type: "projects"
+  #   values:
+  #     layout: project
+  #     img: /assets/images/Hoi_An_Vietnam.jpg
+  #     title: A New, Default Place
+  #     date: "2020-06-11"
   -
     scope:
       path: ""

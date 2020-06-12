@@ -19,13 +19,17 @@
 
 /* device header drop-down menu */
 @media (max-width: 800px) {
+  .nav {
+    margin-left: calc(5%);
+  }
   .nav-links {
     display: none;
   }
 
   .navbar-site-emblem {
     font-size: 20px;
-    padding: 22px 1rem;
+    padding: 22px 20px;
+    margin-left: -25px;
   }
   .dropdown {
     display: flex;

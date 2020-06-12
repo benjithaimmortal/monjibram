@@ -97,6 +97,11 @@ nav {
   width: 100%;
   grid-area: 2 / 2 / 5 / 3;
   margin: 0 auto;
+  .title-bit {
+    letter-spacing: 1.5px;
+    font-size: 30px;
+    line-height: 1;
+  }
   p {
     padding-top: 5px;
     max-width: 600px;
