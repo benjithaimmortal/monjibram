@@ -7,7 +7,7 @@ hero: automation.jpg
 sentence: I used Liquid to fill in this blockquote.
 ---
 
-Cutting edge web technologies don't always document features. Either they lack the ability to demonstrate the full width of their power from the first release, or they release new features gradually after the MVP. That's pretty much the opposite of the old guard of incredible WordPress plugins. A personal favorite static framework of mine is Jekyll, because it's simple. But I guess it isn't so simple after all.
+Cutting edge web technologies don't always document features. Either they lack the ability to convey the full scope of their power from the first release, or they release new features gradually after the MVP. That's pretty much the opposite of the old guard of incredible WordPress plugins. A personal favorite static framework of mine is Jekyll, because it's simple. But I guess it isn't so simple after all.
 
 Sometimes you're good at more than one type of thing. That's OK, you're human. We like to categorize things and study them logically to distinguish them from each other. We argue about definitions. We like tables.
 
