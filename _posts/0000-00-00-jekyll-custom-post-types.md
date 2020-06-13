@@ -3,7 +3,7 @@ title: WordPress Custom Fields but Free
 date: 2020/06/13
 categories:
 - Tutorial
-hero: 
+hero: automation.jpg
 sentence: I used Liquid to fill in this blockquote.
 ---
 
@@ -13,8 +13,10 @@ Sometimes you're good at more than one type of thing. That's OK, you're human. W
 
 But that's *not* so OK if you're developing on a "simple" blog templating tool like Jekyll. Those things only do blogs, right? The type of data you're storing is a blog. The metadata on those posts is standard. You can't well use that for recipes AND blogs. Just make a `recipes` tag and call it a day.
 
+Luckily that's not true at all... you can automate almost anything you want with a little ingenuity, and automation is the key to efficient web work. In most cases I'm learning Jekyll was actually built for this sort of automation, but the documentation isn't always very helpful to show you [how to use it](https://jekyllrb.com/docs/liquid/).
+
 ## Meta-meta
-Metadata feels like a good place to start breaking that idea. In WordPress the most popular metadata tool is called Advanced Custom Fields. ACF allows you to attach images, text, dates, even repeating and iterable internal groups, all within a single page template or custom post type. For each page that uses the template, you can fill in new metadata and create an entirely custom page -- but with the same format and style. Hence the word `template`.
+Metadata feels like a good place to start breaking the 'blog' idea. In WordPress the most popular metadata tool is called Advanced Custom Fields. ACF allows you to attach images, text, dates, even repeating and iterable internal groups, all within a single page template or custom post type. For each page that uses the template, you can fill in new metadata and create an entirely custom page -- but with the same format and style. Hence the word `template`.
 
 Jekyll and many static site generators use [Liquid](https://shopify.github.io/liquid/) to provide metadata in markdown and HTML page *layouts* (= templates) and page contents. For the purposes of this blog, it's most often the variables with unique names that are stored on top of each page.
 
@@ -70,7 +72,7 @@ coolstuff:
 - sword of destiny
 - mandarin oranges
 
-# you can even use objects!? nuts
+# you can even make associative arrays!? nuts
 images:
 - alt: copypasta
   url: /assets/images/spaghetti.png
@@ -97,7 +99,7 @@ Those arrows above are **all of your dynamic data**. This markdown below will ev
 ## Templates gonna template
 You can stamp out as many of these templates as you want. In the example above we made 3 pages (with apples, bananas, asian pears), evidenced by the iteration on the final section.
 
-I cannot emphasize enough how exactly the same as WordPress post meta this is, because *it is post meta*. A CMS easily adds a graphical interface to the process for people who don't want to deal in yaml, but the yaml itself is easy to read.
+I cannot emphasize enough how exactly the same as WordPress post meta this is, because *it is post meta*. A free CMS easily adds a graphical interface to the process for people who don't want to deal in yaml, but the yaml itself is easy to read. [It's not a reason for WordPress.]({% link _posts/2020-05-16-jam-that-sucker.md %})
 
 ## Conclusions
 "Unique Custom Content" is such a big deal in SEO. A marketing site with 5 unique but beautiful (if visibly similar) pages is going to be highly optimized. Blogs aren't the only page style (and certainly aren't the most efficient) when you're trying to build that custom product weight for search placement. Make the job easier: template out your custom page builds!

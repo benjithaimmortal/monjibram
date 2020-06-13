@@ -112,8 +112,10 @@
 
 <p>But that’s <em>not</em> so OK if you’re developing on a “simple” blog templating tool like Jekyll. Those things only do blogs, right? The type of data you’re storing is a blog. The metadata on those posts is standard. You can’t well use that for recipes AND blogs. Just make a <code class="highlighter-rouge">recipes</code> tag and call it a day.</p>
 
+<p>Luckily that’s not true at all… you can automate almost anything you want with a little ingenuity, and automation is the key to efficient web work. In most cases I’m learning Jekyll was actually built for this sort of automation, but the documentation isn’t always very helpful to show you <a href="https://jekyllrb.com/docs/liquid/">how to use it</a>.</p>
+
 <h2 id="meta-meta">Meta-meta</h2>
-<p>Metadata feels like a good place to start breaking that idea. In WordPress the most popular metadata tool is called Advanced Custom Fields. ACF allows you to attach images, text, dates, even repeating and iterable internal groups, all within a single page template or custom post type. For each page that uses the template, you can fill in new metadata and create an entirely custom page – but with the same format and style. Hence the word <code class="highlighter-rouge">template</code>.</p>
+<p>Metadata feels like a good place to start breaking the ‘blog’ idea. In WordPress the most popular metadata tool is called Advanced Custom Fields. ACF allows you to attach images, text, dates, even repeating and iterable internal groups, all within a single page template or custom post type. For each page that uses the template, you can fill in new metadata and create an entirely custom page – but with the same format and style. Hence the word <code class="highlighter-rouge">template</code>.</p>
 
 <p>Jekyll and many static site generators use <a href="https://shopify.github.io/liquid/">Liquid</a> to provide metadata in markdown and HTML page <em>layouts</em> (= templates) and page contents. For the purposes of this blog, it’s most often the variables with unique names that are stored on top of each page.</p>
 
@@ -190,7 +192,7 @@
 <span class="pi">-</span> <span class="s">sword of destiny</span>
 <span class="pi">-</span> <span class="s">mandarin oranges</span>
 
-<span class="c1"># you can even use objects!? nuts</span>
+<span class="c1"># you can even make associative arrays!? nuts</span>
 <span class="na">images</span><span class="pi">:</span>
 <span class="pi">-</span> <span class="na">alt</span><span class="pi">:</span> <span class="s">copypasta</span>
   <span class="na">url</span><span class="pi">:</span> <span class="s">/assets/images/spaghetti.png</span>
@@ -215,7 +217,7 @@ So at the store: apples cost $5, bananas cost $3, asian pears cost $15</p>
 <h2 id="templates-gonna-template">Templates gonna template</h2>
 <p>You can stamp out as many of these templates as you want. In the example above we made 3 pages (with apples, bananas, asian pears), evidenced by the iteration on the final section.</p>
 
-<p>I cannot emphasize enough how exactly the same as WordPress post meta this is, because <em>it is post meta</em>. A CMS easily adds a graphical interface to the process for people who don’t want to deal in yaml, but the yaml itself is easy to read.</p>
+<p>I cannot emphasize enough how exactly the same as WordPress post meta this is, because <em>it is post meta</em>. A free CMS easily adds a graphical interface to the process for people who don’t want to deal in yaml, but the yaml itself is easy to read. <a href="/jam-that-sucker/">It’s not a reason for WordPress.</a></p>
 
 <h2 id="conclusions">Conclusions</h2>
 <p>“Unique Custom Content” is such a big deal in SEO. A marketing site with 5 unique but beautiful (if visibly similar) pages is going to be highly optimized. Blogs aren’t the only page style (and certainly aren’t the most efficient) when you’re trying to build that custom product weight for search placement. Make the job easier: template out your custom page builds!</p>
@@ -223,7 +225,7 @@ So at the store: apples cost $5, bananas cost $3, asian pears cost $15</p>
     </section>
   </article>
   <div class='outer-hero'>
-    <div class='hero' style="background-image: url(/assets/images/pages.jpg)"></div>
+    <div class='hero' style="background-image: url(/assets/images/automation.jpg)"></div>
   </div>
 </div>
       </div>
