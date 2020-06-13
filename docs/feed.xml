@@ -1,4 +1,116 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2020-06-12T07:21:10-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Monjibram</title><subtitle>Benjamin Kostenbader is Front-End Developer at Top Hat. He is also a proud father, cyclist, and squash enthusiast.</subtitle><author><name>Benjamin Kostenbader</name></author><entry><title type="html">Learn AJAX: Part 2</title><link href="http://localhost:4000/ajax-part-2/" rel="alternate" type="text/html" title="Learn AJAX: Part 2" /><published>2020-06-05T08:06:00-04:00</published><updated>2020-06-05T08:06:00-04:00</updated><id>http://localhost:4000/ajax-part-2</id><content type="html" xml:base="http://localhost:4000/ajax-part-2/">&lt;p&gt;The universally supported base API for AJAX is called &lt;code class=&quot;highlighter-rouge&quot;&gt;XMLHttpRequest()&lt;/code&gt;. We often shorten that to &lt;code class=&quot;highlighter-rouge&quot;&gt;XHR&lt;/code&gt;. It is so very much harder for AJAX newcomers to grasp, mostly because the many parts of the HTTP request get separated out into separate pieces of the XHR. If you mess up any of those parts, you won’t have your data. People want their data. People should read this blog.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2020-06-13T00:31:58-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Monjibram</title><subtitle>Benjamin Kostenbader is Front-End Developer at Top Hat. He is also a proud father, cyclist, and squash enthusiast.</subtitle><author><name>Benjamin Kostenbader</name></author><entry><title type="html">WordPress Custom Fields but Free</title><link href="http://localhost:4000/jekyll-custom-post-types/" rel="alternate" type="text/html" title="WordPress Custom Fields but Free" /><published>2020-06-13T00:00:00-04:00</published><updated>2020-06-13T00:00:00-04:00</updated><id>http://localhost:4000/jekyll-custom-post-types</id><content type="html" xml:base="http://localhost:4000/jekyll-custom-post-types/">&lt;p&gt;Cutting edge web technologies don’t always document features. Either they lack the ability to demonstrate the full width of their power from the first release, or they release new features gradually after the MVP. That’s pretty much the opposite of the old guard of incredible WordPress plugins. A personal favorite static framework of mine is Jekyll, because it’s simple. But I guess it isn’t so simple after all.&lt;/p&gt;
+
+&lt;p&gt;Sometimes you’re good at more than one type of thing. That’s OK, you’re human. We like to categorize things and study them logically to distinguish them from each other. We argue about definitions. We like tables.&lt;/p&gt;
+
+&lt;p&gt;But that’s &lt;em&gt;not&lt;/em&gt; so OK if you’re developing on a “simple” blog templating tool like Jekyll. Those things only do blogs, right? The type of data you’re storing is a blog. The metadata on those posts is standard. You can’t well use that for recipes AND blogs. Just make a &lt;code class=&quot;highlighter-rouge&quot;&gt;recipes&lt;/code&gt; tag and call it a day.&lt;/p&gt;
+
+&lt;h2 id=&quot;meta-meta&quot;&gt;Meta-meta&lt;/h2&gt;
+&lt;p&gt;Metadata feels like a good place to start breaking that idea. In WordPress the most popular metadata tool is called Advanced Custom Fields. ACF allows you to attach images, text, dates, even repeating and iterable internal groups, all within a single page template or custom post type. For each page that uses the template, you can fill in new metadata and create an entirely custom page – but with the same format and style. Hence the word &lt;code class=&quot;highlighter-rouge&quot;&gt;template&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Jekyll and many static site generators use &lt;a href=&quot;https://shopify.github.io/liquid/&quot;&gt;Liquid&lt;/a&gt; to provide metadata in markdown and HTML page &lt;em&gt;layouts&lt;/em&gt; (= templates) and page contents. For the purposes of this blog, it’s most often the variables with unique names that are stored on top of each page.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;I used Liquid to fill in this blockquote.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ACFs on WordPress are cool because you don’t really have to build everything in WYSIWYG (or write only blogs all day) to make a beautiful page. Liquid on Jekyll is cool because you don’t &lt;em&gt;really&lt;/em&gt; have to read through any HTML to build a page. Let’s look at an example base layout template:&lt;/p&gt;
+
+&lt;h2 id=&quot;example-base_templatehtml&quot;&gt;Example: base_template.html&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en-US&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  {% include header.html %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;section&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;main-grid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      {% include nav.html %}
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;inner&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        Today I am talking about {{ page.title }}. I really {{ page.preference }} them, because they {{ page.action }} every time I hear about them. They only cost {{ page.cost }}
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;br&amp;gt;&lt;/span&gt;
+
+        So at the store:
+        {% for page in site.pages %}
+          {{ page.title }} cost {{ page.cost }}
+          {% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+
+        {{ content }}
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;
+    {% include footer.html %}
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Liquid is being used in two ways here. It’s including other templates on the page with &lt;code class=&quot;highlighter-rouge&quot;&gt;{% include %}&lt;/code&gt; and it’s providing dynamic page metadata variables inside of mustachey brackets &lt;code class=&quot;highlighter-rouge&quot;&gt;{{ }}&lt;/code&gt;. Those brackets aren’t confined to page variables. One of the most common variables I use on this site is &lt;code class=&quot;highlighter-rouge&quot;&gt;{{ site.baseurl }}&lt;/code&gt; from &lt;code class=&quot;highlighter-rouge&quot;&gt;config.yml&lt;/code&gt;. But for the purposes of page-content, yes, you can have these things on each page!&lt;/p&gt;
+
+&lt;h2 id=&quot;setting-your-variables-on-the-page&quot;&gt;Setting your variables on the page&lt;/h2&gt;
+&lt;p&gt;Now you’ve got the &lt;strong&gt;&lt;em&gt;layout&lt;/em&gt;&lt;/strong&gt;, you can require it in the &lt;strong&gt;&lt;em&gt;front matter&lt;/em&gt;&lt;/strong&gt; of each page you want to set for that template. Front matter is written in yaml, so if you’ve ever written a docker file you’re already halfway there. Or… the other way around!&lt;/p&gt;
+
+&lt;h3 id=&quot;example-pagenamemd&quot;&gt;Example: pagename.md&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-md&quot; data-lang=&quot;md&quot;&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# the front matter is separated from rest of the document by three dashes on top and bottom&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;base_template&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# the html doc above&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;apples&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;preference&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;don't care about&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;make me fall asleep&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;$5&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# you can put arrays here&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;coolstuff&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;backpack&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;sword of destiny&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;mandarin oranges&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# you can even use objects!? nuts&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;images&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;copypasta&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/assets/images/spaghetti.png&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;codesmells&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/assets/images/feet.png&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;https://www.monjibram.com/contact&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Contact Benji&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;_blank&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;black-button&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+
+Those arrows above are &lt;span class=&quot;gs&quot;&gt;**all of your dynamic data**&lt;/span&gt;. This markdown below will eventually be where the &lt;span class=&quot;sb&quot;&gt;`{{ content }}`&lt;/span&gt; variable is placed. But this section could also be blank.&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;output&quot;&gt;Output:&lt;/h3&gt;
+&lt;p&gt;Today I am talking about apples. I really don’t care about them, because they make me fall asleep every time I hear about them. They only cost $5
+So at the store: apples cost $5, bananas cost $3, asian pears cost $15&lt;/p&gt;
+
+&lt;p&gt;Those arrows above are &lt;strong&gt;all of your dynamic data&lt;/strong&gt;. This markdown below will eventually be where the &lt;code class=&quot;highlighter-rouge&quot;&gt;{{ content }}&lt;/code&gt; variable is placed. But this section could also be blank.&lt;/p&gt;
+
+&lt;h2 id=&quot;templates-gonna-template&quot;&gt;Templates gonna template&lt;/h2&gt;
+&lt;p&gt;You can stamp out as many of these templates as you want. In the example above we made 3 pages (apples, bananas, asian pears), evidenced by the iteration on the final section.&lt;/p&gt;
+
+&lt;p&gt;I cannot emphasize enough how exactly the same as WordPress post meta this is, because &lt;em&gt;it is post meta&lt;/em&gt;. A CMS easily adds a graphical interface to the process for people who don’t want to deal in yaml, but the yaml itself is easy to read.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+&lt;p&gt;“Unique Custom Content” is such a big deal in SEO. A marketing site with 5 unique but beautiful (if visibly similar) pages is going to be highly optimized. Blogs aren’t the only page style (and certainly aren’t the most efficient) when you’re trying to build that custom product weight for search placement. Make the job easier: template out your custom page builds!&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">Cutting edge web technologies don’t always document features. Either they lack the ability to demonstrate the full width of their power from the first release, or they release new features gradually after the MVP. That’s pretty much the opposite of the old guard of incredible WordPress plugins. A personal favorite static framework of mine is Jekyll, because it’s simple. But I guess it isn’t so simple after all.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/pages.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/pages.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Learn AJAX: Part 2</title><link href="http://localhost:4000/ajax-part-2/" rel="alternate" type="text/html" title="Learn AJAX: Part 2" /><published>2020-06-05T08:06:00-04:00</published><updated>2020-06-05T08:06:00-04:00</updated><id>http://localhost:4000/ajax-part-2</id><content type="html" xml:base="http://localhost:4000/ajax-part-2/">&lt;p&gt;The universally supported base API for AJAX is called &lt;code class=&quot;highlighter-rouge&quot;&gt;XMLHttpRequest()&lt;/code&gt;. We often shorten that to &lt;code class=&quot;highlighter-rouge&quot;&gt;XHR&lt;/code&gt;. It is so very much harder for AJAX newcomers to grasp, mostly because the many parts of the HTTP request get separated out into separate pieces of the XHR. If you mess up any of those parts, you won’t have your data. People want their data. People should read this blog.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;This is Part 2 of a tutorial on the basics of AJAX, for beginners. You might want to start at &lt;a href=&quot;/ajax-part-1/&quot;&gt;Part 1&lt;/a&gt; if you haven’t already.&lt;/em&gt;&lt;/p&gt;
 
