@@ -20,7 +20,7 @@ Jekyll and many static site generators use [Liquid](https://shopify.github.io/li
 
 > {{ page.sentence }}
 
-ACFs on WordPress are cool because you don't really have to build everything in WYSIWYG (or write only blogs all day) to make a beautiful page. Liquid on Jekyll is cool because you don't _really_ have to read through any HTML to build a page. Let's look at an example base layout template:
+ACFs on WordPress are cool because you don't really have to build everything in WYSIWYG (or write only blogs all day) to make a beautiful page. Liquid on Jekyll is cool because you don't really have to read through any HTML to build a page. Let's look at an example base layout template:
 
 ## Example: base_template.html
 {% highlight html linenos %}
@@ -32,12 +32,12 @@ ACFs on WordPress are cool because you don't really have to build everything in 
     <section class="main-grid">
       {% include nav.html %}
       <div class="inner">
-        Today I am talking about {{ page.title }}. I really {{ page.preference }} them, because they {{ page.action }} every time I hear about them. They only cost {{ page.cost }}
+        Today I am talking about {{ page.fruit }}. I really {{ page.preference }} them, because they {{ page.action }} every time I hear about them. They only cost {{ page.cost }}
         <br>
 
         So at the store:
         {% for page in site.pages %}
-          {{ page.title }} cost {{ page.cost }}
+          {{ page.fruit }} cost {{ page.cost }}
           {% unless forloop.last %}, {% endunless %}
         {% endfor %}
 
@@ -59,7 +59,7 @@ Now you've got the ***layout***, you can require it in the **_front matter_** of
 ---
 # the front matter is separated from rest of the document by three dashes on top and bottom
 layout: base_template # the html doc above
-title: apples
+fruit: apples
 preference: don't care about
 action: make me fall asleep
 cost: $5
@@ -95,7 +95,7 @@ Those arrows above are **all of your dynamic data**. This markdown below will ev
 
 
 ## Templates gonna template
-You can stamp out as many of these templates as you want. In the example above we made 3 pages (apples, bananas, asian pears), evidenced by the iteration on the final section.
+You can stamp out as many of these templates as you want. In the example above we made 3 pages (with apples, bananas, asian pears), evidenced by the iteration on the final section.
 
 I cannot emphasize enough how exactly the same as WordPress post meta this is, because *it is post meta*. A CMS easily adds a graphical interface to the process for people who don't want to deal in yaml, but the yaml itself is easy to read.
 

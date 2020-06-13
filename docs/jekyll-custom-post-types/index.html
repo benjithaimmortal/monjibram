@@ -121,7 +121,7 @@
   <p>I used Liquid to fill in this blockquote.</p>
 </blockquote>
 
-<p>ACFs on WordPress are cool because you don’t really have to build everything in WYSIWYG (or write only blogs all day) to make a beautiful page. Liquid on Jekyll is cool because you don’t <em>really</em> have to read through any HTML to build a page. Let’s look at an example base layout template:</p>
+<p>ACFs on WordPress are cool because you don’t really have to build everything in WYSIWYG (or write only blogs all day) to make a beautiful page. Liquid on Jekyll is cool because you don’t really have to read through any HTML to build a page. Let’s look at an example base layout template:</p>
 
 <h2 id="example-base_templatehtml">Example: base_template.html</h2>
 
@@ -153,12 +153,12 @@
     <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"main-grid"</span><span class="nt">&gt;</span>
       {% include nav.html %}
       <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"inner"</span><span class="nt">&gt;</span>
-        Today I am talking about {{ page.title }}. I really {{ page.preference }} them, because they {{ page.action }} every time I hear about them. They only cost {{ page.cost }}
+        Today I am talking about {{ page.fruit }}. I really {{ page.preference }} them, because they {{ page.action }} every time I hear about them. They only cost {{ page.cost }}
         <span class="nt">&lt;br&gt;</span>
 
         So at the store:
         {% for page in site.pages %}
-          {{ page.title }} cost {{ page.cost }}
+          {{ page.fruit }} cost {{ page.cost }}
           {% unless forloop.last %}, {% endunless %}
         {% endfor %}
 
@@ -179,7 +179,7 @@
 <figure class="highlight"><pre><code class="language-md" data-lang="md"><span class="nn">---</span>
 <span class="c1"># the front matter is separated from rest of the document by three dashes on top and bottom</span>
 <span class="na">layout</span><span class="pi">:</span> <span class="s">base_template</span> <span class="c1"># the html doc above</span>
-<span class="na">title</span><span class="pi">:</span> <span class="s">apples</span>
+<span class="na">fruit</span><span class="pi">:</span> <span class="s">apples</span>
 <span class="na">preference</span><span class="pi">:</span> <span class="s">don't care about</span>
 <span class="na">action</span><span class="pi">:</span> <span class="s">make me fall asleep</span>
 <span class="na">cost</span><span class="pi">:</span> <span class="s">$5</span>
@@ -213,7 +213,7 @@ So at the store: apples cost $5, bananas cost $3, asian pears cost $15</p>
 <p>Those arrows above are <strong>all of your dynamic data</strong>. This markdown below will eventually be where the <code class="highlighter-rouge">{{ content }}</code> variable is placed. But this section could also be blank.</p>
 
 <h2 id="templates-gonna-template">Templates gonna template</h2>
-<p>You can stamp out as many of these templates as you want. In the example above we made 3 pages (apples, bananas, asian pears), evidenced by the iteration on the final section.</p>
+<p>You can stamp out as many of these templates as you want. In the example above we made 3 pages (with apples, bananas, asian pears), evidenced by the iteration on the final section.</p>
 
 <p>I cannot emphasize enough how exactly the same as WordPress post meta this is, because <em>it is post meta</em>. A CMS easily adds a graphical interface to the process for people who don’t want to deal in yaml, but the yaml itself is easy to read.</p>
 
