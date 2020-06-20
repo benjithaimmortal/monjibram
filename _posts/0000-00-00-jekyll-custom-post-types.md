@@ -1,105 +1,92 @@
 ---
-title: WordPress Custom Fields but Free
-date: 2020/06/13
+title: WP Custom Post Types but Free
+date: 2020-06-27
 categories:
 - Tutorial
-hero: automation.jpg
-sentence: I used Liquid to fill in this blockquote.
+hero: custom-food-types.svg
 ---
 
-Cutting edge web technologies don't always document features. Either they lack the ability to convey the full scope of their power from the first release, or they release new features gradually after the MVP. That's pretty much the opposite of the old guard of incredible WordPress plugins. A personal favorite static framework of mine is Jekyll, because it's simple. But I guess it isn't so simple after all.
+Sometimes you're good at more than one type of thing. That's OK, you're human. We like to categorize things and study them logically to distinguish them from each other. We argue about definitions. We like tables. We like lists. We make Custom Types for everything.
 
-Sometimes you're good at more than one type of thing. That's OK, you're human. We like to categorize things and study them logically to distinguish them from each other. We argue about definitions. We like tables.
-
-But that's *not* so OK if you're developing on a "simple" blog templating tool like Jekyll. Those things only do blogs, right? The type of data you're storing is a blog. The metadata on those posts is standard. You can't well use that for recipes AND blogs. Just make a `recipes` tag and call it a day.
+What's *not* so OK is if you're developing on a "simple" blog templating tool and you think you can't. Those things only do blogs, right? The type of data you're storing is a blog. The metadata on those posts is standard. You can't well use that for recipes AND blogs. Just make a `recipes` tag and call it a day.
 
 Luckily that's not true at all... you can automate almost anything you want with a little ingenuity, and automation is the key to efficient web work. In most cases I'm learning Jekyll was actually built for this sort of automation, but the documentation isn't always very helpful to show you [how to use it](https://jekyllrb.com/docs/liquid/).
 
 ## Meta-meta
-Metadata feels like a good place to start breaking the 'blog' idea. In WordPress the most popular metadata tool is called Advanced Custom Fields. ACF allows you to attach images, text, dates, even repeating and iterable internal groups, all within a single page template or custom post type. For each page that uses the template, you can fill in new metadata and create an entirely custom page -- but with the same format and style. Hence the word `template`.
+In part one [we talked about Liquid]({% link _posts/0000-00-00-jekyll-custom-fields.md %}), and how to use it to make ACF-like custom fields on your static marketing site. That's all well and good if you've got individual pages that you want to clone. But what about whole categories of content?
 
-Jekyll and many static site generators use [Liquid](https://shopify.github.io/liquid/) to provide metadata in markdown and HTML page *layouts* (= templates) and page contents. For the purposes of this blog, it's most often the variables with unique names that are stored on top of each page.
+## Meta-meta-meta
+WordPress calls that stuff Custom Post Types. It's based on the idea that you want `posts` for writing things, but you also want a `projects` section that shows off your wow mad skillz. You'd probably like to query those `projects` independently of the `posts`. And maybe you'd like some `events`, `programs`, `cats`, and `hairpieces`. Your business is not the strangest thing on the internet, I promise.
 
-> {{ page.sentence }}
+All of those types are still going to generate data in the same way a blog would. You'll have an index, an author, a post-date, a title, and some contents. You'll have a single template for the files, with whatever custom metadata you like, and you can query a list of all of the fields in some format to make it easy for people to search and peruse.
 
-ACFs on WordPress are cool because you don't really have to build everything in WYSIWYG (or write only blogs all day) to make a beautiful page. Liquid on Jekyll is cool because you don't really have to read through any HTML to build a page. Let's look at an example base layout template:
+## Custom Post Types are called Collections
+As we know, Jekyll is a blog generator! Jekyll does the bloggy parts of this just fine. It also has built-in functionality for Custom Post Types that work in tandem with the blog. The creators of Jekyll, having no ties to WordPress that I know of, decided _not_ to name their custom post types Custom Post Types. They call them Collections.
 
-## Example: base_template.html
-{% highlight html linenos %}
-{% raw %}
-<!doctype html>
-<html lang="en-US">
-  {% include header.html %}
-  <body>
-    <section class="main-grid">
-      {% include nav.html %}
-      <div class="inner">
-        Today I am talking about {{ page.fruit }}. I really {{ page.preference }} them, because they {{ page.action }} every time I hear about them. They only cost {{ page.cost }}
-        <br>
+In 5 years of building Jekyll sites, I never came across a Collection. I didn't know what it was. (Before I had a full-time development job, I didn't even know why I would need something like it.) But it is pretty darn swanky! It can do everything that a WordPress CPT can do, and pre-render the pages as they are built.
 
-        So at the store:
-        {% for page in site.pages %}
-          {{ page.fruit }} cost {{ page.cost }}
-          {% unless forloop.last %}, {% endunless %}
-        {% endfor %}
+> Pre-rendered for your viewing pleasure
 
-        {{ content }}
-      </div>
-    </section>
-    {% include footer.html %}
-  </body>
-{% endraw %}
+I will say that again, louder. It can do all of the work to render a list of these blogs _one time_ and _store the results_ to be served instantly. If the build time takes an extra ten minutes, it's not a bother for your end users. If you come from a WordPress background (or most full-stack projects), this might take some getting used to.
+
+## Old Way of thinking:
+
+This is a common thought process for a WordPress developer:
+- I need only the posts within a certain Post Type, with a certain field.
+- I need to loop through them and grab a connecting ID for other post types.
+- Then I need to loop through _those IDs_ and display their special metadata.
+
+### Really bad but easy to follow example
+{% highlight php %}
+$artist_query = get_posts(array(
+  'numberposts' => -1,      // all of 'em
+  'post_type'   => 'artist'
+));
+
+// iterate through all the Artists after a single query
+foreach ($artist_query as $artist) {
+  $id = $artist['ID'];
+
+  // making queries inside of loops is baaaaaad news
+  $art_query = get_posts(array(
+    'numberposts'  => -1,
+    'post_type'    => 'art',
+    'meta_key'     => 'artist',
+    'meta_value'   => $id
+  ));
+}
 {% endhighlight %}
 
-Liquid is being used in two ways here. It's including other templates on the page with {% raw %}`{% include %}`{% endraw %} and it's providing dynamic page metadata variables inside of mustachey brackets {% raw %}`{{ }}`{% endraw %}. Those brackets aren't confined to page variables. One of the most common variables I use on this site is {% raw %}`{{ site.baseurl }}`{% endraw %} from `config.yml`. But for the purposes of page-content, yes, you can have these things on each page!
 
-## Setting your variables on the page
-Now you've got the ***layout***, you can require it in the **_front matter_** of each page you want to set for that template. Front matter is written in yaml, so if you've ever written a docker file you're already halfway there. Or... the other way around!
+Looping through multiple large queries is going to slow down your page. Maybe you should just index those files yourself in some post meta and make things easier to find. Make a cron and keep things synchronized. If you're getting fancy here, you might jump into the database itself with a `JOIN`. It's going to depend a lot on the size of your indexing lines, to be sure.
 
-### Example: pagename.md
-{% highlight md %}
----
-# the front matter is separated from rest of the document by three dashes on top and bottom
-layout: base_template # the html doc above
-fruit: apples
-preference: don't care about
-action: make me fall asleep
-cost: $5
+### Real world indexing example
+{% highlight php %}
+// start by iterating through all the Artists to set up the index
+$artists = [];
+foreach ($all_artists as $artist) {
+  $id = $artist['ID'];
+  $artists[$id]['ID'] = $id;
+}
 
-# you can put arrays here
-coolstuff:
-- backpack
-- sword of destiny
-- mandarin oranges
+// then do the same with each piece of Art
+$art = [];
+foreach ($all_art as $work) {
+  $id = $work['ID'];
+  $art[$id]['ID'] = $id;
+  $art[$id]['artist_id'] = get_field('artist', $id); // yeah, this was an ACF too
 
-# you can even make associative arrays!? nuts
-images:
-- alt: copypasta
-  url: /assets/images/spaghetti.png
-- alt: codesmells
-  url: /assets/images/feet.png
-
-link:
-- url: https://www.monjibram.com/contact
-  title: Contact Benji
-  target: _blank
-  class: black-button
----
-
-Those arrows above are **all of your dynamic data**. This markdown below will eventually be where the {% raw %}`{{ content }}`{% endraw %} variable is placed. But this section could also be blank.
+  // add only what you need from the Art CPT in the Artist array
+  $a_id = $art[$id]['artist_id'];
+  if (is_array($artists[$a_id]['art'])) {
+    $artists[$a_id]['art'][$id] = array(
+      $id,
+      $work['post_title']
+    );
+  }
+}
 {% endhighlight %}
 
-### Output:
-Today I am talking about apples. I really don't care about them, because they make me fall asleep every time I hear about them. They only cost $5
-So at the store: apples cost $5, bananas cost $3, asian pears cost $15
 
-Those arrows above are **all of your dynamic data**. This markdown below will eventually be where the {% raw %}`{{ content }}`{% endraw %} variable is placed. But this section could also be blank.
-
-
-## Templates gonna template
-You can stamp out as many of these templates as you want. In the example above we made 3 pages (with apples, bananas, asian pears), evidenced by the iteration on the final section.
-
-I cannot emphasize enough how exactly the same as WordPress post meta this is, because *it is post meta*. A free CMS easily adds a graphical interface to the process for people who don't want to deal in yaml, but the yaml itself is easy to read. [It's not a reason for WordPress.]({% link _posts/2020-05-16-jam-that-sucker.md %})
-
-## Conclusions
-"Unique Custom Content" is such a big deal in SEO. A marketing site with 5 unique but beautiful (if visibly similar) pages is going to be highly optimized. Blogs aren't the only page style (and certainly aren't the most efficient) when you're trying to build that custom product weight for search placement. Make the job easier: template out your custom page builds!
+## I digress
+Once again, _you really don't have to worry about all that optimization with a static site!_ It indexes and builds itself. Users will see all that automation like you did it by hand. These days static sites are even smart enough to know when you're changing files, and do [incremental builds](https://jekyllrb.com/docs/configuration/incremental-regeneration/) which are smart enough to keep those complicated queries from slowing down your whole site build every time. You won't waste time either.
