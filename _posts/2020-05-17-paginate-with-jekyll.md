@@ -6,6 +6,7 @@ categories:
 layout: post
 author: Benji
 hero: pages.jpg
+image: assets/images/pages.jpg
 ---
 
 I used the following code in `/config.yml`:

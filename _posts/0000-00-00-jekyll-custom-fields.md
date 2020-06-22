@@ -4,6 +4,7 @@ date: 2020-06-13
 categories:
 - Tutorial
 hero: automation.jpg
+image: assets/images/automation.jpg
 sentence: I used Liquid to fill in this blockquote.
 ---
 
