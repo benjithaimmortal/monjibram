@@ -3,6 +3,7 @@ title: WP Custom Post Types but Free
 date: 2020-06-27
 categories:
 - Tutorial
+- WordPress
 hero: custom-food-types.svg
 ---
 
