@@ -4,8 +4,8 @@ date: 2020-06-20
 categories:
 - WordPress
 - CMS
-hero: framework.jpg
-image: assets/images/framework.jpg
+hero: framework.webp
+image: assets/images/framework.webp
 ---
 
 Lest it fall under the immense weight of my quick and witty Jamstack diatribes, it's time I defend my dear friend WordPress from a most misleading misconception. WordPress is not simply a CMS. It might be *known* for its prowess as a CMS, and modern tools might compare themselves to it, but it is much, much more.

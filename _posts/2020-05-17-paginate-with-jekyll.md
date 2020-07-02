@@ -5,8 +5,8 @@ categories:
 - Tutorials
 layout: post
 author: Benji
-hero: pages.jpg
-image: assets/images/pages.jpg
+hero: pages.webp
+image: assets/images/pages.webp
 ---
 
 I used the following code in `/config.yml`:

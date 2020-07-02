@@ -5,8 +5,8 @@ categories:
 - Site Generators
 layout: post
 author: Benji
-hero: code.jpg
-image: assets/images/code.jpg
+hero: code.webp
+image: assets/images/code.webp
 ---
 
 My first 'official' web project was for an old friend, a successful musician with a 5-year-old single page with some links. I was so confident in my delivery that I told him I'd do the project for free! This is bad business, but it wasn't the worst part. After hours and hours of collaborative design ideation and development, *he went out and bought a subscription to a site generator*.

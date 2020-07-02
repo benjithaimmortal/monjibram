@@ -3,8 +3,8 @@ title: An Ode to the Object
 date: 2020/06/01 12:09:00 Z
 categories:
 - Tutorials
-hero: hash.jpg
-image: assets/images/hash.jpg
+hero: hash.webp
+image: assets/images/hash.webp
 ---
 
 Let's talk about my best friend, **J**ava**S**cript **O**bject **N**otation. You probably call that ***jay***-son. If you're really particular or feeling a little bit French, maybe you call it jase-***on***. Whichever way you call it, you're *almost* talking about an associative array.
