@@ -114,11 +114,9 @@
 <hr />
 
 <h2 id="theres-a-problem-with-your-eyes">There’s a problem with your eyes</h2>
-<p>You can’t read long lines of text. The common recommendation is between <a href="https://www.smashingmagazine.com/2014/09/balancing-line-length-font-size-responsive-web-design/">45 and 75 characters per line</a>. You may have experienced this sensation if you tried to use your TV as a monitor.</p>
+<p>You can’t read long lines of text. The common recommendation is between <a href="https://www.smashingmagazine.com/2014/09/balancing-line-length-font-size-responsive-web-design/">45 and 75 characters per line</a>. You may have experienced this issue when you tried to use your TV as a monitor. Wait you never did that? Oh, no, me either 😅</p>
 
-<!-- > Wait you never did that? Oh, no, me either 😅 -->
-
-<p>If it helps, imagine that it’s two or three alphabets, back to back. Of course the length of the alphabet depends on how large the character widths are. In this particular body font, I can get a better sense by incorporating capitalized letters. Or I could even use them outright.</p>
+<p>Imagine that length as two or three alphabets, back to back. Of course the length of the alphabet depends on how large the character widths are. In this particular body font, I can get a better sense by incorporating capitalized letters. Or I could even use them outright.</p>
 
 <p>Just about this long:
 abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
@@ -130,7 +128,7 @@ AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz</p>
 ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
 
 <h2 id="but-really-big-views-are-bad-too">But really big views are bad too</h2>
-<p>Now that’s all well and good, but the unspoken difficulty comes from larger font sizes at a close distance. Making the text larger for larger screens only works until your <a href="https://en.wikipedia.org/wiki/Saccade">saccade</a> becomes noticeably uncomfortable. Thus a rather fine case <a href="https://baymard.com/blog/line-length-readability">against a purely liquid layout</a>. For large web views, I err on the side of caution. I keep font-size the same on even the largest screens. So something beyond 750px is bad.</p>
+<p>The unspoken flip-side comes from larger font sizes at a close distance. Making the text larger for larger screens only works until your <a href="https://en.wikipedia.org/wiki/Saccade">saccade</a> becomes noticeably uncomfortable. Thus a rather fine case <a href="https://baymard.com/blog/line-length-readability">against a purely liquid layout</a>. For large web views, I err on the side of caution. I keep font-size the same on even the largest screens. So something beyond 750px is bad.</p>
 
 <h2 id="compare-the-next-two-lines">Compare the next two lines:</h2>
 <h3 id="line-1">Line 1:</h3>
@@ -140,7 +138,7 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
 <div style="font-size: 40px; letter-spacing: 1.5px;">abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</div>
 
 <h2 id="but-honestly-it-doesnt-really-change-with-non-text-items">But honestly it doesn’t really change with non-text items</h2>
-<p>To be fair, a huge image doesn’t help. Even disregarding image sizing and web optimization (our rule at work is twice the pixels for each web pixel, so we get some pretty large picture file sizes!) you’ll quickly lose a picture of a forest for some giant trees.</p>
+<p>A huge image doesn’t help. Even disregarding image sizing and web optimization (our rule at work is twice the pixels for each web pixel, so we get some pretty large picture file sizes!) you’ll quickly lose a picture of a forest for some giant trees.</p>
 
 <p>The solution to this is the same as most other web design problems: a few extra tag wrappers and some CSS. But <em>how</em> is the more important question. That’s how this blog was born.</p>
 
@@ -149,15 +147,24 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
 </blockquote>
 
 <h2 id="zero-use-appropriate-html">Zero. Use appropriate HTML</h2>
-<p>The sectional approach to site configuration is underrated. A good page has content sections, and they are usually at least 2/3 the height of your browser window. Taking up space and using the infinite scroll canvas that is available to you dramatically increases user interaction and readability.</p>
 
-<h2 id="one-start-at-the-biggest-which-is-actually-the-smallest">One. Start at the biggest, which is actually the smallest.</h2>
+<p>The sectional approach to site configuration is underrated. A good page has content sections, and they are usually at least 2/3 the height of your browser window. Taking up space and using the infinite scroll canvas that is available to you dramatically increases user interaction and readability. There is also a great reason that HTML has a <code class="highlighter-rouge">&lt;section&gt;</code> tag! It’s for holding this container! Use it like this:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"hero"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"hero-container"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- your div contents --&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span></code></pre></figure>
+
+<p><em>Note: Your section tag might have a full-width background image or other width-breaking things. Don’t limit yourself by making the section tag itself a container.</em></p>
+
+<h2 id="one-start-at-the-maximum-which-is-actually-the-smallest">One. Start at the maximum, which is actually the smallest.</h2>
 
 <p>What’s the maximum width that your section can be? The answer might not make immediate sense. <code class="highlighter-rouge">max-width</code> should be used on your smallest screen sizes. The narrowest screen I’ve seen on devtools is the iPhone 5/SE, weighing in at a mere 325px. If your maximum width is above that, your site will horizontally scroll on that screen. If you use absolute units, your page will forever be confined to 325px.</p>
 
 <div style="display: flex; flex-wrap: no-wrap; justify-content: center; align-items: flex-grow; margin-bottom: 20px;">
   <div style="width: calc((100% - 330px) / 2); background-color: #350e1411;"></div>
-  <p style="width: 320px; margin: 20px auto 25px; padding-bottom: unset;">Don't live in a world that is only 325 px wide, it is a special hell where UX dreams go to die and nothing can be accomplished. One or two sentences of this took up five lines and looked terrible.</p>
+  <p style="width: 320px; margin: 20px auto 25px; padding-bottom: unset;">Don't make your site live in a world that is only 325 px wide, it is a special place where UX dreams go to die and nothing can be accomplished. One or two sentences of this took up five lines and looked terrible.</p>
   <div style="width: calc((100% - 330px) / 2); margin-left: -5px; background-color: #350e1411;"></div>
 </div>
 

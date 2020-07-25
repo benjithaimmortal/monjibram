@@ -49,7 +49,19 @@ The solution to this is the same as most other web design problems: a few extra 
 
 ## Zero. Use appropriate HTML
 
-The sectional approach to site configuration is underrated. A good page has content sections, and they are usually at least 2/3 the height of your browser window. Taking up space and using the infinite scroll canvas that is available to you dramatically increases user interaction and readability. There is also a great reason that HTML has a `<section>` tag! It's for this! Use it!
+The sectional approach to site configuration is underrated. A good page has content sections, and they are usually at least 2/3 the height of your browser window. Taking up space and using the infinite scroll canvas that is available to you dramatically increases user interaction and readability. There is also a great reason that HTML has a `<section>` tag! It's for holding this container! Use it like this:
+
+
+
+{% highlight html %}
+<section class="hero">
+  <div class="hero-container">
+    <!-- your div contents -->
+  </div>
+</section>
+{% endhighlight %}
+
+*Note: Your section tag might have a full-width background image or other width-breaking things. Don't limit yourself by making the section tag itself a container.*
 
 
 ## One. Start at the maximum, which is actually the smallest.

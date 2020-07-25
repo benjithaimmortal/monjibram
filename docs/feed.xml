@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2020-07-24T21:27:26-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Monjibram</title><subtitle>Benjamin Kostenbader is Front-End Developer at Top Hat. He is also a proud father, cyclist, and squash enthusiast.</subtitle><author><name>Benjamin Kostenbader</name></author><entry><title type="html">Secrets of the Site Container: Part 1</title><link href="http://localhost:4000/secrets-of-site-containers/" rel="alternate" type="text/html" title="Secrets of the Site Container: Part 1" /><published>2020-07-24T00:00:00-04:00</published><updated>2020-07-24T00:00:00-04:00</updated><id>http://localhost:4000/secrets-of-site-containers</id><content type="html" xml:base="http://localhost:4000/secrets-of-site-containers/">&lt;p&gt;Big screens are getting bigger. Wider. Less expensive. Our web experience should be seamless, but our eyes can’t adjust to giant blobby things. Containers to the rescue. But first, a digression about font-size and readability!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2020-07-25T07:16:20-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Monjibram</title><subtitle>Benjamin Kostenbader is Front-End Developer at Top Hat. He is also a proud father, cyclist, and squash enthusiast.</subtitle><author><name>Benjamin Kostenbader</name></author><entry><title type="html">Secrets of the Site Container: Part 1</title><link href="http://localhost:4000/secrets-of-site-containers/" rel="alternate" type="text/html" title="Secrets of the Site Container: Part 1" /><published>2020-07-24T00:00:00-04:00</published><updated>2020-07-24T00:00:00-04:00</updated><id>http://localhost:4000/secrets-of-site-containers</id><content type="html" xml:base="http://localhost:4000/secrets-of-site-containers/">&lt;p&gt;Big screens are getting bigger. Wider. Less expensive. Our web experience should be seamless, but our eyes can’t adjust to giant blobby things. Containers to the rescue. But first, a digression about font-size and readability!&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -6,11 +6,9 @@
 &lt;hr /&gt;
 
 &lt;h2 id=&quot;theres-a-problem-with-your-eyes&quot;&gt;There’s a problem with your eyes&lt;/h2&gt;
-&lt;p&gt;You can’t read long lines of text. The common recommendation is between &lt;a href=&quot;https://www.smashingmagazine.com/2014/09/balancing-line-length-font-size-responsive-web-design/&quot;&gt;45 and 75 characters per line&lt;/a&gt;. You may have experienced this sensation if you tried to use your TV as a monitor.&lt;/p&gt;
+&lt;p&gt;You can’t read long lines of text. The common recommendation is between &lt;a href=&quot;https://www.smashingmagazine.com/2014/09/balancing-line-length-font-size-responsive-web-design/&quot;&gt;45 and 75 characters per line&lt;/a&gt;. You may have experienced this issue when you tried to use your TV as a monitor. Wait you never did that? Oh, no, me either 😅&lt;/p&gt;
 
-&lt;!-- &gt; Wait you never did that? Oh, no, me either 😅 --&gt;
-
-&lt;p&gt;If it helps, imagine that it’s two or three alphabets, back to back. Of course the length of the alphabet depends on how large the character widths are. In this particular body font, I can get a better sense by incorporating capitalized letters. Or I could even use them outright.&lt;/p&gt;
+&lt;p&gt;Imagine that length as two or three alphabets, back to back. Of course the length of the alphabet depends on how large the character widths are. In this particular body font, I can get a better sense by incorporating capitalized letters. Or I could even use them outright.&lt;/p&gt;
 
 &lt;p&gt;Just about this long:
 abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz&lt;/p&gt;
@@ -22,7 +20,7 @@ AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz&lt;/p&gt;
 ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ&lt;/p&gt;
 
 &lt;h2 id=&quot;but-really-big-views-are-bad-too&quot;&gt;But really big views are bad too&lt;/h2&gt;
-&lt;p&gt;Now that’s all well and good, but the unspoken difficulty comes from larger font sizes at a close distance. Making the text larger for larger screens only works until your &lt;a href=&quot;https://en.wikipedia.org/wiki/Saccade&quot;&gt;saccade&lt;/a&gt; becomes noticeably uncomfortable. Thus a rather fine case &lt;a href=&quot;https://baymard.com/blog/line-length-readability&quot;&gt;against a purely liquid layout&lt;/a&gt;. For large web views, I err on the side of caution. I keep font-size the same on even the largest screens. So something beyond 750px is bad.&lt;/p&gt;
+&lt;p&gt;The unspoken flip-side comes from larger font sizes at a close distance. Making the text larger for larger screens only works until your &lt;a href=&quot;https://en.wikipedia.org/wiki/Saccade&quot;&gt;saccade&lt;/a&gt; becomes noticeably uncomfortable. Thus a rather fine case &lt;a href=&quot;https://baymard.com/blog/line-length-readability&quot;&gt;against a purely liquid layout&lt;/a&gt;. For large web views, I err on the side of caution. I keep font-size the same on even the largest screens. So something beyond 750px is bad.&lt;/p&gt;
 
 &lt;h2 id=&quot;compare-the-next-two-lines&quot;&gt;Compare the next two lines:&lt;/h2&gt;
 &lt;h3 id=&quot;line-1&quot;&gt;Line 1:&lt;/h3&gt;
@@ -32,7 +30,7 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ&lt;/p&gt;
 &lt;div style=&quot;font-size: 40px; letter-spacing: 1.5px;&quot;&gt;abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz&lt;/div&gt;
 
 &lt;h2 id=&quot;but-honestly-it-doesnt-really-change-with-non-text-items&quot;&gt;But honestly it doesn’t really change with non-text items&lt;/h2&gt;
-&lt;p&gt;To be fair, a huge image doesn’t help. Even disregarding image sizing and web optimization (our rule at work is twice the pixels for each web pixel, so we get some pretty large picture file sizes!) you’ll quickly lose a picture of a forest for some giant trees.&lt;/p&gt;
+&lt;p&gt;A huge image doesn’t help. Even disregarding image sizing and web optimization (our rule at work is twice the pixels for each web pixel, so we get some pretty large picture file sizes!) you’ll quickly lose a picture of a forest for some giant trees.&lt;/p&gt;
 
 &lt;p&gt;The solution to this is the same as most other web design problems: a few extra tag wrappers and some CSS. But &lt;em&gt;how&lt;/em&gt; is the more important question. That’s how this blog was born.&lt;/p&gt;
 
@@ -41,15 +39,24 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;zero-use-appropriate-html&quot;&gt;Zero. Use appropriate HTML&lt;/h2&gt;
-&lt;p&gt;The sectional approach to site configuration is underrated. A good page has content sections, and they are usually at least 2/3 the height of your browser window. Taking up space and using the infinite scroll canvas that is available to you dramatically increases user interaction and readability.&lt;/p&gt;
 
-&lt;h2 id=&quot;one-start-at-the-biggest-which-is-actually-the-smallest&quot;&gt;One. Start at the biggest, which is actually the smallest.&lt;/h2&gt;
+&lt;p&gt;The sectional approach to site configuration is underrated. A good page has content sections, and they are usually at least 2/3 the height of your browser window. Taking up space and using the infinite scroll canvas that is available to you dramatically increases user interaction and readability. There is also a great reason that HTML has a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;section&amp;gt;&lt;/code&gt; tag! It’s for holding this container! Use it like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;section&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hero&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;hero-container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- your div contents --&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/section&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;Note: Your section tag might have a full-width background image or other width-breaking things. Don’t limit yourself by making the section tag itself a container.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;one-start-at-the-maximum-which-is-actually-the-smallest&quot;&gt;One. Start at the maximum, which is actually the smallest.&lt;/h2&gt;
 
 &lt;p&gt;What’s the maximum width that your section can be? The answer might not make immediate sense. &lt;code class=&quot;highlighter-rouge&quot;&gt;max-width&lt;/code&gt; should be used on your smallest screen sizes. The narrowest screen I’ve seen on devtools is the iPhone 5/SE, weighing in at a mere 325px. If your maximum width is above that, your site will horizontally scroll on that screen. If you use absolute units, your page will forever be confined to 325px.&lt;/p&gt;
 
 &lt;div style=&quot;display: flex; flex-wrap: no-wrap; justify-content: center; align-items: flex-grow; margin-bottom: 20px;&quot;&gt;
   &lt;div style=&quot;width: calc((100% - 330px) / 2); background-color: #350e1411;&quot;&gt;&lt;/div&gt;
-  &lt;p style=&quot;width: 320px; margin: 20px auto 25px; padding-bottom: unset;&quot;&gt;Don't live in a world that is only 325 px wide, it is a special hell where UX dreams go to die and nothing can be accomplished. One or two sentences of this took up five lines and looked terrible.&lt;/p&gt;
+  &lt;p style=&quot;width: 320px; margin: 20px auto 25px; padding-bottom: unset;&quot;&gt;Don't make your site live in a world that is only 325 px wide, it is a special place where UX dreams go to die and nothing can be accomplished. One or two sentences of this took up five lines and looked terrible.&lt;/p&gt;
   &lt;div style=&quot;width: calc((100% - 330px) / 2); margin-left: -5px; background-color: #350e1411;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
