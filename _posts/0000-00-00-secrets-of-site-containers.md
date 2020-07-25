@@ -46,6 +46,7 @@ To be fair, a huge image doesn't help. Even disregarding image sizing and web op
 
 The solution to this is the same as most other web design problems: a few extra tag wrappers and some CSS. But _how_ is the more important question. That's how this blog was born.
 
+> You can also [see this blog in action on CodePen](https://codepen.io/benjithaimmortal/full/XWXyJjX).
 
 ## Zero. Use appropriate HTML
 The sectional approach to site configuration is underrated. A good page has content sections, and they are usually at least 2/3 the height of your browser window. Taking up space and using the infinite scroll canvas that is available to you dramatically increases user interaction and readability.
@@ -134,4 +135,5 @@ Well that isn't surprising! Block-level elements fill from the left. All you nee
 
 
 ## Next steps:
+
 What if you want to blow out the screen, anchoring items to the left or right on one side while maintaining your site container width on the other? It's not impossible. I'll show you how in my next article!
