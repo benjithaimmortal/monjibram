@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    
+    <meta charset="utf-8">
+
+
+    <!-- favicons -->
+    <link rel="apple-touch-icon"      sizes="57x57"   href="/assets/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon"      sizes="60x60"   href="/assets/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon"      sizes="72x72"   href="/assets/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon"      sizes="76x76"   href="/assets/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon"      sizes="114x114" href="/assets/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon"      sizes="120x120" href="/assets/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon"      sizes="144x144" href="/assets/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon"      sizes="152x152" href="/assets/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon"      sizes="180x180" href="/assets/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"   href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"   href="/assets/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"   href="/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest"                              href="/assets/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color"             content="#ffffff">
+
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- force mobile to use mobile viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Secrets of the Site Container: Part 1 | Monjibram</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Secrets of the Site Container: Part 1" />
+<meta name="author" content="Benji" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Big screens are getting bigger. Wider. Less expensive. Our web experience should be seamless, but our eyes can’t adjust to giant blobby things. Containers to the rescue. But first, a digression about font-size and readability!" />
+<meta property="og:description" content="Big screens are getting bigger. Wider. Less expensive. Our web experience should be seamless, but our eyes can’t adjust to giant blobby things. Containers to the rescue. But first, a digression about font-size and readability!" />
+<link rel="canonical" href="http://localhost:4000/secrets-of-site-containers/" />
+<meta property="og:url" content="http://localhost:4000/secrets-of-site-containers/" />
+<meta property="og:site_name" content="Monjibram" />
+<meta property="og:image" content="http://localhost:4000/assets/images/containers.webp" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-24T00:00:00-04:00" />
+<meta property="fb:admins" content="THEimmortal" />
+<meta property="article:publisher" content="THEimmortal" />
+<meta name="google-site-verification" content="OTG5c_uywRHQgQpvdcwgCYY02h8ofndgJq_kGPt1l_I" />
+<script type="application/ld+json">
+{"image":"http://localhost:4000/assets/images/containers.webp","description":"Big screens are getting bigger. Wider. Less expensive. Our web experience should be seamless, but our eyes can’t adjust to giant blobby things. Containers to the rescue. But first, a digression about font-size and readability!","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/Benji.jpg"},"name":"Benji"},"@type":"BlogPosting","url":"http://localhost:4000/secrets-of-site-containers/","headline":"Secrets of the Site Container: Part 1","dateModified":"2020-07-24T00:00:00-04:00","datePublished":"2020-07-24T00:00:00-04:00","author":{"@type":"Person","name":"Benji"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/secrets-of-site-containers/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta property="og:type"             content="website" />
+    <meta property="og:image:type"       content="image/jpeg" />
+    <meta property="og:image:alt"        content="Benjamin Kostenbader" />
+  </head>
+  <body>
+    <section class="main-grid">
+      <nav>
+
+  <a href="/index.html" class="navbar-site-emblem">
+    <i class="fa fa-behance-square fa-lg"></i>nji
+  </a>
+  <!-- If PC/Large Resolution -->
+  <div class="big-nav">
+    <div class="nav-links"><a href="/blog/">     Blog</a></div>
+    <div class="nav-links"><a href="/portfolio/">Portfolio</a></div>
+    <div class="nav-links"><a href="/resume/">   Resume</a></div>
+    <div class="nav-links"><a href="/contact/">  Contact</a></div>
+  </div>
+  
+</nav>
+
+
+
+  <!-- If Mobile/Tablet -->
+  <label class="dropdown">
+    <input type="checkbox" class="invisicheck" name="" id="pagestopper" style="display: none;">
+    <div class="dropdown-btn" id="">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="dropdown-nav">
+      <!-- <div class="fa fa-align-justify fa-lg dropdown-nav"></div> -->
+      <!-- <li class="drop-btn"><a href="/">    Home</a></li> -->
+      <li class="drop-btn"><a href="/blog/">    Blog</a></li>
+      <li class="drop-btn"><a href="/portfolio/">Portfolio</a></li>
+      <li class="drop-btn"><a href="/resume/">      Resume</a></li>
+      <li class="drop-btn"><a href="/contact/">    Contact</a></li>
+    </ul>
+  </label>
+      <div class="inner">
+        <div class="blog-post">
+  <article class="article">
+    <div class='blog-info'>
+      <div class='demos'>
+        
+        
+          <div class="cat" href="blog/categories/#Tutorial">Tutorial</div>
+          
+        
+        <div class='datetime'>24 Jul 2020</div>
+      </div>
+      <h1 class='title'>Secrets of the Site Container: Part 1</h1>
+      
+        <div class='auth'>By Benji</div>
+      
+    </div>
+    <section class='content'>
+      <p>Big screens are getting bigger. Wider. Less expensive. Our web experience should be seamless, but our eyes can’t adjust to giant blobby things. Containers to the rescue. But first, a digression about font-size and readability!</p>
+
+<hr />
+
+<h4 style="margin: -25px 0 20px; line-height: 1.1; font-weight: 500;"><strong>Disclaimer!</strong> This page may scroll horizontally. It's ironic, because it's about site containers.</h4>
+<hr />
+
+<h2 id="theres-a-problem-with-your-eyes">There’s a problem with your eyes</h2>
+<p>You can’t read long lines of text. The common recommendation is between <a href="https://www.smashingmagazine.com/2014/09/balancing-line-length-font-size-responsive-web-design/">45 and 75 characters per line</a>. You may have experienced this sensation if you tried to use your TV as a monitor.</p>
+
+<!-- > Wait you never did that? Oh, no, me either 😅 -->
+
+<p>If it helps, imagine that it’s two or three alphabets, back to back. Of course the length of the alphabet depends on how large the character widths are. In this particular body font, I can get a better sense by incorporating capitalized letters. Or I could even use them outright.</p>
+
+<p>Just about this long:
+abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</p>
+
+<p>Maybe this long:
+AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz</p>
+
+<p>Or even this long:
+ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+
+<h2 id="but-really-big-views-are-bad-too">But really big views are bad too</h2>
+<p>Now that’s all well and good, but the unspoken difficulty comes from larger font sizes at a close distance. Making the text larger for larger screens only works until your <a href="https://en.wikipedia.org/wiki/Saccade">saccade</a> becomes noticeably uncomfortable. Thus a rather fine case <a href="https://baymard.com/blog/line-length-readability">against a purely liquid layout</a>. For large web views, I err on the side of caution. I keep font-size the same on even the largest screens. So something beyond 750px is bad.</p>
+
+<h2 id="compare-the-next-two-lines">Compare the next two lines:</h2>
+<h3 id="line-1">Line 1:</h3>
+<div style="font-size: 20px; letter-spacing: 1.5px;">abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</div>
+
+<h3 id="line-2">Line 2:</h3>
+<div style="font-size: 40px; letter-spacing: 1.5px;">abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</div>
+
+<h2 id="but-honestly-it-doesnt-really-change-with-non-text-items">But honestly it doesn’t really change with non-text items</h2>
+<p>To be fair, a huge image doesn’t help. Even disregarding image sizing and web optimization (our rule at work is twice the pixels for each web pixel, so we get some pretty large picture file sizes!) you’ll quickly lose a picture of a forest for some giant trees.</p>
+
+<p>The solution to this is the same as most other web design problems: a few extra tag wrappers and some CSS. But <em>how</em> is the more important question. That’s how this blog was born.</p>
+
+<h2 id="zero-use-appropriate-html">Zero. Use appropriate HTML</h2>
+<p>The sectional approach to site configuration is underrated. A good page has content sections, and they are usually at least 2/3 the height of your browser window. Taking up space and using the infinite scroll canvas that is available to you dramatically increases user interaction and readability.</p>
+
+<h2 id="one-start-at-the-biggest-which-is-actually-the-smallest">One. Start at the biggest, which is actually the smallest.</h2>
+
+<p>What’s the maximum width that your section can be? The answer might not make immediate sense. <code class="highlighter-rouge">max-width</code> should be used on your smallest screen sizes. The narrowest screen I’ve seen on devtools is the iPhone 5/SE, weighing in at a mere 325px. If your maximum width is above that, your site will horizontally scroll on that screen. If you use absolute units, your page will forever be confined to 325px.</p>
+
+<div style="display: flex; flex-wrap: no-wrap; justify-content: center; align-items: flex-grow; margin-bottom: 20px;">
+  <div style="width: calc((100% - 330px) / 2); background-color: #350e1411;"></div>
+  <p style="width: 320px; margin: 20px auto 25px; padding-bottom: unset;">Don't live in a world that is only 325 px wide, it is a special hell where UX dreams go to die and nothing can be accomplished. One or two sentences of this took up five lines and looked terrible.</p>
+  <div style="width: calc((100% - 330px) / 2); margin-left: -5px; background-color: #350e1411;"></div>
+</div>
+
+<p>Instead, you need a <em>relative-unit based</em> <code class="highlighter-rouge">max-width</code> to account for things. I use percentages, because they are based on your container’s size. If your container is <code class="highlighter-rouge">&lt;body&gt;</code>, that’s great, but even if you’re dealing with a strange outer container this won’t break width as a <code class="highlighter-rouge">vw</code> might.</p>
+
+<p>So what percentage? If it’s a hero section it’ll probably be at the widest your screen allows, but it should never break the horizontal dimensions of your device. So that’s <code class="highlighter-rouge">100%</code>. Text also needs to breathe, so text on a small screen should be <code class="highlighter-rouge">90-95%</code>. A card or something that is supposed to visually break the monotony of the left edge can creep in more, but after <code class="highlighter-rouge">85%</code> things start to get silly.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.hero-container</span> <span class="p">{</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.text-container</span> <span class="p">{</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">95%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.narrow-container</span> <span class="p">{</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">90%</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="two-move-on-to-bigger-and-better-screens">Two: Move on to bigger and better screens.</h2>
+
+<p>We’ve determined that text should live somewhere between <code class="highlighter-rouge">600px-750px</code>. Once we find that sweet spot, that’s really the size we want. So let’s use that as our <code class="highlighter-rouge">width</code>!</p>
+
+<p>Other widths will make sense too. Most images look great at between <code class="highlighter-rouge">1280-1500px</code>, your modern laptop screen width. If it’s a group of cards or items, they might follow the same path, though individual items with paragraphs will follow the same text readability rule.</p>
+
+<p>Our outlying ‘monotony breakers’ can live somewhere between a paragraph and a hero.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.hero-container</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">1500px</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.text-container</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">750px</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">95%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.narrow-container</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">1100px</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">90%</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="left-of-center">Left of center</h2>
+<p>Browsers automatically place blocks starting from the left. Your screen probably looks like this:</p>
+<div style="height: 100px; max-width: 100%; width: 1500px; background-color: #2A4B7C44;"></div>
+<div style="height: 100px; max-width: 90%; width: 1100px; background-color: #350e1444;"></div>
+<div style="height: 100px; max-width: 95%; width: 750px; background-color: #264E3644; margin-bottom: 20px;"></div>
+
+<p>Well that isn’t surprising! Block-level elements fill from the left. All you need to do is center those elements on the screen and you’re set. <code class="highlighter-rouge">display: flex;</code> will accomplish this, but changing your overall display feels like overkill. All you need is some sort of automatic margin on both sides of your section, to keep it centered. You know, like <code class="highlighter-rouge">margin: 0 auto;</code>.</p>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.hero-container</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">1500px</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.text-container</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">750px</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">95%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.narrow-container</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">1100px</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">90%</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="tada">Tada!</h2>
+
+<div style="margin: 0 auto; height: 100px; max-width: 100%; width: 1500px; background-color: #2A4B7C44;"></div>
+<div style="margin: 0 auto; height: 100px; max-width: 90%; width: 1100px; background-color: #350e1444;"></div>
+<div style="height: 100px; max-width: 95%; width: 750px; background-color: #264E3644; margin: 0 auto 20px;"></div>
+
+<h2 id="next-steps">Next steps:</h2>
+<p>What if you want to blow out the screen, anchoring items to the left or right on one side while maintaining your site container width on the other? It’s not impossible. I’ll show you how in my next article!</p>
+
+      <hr>
+
+      <div class='bio'>
+        <h2>About the Author:</h2>
+        <p><a href='/contact/'>Benji</a> is a professional web dude. He works at <a href='https://builtbytophat.com' target='_blank' rel='noopener noreferrer'>Top Hat</a> making cool web things for money (and sometimes beer).</p>
+      </div>
+      <div class='disclaimer'>
+        <strong>Disclaimer!</strong>
+        Photos on this blog are sometimes taken by me, but sometimes free for use with attribution from <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText' target='_blank' rel='noopener noreferrer'>Unsplash.com</a>.
+      </div>
+    </section>
+  </article>
+  <div class='outer-hero'>
+    <div class='hero' style="background-image: url(/assets/images/containers.webp)"></div>
+  </div>
+</div>
+      </div>
+    </section>
+    <div class="footer-white-bg">
+  <div class="main-footer">
+    <div class="cont">
+      <div class="b footer-child">
+        <h3>BENJI</h3>
+        <p><a href="/blog/">        blog</a></p>
+        <p><a href="/resume/">        resume</a></p>
+        <p><a href="/portfolio/#news"> news</a></p>
+      </div>
+      <div class="c footer-child">
+        <h3>CODE</h3>
+        <p><a href="/portfolio/#code">                     portfolio</a></p>
+        <p><a href="http://github.com/benjithaimmortal">  github</a></p>
+        <p><a href="http://codepen.io/benjithaimmortal">  codepen</a></p>
+      </div>
+      <div class="p footer-child">
+        <h3>PHOTOGRAPHY</h3>
+        <!-- <p><a href="{/% link photos.html %}"> portfolio</a></p> -->
+        <p><a href="/contact/">contact</a></p>
+      </div>
+      <div class="l footer-child">
+        <h3>LICENSE</h3>
+        <p>all rights reserved</p>
+        <p>copyright &copy;	2020</p>
+        <p>Benjamin Kostenbader</p>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  made with love by Benji &hearts;
+</footer>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      var stopper = document.getElementById("pagestopper")
+      stopper.addEventListener("change", function(){
+        if (stopper.checked) {
+          document.body.classList.add("locked");
+        } else {
+          document.body.classList.remove("locked");
+        }
+        // console.log("this did something");
+      });
+    });
+  </script>
+</html>
