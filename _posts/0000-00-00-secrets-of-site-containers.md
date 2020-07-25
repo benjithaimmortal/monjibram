@@ -30,21 +30,23 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ
 ## But really big views are bad too
 The unspoken flip-side comes from larger font sizes at a close distance. Making the text larger for larger screens only works until your [saccade](https://en.wikipedia.org/wiki/Saccade) becomes noticeably uncomfortable. Thus a rather fine case [against a purely liquid layout](https://baymard.com/blog/line-length-readability). For large web views, I err on the side of caution. I keep font-size the same on even the largest screens. So something beyond 750px is bad.
 
-## Compare the next two lines:
-### Line 1:
-<div style="font-size: 20px; letter-spacing: 1.5px;">abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</div>
+## Compare the next two paragraphs:
+### Paragraph 1:
+<div style="font-size: 20px; line-height: 1.1; letter-spacing: 1.2px; width: 565px;">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, fermentum massa justo sit amet risus. <br><br>
+abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</div>
 
-### Line 2:
-<div style="font-size: 40px; letter-spacing: 1.5px;">abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</div>
+### Paragraph 2:
+<div style="font-size: 40px; line-height: 1.2; letter-spacing: 1.5px; width: 1045px; margin-bottom: 35px;">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, fermentum massa justo sit amet risus. <br><br>
+abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz</div>
 
 
+> The larger text made it hard to move from the end of one line to the start of the next. Either it's because you're scrolling around, or just because your screen was so big that your eye movement was unnatural.
 
-## But honestly it doesn't really change with non-text items
+## Honestly this doesn't really change with non-text items
+
 A huge image doesn't help. Even disregarding image sizing and web optimization (our rule at work is twice the pixels for each web pixel, so we get some pretty large picture file sizes!) you'll quickly lose a picture of a forest for some giant trees.
 
 The solution to this is the same as most other web design problems: a few extra tag wrappers and some CSS. But _how_ is the more important question. That's how this blog was born.
-
-> You can also [see this blog in action on CodePen](https://codepen.io/benjithaimmortal/full/XWXyJjX).
 
 
 ## Zero. Use appropriate HTML
@@ -70,7 +72,7 @@ What's the maximum width that your section can be? The answer might not make imm
 
 <div style="display: flex; flex-wrap: no-wrap; justify-content: center; align-items: flex-grow; margin-bottom: 20px;">
   <div style="width: calc((100% - 330px) / 2); background-color: #350e1411;"></div>
-  <p style="width: 320px; margin: 20px auto 25px; padding-bottom: unset;">Don't make your site live in a world that is only 325 px wide, it is a special place where UX dreams go to die and nothing can be accomplished. One or two sentences of this took up five lines and looked terrible.</p>
+  <p style="width: 320px; margin: 20px auto 25px; padding-bottom: unset;">Don't make your site live in a world that is only 325 px wide, it is a special place where UX dreams go to die and nothing can be accomplished. Two sentences of this took up six lines and looked terrible.</p>
   <div style="width: calc((100% - 330px) / 2); margin-left: -5px; background-color: #350e1411;"></div>
 </div>
 
@@ -89,6 +91,7 @@ So what percentage? If it's a hero section it'll probably be at the widest your 
   max-width: 90%;
 }
 {% endhighlight %}
+
 
 ## Two: Move on to bigger and better screens.
 
@@ -113,7 +116,9 @@ Our outlying 'monotony breakers' can live somewhere between a paragraph and a he
 }
 {% endhighlight %}
 
+
 ## Left of center
+
 Browsers automatically place blocks starting from the left. Your screen probably looks like this:
 <div style="height: 100px; max-width: 100%; width: 1500px; background-color: #2A4B7C44;"></div>
 <div style="height: 100px; max-width: 90%; width: 1100px; background-color: #350e1444;"></div>
@@ -139,6 +144,7 @@ Well that isn't surprising! Block-level elements fill from the left. All you nee
 }
 {% endhighlight %}
 
+
 ## Tada!
 
 <div style="margin: 0 auto; height: 100px; max-width: 100%; width: 1500px; background-color: #2A4B7C44;"></div>
@@ -149,3 +155,5 @@ Well that isn't surprising! Block-level elements fill from the left. All you nee
 ## Next steps:
 
 What if you want to blow out the screen, anchoring items to the left or right on one side while maintaining your site container width on the other? It's not impossible. I'll show you how in my next article!
+
+> You can also [see this blog in action on CodePen](https://codepen.io/benjithaimmortal/full/XWXyJjX).
