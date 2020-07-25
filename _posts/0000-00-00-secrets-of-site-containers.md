@@ -14,11 +14,9 @@ Big screens are getting bigger. Wider. Less expensive. Our web experience should
 <hr>
 
 ## There's a problem with your eyes
-You can't read long lines of text. The common recommendation is between [45 and 75 characters per line](https://www.smashingmagazine.com/2014/09/balancing-line-length-font-size-responsive-web-design/). You may have experienced this sensation if you tried to use your TV as a monitor.
+You can't read long lines of text. The common recommendation is between [45 and 75 characters per line](https://www.smashingmagazine.com/2014/09/balancing-line-length-font-size-responsive-web-design/). You may have experienced this issue when you tried to use your TV as a monitor. Wait you never did that? Oh, no, me either 😅
 
-<!-- > Wait you never did that? Oh, no, me either 😅 -->
-
-If it helps, imagine that it's two or three alphabets, back to back. Of course the length of the alphabet depends on how large the character widths are. In this particular body font, I can get a better sense by incorporating capitalized letters. Or I could even use them outright.
+Imagine that length as two or three alphabets, back to back. Of course the length of the alphabet depends on how large the character widths are. In this particular body font, I can get a better sense by incorporating capitalized letters. Or I could even use them outright.
 
 Just about this long:
 abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz
@@ -30,7 +28,7 @@ Or even this long:
 ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ
 
 ## But really big views are bad too
-Now that's all well and good, but the unspoken difficulty comes from larger font sizes at a close distance. Making the text larger for larger screens only works until your [saccade](https://en.wikipedia.org/wiki/Saccade) becomes noticeably uncomfortable. Thus a rather fine case [against a purely liquid layout](https://baymard.com/blog/line-length-readability). For large web views, I err on the side of caution. I keep font-size the same on even the largest screens. So something beyond 750px is bad.
+The unspoken flip-side comes from larger font sizes at a close distance. Making the text larger for larger screens only works until your [saccade](https://en.wikipedia.org/wiki/Saccade) becomes noticeably uncomfortable. Thus a rather fine case [against a purely liquid layout](https://baymard.com/blog/line-length-readability). For large web views, I err on the side of caution. I keep font-size the same on even the largest screens. So something beyond 750px is bad.
 
 ## Compare the next two lines:
 ### Line 1:
@@ -42,7 +40,7 @@ Now that's all well and good, but the unspoken difficulty comes from larger font
 
 
 ## But honestly it doesn't really change with non-text items
-To be fair, a huge image doesn't help. Even disregarding image sizing and web optimization (our rule at work is twice the pixels for each web pixel, so we get some pretty large picture file sizes!) you'll quickly lose a picture of a forest for some giant trees.
+A huge image doesn't help. Even disregarding image sizing and web optimization (our rule at work is twice the pixels for each web pixel, so we get some pretty large picture file sizes!) you'll quickly lose a picture of a forest for some giant trees.
 
 The solution to this is the same as most other web design problems: a few extra tag wrappers and some CSS. But _how_ is the more important question. That's how this blog was born.
 
