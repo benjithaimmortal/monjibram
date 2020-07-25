@@ -1,10 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2020-07-04T23:10:11-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Monjibram</title><subtitle>Benjamin Kostenbader is Front-End Developer at Top Hat. He is also a proud father, cyclist, and squash enthusiast.</subtitle><author><name>Benjamin Kostenbader</name></author><entry><title type="html">&amp;lt;365 Days of Code</title><link href="http://localhost:4000/get-a-life/" rel="alternate" type="text/html" title="&lt;365 Days of Code" /><published>2020-07-04T00:00:00-04:00</published><updated>2020-07-04T00:00:00-04:00</updated><id>http://localhost:4000/get-a-life</id><content type="html" xml:base="http://localhost:4000/get-a-life/">&lt;p&gt;You should be a part of your local software community. You need to learn things. You probably don’t need to learn &lt;em&gt;all&lt;/em&gt; of the things, but it’s good for you to learn most of them. You’re supposed to be an expert. But you should also probably have a life.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2020-07-24T21:14:25-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Monjibram</title><subtitle>Benjamin Kostenbader is Front-End Developer at Top Hat. He is also a proud father, cyclist, and squash enthusiast.</subtitle><author><name>Benjamin Kostenbader</name></author><entry><title type="html">Secrets of the Site Container: Part 1</title><link href="http://localhost:4000/secrets-of-site-containers/" rel="alternate" type="text/html" title="Secrets of the Site Container: Part 1" /><published>2020-07-24T00:00:00-04:00</published><updated>2020-07-24T00:00:00-04:00</updated><id>http://localhost:4000/secrets-of-site-containers</id><content type="html" xml:base="http://localhost:4000/secrets-of-site-containers/">&lt;p&gt;Big screens are getting bigger. Wider. Less expensive. Our web experience should be seamless, but our eyes can’t adjust to giant blobby things. Containers to the rescue. But first, a digression about font-size and readability!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 style=&quot;margin: -25px 0 20px; line-height: 1.1; font-weight: 500;&quot;&gt;&lt;strong&gt;Disclaimer!&lt;/strong&gt; This page may scroll horizontally. It's ironic, because it's about site containers.&lt;/h4&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;theres-a-problem-with-your-eyes&quot;&gt;There’s a problem with your eyes&lt;/h2&gt;
+&lt;p&gt;You can’t read long lines of text. The common recommendation is between &lt;a href=&quot;https://www.smashingmagazine.com/2014/09/balancing-line-length-font-size-responsive-web-design/&quot;&gt;45 and 75 characters per line&lt;/a&gt;. You may have experienced this sensation if you tried to use your TV as a monitor.&lt;/p&gt;
+
+&lt;!-- &gt; Wait you never did that? Oh, no, me either 😅 --&gt;
+
+&lt;p&gt;If it helps, imagine that it’s two or three alphabets, back to back. Of course the length of the alphabet depends on how large the character widths are. In this particular body font, I can get a better sense by incorporating capitalized letters. Or I could even use them outright.&lt;/p&gt;
+
+&lt;p&gt;Just about this long:
+abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz&lt;/p&gt;
+
+&lt;p&gt;Maybe this long:
+AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz&lt;/p&gt;
+
+&lt;p&gt;Or even this long:
+ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ&lt;/p&gt;
+
+&lt;h2 id=&quot;but-really-big-views-are-bad-too&quot;&gt;But really big views are bad too&lt;/h2&gt;
+&lt;p&gt;Now that’s all well and good, but the unspoken difficulty comes from larger font sizes at a close distance. Making the text larger for larger screens only works until your &lt;a href=&quot;https://en.wikipedia.org/wiki/Saccade&quot;&gt;saccade&lt;/a&gt; becomes noticeably uncomfortable. Thus a rather fine case &lt;a href=&quot;https://baymard.com/blog/line-length-readability&quot;&gt;against a purely liquid layout&lt;/a&gt;. For large web views, I err on the side of caution. I keep font-size the same on even the largest screens. So something beyond 750px is bad.&lt;/p&gt;
+
+&lt;h2 id=&quot;compare-the-next-two-lines&quot;&gt;Compare the next two lines:&lt;/h2&gt;
+&lt;h3 id=&quot;line-1&quot;&gt;Line 1:&lt;/h3&gt;
+&lt;div style=&quot;font-size: 20px; letter-spacing: 1.5px;&quot;&gt;abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz&lt;/div&gt;
+
+&lt;h3 id=&quot;line-2&quot;&gt;Line 2:&lt;/h3&gt;
+&lt;div style=&quot;font-size: 40px; letter-spacing: 1.5px;&quot;&gt;abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz&lt;/div&gt;
+
+&lt;h2 id=&quot;but-honestly-it-doesnt-really-change-with-non-text-items&quot;&gt;But honestly it doesn’t really change with non-text items&lt;/h2&gt;
+&lt;p&gt;To be fair, a huge image doesn’t help. Even disregarding image sizing and web optimization (our rule at work is twice the pixels for each web pixel, so we get some pretty large picture file sizes!) you’ll quickly lose a picture of a forest for some giant trees.&lt;/p&gt;
+
+&lt;p&gt;The solution to this is the same as most other web design problems: a few extra tag wrappers and some CSS. But &lt;em&gt;how&lt;/em&gt; is the more important question. That’s how this blog was born.&lt;/p&gt;
+
+&lt;h2 id=&quot;zero-use-appropriate-html&quot;&gt;Zero. Use appropriate HTML&lt;/h2&gt;
+&lt;p&gt;The sectional approach to site configuration is underrated. A good page has content sections, and they are usually at least 2/3 the height of your browser window. Taking up space and using the infinite scroll canvas that is available to you dramatically increases user interaction and readability.&lt;/p&gt;
+
+&lt;h2 id=&quot;one-start-at-the-biggest-which-is-actually-the-smallest&quot;&gt;One. Start at the biggest, which is actually the smallest.&lt;/h2&gt;
+
+&lt;p&gt;What’s the maximum width that your section can be? The answer might not make immediate sense. &lt;code class=&quot;highlighter-rouge&quot;&gt;max-width&lt;/code&gt; should be used on your smallest screen sizes. The narrowest screen I’ve seen on devtools is the iPhone 5/SE, weighing in at a mere 325px. If your maximum width is above that, your site will horizontally scroll on that screen. If you use absolute units, your page will forever be confined to 325px.&lt;/p&gt;
+
+&lt;div style=&quot;display: flex; flex-wrap: no-wrap; justify-content: center; align-items: flex-grow; margin-bottom: 20px;&quot;&gt;
+  &lt;div style=&quot;width: calc((100% - 330px) / 2); background-color: #350e1411;&quot;&gt;&lt;/div&gt;
+  &lt;p style=&quot;width: 320px; margin: 20px auto 25px; padding-bottom: unset;&quot;&gt;Don't live in a world that is only 325 px wide, it is a special hell where UX dreams go to die and nothing can be accomplished. One or two sentences of this took up five lines and looked terrible.&lt;/p&gt;
+  &lt;div style=&quot;width: calc((100% - 330px) / 2); margin-left: -5px; background-color: #350e1411;&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Instead, you need a &lt;em&gt;relative-unit based&lt;/em&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;max-width&lt;/code&gt; to account for things. I use percentages, because they are based on your container’s size. If your container is &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;, that’s great, but even if you’re dealing with a strange outer container this won’t break width as a &lt;code class=&quot;highlighter-rouge&quot;&gt;vw&lt;/code&gt; might.&lt;/p&gt;
+
+&lt;p&gt;So what percentage? If it’s a hero section it’ll probably be at the widest your screen allows, but it should never break the horizontal dimensions of your device. So that’s &lt;code class=&quot;highlighter-rouge&quot;&gt;100%&lt;/code&gt;. Text also needs to breathe, so text on a small screen should be &lt;code class=&quot;highlighter-rouge&quot;&gt;90-95%&lt;/code&gt;. A card or something that is supposed to visually break the monotony of the left edge can creep in more, but after &lt;code class=&quot;highlighter-rouge&quot;&gt;85%&lt;/code&gt; things start to get silly.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.hero-container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.text-container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;95%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.narrow-container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;90%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;two-move-on-to-bigger-and-better-screens&quot;&gt;Two: Move on to bigger and better screens.&lt;/h2&gt;
+
+&lt;p&gt;We’ve determined that text should live somewhere between &lt;code class=&quot;highlighter-rouge&quot;&gt;600px-750px&lt;/code&gt;. Once we find that sweet spot, that’s really the size we want. So let’s use that as our &lt;code class=&quot;highlighter-rouge&quot;&gt;width&lt;/code&gt;!&lt;/p&gt;
+
+&lt;p&gt;Other widths will make sense too. Most images look great at between &lt;code class=&quot;highlighter-rouge&quot;&gt;1280-1500px&lt;/code&gt;, your modern laptop screen width. If it’s a group of cards or items, they might follow the same path, though individual items with paragraphs will follow the same text readability rule.&lt;/p&gt;
+
+&lt;p&gt;Our outlying ‘monotony breakers’ can live somewhere between a paragraph and a hero.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.hero-container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1500px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.text-container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;750px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;95%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.narrow-container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;90%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;left-of-center&quot;&gt;Left of center&lt;/h2&gt;
+&lt;p&gt;Browsers automatically place blocks starting from the left. Your screen probably looks like this:&lt;/p&gt;
+&lt;div style=&quot;height: 100px; max-width: 100%; width: 1500px; background-color: #2A4B7C44;&quot;&gt;&lt;/div&gt;
+&lt;div style=&quot;height: 100px; max-width: 90%; width: 1100px; background-color: #350e1444;&quot;&gt;&lt;/div&gt;
+&lt;div style=&quot;height: 100px; max-width: 95%; width: 750px; background-color: #264E3644; margin-bottom: 20px;&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;Well that isn’t surprising! Block-level elements fill from the left. All you need to do is center those elements on the screen and you’re set. &lt;code class=&quot;highlighter-rouge&quot;&gt;display: flex;&lt;/code&gt; will accomplish this, but changing your overall display feels like overkill. All you need is some sort of automatic margin on both sides of your section, to keep it centered. You know, like &lt;code class=&quot;highlighter-rouge&quot;&gt;margin: 0 auto;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.hero-container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1500px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.text-container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;750px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;95%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.narrow-container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;90%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;tada&quot;&gt;Tada!&lt;/h2&gt;
+
+&lt;div style=&quot;margin: 0 auto; height: 100px; max-width: 100%; width: 1500px; background-color: #2A4B7C44;&quot;&gt;&lt;/div&gt;
+&lt;div style=&quot;margin: 0 auto; height: 100px; max-width: 90%; width: 1100px; background-color: #350e1444;&quot;&gt;&lt;/div&gt;
+&lt;div style=&quot;height: 100px; max-width: 95%; width: 750px; background-color: #264E3644; margin: 0 auto 20px;&quot;&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;next-steps&quot;&gt;Next steps:&lt;/h2&gt;
+&lt;p&gt;What if you want to blow out the screen, anchoring items to the left or right on one side while maintaining your site container width on the other? It’s not impossible. I’ll show you how in my next article!&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">Big screens are getting bigger. Wider. Less expensive. Our web experience should be seamless, but our eyes can’t adjust to giant blobby things. Containers to the rescue. But first, a digression about font-size and readability!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/containers.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/containers.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Less Than 365 Days of Code</title><link href="http://localhost:4000/get-a-life/" rel="alternate" type="text/html" title="Less Than 365 Days of Code" /><published>2020-07-04T00:00:00-04:00</published><updated>2020-07-04T00:00:00-04:00</updated><id>http://localhost:4000/get-a-life</id><content type="html" xml:base="http://localhost:4000/get-a-life/">&lt;p&gt;You should be a part of your local software community. You need to learn things. You probably don’t need to learn &lt;em&gt;all&lt;/em&gt; of the things, but it’s good for you to learn most of them. You’re supposed to be an expert. But you should also probably have a life.&lt;/p&gt;
 
 &lt;p&gt;I recently joined &lt;a href=&quot;https://twitter.com/monjibram&quot;&gt;Twitter&lt;/a&gt;. I jumped on that smoldering, outdated bandwagon. It was a sad day for my productivity. I’m learning lots of small things, like how to short-circuit instead of using an &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; block and which order to assign styles for &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a&amp;gt;&lt;/code&gt; tags. I’m also learning that it’s been &lt;strong&gt;#100daysofcode&lt;/strong&gt; since forever, and &lt;em&gt;“if you just do this an hour a day, you’ll be famous/rich/happy”&lt;/em&gt;. I don’t think I want to do Twitter an hour every day.&lt;/p&gt;
 
 &lt;p&gt;It’s July 4th today. Yes, I didn’t write this ahead of time, it’s literally the night of July 4th. I’m sitting here listening to the entire western half of Pennsylvania erupt in joyous war sounds. I am not quite hiding in a closet. Not quite.&lt;/p&gt;
 
-&lt;p&gt;Today I played in an inflatable pool. I rode a bike. I ate hot dogs and watermelon and ice cream. I went to a park. But I will tell you what I haven’t done:&lt;/p&gt;
+&lt;p&gt;Today I played in an inflatable pool. I rode a bike. I ate hot dogs and watermelon and ice cream. I went to a park. But I will tell you what I didn’t do:&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;I DID NOT CODE TODAY.&lt;/p&gt;
@@ -19,7 +136,7 @@
   &lt;p&gt;We exist to do good.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;So there’s the basic doing good at little things, which doesn’t feel very fun. You can do good at writing your name, and it will please your parents, and maybe you’ll get a few points on the SAT (I am old, I don’t know this for sure anymore.) If you write it enough, maybe it will look beautiful! Now you’re sort of pleasing people with art.&lt;/p&gt;
+&lt;p&gt;So there’s the basic doing good with little things, which doesn’t feel very fun. You can do good by writing your name, and it will please your parents, and maybe you’ll get a few points on the SAT (I am old, I don’t know this for sure anymore.) If you write it enough, maybe it will look beautiful! Now you’re sort of pleasing people with art.&lt;/p&gt;
 
 &lt;p&gt;That’s also how your job looks, compared to your life. You can do it well, and get paid money for it, and maybe even sort of please other people with how awesome you are. It’s important enough, in its own right. Maybe you’re so good at it that you help &lt;em&gt;other people&lt;/em&gt; work. But your job is also a job. If you quit tomorrow, it will no longer be about you. It will no longer be &lt;em&gt;your&lt;/em&gt; good.&lt;/p&gt;
 
@@ -45,8 +162,8 @@
   &lt;dt&gt;I got paid&lt;/dt&gt;
   &lt;dd&gt;That was a thing I did for money, and sometimes that fourth-wall was broken, by my students, my coworkers, and even myself.&lt;/dd&gt;
   &lt;dt&gt;Other people co-owned that good&lt;/dt&gt;
-  &lt;dd&gt;Someone was investing in it, but it wasn’t me. It was never really my piece of good to begin with. I honestly can’t see where I ended and it began, anyway.&lt;/dd&gt;
-  &lt;dt&gt;There was an alterior motive&lt;/dt&gt;
+  &lt;dd&gt;Someone was investing money in it, but it wasn’t me. It was never really my piece of good to begin with. I honestly can’t see where I ended and it began, anyway.&lt;/dd&gt;
+  &lt;dt&gt;There was an ulterior motive&lt;/dt&gt;
   &lt;dd&gt;You may not understand this if you’re not in the do-gooder profession. There’s a specific reason for any public works job. Sometimes you are forced to skip that thing that could really change one life in order to keep doing the good your job needs.&lt;/dd&gt;
 &lt;/dl&gt;
 
@@ -716,60 +833,7 @@ So at the store: apples cost $5, bananas cost $3, asian pears cost $15&lt;/p&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;so-there-you-have-it&quot;&gt;So there you have it&lt;/h2&gt;
-&lt;p&gt;JSON is cool. You’ll benefit by using it from time to time. Or all the time. That JSON is a cool guy. And there’s going to be a separate blog about data attributes. Because it needs to be explained, and I write blogs! That feels like a separate discussion. Check back soon.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">Let’s talk about my best friend, JavaScript Object Notation. You probably call that jay-son. If you’re really particular or feeling a little bit French, maybe you call it jase-on. Whichever way you call it, you’re almost talking about an associative array.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/hash.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/hash.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">You Should Probably JAMstack That</title><link href="http://localhost:4000/jam-that-sucker/" rel="alternate" type="text/html" title="You Should Probably JAMstack That" /><published>2020-05-17T08:09:00-04:00</published><updated>2020-05-17T08:09:00-04:00</updated><id>http://localhost:4000/jam-that-sucker</id><content type="html" xml:base="http://localhost:4000/jam-that-sucker/">&lt;p&gt;I use WordPress all day every day. It’s extremely customizable and easy for both web administrators and developers. But you don’t need WordPress. You need JAMstack.&lt;/p&gt;
-
-&lt;p&gt;Top Hat makes custom WordPress sites that are both deliciously beautiful and incredibly easy to use. I work with a lot of small- and medium-sized businesses and their marketing sites. I also freelance for up-and-coming businesses and people who consider their budgets a bit lower. I’m even a participating member of WP Pittsburgh, the group for small business owners and developers who study and practice all things WordPress. But I’m still here telling you that … you probably don’t need it.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Write your hosting fee on a piece of paper. Then click the button.&lt;/strong&gt;
-&lt;button onclick=&quot;alert('Too much :(')&quot; style=&quot;padding: 5px; border: none; background: #d8acb2;&quot;&gt;How much do you pay?&lt;/button&gt;&lt;/p&gt;
-
-&lt;p&gt;There’s got to be a catch, you say. I get what I pay for. I’m going to drop quality somewhere. Maybe I won’t get a custom url? Maybe I have to choose from a gaudy design template, or worse, use a clunky website editor like it’s 2005 and I’m building a MySpace profile. Is it going to be slow? It’ll probably be really slow.&lt;/p&gt;
-
-&lt;p&gt;It’s true that if you’re paying for a little server you’re probably not getting the maximum speed out of your site. And if you’re hosting tons and tons of data like a forum or a video library you will need a place to store it (and that gets expensive in its own right). But why use a server at all? This is the decade of STATIC SITES.&lt;/p&gt;
-
-&lt;dl&gt;
-  &lt;dt&gt;Static Site&lt;/dt&gt;
-  &lt;dd&gt;A website that downloads everything to your browser and processes things from there [browser-based]&lt;/dd&gt;
-  &lt;dd&gt;A website that can connect to everything without querying a hosting server many times [pre-rendered]&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;p&gt;You’ve probably heard of this before. These days it’s called the JAMstack, or &lt;strong&gt;J&lt;/strong&gt;avaScript, &lt;strong&gt;A&lt;/strong&gt;PIs and &lt;strong&gt;M&lt;/strong&gt;arkup, which is an easier way of thinking about its key components. But we should start from the beginning of JAM. Or is it the end?&lt;/p&gt;
-
-&lt;h4 id=&quot;markup&quot;&gt;M[arkup]&lt;/h4&gt;
-
-&lt;h2 id=&quot;some-history&quot;&gt;Some History&lt;/h2&gt;
-&lt;p&gt;Actually, static sites have been around since the 1990’s. Back before every page needed login credentials, when the internet was a small place with anonymous pages, many of those pages were static HTML markup. They were quick, available to everyone, and cheap on server resources. That’s the definition of a marketing site!&lt;/p&gt;
-
-&lt;p&gt;So why isn’t everything static? Your own technical experience, for starters. Early static sites required experience with HTML at a bare minimum. Adding assets like audio, images, and video dynamically and styling the results was a big ask. A graphical interface for uploading media? Forget it.&lt;/p&gt;
-
-&lt;p&gt;That’s where WordPress came in, and that’s why it’s been the king for almost 20 years. It provides a cool(ish) GUI that will help your marketing people get the job done without getting encumbered by strange &lt;code class=&quot;highlighter-rouge&quot;&gt;{curly braces}&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;$weird_Naming_Conventions&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;But today we’ve got &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost&lt;/a&gt; and &lt;a href=&quot;https://forestry.io/&quot;&gt;Forestry&lt;/a&gt; bringing the heat without the cost of a fire. These give you the freedom to use good-looking interfaces and a Google Docs-style text editor, and their base plans are free!&lt;/p&gt;
-
-&lt;h4 id=&quot;apis&quot;&gt;A[PIs]&lt;/h4&gt;
-
-&lt;h2 id=&quot;you-probably-dont-need-to-log-in-but-if-you-do&quot;&gt;You Probably Don’t Need to Log In. But If You Do…&lt;/h2&gt;
-&lt;p&gt;You’re not making Facebook 3.0. You’re not asking for a number-munching Site as a Service. You’re just trying to get visibility. Any dynamic experience you need to give your customers could come from a simple cookie.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;If that last sentence sounded like gibberish, &lt;a href=&quot;/contact/&quot;&gt;talk to me later&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;But even if you are, modern web development uses these cool things called REST APIs for a lot of heavy lifting. These are tiny applications that talk to your site from afar, and deliver content you need on request. The speed improvement compared to building dynamic content on the page is readily apparent. Those large media and file databases we spoke of earlier can still exist independently of your site, and they don’t need to slow you down.&lt;/p&gt;
-
-&lt;p&gt;That includes eCommerce. There is no reason to set up your products on a service like &lt;a href=&quot;https://shopify.dev/docs/admin-api/rest/reference&quot;&gt;Shopify&lt;/a&gt; or &lt;a href=&quot;https://woocommerce.github.io/woocommerce-rest-api-docs/#introduction&quot;&gt;WooCommerce&lt;/a&gt;, then set them up again inside of your own site. Do it once, and then interface with it. Hence &lt;strong&gt;A&lt;/strong&gt;pplication &lt;strong&gt;P&lt;/strong&gt;rogramming &lt;strong&gt;I&lt;/strong&gt;nterface. Heck, you can even use &lt;a href=&quot;https://snipcart.com/&quot;&gt;SnipCart&lt;/a&gt; and it will do most of the integrating for you. ✌️&lt;/p&gt;
-
-&lt;h4 id=&quot;javascript&quot;&gt;J[avaScript]&lt;/h4&gt;
-&lt;h2 id=&quot;and-then-there-was-javascript&quot;&gt;And then there was JavaScript&lt;/h2&gt;
-&lt;p&gt;Wix costs up to &lt;em&gt;$500 a month&lt;/em&gt; for fancy templates. WordPress plugins will quickly rack up site costs for functionality. But a one-size-fits-all solution, built to scale to any size, also adds a lot of dead weight. All the processing work for a page to render on a server &lt;em&gt;quickly&lt;/em&gt; becomes more taxing than an API, and rarely is anything new actually getting done.&lt;/p&gt;
-
-&lt;p&gt;A savvy developer could template and build a lightweight, fully custom site to your exact specifications. But actually there’s more than that! What if your site could preload the next page’s images while you read, or hack the browser to stop it from reloading content it already has? That’s possible with modern JavaScript frameworks like React, Angular, and Vue.&lt;/p&gt;
-
-&lt;p&gt;I strongly encourage you to hit F12 and take a look at all the crazy things a simple blog like this needs to load and give to every browser that visits. Search engine meta, styles, JS libraries to make things scroll smoothly… on a standard hosted site it will all load again on every click. Storing it properly and only loading &lt;em&gt;new&lt;/em&gt; things adds serious speed. I’m talking &lt;a href=&quot;https://www.shopflamingo.com&quot;&gt;blazingly&lt;/a&gt;, &lt;a href=&quot;https://ca.braun.com/en-ca&quot;&gt;ludicrously&lt;/a&gt; &lt;a href=&quot;https://airbnb.io/&quot;&gt;fast&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;So that’s the &lt;em&gt;MAJ&lt;/em&gt;– I mean– &lt;strong&gt;JAMstack&lt;/strong&gt;, and it’s going to separate you from your competition. All you need is &lt;a href=&quot;/contact/&quot;&gt;the right developer&lt;/a&gt;. And save all of the hosting costs! That hosting money is much better spent on web consultancy, or invested in the development of the site itself.&lt;/p&gt;
-
-&lt;p&gt;After that it’s 100% yours. You can build out additional pages to your needs, and fill it up with content that will directly attract your clientele. You can even sell products. All without that monthly hosting fee.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">I use WordPress all day every day. It’s extremely customizable and easy for both web administrators and developers. But you don’t need WordPress. You need JAMstack.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/jam.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/jam.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Pay for Web Development</title><link href="http://localhost:4000/why-you-should-pay-a-developer/" rel="alternate" type="text/html" title="Pay for Web Development" /><published>2020-05-17T08:09:00-04:00</published><updated>2020-05-17T08:09:00-04:00</updated><id>http://localhost:4000/why-you-should-pay-a-developer</id><content type="html" xml:base="http://localhost:4000/why-you-should-pay-a-developer/">&lt;p&gt;My first ‘official’ web project was for an old friend, a successful musician with a 5-year-old single page with some links. I was so confident in my delivery that I told him I’d do the project for free! This is bad business, but it wasn’t the worst part. After hours and hours of collaborative design ideation and development, &lt;em&gt;he went out and bought a subscription to a site generator&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;JSON is cool. You’ll benefit by using it from time to time. Or all the time. That JSON is a cool guy. And there’s going to be a separate blog about data attributes. Because it needs to be explained, and I write blogs! That feels like a separate discussion. Check back soon.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">Let’s talk about my best friend, JavaScript Object Notation. You probably call that jay-son. If you’re really particular or feeling a little bit French, maybe you call it jase-on. Whichever way you call it, you’re almost talking about an associative array.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/hash.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/hash.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Pay for Web Development</title><link href="http://localhost:4000/why-you-should-pay-a-developer/" rel="alternate" type="text/html" title="Pay for Web Development" /><published>2020-05-17T08:09:00-04:00</published><updated>2020-05-17T08:09:00-04:00</updated><id>http://localhost:4000/why-you-should-pay-a-developer</id><content type="html" xml:base="http://localhost:4000/why-you-should-pay-a-developer/">&lt;p&gt;My first ‘official’ web project was for an old friend, a successful musician with a 5-year-old single page with some links. I was so confident in my delivery that I told him I’d do the project for free! This is bad business, but it wasn’t the worst part. After hours and hours of collaborative design ideation and development, &lt;em&gt;he went out and bought a subscription to a site generator&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Every developer you know has a similar story. There’s something ephemeral and subjective about web design and development. It’s not a physical product that you can be proud to walk home with, and the difference between success and failure feels technical and difficult to quantify.
 &lt;!-- It's usually when a client asks why they should pay for a custom site when other options are out there for $50 a month. --&gt;&lt;/p&gt;
@@ -828,7 +892,60 @@ So at the store: apples cost $5, bananas cost $3, asian pears cost $15&lt;/p&gt;
 
 &lt;p&gt;Hiring a professional to design and develop will make a huge difference in the lasting success of your site. It’s faster, more accessible, and often a more accurate representation of your business needs and goals.&lt;/p&gt;
 
-&lt;p&gt;Every situation is unique, and the choice is a major one. It’s a big decision, and one you need to make with all the facts. If you’re on the fence about it, &lt;a href=&quot;/contact/&quot;&gt;hire a consult&lt;/a&gt;! The fee for a recommendation will be significantly cheaper than the cost of fixing a mistake.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">My first ‘official’ web project was for an old friend, a successful musician with a 5-year-old single page with some links. I was so confident in my delivery that I told him I’d do the project for free! This is bad business, but it wasn’t the worst part. After hours and hours of collaborative design ideation and development, he went out and bought a subscription to a site generator.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/code.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/code.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Paginate This Blog</title><link href="http://localhost:4000/paginate-with-jekyll/" rel="alternate" type="text/html" title="Paginate This Blog" /><published>2020-05-17T08:07:00-04:00</published><updated>2020-05-17T08:07:00-04:00</updated><id>http://localhost:4000/paginate-with-jekyll</id><content type="html" xml:base="http://localhost:4000/paginate-with-jekyll/">&lt;p&gt;I used the following code in &lt;code class=&quot;highlighter-rouge&quot;&gt;/config.yml&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Every situation is unique, and the choice is a major one. It’s a big decision, and one you need to make with all the facts. If you’re on the fence about it, &lt;a href=&quot;/contact/&quot;&gt;hire a consult&lt;/a&gt;! The fee for a recommendation will be significantly cheaper than the cost of fixing a mistake.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">My first ‘official’ web project was for an old friend, a successful musician with a 5-year-old single page with some links. I was so confident in my delivery that I told him I’d do the project for free! This is bad business, but it wasn’t the worst part. After hours and hours of collaborative design ideation and development, he went out and bought a subscription to a site generator.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/code.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/code.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">You Should Probably JAMstack That</title><link href="http://localhost:4000/jam-that-sucker/" rel="alternate" type="text/html" title="You Should Probably JAMstack That" /><published>2020-05-17T08:09:00-04:00</published><updated>2020-05-17T08:09:00-04:00</updated><id>http://localhost:4000/jam-that-sucker</id><content type="html" xml:base="http://localhost:4000/jam-that-sucker/">&lt;p&gt;I use WordPress all day every day. It’s extremely customizable and easy for both web administrators and developers. But you don’t need WordPress. You need JAMstack.&lt;/p&gt;
+
+&lt;p&gt;Top Hat makes custom WordPress sites that are both deliciously beautiful and incredibly easy to use. I work with a lot of small- and medium-sized businesses and their marketing sites. I also freelance for up-and-coming businesses and people who consider their budgets a bit lower. I’m even a participating member of WP Pittsburgh, the group for small business owners and developers who study and practice all things WordPress. But I’m still here telling you that … you probably don’t need it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Write your hosting fee on a piece of paper. Then click the button.&lt;/strong&gt;
+&lt;button onclick=&quot;alert('Too much :(')&quot; style=&quot;padding: 5px; border: none; background: #d8acb2;&quot;&gt;How much do you pay?&lt;/button&gt;&lt;/p&gt;
+
+&lt;p&gt;There’s got to be a catch, you say. I get what I pay for. I’m going to drop quality somewhere. Maybe I won’t get a custom url? Maybe I have to choose from a gaudy design template, or worse, use a clunky website editor like it’s 2005 and I’m building a MySpace profile. Is it going to be slow? It’ll probably be really slow.&lt;/p&gt;
+
+&lt;p&gt;It’s true that if you’re paying for a little server you’re probably not getting the maximum speed out of your site. And if you’re hosting tons and tons of data like a forum or a video library you will need a place to store it (and that gets expensive in its own right). But why use a server at all? This is the decade of STATIC SITES.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Static Site&lt;/dt&gt;
+  &lt;dd&gt;A website that downloads everything to your browser and processes things from there [browser-based]&lt;/dd&gt;
+  &lt;dd&gt;A website that can connect to everything without querying a hosting server many times [pre-rendered]&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;You’ve probably heard of this before. These days it’s called the JAMstack, or &lt;strong&gt;J&lt;/strong&gt;avaScript, &lt;strong&gt;A&lt;/strong&gt;PIs and &lt;strong&gt;M&lt;/strong&gt;arkup, which is an easier way of thinking about its key components. But we should start from the beginning of JAM. Or is it the end?&lt;/p&gt;
+
+&lt;h4 id=&quot;markup&quot;&gt;M[arkup]&lt;/h4&gt;
+
+&lt;h2 id=&quot;some-history&quot;&gt;Some History&lt;/h2&gt;
+&lt;p&gt;Actually, static sites have been around since the 1990’s. Back before every page needed login credentials, when the internet was a small place with anonymous pages, many of those pages were static HTML markup. They were quick, available to everyone, and cheap on server resources. That’s the definition of a marketing site!&lt;/p&gt;
+
+&lt;p&gt;So why isn’t everything static? Your own technical experience, for starters. Early static sites required experience with HTML at a bare minimum. Adding assets like audio, images, and video dynamically and styling the results was a big ask. A graphical interface for uploading media? Forget it.&lt;/p&gt;
+
+&lt;p&gt;That’s where WordPress came in, and that’s why it’s been the king for almost 20 years. It provides a cool(ish) GUI that will help your marketing people get the job done without getting encumbered by strange &lt;code class=&quot;highlighter-rouge&quot;&gt;{curly braces}&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;$weird_Naming_Conventions&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;But today we’ve got &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost&lt;/a&gt; and &lt;a href=&quot;https://forestry.io/&quot;&gt;Forestry&lt;/a&gt; bringing the heat without the cost of a fire. These give you the freedom to use good-looking interfaces and a Google Docs-style text editor, and their base plans are free!&lt;/p&gt;
+
+&lt;h4 id=&quot;apis&quot;&gt;A[PIs]&lt;/h4&gt;
+
+&lt;h2 id=&quot;you-probably-dont-need-to-log-in-but-if-you-do&quot;&gt;You Probably Don’t Need to Log In. But If You Do…&lt;/h2&gt;
+&lt;p&gt;You’re not making Facebook 3.0. You’re not asking for a number-munching Site as a Service. You’re just trying to get visibility. Any dynamic experience you need to give your customers could come from a simple cookie.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If that last sentence sounded like gibberish, &lt;a href=&quot;/contact/&quot;&gt;talk to me later&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But even if you are, modern web development uses these cool things called REST APIs for a lot of heavy lifting. These are tiny applications that talk to your site from afar, and deliver content you need on request. The speed improvement compared to building dynamic content on the page is readily apparent. Those large media and file databases we spoke of earlier can still exist independently of your site, and they don’t need to slow you down.&lt;/p&gt;
+
+&lt;p&gt;That includes eCommerce. There is no reason to set up your products on a service like &lt;a href=&quot;https://shopify.dev/docs/admin-api/rest/reference&quot;&gt;Shopify&lt;/a&gt; or &lt;a href=&quot;https://woocommerce.github.io/woocommerce-rest-api-docs/#introduction&quot;&gt;WooCommerce&lt;/a&gt;, then set them up again inside of your own site. Do it once, and then interface with it. Hence &lt;strong&gt;A&lt;/strong&gt;pplication &lt;strong&gt;P&lt;/strong&gt;rogramming &lt;strong&gt;I&lt;/strong&gt;nterface. Heck, you can even use &lt;a href=&quot;https://snipcart.com/&quot;&gt;SnipCart&lt;/a&gt; and it will do most of the integrating for you. ✌️&lt;/p&gt;
+
+&lt;h4 id=&quot;javascript&quot;&gt;J[avaScript]&lt;/h4&gt;
+&lt;h2 id=&quot;and-then-there-was-javascript&quot;&gt;And then there was JavaScript&lt;/h2&gt;
+&lt;p&gt;Wix costs up to &lt;em&gt;$500 a month&lt;/em&gt; for fancy templates. WordPress plugins will quickly rack up site costs for functionality. But a one-size-fits-all solution, built to scale to any size, also adds a lot of dead weight. All the processing work for a page to render on a server &lt;em&gt;quickly&lt;/em&gt; becomes more taxing than an API, and rarely is anything new actually getting done.&lt;/p&gt;
+
+&lt;p&gt;A savvy developer could template and build a lightweight, fully custom site to your exact specifications. But actually there’s more than that! What if your site could preload the next page’s images while you read, or hack the browser to stop it from reloading content it already has? That’s possible with modern JavaScript frameworks like React, Angular, and Vue.&lt;/p&gt;
+
+&lt;p&gt;I strongly encourage you to hit F12 and take a look at all the crazy things a simple blog like this needs to load and give to every browser that visits. Search engine meta, styles, JS libraries to make things scroll smoothly… on a standard hosted site it will all load again on every click. Storing it properly and only loading &lt;em&gt;new&lt;/em&gt; things adds serious speed. I’m talking &lt;a href=&quot;https://www.shopflamingo.com&quot;&gt;blazingly&lt;/a&gt;, &lt;a href=&quot;https://ca.braun.com/en-ca&quot;&gt;ludicrously&lt;/a&gt; &lt;a href=&quot;https://airbnb.io/&quot;&gt;fast&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So that’s the &lt;em&gt;MAJ&lt;/em&gt;– I mean– &lt;strong&gt;JAMstack&lt;/strong&gt;, and it’s going to separate you from your competition. All you need is &lt;a href=&quot;/contact/&quot;&gt;the right developer&lt;/a&gt;. And save all of the hosting costs! That hosting money is much better spent on web consultancy, or invested in the development of the site itself.&lt;/p&gt;
+
+&lt;p&gt;After that it’s 100% yours. You can build out additional pages to your needs, and fill it up with content that will directly attract your clientele. You can even sell products. All without that monthly hosting fee.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">I use WordPress all day every day. It’s extremely customizable and easy for both web administrators and developers. But you don’t need WordPress. You need JAMstack.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/jam.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/jam.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Paginate This Blog</title><link href="http://localhost:4000/paginate-with-jekyll/" rel="alternate" type="text/html" title="Paginate This Blog" /><published>2020-05-17T08:07:00-04:00</published><updated>2020-05-17T08:07:00-04:00</updated><id>http://localhost:4000/paginate-with-jekyll</id><content type="html" xml:base="http://localhost:4000/paginate-with-jekyll/">&lt;p&gt;I used the following code in &lt;code class=&quot;highlighter-rouge&quot;&gt;/config.yml&lt;/code&gt;:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;paginate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
 &lt;span class=&quot;nx&quot;&gt;paginate_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/blog/:num/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -837,127 +954,4 @@ So at the store: apples cost $5, bananas cost $3, asian pears cost $15&lt;/p&gt;
 
 &lt;p&gt;Oh dear, and I’ll likely do &lt;a href=&quot;https://eduardoboucas.com/blog/2014/11/05/adding-ajax-pagination-to-jekyll.html&quot;&gt;this&lt;/a&gt; next…&lt;/p&gt;
 
-&lt;p&gt;The End.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">I used the following code in /config.yml:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/pages.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/pages.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Learn AJAX: Part 1</title><link href="http://localhost:4000/ajax-part-1/" rel="alternate" type="text/html" title="Learn AJAX: Part 1" /><published>2020-05-17T08:06:00-04:00</published><updated>2020-05-17T08:06:00-04:00</updated><id>http://localhost:4000/ajax-part-1</id><content type="html" xml:base="http://localhost:4000/ajax-part-1/">&lt;p&gt;I’m going to let you in on a secret superpower I have. With a single line of code I can download any website in the world. OK, so maybe it’s not very super. It’s called an HTTP request and your browser does this all the time. But what if you could do it &lt;em&gt;yourself&lt;/em&gt;? We call that AJAX.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Disclaimer!&lt;/strong&gt; &lt;em&gt;This article is for beginners, but it does assume a basic knowledge of HTTP’s structure. If you know the meaning of GET and POST, read on! Otherwise, I highly recommend going straight to the &lt;a href=&quot;https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods&quot;&gt;Wikipedia source&lt;/a&gt; and boning up.&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;AJAX is &lt;strong&gt;A&lt;/strong&gt;synchronous &lt;strong&gt;J&lt;/strong&gt;avaScript &lt;strong&gt;a&lt;/strong&gt;nd &lt;strong&gt;X&lt;/strong&gt;ML. It &lt;em&gt;was&lt;/em&gt; developed to request and return XML strings from a server. It’s &lt;em&gt;now&lt;/em&gt; widely adopted as a solution for HTTP requesting in the same way your browser does. It helps modern devs to send and get new data asynchronously without changing 20-year-old browser standards.&lt;/p&gt;
-
-&lt;p&gt;For example, let’s say we want to send data from a form. A form that looks like this:&lt;/p&gt;
-
-&lt;form onsubmit=&quot;validateAndAjax(event)&quot; style=&quot;padding-bottom: 30px;&quot;&gt;
-  &lt;input id=&quot;email&quot; type=&quot;email&quot; placeholder=&quot;Email!&quot; /&gt;
-  &lt;input id=&quot;submit&quot; type=&quot;submit&quot; value=&quot;Submit!&quot; /&gt;
-&lt;/form&gt;
-
-&lt;p&gt;With HTML’s &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;form&amp;gt;&lt;/code&gt; element, I can tell the browser to send information via POST or GET request types through a very predictable and typical process:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Gather the form fields.&lt;/li&gt;
-  &lt;li&gt;Do the HTTP request as an &lt;code class=&quot;highlighter-rouge&quot;&gt;action&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Reload the page.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;But what if I don’t want to reload? Reloading on form submission is a terrible UX. Don’t get me wrong, we’ll keep the form in working order, &lt;em&gt;exactly the way it is&lt;/em&gt;, but modern web design on modern browsers never &lt;em&gt;wants&lt;/em&gt; the reload on form submission. Instead, we want AJAX.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;[This next bit is going to use jQuery, and I’ll explain why in a moment. Credit: &lt;a href=&quot;https://scotch.io/tutorials/submitting-ajax-forms-with-jquery&quot;&gt;scotch.io&lt;/a&gt;]&lt;/em&gt;&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#form&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;submit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// stop the form from submitting and refreshing by preventing the default browser behavior&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  
-  &lt;span class=&quot;c1&quot;&gt;// gather and validate data fields from the form, typically storing the result as JSON&lt;/span&gt;
-  &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;formData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;formJSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-  &lt;span class=&quot;c1&quot;&gt;// AJAX, the jQuery way&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ajax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;POST&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;// define the type of HTTP verb we want to use (POST for our form)&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;         &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;process.php&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// the url where we want to POST&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;formData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// our data object&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;dataType&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;// what type of data do we expect back from the server&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;encode&lt;/span&gt;      &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// using something called a Promise, we can wait for the servers to respond, then use the results when they come&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// log data to the console so we can see the result and confirm that it happened&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;To be fair, there are a million ways to use a form. For example, maybe you should house your JS in a function, and call it with &lt;code class=&quot;highlighter-rouge&quot;&gt;onsubmit&lt;/code&gt;.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onsubmit=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'validateAndAjax(event)'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'email'&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'email'&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;placeholder=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Email!'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'submit'&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'submit'&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Submit!'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;validateAndAjax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// stop the event&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// my email input validator, free for your use&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/^&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;(([^&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;&amp;lt;&amp;gt;()&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\[\]\\&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;.,;:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;@&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;(\.[^&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;&amp;lt;&amp;gt;()&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\[\]\\&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;.,;:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\s&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;@&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;&quot;.+&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;((\[[&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;0-9&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]{1,3}\.[&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;0-9&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]{1,3}\.[&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;0-9&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]{1,3}\.[&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;0-9&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]{1,3}&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;(([&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;a-zA-Z&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\-&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;0-9&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\.)&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;a-zA-Z&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]{2,}))&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;#email&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;fail!&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-
-    &lt;span class=&quot;c1&quot;&gt;// that AJAX, one more time for the people in the back&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ajax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// settings for exactly the right HTTP request you want to make&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;// success things, manipulating the data, callbacks&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;// HTTP errors, caught here&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;jQuery also makes helper functions that help developers do things faster. They’re for when you are competent. Don’t use them right now. They are not really relevant for this tutorial, but lists are helpful!&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;https://api.jquery.com/jQuery.get/&quot;&gt;$.get()&lt;/a&gt; does only HTTP GET requests.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://api.jquery.com/jQuery.getJSON/&quot;&gt;$.getJSON()&lt;/a&gt; is $.get()… but only for JSON.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://api.jquery.com/jQuery.getScript/&quot;&gt;$.getScript()&lt;/a&gt; is $.get()… but only for JS (it immediately executes it on arrival).&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://api.jquery.com/jQuery.post/&quot;&gt;$.post()&lt;/a&gt; does only HTTP POST requests.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://api.jquery.com/load/&quot;&gt;$.load()&lt;/a&gt; is basically good for &lt;code class=&quot;highlighter-rouge&quot;&gt;ploop&lt;/code&gt;ing out data as if it were paintballs in an AJAX paintball gun.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;cool-so-now-why-did-we-use-jquery&quot;&gt;Cool, so now why did we use jQuery?&lt;/h2&gt;
-
-&lt;p&gt;Yeah, so jQuery’s AJAX feels pretty simple. It’s just the HTTP &lt;code class=&quot;highlighter-rouge&quot;&gt;method&lt;/code&gt;, the &lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt; we’re grabbing from, and a body of any &lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt;. Maybe you can encode it, or use HTTP headers if you’re getting really fancy.&lt;/p&gt;
-
-&lt;p&gt;The original method is a bit more cumbersome. The &lt;a href=&quot;https://caniuse.com/#feat=mdn-api_xmlhttprequest&quot;&gt;universally supported&lt;/a&gt; base method for AJAX is called &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/XMLHttpRequest&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;XMLHttpRequest()&lt;/code&gt;&lt;/a&gt;. It is so very much harder for AJAX newcomers to grasp, so I’m going to break it down for you in &lt;a href=&quot;/ajax-part-2/&quot;&gt;Part 2&lt;/a&gt;!&lt;/p&gt;
-
-&lt;script&gt;
-    function validateAndAjax(e) {
-        e.preventDefault();
-        alert(&quot;Ha! Your data is mine.&quot;);
-    }
-&lt;/script&gt;</content><author><name>Benji</name></author><summary type="html">I’m going to let you in on a secret superpower I have. With a single line of code I can download any website in the world. OK, so maybe it’s not very super. It’s called an HTTP request and your browser does this all the time. But what if you could do it yourself? We call that AJAX.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/ajax-bottle.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/ajax-bottle.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;p&gt;The End.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">I used the following code in /config.yml:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/pages.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/pages.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
