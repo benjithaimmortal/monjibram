@@ -49,7 +49,7 @@ The solution to this is the same as most other web design problems: a few extra 
 > You can also [see this blog in action on CodePen](https://codepen.io/benjithaimmortal/full/XWXyJjX).
 
 ## Zero. Use appropriate HTML
-The sectional approach to site configuration is underrated. A good page has content sections, and they are usually at least 2/3 the height of your browser window. Taking up space and using the infinite scroll canvas that is available to you dramatically increases user interaction and readability. There is also great reason that HTML has a `<section>` tag! It's for this! Use it!
+The sectional approach to site configuration is underrated. A good page has content sections, and they are usually at least 2/3 the height of your browser window. Taking up space and using the infinite scroll canvas that is available to you dramatically increases user interaction and readability. There is also a great reason that HTML has a `<section>` tag! It's for this! Use it!
 
 
 ## One. Start at the biggest, which is actually the smallest.
