@@ -58,7 +58,7 @@ What's the maximum width that your section can be? The answer might not make imm
 
 <div style="display: flex; flex-wrap: no-wrap; justify-content: center; align-items: flex-grow; margin-bottom: 20px;">
   <div style="width: calc((100% - 330px) / 2); background-color: #350e1411;"></div>
-  <p style="width: 320px; margin: 20px auto 25px; padding-bottom: unset;">Don't live in a world that is only 325 px wide, it is a special hell where UX dreams go to die and nothing can be accomplished. One or two sentences of this took up five lines and looked terrible.</p>
+  <p style="width: 320px; margin: 20px auto 25px; padding-bottom: unset;">Don't make your site live in a world that is only 325 px wide, it is a special place where UX dreams go to die and nothing can be accomplished. One or two sentences of this took up five lines and looked terrible.</p>
   <div style="width: calc((100% - 330px) / 2); margin-left: -5px; background-color: #350e1411;"></div>
 </div>
 
