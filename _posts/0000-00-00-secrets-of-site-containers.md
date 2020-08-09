@@ -154,6 +154,6 @@ Well that isn't surprising! Block-level elements fill from the left. All you nee
 
 ## Next steps:
 
-What if you want to blow out the screen, anchoring items to the left or right on one side while maintaining your site container width on the other? It's not impossible. I'll show you how in my next article!
+What if you want to blow out the screen, anchoring items to the left or right on one side while maintaining your site container width on the other? It's not impossible. [I'll show you how in my next article]({% link _posts/0000-00-00-site-containers-two.md %})!
 
 > You can also [see this blog in action on CodePen](https://codepen.io/benjithaimmortal/full/XWXyJjX).

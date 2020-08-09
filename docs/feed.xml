@@ -1,4 +1,157 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2020-07-29T17:36:55-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Monjibram</title><subtitle>Benjamin Kostenbader is Front-End Developer at Top Hat. He is also a proud father, cyclist, and squash enthusiast.</subtitle><author><name>Benjamin Kostenbader</name></author><entry><title type="html">Secrets of the Site Container: Part 1</title><link href="http://localhost:4000/secrets-of-site-containers/" rel="alternate" type="text/html" title="Secrets of the Site Container: Part 1" /><published>2020-07-24T00:00:00-04:00</published><updated>2020-07-24T00:00:00-04:00</updated><id>http://localhost:4000/secrets-of-site-containers</id><content type="html" xml:base="http://localhost:4000/secrets-of-site-containers/">&lt;p&gt;Big screens are getting bigger. Wider. Less expensive. Our web experience should be seamless, but our eyes can’t adjust to giant blobby things. Containers to the rescue. But first, a digression about font-size and readability!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2020-08-08T21:29:49-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Monjibram</title><subtitle>Benjamin Kostenbader is Front-End Developer at Top Hat. He is also a proud father, cyclist, and squash enthusiast.</subtitle><author><name>Benjamin Kostenbader</name></author><entry><title type="html">Secrets of the Site Container: Part 2</title><link href="http://localhost:4000/site-containers-two/" rel="alternate" type="text/html" title="Secrets of the Site Container: Part 2" /><published>2020-08-08T00:00:00-04:00</published><updated>2020-08-08T00:00:00-04:00</updated><id>http://localhost:4000/site-containers-two</id><content type="html" xml:base="http://localhost:4000/site-containers-two/">&lt;p&gt;Containers are functional. Containers are necessary. Without them you’re exploring the great unknown of horizontal scrolling on a vertical page. Holding shift when you torque the mousewheel. It isn’t too much to ask to make it beautiful, though, is it?&lt;/p&gt;
+
+&lt;p&gt;Well, to be honest, most of the time that answer is yes. Function always comes before form, and things aren’t going to work better if you add bells and whistles. I really, truly believe that isn’t just my Pennsylvania Dutch heritage telling me that it doesn’t get better than hand-built Amish furniture. &lt;em&gt;These hills are in my blood.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;But we do need creativity and freedom. We need to show that we aren’t constrained. Sometimes breaking the rules just enough is proving that you knew the real rules all along. 🥃🕶🚬&lt;/p&gt;
+
+&lt;p&gt;What a meta, over-philosophical introduction to another blog about &lt;a href=&quot;/secrets-of-site-containers/&quot;&gt;site containers&lt;/a&gt;!&lt;/p&gt;
+
+&lt;h2 id=&quot;making-boxes-that-arent-quite-in-the-middle&quot;&gt;Making boxes that aren’t quite in the middle&lt;/h2&gt;
+&lt;p&gt;What if you want to blow out an image all the way to the side of the screen? No site container on that side. Full width. But the other side matches your margin perfectly. Something like…&lt;/p&gt;
+
+&lt;div style=&quot;width: 100%; border: dashed black 1px; margin-bottom: 30px;&quot;&gt;
+  &lt;img src=&quot;/assets/images/this.webp&quot; alt=&quot;like this&quot; style=&quot;height: auto; width: calc(50% + 200px); max-width: 95%; margin: 0 0 0 auto; display: block;&quot; /&gt;
+
+  &lt;div class=&quot;container-sample&quot; style=&quot;margin: 0 auto; width: 400px; max-width: 90%; text-align: justify; background-color: #FFE83F;&quot;&gt;Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;It makes things easier if you consider the two ‘halves’ of your screen like this:&lt;/p&gt;
+&lt;div style=&quot;width: 100%; border: dashed black 1px; margin-bottom: 30px; position: relative;&quot;&gt;
+  &lt;img src=&quot;/assets/images/this.webp&quot; alt=&quot;like this&quot; style=&quot;height: auto; width: calc(50% + 200px); max-width: 95%; margin: 0 0 0 auto; display: block;&quot; /&gt;
+
+  &lt;div class=&quot;middle-line-example&quot; style=&quot;margin: 0 auto; position: absolute; height: 100%; width: 0; top: 0; left: 50%; transform: translate(-50%, 0); border-left: dashed black 1px;&quot;&gt;&lt;/div&gt;
+
+
+  &lt;div class=&quot;container-sample&quot; style=&quot;margin: 0 auto; width: 400px; max-width: 90%; text-align: justify; background-color: #FFE83F;&quot;&gt;Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The right side of that image is blowing out to 50%! Dead simple. The left side is &lt;em&gt;exactly half of the site container’s width&lt;/em&gt;. The only remaining magic is to push the block toward the side you’re locking it on with an automatic margin. Here’s the code for that.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.that-img-container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// make sure that bad boy is a block element, of course&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 50% + half of the container in pixels&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 50% + half of the maximum container in percents&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;95%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// push it right&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;How about a container for text, next to that image? You might be tempted to do heavy math on that. Don’t do heavy math on that.&lt;/p&gt;
+
+&lt;div style=&quot;width: 100%; border: dashed black 1px; margin-bottom: 30px; position: relative;&quot;&gt;
+  
+  &lt;div class=&quot;blowout-container-sample&quot; style=&quot;display: flex; align-items: center; width: calc(50% + 200px); max-width: 95%; margin: 0 0 0 auto;&quot;&gt;
+    &lt;div style=&quot;width: 100px; margin-right: 20px; font-weight: bold;&quot;&gt;Some text on the left&lt;/div&gt;
+    &lt;img src=&quot;/assets/images/this.webp&quot; alt=&quot;like this&quot; style=&quot;height: auto; width: calc(100% - 120px); display: block;&quot; /&gt;
+  &lt;/div&gt;
+
+
+  &lt;div class=&quot;middle-line-example&quot; style=&quot;margin: 0 auto; position: absolute; height: 100%; width: 0; top: 0; left: 50%; transform: translate(-50%, 0); border-left: dashed black 1px;&quot;&gt;&lt;/div&gt;
+
+
+  &lt;div class=&quot;container-sample&quot; style=&quot;margin: 0 auto; width: 400px; max-width: 90%; text-align: justify; background-color: #FFE83F;&quot;&gt;Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The code:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.that-img-container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;align-items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;flex-wrap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nowrap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;95%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.side-text&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.image&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// everything but the text and margins&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;calc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;120px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;making-things-that-arent-a-box&quot;&gt;Making things that aren’t a box&lt;/h2&gt;
+&lt;p&gt;Let’s say you have a thing that isn’t a square, or doesn’t require constraining at all. That thing might not flow at the same speed as your page content. It might not even be positioned relative to it. The easy answer for that is &lt;code class=&quot;highlighter-rouge&quot;&gt;position&lt;/code&gt; itself. Which has the potential to negate a lot of the power of a site container as well.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;position: static;&lt;/code&gt;&lt;/dt&gt;
+  &lt;dd&gt;The default. Should work the same as &lt;code class=&quot;highlighter-rouge&quot;&gt;unset&lt;/code&gt;, so this is what you do if you have to override somebody else’s work, but you also want them to think you’re smart (read: force them to look up your solution).&lt;/dd&gt;
+  &lt;dt&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;position: relative;&lt;/code&gt;&lt;/dt&gt;
+  &lt;dd&gt;Makes everything tick. It’s a way to set the parent for all of your &lt;code class=&quot;highlighter-rouge&quot;&gt;position&lt;/code&gt; children.&lt;/dd&gt;
+  &lt;dt&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;position: absolute;&lt;/code&gt;&lt;/dt&gt;
+  &lt;dd&gt;Ignores block positioning. It lets things go on top of (or underneath) other things. It refers back to most recent &lt;code class=&quot;highlighter-rouge&quot;&gt;position&lt;/code&gt;-assigned parent to determine its place. If none is available, it’s positioned on &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; itself. It then uses &lt;code class=&quot;highlighter-rouge&quot;&gt;top&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;bottom&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;left&lt;/code&gt;, or &lt;code class=&quot;highlighter-rouge&quot;&gt;right&lt;/code&gt; to determine coordinates on that element.&lt;/dd&gt;
+  &lt;dt&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;position: fixed;&lt;/code&gt;&lt;/dt&gt;
+  &lt;dd&gt;Like &lt;code class=&quot;highlighter-rouge&quot;&gt;absolute&lt;/code&gt; on crack. Ignores block positiong and parents. Almost always a terrible idea, especially for accessibility. So of course I’ve used it in a final build!&lt;/dd&gt;
+  &lt;dt&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;position: sticky;&lt;/code&gt;&lt;/dt&gt;
+  &lt;dd&gt;The fun uncle. Make things stick at a certain point, but only inside of the parent. Not supported by IE, but generally it doesn’t matter – most standard uses &lt;a href=&quot;https://www.w3.org/wiki/Graceful_degradation_versus_progressive_enhancement&quot;&gt;degrade gracefully&lt;/a&gt;.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;h2 id=&quot;the-centered-thing&quot;&gt;The centered thing.&lt;/h2&gt;
+&lt;p&gt;This might be amateur hour but here’s how to center a thing that is absolutely positioned.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.thing-parent&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.thing&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// parent container percents&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// child item percents &lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// (to make its center the target, subtract 50% of each axis)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;But did you know, for example, that padding, borders, margins all flow &lt;em&gt;outside&lt;/em&gt; of that position?&lt;/p&gt;
+
+&lt;div style=&quot;width: 100%; position: relative; height: 100px; border: dashed 1px #F96714&quot;&gt;
+  &lt;div style=&quot;position: absolute; width: 100%; padding: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); border: dashed 1px #77212E&quot;&gt;Here's an example of that. The text will flow normally inside of the container, but you'll have to fix the space around the item separately...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;width: 100%; position: relative; height: 200px; border: dashed 1px #F96714; margin-top: 20px;&quot;&gt;
+  &lt;div style=&quot;position: absolute; width: calc(100% - 22px); padding: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); border: dashed 1px #77212E&quot;&gt;... like this! Account for the padding, the border-width, and the margins. Usually they're the same on both sides of the item, so you can just multiply them by two: &lt;br /&gt;&lt;code&gt;width: calc(100% - (padding + border + margin) * 2);&lt;/code&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;position-containers&quot;&gt;Position Containers&lt;/h2&gt;
+&lt;p&gt;Containers &lt;em&gt;need&lt;/em&gt; to be relatively positioned (if they are positioned at all) to your document’s &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;, or they will likely lose their pinpoint mathematical accuracy and throw in extra space.&lt;/p&gt;
+
+&lt;p&gt;Positioning other things inside of a well-built site container is fair game, as long as you know exactly how big the things are. Using default-styled things like &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;p&amp;gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;? You’re studdenly worrying about the default bottom margins, and the total height of the element. If something looks off optically, you can use my debugging reticle:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.top-left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.top-right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.bottom-left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.bottom-right&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;tomato&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.top-left&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;border-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;border-top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-100%&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.top-right&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;border-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;border-top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.bottom-left&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;border-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;border-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-100%&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.bottom-right&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;border-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;border-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;unset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// no need to transform, we're already there&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;your-container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;top-left&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;top-right&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bottom-left&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bottom-right&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;</content><author><name>Benji</name></author><summary type="html">Containers are functional. Containers are necessary. Without them you’re exploring the great unknown of horizontal scrolling on a vertical page. Holding shift when you torque the mousewheel. It isn’t too much to ask to make it beautiful, though, is it?</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/pretty-container.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/pretty-container.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Secrets of the Site Container: Part 1</title><link href="http://localhost:4000/secrets-of-site-containers/" rel="alternate" type="text/html" title="Secrets of the Site Container: Part 1" /><published>2020-07-24T00:00:00-04:00</published><updated>2020-07-24T00:00:00-04:00</updated><id>http://localhost:4000/secrets-of-site-containers</id><content type="html" xml:base="http://localhost:4000/secrets-of-site-containers/">&lt;p&gt;Big screens are getting bigger. Wider. Less expensive. Our web experience should be seamless, but our eyes can’t adjust to giant blobby things. Containers to the rescue. But first, a digression about font-size and readability!&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -131,7 +284,7 @@ abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz&lt;/div&gt;
 
 &lt;h2 id=&quot;next-steps&quot;&gt;Next steps:&lt;/h2&gt;
 
-&lt;p&gt;What if you want to blow out the screen, anchoring items to the left or right on one side while maintaining your site container width on the other? It’s not impossible. I’ll show you how in my next article!&lt;/p&gt;
+&lt;p&gt;What if you want to blow out the screen, anchoring items to the left or right on one side while maintaining your site container width on the other? It’s not impossible. &lt;a href=&quot;/site-containers-two/&quot;&gt;I’ll show you how in my next article&lt;/a&gt;!&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;You can also &lt;a href=&quot;https://codepen.io/benjithaimmortal/full/XWXyJjX&quot;&gt;see this blog in action on CodePen&lt;/a&gt;.&lt;/p&gt;
@@ -965,13 +1118,4 @@ So at the store: apples cost $5, bananas cost $3, asian pears cost $15&lt;/p&gt;
 
 &lt;p&gt;So that’s the &lt;em&gt;MAJ&lt;/em&gt;– I mean– &lt;strong&gt;JAMstack&lt;/strong&gt;, and it’s going to separate you from your competition. All you need is &lt;a href=&quot;/contact/&quot;&gt;the right developer&lt;/a&gt;. And save all of the hosting costs! That hosting money is much better spent on web consultancy, or invested in the development of the site itself.&lt;/p&gt;
 
-&lt;p&gt;After that it’s 100% yours. You can build out additional pages to your needs, and fill it up with content that will directly attract your clientele. You can even sell products. All without that monthly hosting fee.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">I use WordPress all day every day. It’s extremely customizable and easy for both web administrators and developers. But you don’t need WordPress. You need JAMstack.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/jam.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/jam.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Paginate This Blog</title><link href="http://localhost:4000/paginate-with-jekyll/" rel="alternate" type="text/html" title="Paginate This Blog" /><published>2020-05-17T08:07:00-04:00</published><updated>2020-05-17T08:07:00-04:00</updated><id>http://localhost:4000/paginate-with-jekyll</id><content type="html" xml:base="http://localhost:4000/paginate-with-jekyll/">&lt;p&gt;I used the following code in &lt;code class=&quot;highlighter-rouge&quot;&gt;/config.yml&lt;/code&gt;:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;paginate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;paginate_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/blog/:num/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;I also learned that &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; becomes the slash on whatever its root. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;blog/index.html&lt;/code&gt; is happily routed as &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog/&lt;/code&gt;! So don’t worry about&lt;/p&gt;
-
-&lt;p&gt;Oh dear, and I’ll likely do &lt;a href=&quot;https://eduardoboucas.com/blog/2014/11/05/adding-ajax-pagination-to-jekyll.html&quot;&gt;this&lt;/a&gt; next…&lt;/p&gt;
-
-&lt;p&gt;The End.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">I used the following code in /config.yml:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/pages.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/pages.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;p&gt;After that it’s 100% yours. You can build out additional pages to your needs, and fill it up with content that will directly attract your clientele. You can even sell products. All without that monthly hosting fee.&lt;/p&gt;</content><author><name>Benji</name></author><summary type="html">I use WordPress all day every day. It’s extremely customizable and easy for both web administrators and developers. But you don’t need WordPress. You need JAMstack.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/jam.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/jam.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
