@@ -1,0 +1,149 @@
+.home-sweet-home {
+  margin-top: 100px;
+  margin-bottom: 195px;
+  .container-narrow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .left {
+    width: 47%;
+  }
+  .right {
+    margin-bottom: 22px;
+    width: 40%;
+  }
+  .title {
+    margin-bottom: 14px;
+    font-size: 40px;
+    color: $red;
+  }
+  .text {
+    margin-bottom: 27px;
+    width: 100%;
+    max-width: 375px; // really unnecessary because math
+    font-size: 18px;
+  }
+  .social {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    a {
+      height: 43px;
+      width: 43px;
+      margin-right: 14px;
+      text-decoration: none;
+      border-radius: 50%;
+      background-color: $blue;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      &:last-of-type {
+        margin-right: unset;
+      }
+      img {
+        width: 60%;
+        height: auto;
+      }
+    }
+  }
+}
+.the-stacks {
+  margin-bottom: 154px;
+  .container-wide {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    border: solid 1px $border-color;
+    border-radius: 35px;
+  }
+  .role {
+    width: 25%;
+    padding: 30px 0 80px;
+    border-right: solid 1px $border-color;
+    margin-right: -1px;
+    &:last-of-type {
+      border-right: unset;
+      margin-right: unset;
+    }
+  }
+  .illy {
+    width: 55%;
+    margin: 0 auto 10px;
+    background: top center / contain no-repeat;
+    &::after {
+      content: '';
+      display: inline-block;
+      position: relative;
+      padding-top: 100%
+    }
+  }
+  .name {
+    text-align: center;
+    font-size: 29px;
+    color: $red;
+    margin-bottom: 30px;
+  }
+  .blurb {
+    width: 80%;
+    max-width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
+  }
+}
+
+
+
+@media (max-width: 951px) {
+  .home-sweet-home {
+    margin-bottom: 100px;
+    margin-top: 80px;
+    .container-narrow {
+      align-items: center;
+    }
+    .right {
+      width: 47%;
+    }
+  }
+  .the-stacks {
+    .container-wide {
+      width: 80%;
+    }
+    .role {
+      width: 50%;
+      padding: 50px 0 40px;
+      &:nth-child(1), &:nth-child(2) {
+        border-bottom: solid $border-color 1px;
+      }
+      &:nth-child(2n) {
+        margin-right: unset;
+        border-right: unset;
+      }
+    }
+  }
+}
+
+@media (max-width: 651px) {
+  .home-sweet-home {
+    margin-top: 20px;
+    .container-narrow {
+      flex-direction: column;
+    }
+    .left, .right {
+      width: 100%;
+      max-width: 375px;
+      margin: 0 auto;
+    }
+  }
+  .the-stacks {
+    .container-wide {
+      width: 90%;
+    }
+  }
+}

@@ -6,23 +6,20 @@ seo:
 <div class="blog-post">
   <article class="article">
     <div class='blog-info'>
-      <div class='demos'>
-        {% if post %}
-          {% assign categories = post.categories %}
-        {% else %}
-          {% assign categories = page.categories %}
-        {% endif %}
-        {% for category in categories %}
-          <div class="cat" href="{{site.baseurl}}blog/categories/#{{category|slugize}}">{{category}}</div>
-          {% unless forloop.last %}, {% endunless %}
-        {% endfor %}
-        <div class='datetime'>{{ page.date | date_to_string }}</div>
-      </div>
-      <h1 class='title'>{{ page.title }}</h1>
-      {% if page.author %}
-        <div class='auth'>By {{ page.author }}</div>
+      <div class='datetime'>{{ page.date | date: "%D" }}</div>
+      {% if post %}
+        {% assign categories = post.categories %}
+      {% else %}
+        {% assign categories = page.categories %}
       {% endif %}
+      {% for category in categories %}
+      <div class="cat" href="{{site.baseurl}}blog/categories/#{{category|slugize}}">{{category}}</div>
+      {% endfor %}
+      <!-- {% if page.author %}
+        <div class='auth'>By {{ page.author }}</div>
+        {% endif %} -->
     </div>
+    <h1 class='title'>{{ page.title }}</h1>
     <section class='content'>
       {{ content }}
       <hr>

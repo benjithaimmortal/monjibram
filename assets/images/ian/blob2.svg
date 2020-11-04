@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="117px" height="138px" viewBox="0 0 117 138" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Blob 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 117 0 117 138 0 138"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-Copy" transform="translate(-249.000000, -279.000000)">
+            <g id="Blob-2" transform="translate(249.000000, 279.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M0.0841961516,62.5186633 C2.86840755,25.6696316 76.3153324,-9.96430622 101.297371,2.55583246 C127.202033,15.5380333 119.114923,122.969445 91.2167866,135.99667 C64.3078007,148.561271 -2.70001525,99.3671322 0.0841961516,62.5186633" id="Fill-1" fill="#4C80A2" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

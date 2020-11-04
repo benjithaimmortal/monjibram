@@ -1,0 +1,11 @@
+<a href='{{ site.baseurl }}{{ post.url }}' class='post-card' data-filter='{% for category in post.categories %}{{ category | slugify }}{% if forloop.last %}{% else %} {% endif %}{% endfor %}'>
+  <div class='left'>
+    <div class='tag-date'>
+      <div class='tags'>{% for category in post.categories %}{{ category }}{% if forloop.last %}{% else %}, {% endif %}{% endfor %}</div>
+      <div class='date'>{{ post.date | date: "%D" }}</div>
+    </div>
+    <div class='title'>{{ post.title }}</div>
+    <p class='shortcut'>{{ post.excerpt | strip_html | strip_newlines | truncatewords: 20 }}</p>
+  </div>
+  <div class='right' style='background-image: url({{ site.baseurl }}/assets/images/{{ post.hero }});'></div>
+</a>

@@ -1,0 +1,40 @@
+<section class='contact contact-{{ page.title | slugify }}'>
+<!-- <section class='contact'> -->
+  <svg class="tabby-top" width="297px" height="54px" viewBox="0 0 297 54">
+    <g class="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-652.000000, 0)">
+      <path d="M951.740011,55.4838378 C927.210375,55.4838378 903.348381,47.4978255 883.7593,32.7316588 C825.859034,-10.9105529 784.723305,-10.9105529 726.823039,32.7316588 C707.233319,47.4978255 683.370687,55.4838378 658.842328,55.4838378 L0.935173132,55.4838378 L0.935173132,1428 L658.842328,1428 C683.370687,1428 707.233319,1420.01335 726.823039,1405.24782 C784.723305,1361.60561 825.859034,1361.60561 883.758661,1405.24782 C903.348381,1420.01335 927.210375,1428 951.740011,1428 L1610.93517,1428 L1610.93517,55.4838378 L951.740011,55.4838378 Z"></path>
+    </g>
+  </svg>
+  <div class='tab-image'>
+    <img src='{{ site.baseurl }}/assets/images/ian/contact.svg' alt='' class=''>
+  </div>
+  <div class='container-medium'>
+    <div class='left'>
+      {% if page.title == "Contact" %}
+        <h1 class='title'>{{ site.data.contact.title }}</h1>
+      {% else %}
+        <h2 class='title'>{{ site.data.contact.title }}</h2>
+      {% endif %}
+      <div class='blurb'>{{ site.data.contact.blurb }}</div>
+    </div>
+    <div class='right'>
+      <form action=''>
+        {% for input in site.data.contact.form.inputs %}
+          <input class="{{ input.width }}" type='{{ input.type }}' name="{{ input.name }}" placeholder="{{ input.placeholder }}" autocomplete="{{ input.autocomplete }}">
+        {% endfor %}
+        {% for select in site.data.contact.form.selects %}
+          <select name='{{ select.name }}' class='{{ select.width }}'>
+            <option value='' disabled selected>{{ select.placeholder }}</option>
+            {% for option in select.options %}
+              <option value='{{ option }}'>{{ option }}</option>
+            {% endfor %}
+          </select>
+        {% endfor %}
+        {% for textarea in site.data.contact.form.textareas %}
+          <textarea name='{{ textarea.name }}' class='{{ textarea.width }}' placeholder="{{ textarea.placeholder }}"></textarea>
+        {% endfor %}
+        <input type='submit' value='Submit' class='submit'>
+      </form>
+    </div>
+  </div>
+</section>

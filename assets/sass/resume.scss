@@ -11,13 +11,13 @@
   left: 80%;
   transform: translateX(-80%);
   padding: 20px;
-  color: $cyan;
+  color: $red;
   text-align: center;
   background-color: white;
   border-top-left-radius:     15px;
   border-bottom-left-radius:  15px;
   border-bottom-right-radius: 15px;
-  border: solid 1px $dark-bg-blue;
+  border: solid 1px $border-color;
   max-height: 0;
   min-width: 130px;
   opacity: 0;
@@ -46,7 +46,7 @@
       width: 20px;
       right: 0;
       top: 10px;
-      background-color: $cyan; 
+      background-color: $red; 
       transition: ease all .5s;
     }
   }

@@ -2,7 +2,7 @@
 title: "Secrets of the Site Container: Part 1"
 date: 2020-07-24
 categories:
-- Tutorial
+- Tutorials
 hero: containers.webp
 image: assets/images/containers.webp
 ---

@@ -2,7 +2,7 @@
 title: WordPress Custom Fields but Free
 date: 2020-06-13
 categories:
-- Tutorial
+- Tutorials
 hero: automation.webp
 image: assets/images/automation.webp
 sentence: I used Liquid to fill in this blockquote.

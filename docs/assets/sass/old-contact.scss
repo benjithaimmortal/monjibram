@@ -1,0 +1,143 @@
+
+.contact{
+  background:
+    // linear-gradient(#f7f4e911, #F96714)
+    // #F96714
+    // url(/assets/images/BenjiandAbram.jpg)
+    left center / cover
+    no-repeat;
+  background-attachment: fixed;
+  .pane {
+    // max-width: 90%;
+    // margin: 0 auto;
+    // width: 1100px;
+    // padding-top: 120px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    // p, h1 { color: white; }
+  }
+  // breaks at 875px
+  .text-left {
+    cursor: pointer;
+    width: 410px;
+    margin-left: auto;
+    font-family: $serif-font;
+    em { font-family: $font-fam;}
+    padding-bottom: 50px;
+  }
+  p {
+    color: rgb(24, 24, 24);
+    display: inline-block;
+    padding-bottom: 28px;
+  }
+  .image-right {
+    margin-left: auto;
+    margin-right: -150px;
+    margin-top: -80px;
+    width: calc(100% - 260px);
+    max-width: 540px;
+    min-width: 310px;
+  }
+  .batkid {
+    height: auto;
+    width: 100%;
+    margin-bottom: -180px;
+    cursor: pointer;
+  }
+}
+.contact-form-box {
+  width: calc(100% + 300px);
+  background-color: $cyan;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  margin-left: -150px;
+  margin-right: -150px;
+  margin-bottom: -40px; // unless you have a footer here
+}
+.header-indent {
+  cursor: pointer;
+  display: flex;
+  justify-content: left;
+  color: $p-color;
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 4rem;
+  span {
+    margin: 0 15px;
+    width: 103px;
+    text-align: right;
+  }
+}
+.contactform {
+  max-width: 90%;
+  padding-top: 30px;
+  margin: 0 auto;
+  width: 675px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  input, textarea, button {
+    font-size: 16px;
+    font-family: $font-fam;
+    // &::placeholder {
+    //   font-size: 16px;
+    // }
+  }
+}
+
+
+.post {
+  margin: 5px;
+  border: 7px solid white;
+  background: white;
+  .field {
+    margin: 0 auto;
+    float: left;
+    text-align: center;
+    outline: none;
+  }
+}
+
+strong {
+  color: $p-dark-color;
+}
+
+
+@media (max-width: 900px) {
+  .contact .text-left {
+    font-size: 14px;
+    width: 330px;
+    margin-left: unset;
+  }
+}
+@media (max-width: 800px) {
+  .contact .image-right {
+    margin-right: -25px;
+    width: calc(100% - 300px);
+    // overflow: hidden;
+    img {
+      margin-right: -20px;
+    }
+  }
+  .contact-form-box {
+    width: calc(100% + 95px);
+    margin-left: -50px;
+    margin-right: -50px;
+  }
+}
+@media (max-width: 700px) {
+
+  .contact-form-box {
+    width: calc(100% + 76px);
+    margin-right: auto;
+  }
+  .contact {
+    // .pane { padding-top: 90px; }
+    .text-left { font-size: 13px; }
+    .image-right { min-width: 290px; }
+    .contact-form-box h1 { font-size: 50px; text-align: center; }
+  }
+}

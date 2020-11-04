@@ -1,0 +1,37 @@
+# For the contact section. Duh.
+title: Contact
+blurb: "<p>Sometimes the hardest part of the process is building up the courage to take that first step. Maybe you're nervous. <em>What if he doesn't like me?</em> you complain to your dearest friends. <em>My entire life hangs in the balance.</em></p>
+<p>Well let's cut to the chase. I do like you. I do want to be a part of your next big adventure. Together we can make sweet, sweet technical magic. So drop those deets in the box below and let's get started!</p>"
+form:
+  inputs:
+    - placeholder: Name
+      name: Name
+      type: text
+      autocomplete: name
+      width: half
+      required: true
+    - placeholder: Email
+      name: Email
+      type: email
+      autocomplete: email
+      width: half
+      required: true
+    - placeholder: Phone
+      name: Phone
+      type: tel
+      autocomplete: tel
+      width: half
+      required: true
+  selects:
+    - name: Area
+      placeholder: What can I do for you?
+      width: half
+      options:
+        - Custom
+        - Design
+        - Development
+        - Operations
+  textareas:
+    - placeholder: Tell me more about your project
+      name: Project_Details
+      width: full

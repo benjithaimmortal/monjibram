@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="74px" height="70px" viewBox="0 0 74 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Blob 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.219817167 0.758576959 72.8543255 0.758576959 72.8543255 71.4914651 0.219817167 71.4914651"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-Copy" transform="translate(-593.000000, -295.000000)">
+            <g id="Blob-3" transform="translate(630.807223, 331.814116) rotate(-171.000000) translate(-630.807223, -331.814116) translate(594.307223, 295.814116)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M63.281201,3.58547543 C77.2393099,14.1795522 78.0726464,58.9894321 51.2852766,69.4217051 C24.4976283,79.8539782 -3.98955875,48.3299279 0.737787994,31.0568291 C5.29802179,14.3959241 49.3230921,-7.00860138 63.281201,3.58547543" id="Fill-1" fill="#D42C41" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

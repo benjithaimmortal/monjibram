@@ -11,11 +11,9 @@ image: assets/images/pages.webp
 
 I used the following code in `/config.yml`:
 
-{% highlight js %}
-paginate: 5
-paginate_path: "/blog/:num/"
-{% endhighlight %}
-
+`paginate: 5`
+<br>
+`paginate_path: "/blog/:num/"`
 
 I also learned that `index.html` becomes the slash on whatever its root. For example, `blog/index.html` is happily routed as `/blog/`! So don't worry about 
 

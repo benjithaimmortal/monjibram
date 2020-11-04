@@ -1,34 +1,5 @@
 ---
-title: Contact Benji!
-permalink: "/contact/"
-layout: base
-preloads: batbram_backgroundless.webp
-description: Benji makes your website better. From full site development projects to web consulting to web advocacy and public speaking. Contact him today.
+title: Contact
 ---
-  <div class="contact">
-    <div class="pane">
-      <div class="text-left" benji-data="this next part was pure laziness" onClick="$('html, body').animate({ scrollTop: $(body).height()}, 600);">
-        <p>Sometimes the hardest part of the process is building up the courage to take that first step. Maybe you're nervous. <em>What if he doesn't like me?</em> you complain to your dearest friends. <em>My entire life hangs in the balance.</em></p>
-        <p>Well let's cut to the chase. I do like you. I do want to be a part of your network / community / adventure. Together we can make sweet, sweet technical magic. So drop those deets in the box below and let's get started!</p>
-      </div>
-      <div class="image-right" benji-data="this next part was pure laziness" onClick="$('html, body').animate({ scrollTop: $(body).height()}, 600);">
-        <img src="{{ site.baseurl }}/assets/images/batbram_backgroundless.png" alt="progeny" class="batkid">
-      </div>
-      
-    </div>
-  </div>
 
-
-  <div class="contact-form-box ">
-    <h1 benji-data="this next part was pure laziness" onClick="$('html, body').animate({ scrollTop: $(body).height()}, 600);" class="header-indent">Contact Me</h1>
-    <form id="contactform" class="contactform" action="https://formspree.io/benjamin.kostenbader@gmail.com" method="POST">
-      <input  required class="post field"  type="text"   placeholder="Your name"           name="name"     id="name">
-      <input  required class="post field"  type="email"  placeholder="you@example.com"     name="_replyto" id="_replyto">
-    <textarea required class="post field"  type="text"   placeholder="Your destination"     name="message"  id="message"></textarea>
-      <input           class="hidden"      type="text"   name="_gotcha"  style="display:none">
-      <input           class="hidden"      type="hidden" name="_subject" value="Message via http://monjibram.com">
-      <button          class="post button" type="submit">Submit</button>
-    </form>
-</div>
-
-  <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+{% include contact.html %}

@@ -7,9 +7,9 @@
   font-family: Arial, sans-serif;
   // font-weight: 400;
   a:link a:visited {
-    color: $nav-link-color;
+    color: $red;
   }
-  .fa.fa-behance-square.fa-lg { color: $nav-logo-color; }
+  // .fa.fa-behance-square.fa-lg { color: $nav-logo-color; }
   margin-bottom: 5px;
 }
 
@@ -48,7 +48,7 @@
         position: absolute;
         height: 2px;
         width: 30px;
-        background-color: $nav-text-color;
+        background-color: $red;
         transition: ease all .2s;
         &:first-of-type { top: 20%; }
         &:nth-child(2)  { top: 50%; }
@@ -68,7 +68,7 @@
     }
   }
   .dropdown-nav {
-    color: $nav-text-color;
+    color: $white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -86,7 +86,7 @@
     right: 0;
     font-size: 1.1rem;
     // border-left: solid 1px $nav-text-color;
-    background-color: $cyan;
+    background-color: $red;
   }
   .invisicheck:checked + .dropdown-btn + .dropdown-nav {
     max-height: 100%;

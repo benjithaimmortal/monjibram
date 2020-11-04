@@ -24,7 +24,7 @@ host: localhost
 livereload: true
 # show_drafts: true
 
-paginate: 5
+paginate: 6
 paginate_path: "blog/:num/"
 permalink: :slug/
 
@@ -34,21 +34,19 @@ sass:
 
 title: Monjibram
 email: benji@monjibram.com
-tagline: Benji makes your website better. See more!
+tagline: Benji makes your website better.
 description: >- # this means to ignore newlines until "author:"
   Benjamin Kostenbader is Front-End Developer at Top Hat. He is also a proud father, cyclist, and squash enthusiast.
 author: Benjamin Kostenbader
-facebook:
-  publisher: THEimmortal
-  admins: THEimmortal
+name: Benjamin Kostenbader
 logo: assets/images/Benji.jpg
 social:
-  name: Benjamin Kostenbader
   links:
-    - https://www.linkedin.com/in/benjamin-kostenbader-18499836/
-    - https://www.facebook.com/THEimmortal
-    - https://codepen.io/benjithaimmortal
-    - https://github.com/benjithaimmortal
+    linkedin: https://www.linkedin.com/in/benjamin-kostenbader-18499836/
+    facebook: https://www.facebook.com/THEimmortal
+    codepen: https://codepen.io/benjithaimmortal
+    github: https://github.com/benjithaimmortal
+    twitter: https://twitter.com/monjibram
 google_site_verification: OTG5c_uywRHQgQpvdcwgCYY02h8ofndgJq_kGPt1l_I
 # google_site_verification: google-site-verification=OTG5c_uywRHQgQpvdcwgCYY02h8ofndgJq_kGPt1l_I
 lang: en_US
@@ -112,7 +110,7 @@ url: "https://www.monjibram.com" # the base hostname & protocol for your site, e
 github_username:  benjithaimmortal
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
   - jekyll-paginate

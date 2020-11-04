@@ -3,6 +3,8 @@ title: An Ode to the Object
 date: 2020/06/01 12:09:00 Z
 categories:
 - Tutorials
+tags:
+- Featured
 hero: hash.webp
 image: assets/images/hash.webp
 ---

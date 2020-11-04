@@ -4,6 +4,8 @@ date: 2020-06-20
 categories:
 - WordPress
 - CMS
+tags:
+- Featured
 hero: framework.webp
 image: assets/images/framework.webp
 ---
@@ -91,7 +93,6 @@ By 2005, static web content in one file was slowly getting replaced by WYSIWYG e
 WordPress also became quite universally recognized for this! The base 'content' field of every WordPress page or post is a WYSIWYG content editor.
 
 > This is a terrible way to build pages in 2020...
->
 > but it was very cool at the time.
 
 But these days WP developers use templates to make custom page styles. That's a pretty baked-in and dynamic way to organize data. It's much more complex than just preserving your content, it's actually modifying your output.

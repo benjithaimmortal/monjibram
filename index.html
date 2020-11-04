@@ -2,38 +2,86 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: base
-title: Benjamin Kostenbader
+title: Monjibram
 canonical_url: "https://www.monjibram.com/"
+hero-title: Hi! I&#146;m Benji.
+hero-text: I'm Senior Front-End Developer at [Top Hat](www.builtbytophat.com/about). When I'm not running away from Internet Explorer support requests, I keep busy making beautiful things on computers, distance cycle, play squash, dad, and volunteer in the community. I am inspired by my faith, and the fact that every challenge I encounter is fun to overcome.
+stack:
+  - name: Design
+    blurb: "UI / UX Consultation, Transitions, Animations, Typography, Color, Content Layout"
+    image: assets/images/ian/design.svg
+  - name: Front-End
+    blurb: "CSS/SCSS, RESTful APIs and GraphQL, SEO, Jamstack, Vue, React, jQuery"
+    image: assets/images/ian/front-end.svg
+  - name: Back-End
+    blurb: "Security, Site Architecture, Data Indexing, Search, Privacy, User Roles"
+    image: assets/images/ian/back-end.svg
+  - name: Operations
+    blurb: "Database Maintenance, Continuous Deployment, Environment Migrations, Automation"
+    image: assets/images/ian/operations.svg
 ---
 
 
-<h1 class='title-bit'>Hi. I'm Benji.</h1>
-<br>
-<p>
-  I'm a front-end developer at <a href="https://builtbytophat.com"><strong>Top Hat</strong></a>, Pittsburgh's award-winning, boutique web marketing firm. I'm a community volunteer, touring cyclist, squash captain, and father. When I'm not running away from Internet Explorer support requests, I keep busy making beautiful things on computers. I am inspired by my faith, and the fact that every challenge I encounter [on modern web browsers] is fun to overcome.
-</p>
-<br>
-<p>
-  I'm also a public speaker and advocate for Jamstack, the modern, faster, cheaper method for marketing and personal sites. I love <a href='https://jekyllrb.com/' target="_blank">Jekyll</a> because it's old school, but I've worked in almost everything from Flask to Pelican to Gatsby to Eleventy to Nuxt. 
-</p>
-<br>
-<p>Here are some of my more recent thoughts about WordPress:</p>
-<ul style="margin: 20px 0 0 30px;">
-  <li><a href='{% link _posts/0000-00-00-wordpress-is-a-framework.md %}'>It's capable of anything</a>&nbsp;&nbsp;&nbsp;☜ Blog</li>
-  <li><a href='{% link _posts/2020-05-16-jam-that-sucker.md %}' target='_blank' rel='noopener noreferrer'>It isn't for everything</a>&nbsp;&nbsp;&nbsp;☜ Blog</li>
-  <li><a href='https://wppittsburgh.com/headless-wordpress-on-vue-and-nuxt/' target='_blank' rel='noopener noreferrer'>It can be fast if you try hard</a>&nbsp;&nbsp;&nbsp;☜ Video Tutorial</li>
-  <li><a href='https://www.youtube.com/watch?v=qGdYVslWJdQ&t=15m6s' target='_blank' rel='noopener noreferrer'>But Jamstack is easy!</a>&nbsp;&nbsp;&nbsp;☜ Lightning Talk</li>
-</ul>
-<br>
-<p>
-  My work is featured on many sites, including <a href='https://www.drsarchitects.com' target='_blank' rel='noopener noreferrer'><strong>DRS Architects</strong></a>, <a href='https://www.reubensbrews.com' target='_blank' rel='noopener noreferrer'><strong>Reuben's Brews</strong></a>, <a href='https://www.revtownusa.com' target='_blank' rel='noopener noreferrer'><strong>Revtown Jeans</strong></a>, and <a href='https://www.snake.dev' target='_blank' rel='noopener noreferrer'><strong>Snakedev</strong></a>. My work is also featured at <a href='https://sdglobal.modoo.at' target='_blank' rel='noopener noreferrer'><strong>Seongdong Global Experience Center</strong></a> in the <a href='https://www.hankookilbo.com/News/Read/201811151679724140' target='_blank' rel='noopener noreferrer'><strong>City of Seoul, South Korea</strong></a>, but that's another story for another day.
-</p>
-<br>
-<p>
-  I'm currently working on some secret things, as well as a site for the Mattress Factory (a contemporary art museum), a front-end for the Pittsburgh Python User Group, and an <em>HTML video game</em>.
-</p>
-<br>
-<p>
-  I'm always up for a challenge. <br><a href='{% link contact.html %}'>Contact me today!</a>
-</p>
+<section class='home-sweet-home'>
+  <div class='container-narrow'>
+    <img src='assets/images/ian/benji.png' alt='Hi there!' class='left'>
+    <div class='right'>
+      <h1 class='title'>{{ page.hero-title }}</h1>
+      <div class='text'>{{ page.hero-text | markdownify }}</div>
+      <div class='social'>
+        <a href="{{ site.social.links.github }}" class='git'><img src='assets/images/ian/social-g.png' alt='GitHub' class='gitr'></a>
+        <a href='{{ site.social.links.codepen }}' class='face'><img src='assets/images/ian/social-c.svg' alt='Facebook' class='facer'></a>
+        <a href='{{ site.social.links.twitter }}' class='twit'><img src='assets/images/ian/social-t.svg' alt='Twitter' class='twitr'></a>
+        <a href='{{ site.social.links.linkedin }}' class='linked'><img src='assets/images/ian/social-l.svg' alt='LinkedIn' class='linkedr'></a>
+        <!-- <a href='{{ site.social.links.facebook }}' class='face'><img src='assets/images/ian/social-f.svg' alt='Facebook' class='facer'></a> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class='the-stacks'>
+  <div class='container-wide'>
+    {% for role in page.stack %}
+    <div class='role'>
+      <div class='illy' style='background-image: url({{ role.image }});'></div>
+      <h2 class='name'>{{ role.name }}</h2>
+      <p class='blurb'>{{ role.blurb }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% include blog-list.html %}
+
+{% include contact.html %}
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+  $(function(){
+    $('.filter').each(function(){
+      var filter = $(this).data('filter');
+      if (!$('.post-card[data-filter*="' + filter + '"]').length) {
+        $(this).hide();
+      }
+    })
+
+    function filterCards(filter, btn) {
+      $('.filter').removeClass('active');
+      btn.addClass('active');
+      $('.post-card').hide();
+      $('.post-card[data-filter*="' + filter + '"]').show();
+    }
+    $('.filter').click(function(){
+      if ($(this).hasClass('active')) {
+        $('.post-card').show();
+        $(this).removeClass('active');
+      } else {
+        var filter = $(this).data('filter');
+        filterCards(filter, $(this));
+      }
+    })
+  });
+</script>
