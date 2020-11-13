@@ -20,7 +20,7 @@ But it rarely is, is it? This week we did a thing on a website. It required us t
 
 But it's also time consuming. If you are a precognitive savant, you can use your innate talents to divine the whole structure of what you're doing the first time. For the rest of us, we review our code many times as things progress, and keep refining things.
 
-So I'm thinking about the following code that I wrote once, and is perfectly useful:
+So I'm thinking about the following code that I wrote once, and is perfectly useful.
 
 {% highlight php %}
 
