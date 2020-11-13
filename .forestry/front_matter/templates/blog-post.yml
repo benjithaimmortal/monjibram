@@ -29,9 +29,6 @@ fields:
       file: 
       path: 
   label: Author
-- type: list
-  name: categories
-  label: Categories
 - name: tags
   type: list
   config:
@@ -40,6 +37,9 @@ fields:
     max: 
   label: Tags
   description: Featured is a common choice!
+- type: list
+  name: categories
+  label: Categories
 - name: hero
   type: text
   config:
