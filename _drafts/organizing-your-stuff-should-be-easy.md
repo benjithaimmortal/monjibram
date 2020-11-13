@@ -1,6 +1,6 @@
 ---
 title: Organizing Your Stuff Should Be Easy
-date: 11/13/2020 8:09 AM
+date: 2020-11-13
 categories:
 - Tutorial
 - WordPress
