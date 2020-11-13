@@ -23,31 +23,19 @@ But it's time consuming. If you are a precognitive savant, you can use your inna
 So I'm thinking about this code that I wrote once, which is perfectly useful. I was trying to process some existing Custom Post Types and import them into existing, more specific ones:
 
 {% highlight php %}
-
-// I want to make a new Custom Post Type called Kittens, but I want to use the existing data in Cats.
-
+// I want to add some new Custom Post Types called Kittens, but I want to use the existing data from Cats.
 $kittens = get_posts(array(
-
   'post_type'   => 'cats',
-
   'post_status' => 'publish',
-
   'meta_key'    => 'baby',
-
   'meta_value'  => 'true',
-
 ));
 
 // now things get unnecessarily complex
-
 foreach ($kittens as $i => $kitten) {
-
   $original_id = $kitten->ID;
-
   $title = $kitten->post_title;
-
   $calico = get_field('calico', $original_id);
-
 }
 
 {% endhighlight %}
