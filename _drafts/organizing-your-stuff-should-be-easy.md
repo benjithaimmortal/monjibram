@@ -20,7 +20,7 @@ But stuff rarely is, is it? This week we did a thing on a website. It required u
 
 But it's time consuming. If you are a precognitive savant, you can use your innate talents to divine the whole structure of what you're doing the first time. For the rest of us, we review our code many times as things progress, and keep refining it.
 
-So I'm thinking about this code that I wrote once, which is perfectly useful. I was trying to process some existing Custom Post Types and make newer, more specific ones:
+So I'm thinking about this code that I wrote once, which is perfectly useful. I was trying to process some existing Custom Post Types and import them into existing, more specific ones:
 
 {% highlight php %}
 
@@ -37,5 +37,17 @@ $kittens = get_posts(array(
   'meta_value'  => 'true',
 
 ));
+
+// now things get unnecessarily complex
+
+foreach ($kittens as $i => $kitten) {
+
+  $original_id = $kitten->ID;
+
+  $title = $kitten->post_title;
+
+  $calico = get_field('calico', $original_id);
+
+}
 
 {% endhighlight %}
