@@ -6,7 +6,8 @@ categories:
 - WordPress
 layout: post
 author: Benji
-hero: "/assets/images/organize_and_update.jpg"
+hero: organize_and_update.jpg
+image: /assets/images/organize_and_update.jpg
 
 ---
 This week we did a thing on a website.
