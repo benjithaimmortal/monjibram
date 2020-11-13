@@ -4,21 +4,63 @@ hide_body: false
 fields:
 - type: text
   name: title
-  label: title
-- type: text
-  name: date
-  label: date
+  label: Title
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+    export_format: YYYY-MM-DD
+  default: now
+- name: author
+  type: select
+  default: Benji
+  config:
+    required: true
+    options:
+    - Benji
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Author
 - type: list
   name: categories
-  label: categories
-- type: text
-  name: layout
-  label: layout
-- type: text
-  name: author
-  label: author
+  label: Categories
+- name: tags
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: Tags
+  description: Featured is a common choice!
+- name: hero
+  type: text
+  config:
+    required: false
+  label: Hero
+  description: Short URL from image
 - type: file
-  name: hero
-  label: hero
+  name: image
+  label: Image
+- name: layout
+  type: select
+  default: post
+  config:
+    required: true
+    options:
+    - post
+    source:
+      type: simple
+      section: jekyll-posts
+      file: 
+      path: 
+  label: Layout
 pages:
 - _posts/organizing-your-stuff-should-be-easy.md
