@@ -14,6 +14,4 @@ tags:
 ---
 This week we did a thing on a website.
 
-{% highlight html %}
-<div class='boop'></div>
-{% endhighlight %}
+{% highlight html %} <div class='boop'></div> {% endhighlight %} 
