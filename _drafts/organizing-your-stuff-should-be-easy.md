@@ -24,6 +24,8 @@ So I'm thinking about the following code that I wrote once, and is perfectly use
 
 {% highlight php %}
 
+// I want to make a new Custom Post Type called Kittens, but I want to use the existing data in Cats.
+
 $kittens = get_posts(array(
 
   'post_type'   => 'cats',
