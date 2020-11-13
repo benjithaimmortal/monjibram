@@ -20,3 +20,5 @@ fields:
 - type: file
   name: hero
   label: hero
+pages:
+- _posts/organizing-your-stuff-should-be-easy.md
