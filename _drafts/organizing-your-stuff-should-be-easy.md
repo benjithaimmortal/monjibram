@@ -12,6 +12,8 @@ tags:
 - Featured
 
 ---
-This week we did a thing on a website.
+But it rarely is, is it? This week we did a thing on a website. It required us to create or update something, depending on whether or not that thing exists. Simple enough, if you're copy and pasting, but hard why you're writing DRY code.
 
-{% highlight html %} <div class='boop'></div> {% endhighlight %} 
+DRY means **Don't** **Repeat** **Yourself**.
+
+{% highlight html %} <div class='boop'></div> {% endhighlight %}
