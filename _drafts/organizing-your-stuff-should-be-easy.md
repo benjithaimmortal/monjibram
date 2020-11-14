@@ -63,7 +63,7 @@ foreach ($kittens as $i => $kitten) {
         // more things
     ));
   } else {
-    // No existing kittens, proceed with making a new post
+    // No existing kittens, proceed with making a new one
     $confirmation = insert_post(array(
       'title' => $title,
       'calico' => $calico,
@@ -72,6 +72,8 @@ foreach ($kittens as $i => $kitten) {
       // more things
     ));
   }
+  
+  // Welcome to the end! You can put confirmations here like this...
   
 }
 
