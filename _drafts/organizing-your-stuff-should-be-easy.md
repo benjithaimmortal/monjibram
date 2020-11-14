@@ -93,8 +93,8 @@ That would work if we made a bunch of individual functions for updating or creat
 ### What Did You Do?
 I'm gonna visually separate this giant code block into things that we did:
 
-1. **Query** the `Cats` that are `Kittens`
-2. **Iterate** the `Kittens` to process:
-  1. **Query** the data we need from each of the `Cat` CPTs
-  2. **Query** existing `Kittens` to check for a match
-  3. **Post** an update OR make a new **post**
+- **Query** the `Cats` that are `Kittens`
+- **Iterate** the `Kittens` to process:
+  + **Query** the data we need from each of the `Cat` CPTs
+  + **Query** existing `Kittens` to check for a match
+  + **Post** an update OR make a new **post**
