@@ -91,4 +91,10 @@ That was fine, and you should feel fine. But it was also super long. Way too lon
 That would work if we made a bunch of individual functions for updating or creating, for checking if `Kittens` exist. Sure. But that's necessarily going to make this even bigger. I want to DRY it out first.
 
 ### What Did You Do?
-I'm gonna visually separate this into 
+I'm gonna visually separate this giant code block into things that we did:
+
+1. **Query** the `Cats` that are `Kittens`
+2. **Iterate** the `Kittens` to process:
+  1. **Query** the data we need from each of the `Cat` CPTs
+  2. **Query** existing `Kittens` to check for a match
+  3. **Post** an update OR make a new **post**
