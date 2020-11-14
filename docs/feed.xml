@@ -1,4 +1,164 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2020-11-03T23:24:04-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Monjibram</title><subtitle>Benjamin Kostenbader is Front-End Developer at Top Hat. He is also a proud father, cyclist, and squash enthusiast.</subtitle><author><name>Benjamin Kostenbader</name></author><entry><title type="html">Secrets of the Site Container: Part 2</title><link href="http://localhost:4000/site-containers-two/" rel="alternate" type="text/html" title="Secrets of the Site Container: Part 2" /><published>2020-08-08T00:00:00-04:00</published><updated>2020-08-08T00:00:00-04:00</updated><id>http://localhost:4000/site-containers-two</id><content type="html" xml:base="http://localhost:4000/site-containers-two/">&lt;p&gt;Containers are functional. Containers are necessary. Without them you’re exploring the great unknown of horizontal scrolling on a vertical page. Holding shift when you torque the mousewheel. It isn’t too much to ask to make it beautiful, though, is it?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2020-11-14T08:07:34-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Monjibram</title><subtitle>Benjamin Kostenbader is Front-End Developer at Top Hat. He is also a proud father, cyclist, and squash enthusiast.</subtitle><author><name>Benjamin Kostenbader</name></author><entry><title type="html">Organizing Your Stuff Is[n’t] Easy</title><link href="http://localhost:4000/organizing-your-stuff-should-be-easy/" rel="alternate" type="text/html" title="Organizing Your Stuff Is[n’t] Easy" /><published>2020-11-13T00:00:00-05:00</published><updated>2020-11-13T00:00:00-05:00</updated><id>http://localhost:4000/organizing-your-stuff-should-be-easy</id><content type="html" xml:base="http://localhost:4000/organizing-your-stuff-should-be-easy/">&lt;p&gt;But stuff rarely is, is it? This week we did a thing on a website. It required us to create or update something, depending on whether or not that thing exists. Simple enough, if you’re copy and pasting, but still time consuming when you’re writing DRY code.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;By the way, DRY means &lt;strong&gt;D&lt;/strong&gt;on’t &lt;strong&gt;R&lt;/strong&gt;epeat &lt;strong&gt;Y&lt;/strong&gt;ourself.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;DRY&lt;/strong&gt; code is one of those useful code quotes that was probably coined by Uncle Bob or Ada Lovelace or Abraham Lincoln (it’s actually attributed to Andy Hunt and Dave Thomas, if you care), which is incredibly overworked by the fancy developers you’ll see waxing eloquent on &lt;a href=&quot;https://www.youtube.com/watch?v=G6qOvbLngVs&quot;&gt;complex new frameworks&lt;/a&gt;, or talking quickly and passionately about &lt;a href=&quot;https://youtu.be/qGdYVslWJdQ?t=906&quot;&gt;things that don’t matter&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;But it’s time consuming. If you are a precognitive savant, you can use your innate talents to divine the whole structure of what you’re doing the first time. For the rest of us, we review our code many times as things progress, and keep refining it.&lt;/p&gt;
+
+&lt;p&gt;So I’m thinking about this code that I wrote once, which is a perfectly useful example. I’m trying to process some existing Custom Post Types and import them into existing, more specific ones.&lt;/p&gt;
+
+&lt;p&gt;I’m not thinking about speed, here. Even if there are hundreds and hundreds of these things, it’s not going to overwhelm my server’s processor. It’s not a web view, so I’m not making users wait around. It’s just a one-time transaction.&lt;/p&gt;
+
+&lt;p&gt;Prepare to &lt;a href=&quot;#after-the-first-pass&quot;&gt;skip to the end&lt;/a&gt; if you don’t want to scroll through the muck and comments!&lt;/p&gt;
+
+&lt;h2 id=&quot;the-first-pass&quot;&gt;The First Pass&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// I want to add some new Custom Post Types called Kittens, but I want to use the existing data from Cats.&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$kittens&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_posts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'numberposts'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// this defaults to ten, but I want all of them&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'post_type'&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'cat'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'post_status'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'publish'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'meta_key'&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'baby'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'meta_value'&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'true'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Now things get complex. the end of this foreach is a long way away.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;foreach&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$kittens&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$kitten&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$original_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$kitten&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$kitten&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post_title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$breed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_field&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'breed'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$original_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// an ACF&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$other_cat_meta&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_post_meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cat_meta'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$original_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// some post meta&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// more metadata&lt;/span&gt;
+  
+  &lt;span class=&quot;c1&quot;&gt;// But wait, is there already a Cat like this in my Kittens?&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// I don't want duplicates, in case I have to modify the data and run this migration again later.&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$existing_kitten&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_posts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'post_status'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'publish'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'post_type'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'kitten'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'title'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;// Let's say that most titles are unique...&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'meta_key'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'breed'&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'meta_value'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$breed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// ...and that this solidifies that uniqueness&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;))[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Grab the first post like this. I trust that your data selection is unique **side eye**&lt;/span&gt;
+  
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$existing_kitten&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  	&lt;span class=&quot;nv&quot;&gt;$confirmation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;wp_update_post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;'ID'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$existing_kitten&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;'post_title'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;'post_status'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'publish'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;'meta_input'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'breed'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$breed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'cat_meta'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$other_cat_meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// more things&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// No existing kittens, proceed with making a new one&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;$confirmation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;wp_insert_post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;'post_title'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;'post_status'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'publish'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;'meta_input'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'breed'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$breed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'cat_meta'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$other_cat_meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// more things&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  
+  &lt;span class=&quot;c1&quot;&gt;// You can put confirmations in post meta somewhere like this...&lt;/span&gt;
+  &lt;span class=&quot;nv&quot;&gt;$log_post_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12345&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$confirmation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;update_post_meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$log_post_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'log'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'error on $original_id'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// or raise an exception within the functions by setting the second arg to true, if you're logging those&lt;/span&gt;
+  &lt;span class=&quot;nf&quot;&gt;wp_insert_posts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$post_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nf&quot;&gt;wp_update_posts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$post_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  
+  &lt;span class=&quot;c1&quot;&gt;// Welcome to the end! You made it.&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;after-the-first-pass&quot;&gt;After the First Pass&lt;/h2&gt;
+&lt;p&gt;That was fine, and you should feel fine. But it was also super long. Way too long to store in one function. Kurt Vonnegut famously said, &lt;a href=&quot;https://en.wikipedia.org/wiki/Separation_of_concerns&quot; target=&quot;_blank&quot;&gt;“separate your concerns”&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;That would work if we made a bunch of individual functions for updating or creating, for checking if &lt;code class=&quot;highlighter-rouge&quot;&gt;Kittens&lt;/code&gt; exist. Sure. But that’s necessarily going to make this even bigger. I want to DRY it out first, or we’re going to be all.over.the.place.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-did-you-do-that&quot;&gt;Why Did You Do That?&lt;/h3&gt;
+&lt;p&gt;I’m gonna visually separate this giant code block into things that we did:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Query&lt;/strong&gt; the &lt;code class=&quot;highlighter-rouge&quot;&gt;Cats&lt;/code&gt; that are &lt;code class=&quot;highlighter-rouge&quot;&gt;Kittens&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;Iterate&lt;/em&gt; the &lt;code class=&quot;highlighter-rouge&quot;&gt;Kittens&lt;/code&gt; to process:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Query&lt;/strong&gt; the data we need from each of the matching &lt;code class=&quot;highlighter-rouge&quot;&gt;Cats&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Query&lt;/strong&gt; existing &lt;code class=&quot;highlighter-rouge&quot;&gt;Kittens&lt;/code&gt; to check for a match&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;If&lt;/em&gt; there’s a &lt;code class=&quot;highlighter-rouge&quot;&gt;Kitten&lt;/code&gt;, &lt;strong&gt;Post&lt;/strong&gt; an update&lt;/li&gt;
+      &lt;li&gt;&lt;em&gt;Else,&lt;/em&gt; &lt;strong&gt;Post&lt;/strong&gt; a new post&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;There’s a pretty hard mental stop between database queries and local processing. I can’t gain any meaningful ground by trying to combine the &lt;code class=&quot;highlighter-rouge&quot;&gt;foreach&lt;/code&gt; into a query, or even combining my &lt;code class=&quot;highlighter-rouge&quot;&gt;Cats&lt;/code&gt; query with my &lt;code class=&quot;highlighter-rouge&quot;&gt;Kittens&lt;/code&gt; query. They feel separate because they are!&lt;/p&gt;
+
+&lt;p&gt;But that last bit about posting changes felt pretty long. Even when I wrote the bullets I felt like it should be shorter. &lt;code class=&quot;highlighter-rouge&quot;&gt;If&lt;/code&gt; conditions are notorious for making big, unnecessary code.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-did-you-want-to-do&quot;&gt;What Did You Want to Do?&lt;/h3&gt;
+&lt;p&gt;We’ve got two fellow commands inside of that conditional, and they both do similar things: &lt;a href=&quot;https://developer.wordpress.org/reference/functions/wp_update_post/&quot; target=&quot;_blank&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wp_update_post()&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;https://developer.wordpress.org/reference/functions/wp_insert_post/&quot; target=&quot;_blank&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wp_insert_post()&lt;/code&gt;&lt;/a&gt;. Wait, no, on a computer level they’re really doing the same thing: pushing identical data to the database. The only difference seems to be that one creates a unique ID and the other doesn’t.&lt;/p&gt;
+
+&lt;p&gt;So click on them and read around! You’ll find something interesting. If you already work with WordPress a lot, you probably already had an inkling about it.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wp_insert_post()&lt;/code&gt; can also update posts!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Oh cool. So if we have the right parameters we can make that add or update posts exactly like we want it to.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Side rant: How bloody confusing! Most of the time WP update_ functions are the ones that create-or-update. Welcome to PHP, a Wild West of naming conventions where array_push($home_array, $other_stuff) but implode($separators, $home_array). I even had to look it up again for this article to make sure I was right. But yeah, in this case you're going to use wp_insert_post().&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;So &lt;code class=&quot;highlighter-rouge&quot;&gt;wp_insert_post()&lt;/code&gt; can take an existing ID and update that. Cool. But we don’t want to leave that field blank: that would be a great way to get errors, or overwrite an existing post elsewhere in the database. Or even worse, &lt;strong&gt;if the ID isn’t found… it breaks.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Luckily, &lt;a href=&quot;https://developer.wordpress.org/reference/functions/wp_insert_post/#comment-3682&quot; target=&quot;_blank&quot;&gt;I contributed something to the docs about that.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;compare&quot;&gt;Compare&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// insert&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$confirmation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;wp_insert_post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'title'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'breed'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$breed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'cat_meta'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$other_cat_meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'post_status'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'publish'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// more things&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// update&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$confirmation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;wp_update_post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'ID'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$existing_kitten&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// NO, BOOOO&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'title'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;               &lt;span class=&quot;c1&quot;&gt;// YES&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'post_status'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'publish'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;// YES&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'meta_input'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;           &lt;span class=&quot;c1&quot;&gt;// YES&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'breed'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$breed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'cat_meta'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$other_cat_meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// more things                   // YES&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;We can copy everything else into both functions. Cleaning these args should just require us to insert the ID. So let’s do that separately!&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'title'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'breed'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$breed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'cat_meta'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$other_cat_meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;'post_status'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'publish'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// more things&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// If there be kitten, update kitten.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$existing_kitten&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'ID'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$existing_kitten&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;ID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$confirmation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;wp_insert_post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Woah. That’s it! That’s the conditional. It’s one whole line long. Now we can separate any concerns we want, because I’m satisfied that an inevitable change in the &lt;code class=&quot;highlighter-rouge&quot;&gt;post_meta&lt;/code&gt; keys won’t make me update five of the same things – it’ll only make me update four.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+&lt;p&gt;There’s a ton of other stuff we could do to make this look even better, but this took me three hours to write. Go have a drink! You know this code is rock solid. I mean, you did make sure all the &lt;code class=&quot;highlighter-rouge&quot;&gt;post_titles&lt;/code&gt; were unique, right? …right? …Bueller?&lt;/p&gt;</content><author><name>Benji</name></author><category term="Tutorial" /><category term="WordPress" /><category term="Featured" /><summary type="html">But stuff rarely is, is it? This week we did a thing on a website. It required us to create or update something, depending on whether or not that thing exists. Simple enough, if you’re copy and pasting, but still time consuming when you’re writing DRY code.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/organize_and_update.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/organize_and_update.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Secrets of the Site Container: Part 2</title><link href="http://localhost:4000/site-containers-two/" rel="alternate" type="text/html" title="Secrets of the Site Container: Part 2" /><published>2020-08-08T00:00:00-04:00</published><updated>2020-08-08T00:00:00-04:00</updated><id>http://localhost:4000/site-containers-two</id><content type="html" xml:base="http://localhost:4000/site-containers-two/">&lt;p&gt;Containers are functional. Containers are necessary. Without them you’re exploring the great unknown of horizontal scrolling on a vertical page. Holding shift when you torque the mousewheel. It isn’t too much to ask to make it beautiful, though, is it?&lt;/p&gt;
 
 &lt;p&gt;Well, to be honest, most of the time that answer is yes. Function always comes before form, and things aren’t going to work better if you add bells and whistles. I really, truly believe that isn’t just my Pennsylvania Dutch heritage telling me that it doesn’t get better than hand-built Amish furniture. &lt;em&gt;These hills are in my blood.&lt;/em&gt;&lt;/p&gt;
 
@@ -1069,62 +1229,4 @@ So at the store: apples cost $5, bananas cost $3, asian pears cost $15&lt;/p&gt;
 
 &lt;p&gt;Hiring a professional to design and develop will make a huge difference in the lasting success of your site. It’s faster, more accessible, and often a more accurate representation of your business needs and goals.&lt;/p&gt;
 
-&lt;p&gt;Every situation is unique, and the choice is a major one. It’s a big decision, and one you need to make with all the facts. If you’re on the fence about it, &lt;a href=&quot;/contact/&quot;&gt;hire a consult&lt;/a&gt;! The fee for a recommendation will be significantly cheaper than the cost of fixing a mistake.&lt;/p&gt;</content><author><name>Benji</name></author><category term="Site&amp;nbsp;Generators" /><summary type="html">My first ‘official’ web project was for an old friend, a successful musician with a 5-year-old single page with some links. I was so confident in my delivery that I told him I’d do the project for free! This is bad business, but it wasn’t the worst part. After hours and hours of collaborative design ideation and development, he went out and bought a subscription to a site generator.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/code.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/code.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">You Should Probably Jamstack That</title><link href="http://localhost:4000/jam-that-sucker/" rel="alternate" type="text/html" title="You Should Probably Jamstack That" /><published>2020-05-17T08:09:00-04:00</published><updated>2020-05-17T08:09:00-04:00</updated><id>http://localhost:4000/jam-that-sucker</id><content type="html" xml:base="http://localhost:4000/jam-that-sucker/">&lt;p&gt;I use WordPress all day every day. It’s extremely customizable and easy for both web administrators and developers. But you don’t need WordPress. You need Jamstack.&lt;/p&gt;
-
-&lt;p&gt;Top Hat makes custom WordPress sites that are both deliciously beautiful and incredibly easy to use. I work with a lot of small- and medium-sized businesses and their marketing sites. I also freelance for up-and-coming businesses and people who consider their budgets a bit lower. I’m even a participating member of WP Pittsburgh, the group for small business owners and developers who study and practice all things WordPress. But I’m still here telling you that … you probably don’t need it.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Type your hosting fee here, then click the button.&lt;/strong&gt;
-&lt;!-- &lt;form action=&quot;event.preventDefault()&quot;&gt; --&gt;
-  &lt;input placeholder=&quot;$&quot; name=&quot;Fee&quot; style=&quot;     font: 400 18px / 1.2;     border-radius: 10px;     border: solid 1px #cddeec;     height: 33px;     width: 345px;     padding-left: 10px;     &quot; /&gt;
-  &lt;button for=&quot;Fee&quot; onclick=&quot;alert('Too much :(')&quot; style=&quot;     margin-top: 15px;     border-radius: 10px;     /* border: solid 1px #cddeec; */     height: 35px;     padding: 0 15px;     color: white;     background-color: #d42c41;     border: unset;&quot;&gt;
-      How much do you pay?
-  &lt;/button&gt;
-&lt;!-- &lt;/form&gt; --&gt;&lt;/p&gt;
-
-&lt;p&gt;There’s got to be a catch, you say. I get what I pay for. I’m going to drop quality somewhere. Maybe I won’t get a custom url? Maybe I have to choose from a gaudy design template, or worse, use a clunky website editor like it’s 2005 and I’m building a MySpace profile. Is it going to be slow? It’ll probably be really slow.&lt;/p&gt;
-
-&lt;p&gt;It’s true that if you’re paying for a little server you’re probably not getting the maximum speed out of your site. And if you’re hosting tons and tons of data like a forum or a video library you will need a place to store it (and that gets expensive in its own right). But why use a server at all? This is the decade of STATIC SITES.&lt;/p&gt;
-
-&lt;dl&gt;
-  &lt;dt&gt;Static Site&lt;/dt&gt;
-  &lt;dd&gt;A website that downloads everything to your browser and processes things from there [browser-based]&lt;/dd&gt;
-  &lt;dd&gt;A website that can connect to everything without querying a hosting server many times [pre-rendered]&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;p&gt;You’ve probably heard of this before. These days it’s called the Jamstack, or &lt;strong&gt;J&lt;/strong&gt;avaScript, &lt;strong&gt;A&lt;/strong&gt;PIs and &lt;strong&gt;M&lt;/strong&gt;arkup, which is an easier way of thinking about its key components. But we should start from the beginning of JAM. Or is it the end?&lt;/p&gt;
-
-&lt;h2 id=&quot;markup&quot;&gt;M[arkup]&lt;/h2&gt;
-
-&lt;h4 id=&quot;some-history&quot;&gt;Some History&lt;/h4&gt;
-&lt;p&gt;Actually, static sites have been around since the 1990’s. Back before every page needed login credentials, when the internet was a small place with anonymous pages, many of those pages were static HTML markup. They were quick, available to everyone, and cheap on server resources. That’s the definition of a marketing site!&lt;/p&gt;
-
-&lt;p&gt;So why isn’t everything static? Your own technical experience, for starters. Early static sites required experience with HTML at a bare minimum. Adding assets like audio, images, and video dynamically and styling the results was a big ask. A graphical interface for uploading media? Forget it.&lt;/p&gt;
-
-&lt;p&gt;That’s where WordPress came in, and that’s why it’s been the king for almost 20 years. It provides a cool(ish) GUI that will help your marketing people get the job done without getting encumbered by strange &lt;code class=&quot;highlighter-rouge&quot;&gt;{curly braces}&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;$weird_Naming_Conventions&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;But today we’ve got &lt;a href=&quot;https://ghost.org/&quot;&gt;Ghost&lt;/a&gt; and &lt;a href=&quot;https://forestry.io/&quot;&gt;Forestry&lt;/a&gt; bringing the heat without the cost of a fire. These give you the freedom to use good-looking interfaces and a Google Docs-style text editor, and their base plans are free!&lt;/p&gt;
-
-&lt;h2 id=&quot;apis&quot;&gt;A[PIs]&lt;/h2&gt;
-
-&lt;h4 id=&quot;you-probably-dont-need-to-log-in-but-if-you-do&quot;&gt;You Probably Don’t Need to Log In. But If You Do…&lt;/h4&gt;
-&lt;p&gt;You’re not making Facebook 3.0. You’re not asking for a number-munching Site as a Service. You’re just trying to get visibility. Any dynamic experience you need to give your customers could come from a simple cookie.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;If that last sentence sounded like gibberish, &lt;a href=&quot;/contact/&quot;&gt;talk to me later&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;But even if you are, modern web development uses these cool things called REST APIs for a lot of heavy lifting. These are tiny applications that talk to your site from afar, and deliver content you need on request. The speed improvement compared to building dynamic content on the page is readily apparent. Those large media and file databases we spoke of earlier can still exist independently of your site, and they don’t need to slow you down.&lt;/p&gt;
-
-&lt;p&gt;That includes eCommerce. There is no reason to set up your products on a service like &lt;a href=&quot;https://shopify.dev/docs/admin-api/rest/reference&quot;&gt;Shopify&lt;/a&gt; or &lt;a href=&quot;https://woocommerce.github.io/woocommerce-rest-api-docs/#introduction&quot;&gt;WooCommerce&lt;/a&gt;, then set them up again inside of your own site. Do it once, and then interface with it. Hence &lt;strong&gt;A&lt;/strong&gt;pplication &lt;strong&gt;P&lt;/strong&gt;rogramming &lt;strong&gt;I&lt;/strong&gt;nterface. Heck, you can even use &lt;a href=&quot;https://snipcart.com/&quot;&gt;SnipCart&lt;/a&gt; and it will do most of the integrating for you. ✌️&lt;/p&gt;
-
-&lt;h2 id=&quot;javascript&quot;&gt;J[avaScript]&lt;/h2&gt;
-&lt;h4 id=&quot;and-then-there-was-javascript&quot;&gt;And then there was JavaScript&lt;/h4&gt;
-&lt;p&gt;Wix costs up to &lt;em&gt;$500 a month&lt;/em&gt; for fancy templates. WordPress plugins will quickly rack up site costs for functionality. But a one-size-fits-all solution, built to scale to any size, also adds a lot of dead weight. All the processing work for a page to render on a server &lt;em&gt;quickly&lt;/em&gt; becomes more taxing than an API, and rarely is anything new actually getting done.&lt;/p&gt;
-
-&lt;p&gt;A savvy developer could template and build a lightweight, fully custom site to your exact specifications. But actually there’s more than that! What if your site could preload the next page’s images while you read, or hack the browser to stop it from reloading content it already has? That’s possible with modern JavaScript frameworks like React, Angular, and Vue.&lt;/p&gt;
-
-&lt;p&gt;I strongly encourage you to hit F12 and take a look at all the crazy things a simple blog like this needs to load and give to every browser that visits. Search engine meta, styles, JS libraries to make things scroll smoothly… on a standard hosted site it will all load again on every click. Storing it properly and only loading &lt;em&gt;new&lt;/em&gt; things adds serious speed. I’m talking &lt;a href=&quot;https://www.shopflamingo.com&quot;&gt;blazingly&lt;/a&gt;, &lt;a href=&quot;https://ca.braun.com/en-ca&quot;&gt;ludicrously&lt;/a&gt; &lt;a href=&quot;https://airbnb.io/&quot;&gt;fast&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;So that’s the &lt;em&gt;MAJ&lt;/em&gt;– I mean– &lt;strong&gt;Jamstack&lt;/strong&gt;, and it’s going to separate you from your competition. All you need is &lt;a href=&quot;/contact/&quot;&gt;the right developer&lt;/a&gt;. And save all of the hosting costs! That hosting money is much better spent on web consultancy, or invested in the development of the site itself.&lt;/p&gt;
-
-&lt;p&gt;After that it’s 100% yours. You can build out additional pages to your needs, and fill it up with content that will directly attract your clientele. You can even sell products. All without that monthly hosting fee.&lt;/p&gt;</content><author><name>Benji</name></author><category term="Jamstack" /><category term="Static&amp;nbsp;Sites" /><category term="Featured" /><summary type="html">I use WordPress all day every day. It’s extremely customizable and easy for both web administrators and developers. But you don’t need WordPress. You need Jamstack.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/jam.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/jam.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;p&gt;Every situation is unique, and the choice is a major one. It’s a big decision, and one you need to make with all the facts. If you’re on the fence about it, &lt;a href=&quot;/contact/&quot;&gt;hire a consult&lt;/a&gt;! The fee for a recommendation will be significantly cheaper than the cost of fixing a mistake.&lt;/p&gt;</content><author><name>Benji</name></author><category term="Site&amp;nbsp;Generators" /><summary type="html">My first ‘official’ web project was for an old friend, a successful musician with a 5-year-old single page with some links. I was so confident in my delivery that I told him I’d do the project for free! This is bad business, but it wasn’t the worst part. After hours and hours of collaborative design ideation and development, he went out and bought a subscription to a site generator.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/code.webp" /><media:content medium="image" url="http://localhost:4000/assets/images/code.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
