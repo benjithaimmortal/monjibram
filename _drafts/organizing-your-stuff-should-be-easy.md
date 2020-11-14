@@ -47,7 +47,7 @@ foreach ($kittens as $i => $kitten) {
   
   // But wait, is there already a Cat like this in my Kittens?
   // I don't want duplicates, in case I have to modify the data and run this migration again later.
-  $(existing_kitten) = get_posts(array(
+  $existing_kitten = get_posts(array(
     'post_status' => 'publish',
     'post_type' => 'kitten',
     'title' => $title,   // let's say that most titles are unique
