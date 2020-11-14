@@ -95,6 +95,6 @@ I'm gonna visually separate this giant code block into things that we did:
 
 1. **Query** the `Cats` that are `Kittens`
 1. **Iterate** the `Kittens` to process:
-  + **Query** the data we need from each of the `Cat` CPTs
+  + **Query** the data we need from each of the matching `Cats`
   + **Query** existing `Kittens` to check for a match
   + **Post** an update OR make a new **post**
