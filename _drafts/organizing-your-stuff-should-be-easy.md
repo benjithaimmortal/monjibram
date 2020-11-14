@@ -20,12 +20,14 @@ But stuff rarely is, is it? This week we did a thing on a website. It required u
 
 But it's time consuming. If you are a precognitive savant, you can use your innate talents to divine the whole structure of what you're doing the first time. For the rest of us, we review our code many times as things progress, and keep refining it.
 
-So I'm thinking about this code that I wrote once, which is a perfectly useful example. I was trying to process some existing Custom Post Types and import them into existing, more specific ones:
+So I'm thinking about this code that I wrote once, which is a perfectly useful example. I'm trying to process some existing Custom Post Types and import them into existing, more specific ones.
+
+I'm not thinking about speed, here. Even if there are hundreds and hundreds of these things, it's not going to overwhelm my processor. It's not a web view, so I'm not making users wait around. It's just a one-time transaction.
 
 {% highlight php %}
 // I want to add some new Custom Post Types called Kittens, but I want to use the existing data from Cats.
 $kittens = get_posts(array(
-  'post_type'   => 'cats',
+  'post_type'   => 'cat',
   'post_status' => 'publish',
   'meta_key'    => 'baby',
   'meta_value'  => 'true',
@@ -36,6 +38,17 @@ foreach ($kittens as $i => $kitten) {
   $original_id = $kitten->ID;
   $title = $kitten->post_title;
   $calico = get_field('calico', $original_id);
+  $other_cat_meta = get_post_meta('cat_meta', $original_id);
+  
+  // but wait, is there already a Cat like this in my Kittens? I don't want duplicates, in case I have to modify the data and run this migration again later.
+  $existing_cat = get_posts(array(
+    'post_status' => 'publish',
+    'post_type' => 'kitten',
+    'title' => $title,   // let's say that most titles are unique
+    'calico' => $calico, // and that this solidifies that
+  ))[0]; // there should only be one of these already
+  
+  if 
 }
 
 {% endhighlight %}
