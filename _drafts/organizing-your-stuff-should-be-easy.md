@@ -92,7 +92,7 @@ foreach ($kittens as $i => $kitten) {
 {% endhighlight %}
 
 ## After the First Pass
-That was fine, and you should feel fine. But it was also super long. Way too long to store in one function. Kurt Vonnegut famously said <a href="https://en.wikipedia.org/wiki/Separation_of_concerns" target="_blank">"separate your concerns"</a>.
+That was fine, and you should feel fine. But it was also super long. Way too long to store in one function. Kurt Vonnegut famously said, <a href="https://en.wikipedia.org/wiki/Separation_of_concerns" target="_blank">"separate your concerns"</a>.
 
 That would work if we made a bunch of individual functions for updating or creating, for checking if `Kittens` exist. Sure. But that's necessarily going to make this even bigger. I want to DRY it out first, or we're going to be all.over.the.place.
 
