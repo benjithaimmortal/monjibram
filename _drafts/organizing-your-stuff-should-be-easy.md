@@ -56,19 +56,24 @@ foreach ($kittens as $i => $kitten) {
   
   if ($existing_kitten->ID) {
   	$confirmation = wp_update_post(array(
-        'ID' => $existing_kitten->ID,
-        'title' => $title,
+      'ID' => $existing_kitten->ID,
+      'post_title' => $title,
+      'post_status' => 'publish',
+      'meta_input' => array(
         'calico' => $calico,
-        'cat_meta' => $other_cat_meta
-        // more things
+        'cat_meta' => $other_cat_meta,
+      ),
+      // more things
     ));
   } else {
     // No existing kittens, proceed with making a new one
     $confirmation = wp_insert_post(array(
-      'title' => $title,
-      'calico' => $calico,
-      'cat_meta' => $other_cat_meta,
+      'post_title' => $title,
       'post_status' => 'publish',
+      'meta_input' => array(
+        'calico' => $calico,
+        'cat_meta' => $other_cat_meta,
+      ),
       // more things
     ));
   }
