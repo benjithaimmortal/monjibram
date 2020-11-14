@@ -94,11 +94,11 @@ That would work if we made a bunch of individual functions for updating or creat
 I'm gonna visually separate this giant code block into things that we did:
 
 1. **Query** the `Cats` that are `Kittens`
-1. **Iterate** the `Kittens` to process:
+1. *Iterate* the `Kittens` to process:
   + **Query** the data we need from each of the matching `Cats`
   + **Query** existing `Kittens` to check for a match
-  + **If** there's a `Kitten`: **Post** an update
-  + **Else**: **Post** a new post
+  + *If* there's a `Kitten`: **Post** an update
+  + *Else*: **Post** a new post
 
 There's a pretty hard mental stop between queries and independent functional processing. I can't gain any meaningful ground by trying to combine the `foreach` into a query, or even combining my `Cats` query with my `Kittens` query. They feel separate because they are!
 
