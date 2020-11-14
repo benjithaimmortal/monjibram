@@ -41,7 +41,7 @@ $kittens = get_posts(array(
 foreach ($kittens as $i => $kitten) {
   $original_id = $kitten->ID;
   $title = $kitten->post_title;
-  $calico = get_field('calico', $original_id); // an ACF
+  $calico = get_field('breed', $original_id); // an ACF
   $other_cat_meta = get_post_meta('cat_meta', $original_id); // some post meta
   // more metadata
   
@@ -51,7 +51,8 @@ foreach ($kittens as $i => $kitten) {
     'post_status' => 'publish',
     'post_type' => 'kitten',
     'title' => $title,   // let's say that most titles are unique
-    'calico' => $calico, // and that this solidifies that
+    'meta_key' => 'breed'
+    'meta_value' => $calico, // and that this solidifies that uniqueness
   ))[0]; // I trust that your data selection is unique **side eye**
   
   if ($existing_kitten->ID) {
@@ -60,7 +61,7 @@ foreach ($kittens as $i => $kitten) {
       'post_title' => $title,
       'post_status' => 'publish',
       'meta_input' => array(
-        'calico' => $calico,
+        'breed' => $calico,
         'cat_meta' => $other_cat_meta,
       ),
       // more things
@@ -71,7 +72,7 @@ foreach ($kittens as $i => $kitten) {
       'post_title' => $title,
       'post_status' => 'publish',
       'meta_input' => array(
-        'calico' => $calico,
+        'breed' => $calico,
         'cat_meta' => $other_cat_meta,
       ),
       // more things
@@ -122,10 +123,9 @@ Oh cool. So if we have the right parameters we can make that add or update posts
 
 So `wp_insert_post()` can take an existing ID and update that. Cool. But we don't want to leave that field blank: that would be a great way to get errors, or overwrite an existing post elsewhere in the database. Or even worse, **if the ID isn't found... it breaks.**
 
-Luckily, <a href='https://developer.wordpress.org/reference/functions/wp_insert_post/#comment-3682' target='_blank'>I contributed something to the docs about that!</a>
+Luckily, <a href='https://developer.wordpress.org/reference/functions/wp_insert_post/#comment-3682' target='_blank'>I contributed something to the docs about that.</a>
 
-There are a lot of things that we can copy into both, though!
-
+### Compare
 {% highlight php %}
 // insert
 $confirmation = wp_insert_post(array(
@@ -149,3 +149,16 @@ $confirmation = wp_update_post(array(
 ));
 
 {% endhighlight %}
+
+We can copy everything else into both functions. Cleaning these args should just require us to insert the ID. So let's do that separately!
+
+{% highlight php %}
+$args = array(
+  'title' => $title,
+  'calico' => $calico,
+  'cat_meta' => $other_cat_meta,
+  'post_status' => 'publish',
+  // more things
+)
+if ($existing_kitten->ID) {
+$confirmation = wp_insert_post($args);
