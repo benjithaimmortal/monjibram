@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  
+  <meta charset="utf-8">
+
+  <!-- favicons -->
+  <link rel="apple-touch-icon"      sizes="57x57"   href="/assets/images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon"      sizes="60x60"   href="/assets/images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon"      sizes="72x72"   href="/assets/images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon"      sizes="76x76"   href="/assets/images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon"      sizes="114x114" href="/assets/images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon"      sizes="120x120" href="/assets/images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon"      sizes="144x144" href="/assets/images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon"      sizes="152x152" href="/assets/images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon"      sizes="180x180" href="/assets/images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32"   href="/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96"   href="/assets/images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16"   href="/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest"                              href="/assets/images/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/images/favicon/ms-icon-144x144.png">
+  <meta name="theme-color"             content="#ffffff">
+
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+
+  <!-- force mobile to use mobile viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Organizing Your Stuff Is[n’t] Easy | Monjibram</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="Organizing Your Stuff Is[n’t] Easy" />
+<meta name="author" content="Benji" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="But stuff rarely is, is it? This week we did a thing on a website. It required us to create or update something, depending on whether or not that thing exists. Simple enough, if you’re copy and pasting, but still time consuming when you’re writing DRY code." />
+<meta property="og:description" content="But stuff rarely is, is it? This week we did a thing on a website. It required us to create or update something, depending on whether or not that thing exists. Simple enough, if you’re copy and pasting, but still time consuming when you’re writing DRY code." />
+<link rel="canonical" href="http://localhost:4000/organizing-your-stuff-should-be-easy/" />
+<meta property="og:url" content="http://localhost:4000/organizing-your-stuff-should-be-easy/" />
+<meta property="og:site_name" content="Monjibram" />
+<meta property="og:image" content="http://localhost:4000/assets/images/organize_and_update.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-11-13T00:00:00-05:00" />
+<meta name="google-site-verification" content="OTG5c_uywRHQgQpvdcwgCYY02h8ofndgJq_kGPt1l_I" />
+<script type="application/ld+json">
+{"description":"But stuff rarely is, is it? This week we did a thing on a website. It required us to create or update something, depending on whether or not that thing exists. Simple enough, if you’re copy and pasting, but still time consuming when you’re writing DRY code.","@type":"BlogPosting","image":"http://localhost:4000/assets/images/organize_and_update.jpg","url":"http://localhost:4000/organizing-your-stuff-should-be-easy/","headline":"Organizing Your Stuff Is[n’t] Easy","dateModified":"2020-11-13T00:00:00-05:00","datePublished":"2020-11-13T00:00:00-05:00","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/Benji.jpg"},"name":"Benji"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/organizing-your-stuff-should-be-easy/"},"author":{"@type":"Person","name":"Benji"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta property="og:type"             content="website" />
+  <meta property="og:image:type"       content="image/jpeg" />
+  <meta property="og:image:alt"        content="Benjamin Kostenbader" />
+</head>
+  <body>
+    <div class='bar'>
+  <a href='/' class='logo' aria-label="Navigate Home">
+    <svg width="90px" height="47px" viewBox="0 0 90 47" role="img">
+      <title>Site Logo</title>
+      <g class="full-logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M4.12470513,7.7974 C2.11314103,7.7974 0.482551282,6.1239 0.482551282,4.0594 C0.482551282,1.9954 2.11314103,0.3219 4.12470513,0.3219 L14.9776026,0.3219 C16.9891667,0.3219 18.6197564,1.9954 18.6197564,4.0594 C18.6197564,6.1239 16.9891667,7.7974 14.9776026,7.7974 L4.12470513,7.7974 Z" class="toggleBackground" fill-opacity="0.4" mask="url(#mask-2)" transform="translate(71.000000, 0.918367)"></path>
+        <path d="M72.132849,7.89676344 C71.3772704,7.2155381 71,6.38261723 71,5.39706442 C71,4.41151162 71.3772704,3.58514549 72.132849,2.91843423 C72.8873897,2.25172298 73.8432797,1.91836735 75,1.91836735 C76.1567203,1.91836735 77.1120913,2.25172298 77.867151,2.91843423 C78.6216917,3.58514549 79,4.41151162 79,5.39706442 C79,6.41164539 78.6216917,7.25158921 77.867151,7.91830046 C77.1120913,8.58547991 76.1567203,8.91836735 75,8.91836735 C73.8432797,8.91836735 72.8873897,8.57798878 72.132849,7.89676344 Z" class="toggle-dot"></path>
+        <path d="M10.5018262,20.9121192 L5.43170197,20.9121192 L5.43170197,28.5282862 L10.9096056,28.5282862 C14.621302,28.5282862 16.4322042,27.2291045 16.4322042,24.6754719 C16.4322042,21.8976882 13.9875365,20.9121192 10.5018262,20.9121192 M10.63792,9.30844847 L5.43170197,9.30844847 L5.43170197,16.9251125 L10.1849434,16.9251125 C13.715851,16.9251125 15.5719503,15.4465105 15.5719503,13.0275673 C15.5719503,10.652858 13.8519449,9.30844847 10.63792,9.30844847 M22,24.899126 C22,29.5143522 19.1937546,32.9183673 10.9994978,32.9183673 L0,32.9183673 L0,4.91836735 L10.8192111,4.91836735 C18.4690924,4.91836735 21.0945489,8.05449458 21.0945489,12.3103833 C21.0945489,15.311821 19.2836468,17.3281868 16.0244248,18.4032174 C19.7366234,19.2093662 22,21.5840755 22,24.899126" class="bee"></path>
+        <path d="M35.1660662,14.9059854 C37.8741609,14.9059854 39.0728338,16.6537372 39.0728338,19.4314497 L39.0728338,19.7898482 L30.2832223,19.8345859 C30.5491563,17.2805618 32.2811747,14.9059854 35.1660662,14.9059854 L35.1660662,14.9059854 Z M42.6683601,26.8250961 C40.8038672,27.9892698 38.4513361,28.7065638 36.2760945,28.7065638 C32.6357534,28.7065638 30.3723595,26.4214628 30.1497628,23.0606693 L30.1497628,22.9264563 C30.1497628,22.9264563 43.5119618,22.7470085 43.5562842,22.7470085 C43.8227107,21.8512608 44,20.4171698 44,19.2972367 C44,14.233429 40.981649,10.9183673 35.5659522,10.9183673 C29.4396205,10.9183673 25,15.3985969 25,22.120184 C25,28.7065638 29.3504834,32.9183673 35.9210233,32.9183673 C38.3735258,32.9183673 40.7890931,32.4192937 42.6683601,31.5498916 L42.6683601,26.8250961 Z" class="eee" mask="url(#mask-4)"></path>
+        <path d="M60.6270503,10.9183673 C58.2154573,10.9183673 55.8468602,12.1972794 54.0811614,14.1829457 L54.0811614,11.6681925 L49,11.6681925 L49,31.9183673 L54.0811614,31.9183673 L54.0811614,17.4039638 C55.0719783,16.4334002 56.7082117,15.506397 58.4734328,15.506397 C60.7565157,15.506397 61.9188386,16.5210103 61.9188386,19.52129 L61.9188386,31.9183673 L67,31.9183673 L67,17.9330506 C67,13.5652699 64.6318807,10.9183673 60.6270503,10.9183673" class="enn" mask="url(#mask-4)"></path>
+        <polygon class="jay" mask="url(#mask-4)" points="72 47.9183673 78 47.9183673 78 11.9183673 72 11.9183673"></polygon>
+        <polygon class="eye" mask="url(#mask-4)" points="83 31.9183673 89 31.9183673 89 11.9183673 83 11.9183673"></polygon>
+      </g>
+    </svg>
+  </a>
+  <nav>
+    <!-- 
+      <a href='/' class='link'>Home</a>
+     -->
+
+
+    
+      
+    
+      
+        
+          <a href='/contact/' class='link'>Contact</a>
+          
+            
+              <!-- Blog be special -->
+              <a href='/blog' class='link'>Blog</a>
+            
+          
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href='/resume/' class='link'>Resume</a>
+          
+        
+      
+    
+      
+    
+      
+    
+  </nav>
+</div>
+    <div class='content organizing-your-stuff-is-n-t-easy-page'>
+      <div class="blog-post">
+  <article class="article">
+    <div class='blog-info'>
+      <div class='datetime'>11/13/20</div>
+      
+      
+      <div class="cat" href="blog/categories/#Tutorial">Tutorial</div>
+      
+      <div class="cat" href="blog/categories/#WordPress">WordPress</div>
+      
+      <!-- 
+        <div class='auth'>By Benji</div>
+         -->
+    </div>
+    <h1 class='title'>Organizing Your Stuff Is[n't] Easy</h1>
+    <section class='content'>
+      <p>But stuff rarely is, is it? This week we did a thing on a website. It required us to create or update something, depending on whether or not that thing exists. Simple enough, if you’re copy and pasting, but still time consuming when you’re writing DRY code.</p>
+
+<blockquote>
+  <p>By the way, DRY means <strong>D</strong>on’t <strong>R</strong>epeat <strong>Y</strong>ourself.</p>
+</blockquote>
+
+<p><strong>DRY</strong> code is one of those useful code quotes that was probably coined by Uncle Bob or Ada Lovelace or Abraham Lincoln (it’s actually attributed to Andy Hunt and Dave Thomas, if you care), which is incredibly overworked by the fancy developers you’ll see waxing eloquent on <a href="https://www.youtube.com/watch?v=G6qOvbLngVs">complex new frameworks</a>, or talking quickly and passionately about <a href="https://youtu.be/qGdYVslWJdQ?t=906">things that don’t matter</a>.</p>
+
+<p>But it’s time consuming. If you are a precognitive savant, you can use your innate talents to divine the whole structure of what you’re doing the first time. For the rest of us, we review our code many times as things progress, and keep refining it.</p>
+
+<p>So I’m thinking about this code that I wrote once, which is a perfectly useful example. I’m trying to process some existing Custom Post Types and import them into existing, more specific ones.</p>
+
+<p>I’m not thinking about speed, here. Even if there are hundreds and hundreds of these things, it’s not going to overwhelm my server’s processor. It’s not a web view, so I’m not making users wait around. It’s just a one-time transaction.</p>
+
+<p>Prepare to <a href="#after-the-first-pass">skip to the end</a> if you don’t want to scroll through the muck and comments!</p>
+
+<h2 id="the-first-pass">The First Pass</h2>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="c1">// I want to add some new Custom Post Types called Kittens, but I want to use the existing data from Cats.</span>
+<span class="nv">$kittens</span> <span class="o">=</span> <span class="nf">get_posts</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+  <span class="s1">'numberposts'</span> <span class="o">=&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="c1">// this defaults to ten, but I want all of them</span>
+  <span class="s1">'post_type'</span>   <span class="o">=&gt;</span> <span class="s1">'cat'</span><span class="p">,</span>
+  <span class="s1">'post_status'</span> <span class="o">=&gt;</span> <span class="s1">'publish'</span><span class="p">,</span>
+  <span class="s1">'meta_key'</span>    <span class="o">=&gt;</span> <span class="s1">'baby'</span><span class="p">,</span>
+  <span class="s1">'meta_value'</span>  <span class="o">=&gt;</span> <span class="s1">'true'</span><span class="p">,</span>
+<span class="p">));</span>
+
+<span class="c1">// Now things get complex. the end of this foreach is a long way away.</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$kittens</span> <span class="k">as</span> <span class="nv">$i</span> <span class="o">=&gt;</span> <span class="nv">$kitten</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nv">$original_id</span> <span class="o">=</span> <span class="nv">$kitten</span><span class="o">-&gt;</span><span class="no">ID</span><span class="p">;</span>
+  <span class="nv">$title</span> <span class="o">=</span> <span class="nv">$kitten</span><span class="o">-&gt;</span><span class="n">post_title</span><span class="p">;</span>
+  <span class="nv">$breed</span> <span class="o">=</span> <span class="nf">get_field</span><span class="p">(</span><span class="s1">'breed'</span><span class="p">,</span> <span class="nv">$original_id</span><span class="p">);</span> <span class="c1">// an ACF</span>
+  <span class="nv">$other_cat_meta</span> <span class="o">=</span> <span class="nf">get_post_meta</span><span class="p">(</span><span class="s1">'cat_meta'</span><span class="p">,</span> <span class="nv">$original_id</span><span class="p">);</span> <span class="c1">// some post meta</span>
+  <span class="c1">// more metadata</span>
+  
+  <span class="c1">// But wait, is there already a Cat like this in my Kittens?</span>
+  <span class="c1">// I don't want duplicates, in case I have to modify the data and run this migration again later.</span>
+  <span class="nv">$existing_kitten</span> <span class="o">=</span> <span class="nf">get_posts</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+    <span class="s1">'post_status'</span> <span class="o">=&gt;</span> <span class="s1">'publish'</span><span class="p">,</span>
+    <span class="s1">'post_type'</span> <span class="o">=&gt;</span> <span class="s1">'kitten'</span><span class="p">,</span>
+    <span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="nv">$title</span><span class="p">,</span>   <span class="c1">// Let's say that most titles are unique...</span>
+    <span class="s1">'meta_key'</span> <span class="o">=&gt;</span> <span class="s1">'breed'</span>
+    <span class="s1">'meta_value'</span> <span class="o">=&gt;</span> <span class="nv">$breed</span><span class="p">,</span> <span class="c1">// ...and that this solidifies that uniqueness</span>
+  <span class="p">))[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// Grab the first post like this. I trust that your data selection is unique **side eye**</span>
+  
+  <span class="k">if</span> <span class="p">(</span><span class="nv">$existing_kitten</span><span class="o">-&gt;</span><span class="no">ID</span><span class="p">)</span> <span class="p">{</span>
+  	<span class="nv">$confirmation</span> <span class="o">=</span> <span class="nf">wp_update_post</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+      <span class="s1">'ID'</span> <span class="o">=&gt;</span> <span class="nv">$existing_kitten</span><span class="o">-&gt;</span><span class="no">ID</span><span class="p">,</span>
+      <span class="s1">'post_title'</span> <span class="o">=&gt;</span> <span class="nv">$title</span><span class="p">,</span>
+      <span class="s1">'post_status'</span> <span class="o">=&gt;</span> <span class="s1">'publish'</span><span class="p">,</span>
+      <span class="s1">'meta_input'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'breed'</span> <span class="o">=&gt;</span> <span class="nv">$breed</span><span class="p">,</span>
+        <span class="s1">'cat_meta'</span> <span class="o">=&gt;</span> <span class="nv">$other_cat_meta</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="c1">// more things</span>
+    <span class="p">));</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// No existing kittens, proceed with making a new one</span>
+    <span class="nv">$confirmation</span> <span class="o">=</span> <span class="nf">wp_insert_post</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+      <span class="s1">'post_title'</span> <span class="o">=&gt;</span> <span class="nv">$title</span><span class="p">,</span>
+      <span class="s1">'post_status'</span> <span class="o">=&gt;</span> <span class="s1">'publish'</span><span class="p">,</span>
+      <span class="s1">'meta_input'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'breed'</span> <span class="o">=&gt;</span> <span class="nv">$breed</span><span class="p">,</span>
+        <span class="s1">'cat_meta'</span> <span class="o">=&gt;</span> <span class="nv">$other_cat_meta</span><span class="p">,</span>
+      <span class="p">),</span>
+      <span class="c1">// more things</span>
+    <span class="p">));</span>
+  <span class="p">}</span>
+  
+  <span class="c1">// You can put confirmations in post meta somewhere like this...</span>
+  <span class="nv">$log_post_id</span> <span class="o">=</span> <span class="mi">12345</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nv">$confirmation</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="nf">update_post_meta</span><span class="p">(</span><span class="nv">$log_post_id</span><span class="p">,</span> <span class="s1">'log'</span><span class="p">,</span> <span class="s1">'error on $original_id'</span><span class="p">);</span> <span class="p">}</span>
+  <span class="c1">// or raise an exception within the functions by setting the second arg to true, if you're logging those</span>
+  <span class="nf">wp_insert_posts</span><span class="p">(</span><span class="nv">$post_array</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+  <span class="nf">wp_update_posts</span><span class="p">(</span><span class="nv">$post_array</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+  
+  <span class="c1">// Welcome to the end! You made it.</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="after-the-first-pass">After the First Pass</h2>
+<p>That was fine, and you should feel fine. But it was also super long. Way too long to store in one function. Kurt Vonnegut famously said, <a href="https://en.wikipedia.org/wiki/Separation_of_concerns" target="_blank">“separate your concerns”</a>.</p>
+
+<p>That would work if we made a bunch of individual functions for updating or creating, for checking if <code class="highlighter-rouge">Kittens</code> exist. Sure. But that’s necessarily going to make this even bigger. I want to DRY it out first, or we’re going to be all.over.the.place.</p>
+
+<h3 id="why-did-you-do-that">Why Did You Do That?</h3>
+<p>I’m gonna visually separate this giant code block into things that we did:</p>
+
+<ol>
+  <li><strong>Query</strong> the <code class="highlighter-rouge">Cats</code> that are <code class="highlighter-rouge">Kittens</code></li>
+  <li><em>Iterate</em> the <code class="highlighter-rouge">Kittens</code> to process:
+    <ul>
+      <li><strong>Query</strong> the data we need from each of the matching <code class="highlighter-rouge">Cats</code></li>
+      <li><strong>Query</strong> existing <code class="highlighter-rouge">Kittens</code> to check for a match</li>
+      <li><em>If</em> there’s a <code class="highlighter-rouge">Kitten</code>, <strong>Post</strong> an update</li>
+      <li><em>Else,</em> <strong>Post</strong> a new post</li>
+    </ul>
+  </li>
+</ol>
+
+<p>There’s a pretty hard mental stop between database queries and local processing. I can’t gain any meaningful ground by trying to combine the <code class="highlighter-rouge">foreach</code> into a query, or even combining my <code class="highlighter-rouge">Cats</code> query with my <code class="highlighter-rouge">Kittens</code> query. They feel separate because they are!</p>
+
+<p>But that last bit about posting changes felt pretty long. Even when I wrote the bullets I felt like it should be shorter. <code class="highlighter-rouge">If</code> conditions are notorious for making big, unnecessary code.</p>
+
+<h3 id="what-did-you-want-to-do">What Did You Want to Do?</h3>
+<p>We’ve got two fellow commands inside of that conditional, and they both do similar things: <a href="https://developer.wordpress.org/reference/functions/wp_update_post/" target="_blank"><code class="highlighter-rouge">wp_update_post()</code></a> and <a href="https://developer.wordpress.org/reference/functions/wp_insert_post/" target="_blank"><code class="highlighter-rouge">wp_insert_post()</code></a>. Wait, no, on a computer level they’re really doing the same thing: pushing identical data to the database. The only difference seems to be that one creates a unique ID and the other doesn’t.</p>
+
+<p>So click on them and read around! You’ll find something interesting. If you already work with WordPress a lot, you probably already had an inkling about it.</p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">wp_insert_post()</code> can also update posts!</p>
+</blockquote>
+
+<p>Oh cool. So if we have the right parameters we can make that add or update posts exactly like we want it to.</p>
+
+<p><code class="highlighter-rouge">Side rant: How bloody confusing! Most of the time WP update_ functions are the ones that create-or-update. Welcome to PHP, a Wild West of naming conventions where array_push($home_array, $other_stuff) but implode($separators, $home_array). I even had to look it up again for this article to make sure I was right. But yeah, in this case you're going to use wp_insert_post().</code></p>
+
+<p>So <code class="highlighter-rouge">wp_insert_post()</code> can take an existing ID and update that. Cool. But we don’t want to leave that field blank: that would be a great way to get errors, or overwrite an existing post elsewhere in the database. Or even worse, <strong>if the ID isn’t found… it breaks.</strong></p>
+
+<p>Luckily, <a href="https://developer.wordpress.org/reference/functions/wp_insert_post/#comment-3682" target="_blank">I contributed something to the docs about that.</a></p>
+
+<h3 id="compare">Compare</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="c1">// insert</span>
+<span class="nv">$confirmation</span> <span class="o">=</span> <span class="nf">wp_insert_post</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+  <span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="nv">$title</span><span class="p">,</span>
+  <span class="s1">'breed'</span> <span class="o">=&gt;</span> <span class="nv">$breed</span><span class="p">,</span>
+  <span class="s1">'cat_meta'</span> <span class="o">=&gt;</span> <span class="nv">$other_cat_meta</span><span class="p">,</span>
+  <span class="s1">'post_status'</span> <span class="o">=&gt;</span> <span class="s1">'publish'</span><span class="p">,</span>
+  <span class="c1">// more things</span>
+<span class="p">));</span>
+
+<span class="c1">// update</span>
+<span class="nv">$confirmation</span> <span class="o">=</span> <span class="nf">wp_update_post</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+  <span class="s1">'ID'</span> <span class="o">=&gt;</span> <span class="nv">$existing_kitten</span><span class="o">-&gt;</span><span class="no">ID</span><span class="p">,</span>    <span class="c1">// NO, BOOOO</span>
+  <span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="nv">$title</span><span class="p">,</span>               <span class="c1">// YES</span>
+  <span class="s1">'post_status'</span> <span class="o">=&gt;</span> <span class="s1">'publish'</span><span class="p">,</span>      <span class="c1">// YES</span>
+  <span class="s1">'meta_input'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>           <span class="c1">// YES</span>
+    <span class="s1">'breed'</span> <span class="o">=&gt;</span> <span class="nv">$breed</span><span class="p">,</span>
+    <span class="s1">'cat_meta'</span> <span class="o">=&gt;</span> <span class="nv">$other_cat_meta</span><span class="p">,</span>
+  <span class="p">),</span>
+  <span class="c1">// more things                   // YES</span>
+<span class="p">));</span></code></pre></figure>
+
+<p>We can copy everything else into both functions. Cleaning these args should just require us to insert the ID. So let’s do that separately!</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$args</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'title'</span> <span class="o">=&gt;</span> <span class="nv">$title</span><span class="p">,</span>
+  <span class="s1">'breed'</span> <span class="o">=&gt;</span> <span class="nv">$breed</span><span class="p">,</span>
+  <span class="s1">'cat_meta'</span> <span class="o">=&gt;</span> <span class="nv">$other_cat_meta</span><span class="p">,</span>
+  <span class="s1">'post_status'</span> <span class="o">=&gt;</span> <span class="s1">'publish'</span><span class="p">,</span>
+  <span class="c1">// more things</span>
+<span class="p">)</span>
+<span class="c1">// If there be kitten, update kitten.</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$existing_kitten</span><span class="o">-&gt;</span><span class="no">ID</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$args</span><span class="p">[</span><span class="s1">'ID'</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$existing_kitten</span><span class="o">-&gt;</span><span class="no">ID</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nv">$confirmation</span> <span class="o">=</span> <span class="nf">wp_insert_post</span><span class="p">(</span><span class="nv">$args</span><span class="p">);</span></code></pre></figure>
+
+<p>Woah. That’s it! That’s the conditional. It’s one whole line long. Now we can separate any concerns we want, because I’m satisfied that an inevitable change in the <code class="highlighter-rouge">post_meta</code> keys won’t make me update five of the same things – it’ll only make me update four.</p>
+
+<h2 id="conclusions">Conclusions</h2>
+<p>There’s a ton of other stuff we could do to make this look even better, but this took me three hours to write. Go have a drink! You know this code is rock solid. I mean, you did make sure all the <code class="highlighter-rouge">post_titles</code> were unique, right? …right? …Bueller?</p>
+
+      <hr>
+
+      <div class='bio'>
+        <h2>About the Author:</h2>
+        <p><a href='/contact/'>Benji</a> is a professional web dude. He works at <a href='https://builtbytophat.com' target='_blank' rel='noopener noreferrer'>Top Hat</a> making cool web things for money (and sometimes beer).</p>
+      </div>
+      <div class='disclaimer'>
+        <strong>Disclaimer!</strong>
+        Photos on this blog are sometimes taken by me, but sometimes free for use with attribution from <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText' target='_blank' rel='noopener noreferrer'>Unsplash.com</a>.
+      </div>
+    </section>
+  </article>
+  <div class='outer-hero'>
+    <div class='hero' style="background-image: url(/assets/images/organize_and_update.jpg)"></div>
+  </div>
+</div>
+    </div>
+  </body>
+  <footer>
+  <a href='/' class='inverse-logo' aria-label="Navigate Home">
+    <svg alt="Site Logo" width="90px" height="47px" viewBox="0 0 90 47" role="img">
+      <title>Site Logo</title>
+      <desc>Wow, I am truly amazed! You traversed my site in reader mode! Send me an email at hello@monjibram.com, I want to shake your hand someday.</desc>
+      <g class="full-logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M4.12470513,7.7974 C2.11314103,7.7974 0.482551282,6.1239 0.482551282,4.0594 C0.482551282,1.9954 2.11314103,0.3219 4.12470513,0.3219 L14.9776026,0.3219 C16.9891667,0.3219 18.6197564,1.9954 18.6197564,4.0594 C18.6197564,6.1239 16.9891667,7.7974 14.9776026,7.7974 L4.12470513,7.7974 Z" class="toggleBackground" fill-opacity="0.4" mask="url(#mask-2)" transform="translate(71.000000, 0.918367)"></path>
+        <path d="M72.132849,7.89676344 C71.3772704,7.2155381 71,6.38261723 71,5.39706442 C71,4.41151162 71.3772704,3.58514549 72.132849,2.91843423 C72.8873897,2.25172298 73.8432797,1.91836735 75,1.91836735 C76.1567203,1.91836735 77.1120913,2.25172298 77.867151,2.91843423 C78.6216917,3.58514549 79,4.41151162 79,5.39706442 C79,6.41164539 78.6216917,7.25158921 77.867151,7.91830046 C77.1120913,8.58547991 76.1567203,8.91836735 75,8.91836735 C73.8432797,8.91836735 72.8873897,8.57798878 72.132849,7.89676344 Z" class="toggle-dot"></path>
+        <path d="M10.5018262,20.9121192 L5.43170197,20.9121192 L5.43170197,28.5282862 L10.9096056,28.5282862 C14.621302,28.5282862 16.4322042,27.2291045 16.4322042,24.6754719 C16.4322042,21.8976882 13.9875365,20.9121192 10.5018262,20.9121192 M10.63792,9.30844847 L5.43170197,9.30844847 L5.43170197,16.9251125 L10.1849434,16.9251125 C13.715851,16.9251125 15.5719503,15.4465105 15.5719503,13.0275673 C15.5719503,10.652858 13.8519449,9.30844847 10.63792,9.30844847 M22,24.899126 C22,29.5143522 19.1937546,32.9183673 10.9994978,32.9183673 L0,32.9183673 L0,4.91836735 L10.8192111,4.91836735 C18.4690924,4.91836735 21.0945489,8.05449458 21.0945489,12.3103833 C21.0945489,15.311821 19.2836468,17.3281868 16.0244248,18.4032174 C19.7366234,19.2093662 22,21.5840755 22,24.899126" class="bee"></path>
+        <path d="M35.1660662,14.9059854 C37.8741609,14.9059854 39.0728338,16.6537372 39.0728338,19.4314497 L39.0728338,19.7898482 L30.2832223,19.8345859 C30.5491563,17.2805618 32.2811747,14.9059854 35.1660662,14.9059854 L35.1660662,14.9059854 Z M42.6683601,26.8250961 C40.8038672,27.9892698 38.4513361,28.7065638 36.2760945,28.7065638 C32.6357534,28.7065638 30.3723595,26.4214628 30.1497628,23.0606693 L30.1497628,22.9264563 C30.1497628,22.9264563 43.5119618,22.7470085 43.5562842,22.7470085 C43.8227107,21.8512608 44,20.4171698 44,19.2972367 C44,14.233429 40.981649,10.9183673 35.5659522,10.9183673 C29.4396205,10.9183673 25,15.3985969 25,22.120184 C25,28.7065638 29.3504834,32.9183673 35.9210233,32.9183673 C38.3735258,32.9183673 40.7890931,32.4192937 42.6683601,31.5498916 L42.6683601,26.8250961 Z" class="eee" mask="url(#mask-4)"></path>
+        <path d="M60.6270503,10.9183673 C58.2154573,10.9183673 55.8468602,12.1972794 54.0811614,14.1829457 L54.0811614,11.6681925 L49,11.6681925 L49,31.9183673 L54.0811614,31.9183673 L54.0811614,17.4039638 C55.0719783,16.4334002 56.7082117,15.506397 58.4734328,15.506397 C60.7565157,15.506397 61.9188386,16.5210103 61.9188386,19.52129 L61.9188386,31.9183673 L67,31.9183673 L67,17.9330506 C67,13.5652699 64.6318807,10.9183673 60.6270503,10.9183673" class="enn" mask="url(#mask-4)"></path>
+        <polygon class="jay" mask="url(#mask-4)" points="72 47.9183673 78 47.9183673 78 11.9183673 72 11.9183673"></polygon>
+        <polygon class="eye" mask="url(#mask-4)" points="83 31.9183673 89 31.9183673 89 11.9183673 83 11.9183673"></polygon>
+      </g>
+    </svg>
+  </a>
+  <div class='inverse-social'>
+    <a href="https://github.com/benjithaimmortal" class='git'><img src='/assets/images/ian/social-g.png' alt='GitHub' class='gitr'></a>
+    <a href='https://codepen.io/benjithaimmortal' class='face'><img src='/assets/images/ian/social-c.svg' alt='Facebook' class='penr'></a>
+    <a href='https://twitter.com/monjibram' class='twit'><img src='/assets/images/ian/social-t.svg' alt='Twitter' class='twitr'></a>
+    <a href='https://www.linkedin.com/in/benjamin-kostenbader-18499836/' class='linked'><img src='/assets/images/ian/social-l.svg' alt='LinkedIn' class='linkedr'></a>
+  </div>
+</footer>
+  
+  <!-- <script>
+    // document.addEventListener("DOMContentLoaded", function(){
+    //   // var stopper = document.getElementById("pagestopper")
+    //   // stopper.addEventListener("change", function(){
+    //   //   if (stopper.checked) {
+    //   //     document.body.classList.add("locked");
+    //   //   } else {
+    //   //     document.body.classList.remove("locked");
+    //   //   }
+    //   //   // console.log("this did something");
+    //   // });
+    // });
+  </script> -->
+</html>
