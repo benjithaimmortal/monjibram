@@ -41,7 +41,7 @@ $kittens = get_posts(array(
 foreach ($kittens as $i => $kitten) {
   $original_id = $kitten->ID;
   $title = $kitten->post_title;
-  $calico = get_field('breed', $original_id); // an ACF
+  $breed = get_field('breed', $original_id); // an ACF
   $other_cat_meta = get_post_meta('cat_meta', $original_id); // some post meta
   // more metadata
   
@@ -52,7 +52,7 @@ foreach ($kittens as $i => $kitten) {
     'post_type' => 'kitten',
     'title' => $title,   // let's say that most titles are unique
     'meta_key' => 'breed'
-    'meta_value' => $calico, // and that this solidifies that uniqueness
+    'meta_value' => $breed, // and that this solidifies that uniqueness
   ))[0]; // I trust that your data selection is unique **side eye**
   
   if ($existing_kitten->ID) {
@@ -61,7 +61,7 @@ foreach ($kittens as $i => $kitten) {
       'post_title' => $title,
       'post_status' => 'publish',
       'meta_input' => array(
-        'breed' => $calico,
+        'breed' => $breed,
         'cat_meta' => $other_cat_meta,
       ),
       // more things
@@ -72,7 +72,7 @@ foreach ($kittens as $i => $kitten) {
       'post_title' => $title,
       'post_status' => 'publish',
       'meta_input' => array(
-        'breed' => $calico,
+        'breed' => $breed,
         'cat_meta' => $other_cat_meta,
       ),
       // more things
@@ -130,7 +130,7 @@ Luckily, <a href='https://developer.wordpress.org/reference/functions/wp_insert_
 // insert
 $confirmation = wp_insert_post(array(
   'title' => $title,
-  'breed' => $calico,
+  'breed' => $breed,
   'cat_meta' => $other_cat_meta,
   'post_status' => 'publish',
   // more things
@@ -142,7 +142,7 @@ $confirmation = wp_update_post(array(
   'title' => $title,               // YES
   'post_status' => 'publish',      // YES
   'meta_input' => array(           // YES
-    'breed' => $calico,
+    'breed' => $breed,
     'cat_meta' => $other_cat_meta,
   ),
   // more things                   // YES
@@ -155,7 +155,7 @@ We can copy everything else into both functions. Cleaning these args should just
 {% highlight php %}
 $args = array(
   'title' => $title,
-  'calico' => $calico,
+  'breed' => $breed,
   'cat_meta' => $other_cat_meta,
   'post_status' => 'publish',
   // more things
