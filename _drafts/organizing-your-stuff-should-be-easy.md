@@ -27,7 +27,7 @@ I'm not thinking about speed, here. Even if there are hundreds and hundreds of t
 Prepare to [skip to the end](#after-the-first-pass) if you don't want to scroll through the muck and comments!
 
 ## The First Pass
-```php
+{% highlight php %}
 // I want to add some new Custom Post Types called Kittens, but I want to use the existing data from Cats.
 $kittens = get_posts(array(
   'numberposts' => -1, // this defaults to ten, but I want all of them
@@ -82,7 +82,8 @@ foreach ($kittens as $i => $kitten) {
   
   // Welcome to the end! You made it.
 }
-```
+
+{% endhighlight %}
 
 ## After the First Pass
 That was fine, and you should feel fine. But it was also super long. Way too long to store in one function. Kurt Vonnegut famously said <a href="https://en.wikipedia.org/wiki/Separation_of_concerns" target="_blank">"separate your concerns"</a>.
@@ -114,26 +115,27 @@ Oh cool. So if we have the right parameters we can make that add or update posts
 
 ```Side rant: How bloody confusing! Most of the time WP update_ functions are the ones that create-or-update. Welcome to PHP, a Wild West of naming conventions where array_push($home_array, $other_stuff) but implode($separators, $home_array). I even had to look it up again for this article to make sure I was right. But yeah, in this case you're going to use wp_insert_post().```
 
-So `wp_insert_post()` can take an existing ID and update that. Cool. But we don't want to leave that field blank: that would be a great way to get errors, or overwrite an existing post elsewhere in the database.
+So `wp_insert_post()` can take an existing ID and update that. Cool. But we don't want to leave that field blank: that would be a great way to get errors, or overwrite an existing post elsewhere in the database. Or even worse, **if the ID isn't found... nothing happens.** <a href='https://developer.wordpress.org/reference/functions/wp_insert_post/#comment-3682' target='_blank'>Hey, I contributed something about that!</a>
 
 There are a lot of things that we can copy into both, though!
 
-```php
-	// update
-  	$confirmation = wp_update_post(array(
-        'ID' => $existing_kitten->ID,
-        'title' => $title,
-        'calico' => $calico,
-        'cat_meta' => $other_cat_meta
-        // more things
-    ));
-    // insert
-    $confirmation = wp_insert_post(array(
-      'title' => $title,
-      'calico' => $calico,
-      'cat_meta' => $other_cat_meta,
-      'post_status' => 'publish',
-      // more things
-    ));
+{% highlight php %}
+// update
+$confirmation = wp_update_post(array(
+//  'ID' => $existing_kitten->ID, this is the only thing we can't, really!
+  'title' => $title,
+  'calico' => $calico,
+  'cat_meta' => $other_cat_meta
+  // more things
+));
 
-```
+// insert
+$confirmation = wp_insert_post(array(
+  'title' => $title,
+  'calico' => $calico,
+  'cat_meta' => $other_cat_meta,
+  'post_status' => 'publish',
+  // more things
+));
+
+{% endhighlight %}
