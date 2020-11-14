@@ -80,7 +80,7 @@ foreach ($kittens as $i => $kitten) {
   wp_insert_posts($post_array, true);
   wp_update_posts($post_array, true);
   
-  Welcome to the end! You made it.
+  // Welcome to the end! You made it.
 }
 
 {% endhighlight %}
