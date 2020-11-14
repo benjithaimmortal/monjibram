@@ -138,7 +138,7 @@ $confirmation = wp_insert_post(array(
 
 // update
 $confirmation = wp_update_post(array(
-  'ID' => $existing_kitten->ID,    // NO
+  'ID' => $existing_kitten->ID,    // NO, BOOOO
   'title' => $title,               // YES
   'post_status' => 'publish',      // YES
   'meta_input' => array(           // YES
@@ -161,4 +161,8 @@ $args = array(
   // more things
 )
 if ($existing_kitten->ID) {
+  $args['ID'] = $existing_kitten->ID,
+}
 $confirmation = wp_insert_post($args);
+
+{% endhighlight %}
