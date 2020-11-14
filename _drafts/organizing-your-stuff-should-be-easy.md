@@ -115,5 +115,5 @@ So click on them and read around! You'll find something interesting. If you alre
 
 Oh cool. So if we have the right parameters we can make that add or update posts exactly like we want it to.
 
-###### Side rant:
-How bloody confusing! Most of the time WP `update_` functions are the ones that create-or-update. Welcome to PHP, a Wild West of naming conventions where `array_push($home_array, $other_stuff)` but `implode($separators, $home_array)`. But yeah, in this case you're going to use `wp_insert_post()`.
+#### Side rant:
+```How bloody confusing! Most of the time WP `update_` functions are the ones that create-or-update. Welcome to PHP, a Wild West of naming conventions where `array_push($home_array, $other_stuff)` but `implode($separators, $home_array)`. But yeah, in this case you're going to use `wp_insert_post()`.```
