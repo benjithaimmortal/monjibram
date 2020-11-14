@@ -53,7 +53,7 @@ foreach ($kittens as $i => $kitten) {
     'title' => $title,   // let's say that most titles are unique
     'meta_key' => 'breed'
     'meta_value' => $breed, // and that this solidifies that uniqueness
-  ))[0]; // I trust that your data selection is unique **side eye**
+  ))[0]; // Grab the first post like this. I trust that your data selection is unique **side eye**
   
   if ($existing_kitten->ID) {
   	$confirmation = wp_update_post(array(
