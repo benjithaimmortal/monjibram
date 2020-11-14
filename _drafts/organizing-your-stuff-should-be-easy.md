@@ -24,6 +24,8 @@ So I'm thinking about this code that I wrote once, which is a perfectly useful e
 
 I'm not thinking about speed, here. Even if there are hundreds and hundreds of these things, it's not going to overwhelm my processor. It's not a web view, so I'm not making users wait around. It's just a one-time transaction.
 
+Prepare to [skip to the end](#after-the-code) if you don't want to scroll through the muck!
+
 {% highlight php %}
 // I want to add some new Custom Post Types called Kittens, but I want to use the existing data from Cats.
 $kittens = get_posts(array(
@@ -53,3 +55,5 @@ foreach ($kittens as $i => $kitten) {
 }
 
 {% endhighlight %}
+
+## After the Code
