@@ -30,6 +30,7 @@ Prepare to [skip to the end](#after-the-first-pass) if you don't want to scroll 
 {% highlight php %}
 // I want to add some new Custom Post Types called Kittens, but I want to use the existing data from Cats.
 $kittens = get_posts(array(
+  'numberposts' => -1, // this defaults to ten, but I want all of them
   'post_type'   => 'cat',
   'post_status' => 'publish',
   'meta_key'    => 'baby',
@@ -42,17 +43,38 @@ foreach ($kittens as $i => $kitten) {
   $title = $kitten->post_title;
   $calico = get_field('calico', $original_id);
   $other_cat_meta = get_post_meta('cat_meta', $original_id);
+  // more metadata
   
   // But wait, is there already a Cat like this in my Kittens?
   // I don't want duplicates, in case I have to modify the data and run this migration again later.
-  $existing_cat = get_posts(array(
+  $(existing_kitten) = get_posts(array(
     'post_status' => 'publish',
     'post_type' => 'kitten',
     'title' => $title,   // let's say that most titles are unique
     'calico' => $calico, // and that this solidifies that
   ))[0]; // I trust that your data selection is unique **side eye**
   
-  if 
+  if ($existing_kitten->ID) {
+  	$confirmation = update_post(array(
+    	'ID' => $existing_kitten->ID,
+        'title' => $title,
+	    'calico' => $calico,
+		'cat_meta' => $other_cat_meta
+        // more things
+    ));
+  } else {
+	// No existing kittens, proceed with making a new post
+    $confirmation = insert_post(array(
+      'title' => $title,
+	  'calico' => $calico,
+	  'cat_meta' => $other_cat_meta,
+      'post_status' => 'publish',
+      'post_
+      // more things
+    
+    ));
+  }
+  
 }
 
 {% endhighlight %}
