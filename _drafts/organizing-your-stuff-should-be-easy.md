@@ -41,8 +41,8 @@ $kittens = get_posts(array(
 foreach ($kittens as $i => $kitten) {
   $original_id = $kitten->ID;
   $title = $kitten->post_title;
-  $calico = get_field('calico', $original_id);
-  $other_cat_meta = get_post_meta('cat_meta', $original_id);
+  $calico = get_field('calico', $original_id); // an ACF
+  $other_cat_meta = get_post_meta('cat_meta', $original_id); // some post meta
   // more metadata
   
   // But wait, is there already a Cat like this in my Kittens?
@@ -120,22 +120,13 @@ Oh cool. So if we have the right parameters we can make that add or update posts
 
 ```Side rant: How bloody confusing! Most of the time WP update_ functions are the ones that create-or-update. Welcome to PHP, a Wild West of naming conventions where array_push($home_array, $other_stuff) but implode($separators, $home_array). I even had to look it up again for this article to make sure I was right. But yeah, in this case you're going to use wp_insert_post().```
 
-So `wp_insert_post()` can take an existing ID and update that. Cool. But we don't want to leave that field blank: that would be a great way to get errors, or overwrite an existing post elsewhere in the database. Or even worse, **if the ID isn't found... nothing happens.** 
+So `wp_insert_post()` can take an existing ID and update that. Cool. But we don't want to leave that field blank: that would be a great way to get errors, or overwrite an existing post elsewhere in the database. Or even worse, **if the ID isn't found... it breaks.**
 
 Luckily, <a href='https://developer.wordpress.org/reference/functions/wp_insert_post/#comment-3682' target='_blank'>I contributed something to the docs about that!</a>
 
 There are a lot of things that we can copy into both, though!
 
 {% highlight php %}
-// update
-$confirmation = wp_update_post(array(
-//  'ID' => $existing_kitten->ID, this is the only thing we can't, really!
-  'title' => $title,
-  'calico' => $calico,
-  'cat_meta' => $other_cat_meta
-  // more things
-));
-
 // insert
 $confirmation = wp_insert_post(array(
   'title' => $title,
@@ -143,6 +134,18 @@ $confirmation = wp_insert_post(array(
   'cat_meta' => $other_cat_meta,
   'post_status' => 'publish',
   // more things
+));
+
+// update
+$confirmation = wp_update_post(array(
+  'ID' => $existing_kitten->ID,    // NO
+  'title' => $title,               // YES
+  'post_status' => 'publish',      // YES
+  'meta_input' => array(           // YES
+    'calico' => $calico,
+    'cat_meta' => $other_cat_meta,
+  ),
+  // more things                   // YES
 ));
 
 {% endhighlight %}
