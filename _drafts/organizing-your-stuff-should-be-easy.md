@@ -104,7 +104,11 @@ I'm gonna visually separate this giant code block into things that we did:
 
 There's a pretty hard mental stop between queries and independent functional processing. I can't gain any meaningful ground by trying to combine the `foreach` into a query, or even combining my `Cats` query with my `Kittens` query. They feel separate because they are!
 
-But that last bit about posting changes felt pretty good. Even when I wrote the bullets I felt like it should be the same. It's got an OR statement. So let's look at the functions we used for it.
+But that last bit about posting changes felt pretty long. Even when I wrote the bullets I felt like it should be shorter. **If** conditions are notorious for making big, unnecessary code.
 
 ### What Did You Do?
-We've got two fellow commands inside of an 
+We've got two fellow commands inside of that conditional, and they both do similar things: <a href='https://developer.wordpress.org/reference/functions/wp_update_post/' target='_blank'><code class="highlighter-rouge">wp_update_post()</code></a> and <a href='https://developer.wordpress.org/reference/functions/wp_insert_post/' target='_blank'><code class="highlighter-rouge">wp_insert_post()</code></a>. Wait, no, on a computer level they're really doing the same thing: pushing identical data to the database. The only difference seems to be that one creates a unique ID and the other doesn't.
+
+So click on them and read around! You'll find something interesting. If you already work with WordPress a lot, you probably already had an inkling about it.
+
+> `wp_update_posts()` can also create new posts!
