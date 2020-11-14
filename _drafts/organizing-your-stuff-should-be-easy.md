@@ -50,9 +50,9 @@ foreach ($kittens as $i => $kitten) {
   $existing_kitten = get_posts(array(
     'post_status' => 'publish',
     'post_type' => 'kitten',
-    'title' => $title,   // let's say that most titles are unique
+    'title' => $title,   // Let's say that most titles are unique...
     'meta_key' => 'breed'
-    'meta_value' => $breed, // and that this solidifies that uniqueness
+    'meta_value' => $breed, // ...and that this solidifies that uniqueness
   ))[0]; // Grab the first post like this. I trust that your data selection is unique **side eye**
   
   if ($existing_kitten->ID) {
@@ -106,7 +106,7 @@ I'm gonna visually separate this giant code block into things that we did:
   + *If* there's a `Kitten`: **Post** an update
   + *Else*: **Post** a new post
 
-There's a pretty hard mental stop between queries and independent functional processing. I can't gain any meaningful ground by trying to combine the `foreach` into a query, or even combining my `Cats` query with my `Kittens` query. They feel separate because they are!
+There's a pretty hard mental stop between database queries and local processing. I can't gain any meaningful ground by trying to combine the `foreach` into a query, or even combining my `Cats` query with my `Kittens` query. They feel separate because they are!
 
 But that last bit about posting changes felt pretty long. Even when I wrote the bullets I felt like it should be shorter. **If** conditions are notorious for making big, unnecessary code.
 
@@ -160,9 +160,10 @@ $args = array(
   'post_status' => 'publish',
   // more things
 )
-if ($existing_kitten->ID) {
-  $args['ID'] = $existing_kitten->ID,
-}
+// If there be kitten, update kitten.
+if ($existing_kitten->ID) { $args['ID'] = $existing_kitten->ID; }
 $confirmation = wp_insert_post($args);
 
 {% endhighlight %}
+
+Woah. That's it! That's the conditional. It's one whole line long.
