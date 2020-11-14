@@ -33,14 +33,15 @@ $kittens = get_posts(array(
   'meta_value'  => 'true',
 ));
 
-// now things get unnecessarily complex. the end of this foreach is a long way away.
+// Now things get unnecessarily complex. the end of this foreach is a long way away.
 foreach ($kittens as $i => $kitten) {
   $original_id = $kitten->ID;
   $title = $kitten->post_title;
   $calico = get_field('calico', $original_id);
   $other_cat_meta = get_post_meta('cat_meta', $original_id);
   
-  // but wait, is there already a Cat like this in my Kittens? I don't want duplicates, in case I have to modify the data and run this migration again later.
+  // But wait, is there already a Cat like this in my Kittens?
+  // I don't want duplicates, in case I have to modify the data and run this migration again later.
   $existing_cat = get_posts(array(
     'post_status' => 'publish',
     'post_type' => 'kitten',
