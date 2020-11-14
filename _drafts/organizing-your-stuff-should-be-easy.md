@@ -22,7 +22,7 @@ But it's time consuming. If you are a precognitive savant, you can use your inna
 
 So I'm thinking about this code that I wrote once, which is a perfectly useful example. I'm trying to process some existing Custom Post Types and import them into existing, more specific ones.
 
-I'm not thinking about speed, here. Even if there are hundreds and hundreds of these things, it's not going to overwhelm my processor. It's not a web view, so I'm not making users wait around. It's just a one-time transaction.
+I'm not thinking about speed, here. Even if there are hundreds and hundreds of these things, it's not going to overwhelm my server's processor. It's not a web view, so I'm not making users wait around. It's just a one-time transaction.
 
 Prepare to [skip to the end](#after-the-first-pass) if you don't want to scroll through the muck and comments!
 
@@ -86,5 +86,9 @@ foreach ($kittens as $i => $kitten) {
 {% endhighlight %}
 
 ## After the First Pass
-That was fine, and you should feel fine. But it was also super long. Why was it so long? Kurt Vonnegut famously said <a href="https://en.wikipedia.org/wiki/Separation_of_concerns" target="_blank">"separate your concerns"</a>. That would work if we made a bunch of individual functions for updating or creating, for checking if it exists. Sure. But that's necessarily going to make things even larger.
+That was fine, and you should feel fine. But it was also super long. Way too long to store in one function. Kurt Vonnegut famously said <a href="https://en.wikipedia.org/wiki/Separation_of_concerns" target="_blank">"separate your concerns"</a>.
 
+That would work if we made a bunch of individual functions for updating or creating, for checking if `Kittens` exist. Sure. But that's necessarily going to make this even bigger. I want to DRY it out first.
+
+### What Did You Do?
+I'm gonna visually separate this into 
