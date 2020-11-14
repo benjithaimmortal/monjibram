@@ -88,13 +88,23 @@ foreach ($kittens as $i => $kitten) {
 ## After the First Pass
 That was fine, and you should feel fine. But it was also super long. Way too long to store in one function. Kurt Vonnegut famously said <a href="https://en.wikipedia.org/wiki/Separation_of_concerns" target="_blank">"separate your concerns"</a>.
 
-That would work if we made a bunch of individual functions for updating or creating, for checking if `Kittens` exist. Sure. But that's necessarily going to make this even bigger. I want to DRY it out first.
+That would work if we made a bunch of individual functions for updating or creating, for checking if `Kittens` exist. Sure. But that's necessarily going to make this even bigger. I want to DRY it out first, or we're going to be all.over.the.place.
 
-### What Did You Do?
+### Why Did You Do That?
 I'm gonna visually separate this giant code block into things that we did:
 
 1. **Query** the `Cats` that are `Kittens`
 1. **Iterate** the `Kittens` to process:
   + **Query** the data we need from each of the matching `Cats`
   + **Query** existing `Kittens` to check for a match
-  + **Post** an update OR make a new **post**
+  + **If** there's a `Kitten`:
+    + **Post** an update
+  + **Else**...
+    + **Post** a new post
+
+There's a pretty hard mental stop between queries and independent functional processing. I can't gain any meaningful ground by trying to combine the `foreach` into a query, or even combining my `Cats` query with my `Kittens` query. They feel separate because they are!
+
+But that last bit about posting changes felt pretty good. Even when I wrote the bullets I felt like it should be the same. It's got an OR statement. So let's look at the functions we used for it.
+
+### What Did You Do?
+We've got two fellow commands inside of an 
