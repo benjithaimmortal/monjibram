@@ -56,22 +56,20 @@ foreach ($kittens as $i => $kitten) {
   
   if ($existing_kitten->ID) {
   	$confirmation = update_post(array(
-    	'ID' => $existing_kitten->ID,
+        'ID' => $existing_kitten->ID,
         'title' => $title,
-	    'calico' => $calico,
-		'cat_meta' => $other_cat_meta
+        'calico' => $calico,
+        'cat_meta' => $other_cat_meta
         // more things
     ));
   } else {
-	// No existing kittens, proceed with making a new post
+    // No existing kittens, proceed with making a new post
     $confirmation = insert_post(array(
       'title' => $title,
-	  'calico' => $calico,
-	  'cat_meta' => $other_cat_meta,
+      'calico' => $calico,
+      'cat_meta' => $other_cat_meta,
       'post_status' => 'publish',
-      'post_
       // more things
-    
     ));
   }
   
