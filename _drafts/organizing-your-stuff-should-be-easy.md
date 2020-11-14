@@ -16,7 +16,7 @@ But stuff rarely is, is it? This week we did a thing on a website. It required u
 
 > By the way, DRY means **D**on't **R**epeat **Y**ourself.
 
-**DRY** code is one of those useful code anachronisms that was probably coined by Uncle Bob or Ada Lovelace or Abraham Lincoln (it's actually attributed to Andy Hunt and Dave Thomas, if you care), which is incredibly overworked by the fancy developers you'll see waxing eloquent on [complex new frameworks](https://www.youtube.com/watch?v=G6qOvbLngVs), or talking quickly and passionately about [things that don't matter](https://youtu.be/qGdYVslWJdQ?t=906).
+**DRY** code is one of those useful code quotes that was probably coined by Uncle Bob or Ada Lovelace or Abraham Lincoln (it's actually attributed to Andy Hunt and Dave Thomas, if you care), which is incredibly overworked by the fancy developers you'll see waxing eloquent on [complex new frameworks](https://www.youtube.com/watch?v=G6qOvbLngVs), or talking quickly and passionately about [things that don't matter](https://youtu.be/qGdYVslWJdQ?t=906).
 
 But it's time consuming. If you are a precognitive savant, you can use your innate talents to divine the whole structure of what you're doing the first time. For the rest of us, we review our code many times as things progress, and keep refining it.
 
@@ -55,7 +55,7 @@ foreach ($kittens as $i => $kitten) {
   ))[0]; // I trust that your data selection is unique **side eye**
   
   if ($existing_kitten->ID) {
-  	$confirmation = update_post(array(
+  	$confirmation = wp_update_post(array(
         'ID' => $existing_kitten->ID,
         'title' => $title,
         'calico' => $calico,
@@ -64,7 +64,7 @@ foreach ($kittens as $i => $kitten) {
     ));
   } else {
     // No existing kittens, proceed with making a new one
-    $confirmation = insert_post(array(
+    $confirmation = wp_insert_post(array(
       'title' => $title,
       'calico' => $calico,
       'cat_meta' => $other_cat_meta,
@@ -73,10 +73,18 @@ foreach ($kittens as $i => $kitten) {
     ));
   }
   
-  // Welcome to the end! You can put confirmations here like this...
+  // You can put confirmations in post meta somewhere like this...
+  $log_post_id = 12345;
+  if ($confirmation == 0) { update_post_meta($log_post_id, 'log', 'error on $original_id'); }
+  // or raise an exception within the functions by setting the second arg to true, if you're logging those
+  wp_insert_posts($post_array, true);
+  wp_update_posts($post_array, true);
   
+  Welcome to the end! You made it.
 }
 
 {% endhighlight %}
 
 ## After the First Pass
+That was fine, and you should feel fine. But it was also super long. Why was it so long? Kurt Vonnegut famously said <a href="https://en.wikipedia.org/wiki/Separation_of_concerns" target="_blank">"separate your concerns"</a>. That would work if we made a bunch of individual functions for updating or creating, for checking if it exists. Sure. But that's necessarily going to make things even larger.
+
