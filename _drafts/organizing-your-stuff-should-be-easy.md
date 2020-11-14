@@ -24,8 +24,9 @@ So I'm thinking about this code that I wrote once, which is a perfectly useful e
 
 I'm not thinking about speed, here. Even if there are hundreds and hundreds of these things, it's not going to overwhelm my processor. It's not a web view, so I'm not making users wait around. It's just a one-time transaction.
 
-Prepare to [skip to the end](#after-the-code) if you don't want to scroll through the muck!
+Prepare to [skip to the end](#after-the-first-pass) if you don't want to scroll through the muck and comments!
 
+## The First Pass
 {% highlight php %}
 // I want to add some new Custom Post Types called Kittens, but I want to use the existing data from Cats.
 $kittens = get_posts(array(
@@ -35,7 +36,7 @@ $kittens = get_posts(array(
   'meta_value'  => 'true',
 ));
 
-// Now things get unnecessarily complex. the end of this foreach is a long way away.
+// Now things get complex. the end of this foreach is a long way away.
 foreach ($kittens as $i => $kitten) {
   $original_id = $kitten->ID;
   $title = $kitten->post_title;
@@ -49,11 +50,11 @@ foreach ($kittens as $i => $kitten) {
     'post_type' => 'kitten',
     'title' => $title,   // let's say that most titles are unique
     'calico' => $calico, // and that this solidifies that
-  ))[0]; // there should only be one of these already
+  ))[0]; // I trust that your data selection is unique **side eye**
   
   if 
 }
 
 {% endhighlight %}
 
-## After the Code
+## After the First Pass
