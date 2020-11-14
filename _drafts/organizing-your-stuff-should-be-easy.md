@@ -27,7 +27,7 @@ I'm not thinking about speed, here. Even if there are hundreds and hundreds of t
 Prepare to [skip to the end](#after-the-first-pass) if you don't want to scroll through the muck and comments!
 
 ## The First Pass
-{% highlight php %}
+```php
 // I want to add some new Custom Post Types called Kittens, but I want to use the existing data from Cats.
 $kittens = get_posts(array(
   'numberposts' => -1, // this defaults to ten, but I want all of them
@@ -82,8 +82,7 @@ foreach ($kittens as $i => $kitten) {
   
   // Welcome to the end! You made it.
 }
-
-{% endhighlight %}
+```
 
 ## After the First Pass
 That was fine, and you should feel fine. But it was also super long. Way too long to store in one function. Kurt Vonnegut famously said <a href="https://en.wikipedia.org/wiki/Separation_of_concerns" target="_blank">"separate your concerns"</a>.
