@@ -130,7 +130,7 @@ Luckily, <a href='https://developer.wordpress.org/reference/functions/wp_insert_
 // insert
 $confirmation = wp_insert_post(array(
   'title' => $title,
-  'calico' => $calico,
+  'breed' => $calico,
   'cat_meta' => $other_cat_meta,
   'post_status' => 'publish',
   // more things
@@ -142,7 +142,7 @@ $confirmation = wp_update_post(array(
   'title' => $title,               // YES
   'post_status' => 'publish',      // YES
   'meta_input' => array(           // YES
-    'calico' => $calico,
+    'breed' => $calico,
     'cat_meta' => $other_cat_meta,
   ),
   // more things                   // YES
