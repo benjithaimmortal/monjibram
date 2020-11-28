@@ -16,7 +16,7 @@ I'm also one of those guys who spends a lot of time [visualizing and manipulatin
 
 ## How am I sorting, anyway?
 
-Sorting a thing isn't bad. It's JavaScript territory. I'm attaching the `blog`'s taxonomy (in this case, `tags`) to the post-card anyway. You see it here:
+Sorting a thing isn't bad. It's JavaScript territory. I'm attaching the `blog`'s taxonomy (in this case, `tags`) to the post-card anyway. You can see them here:
 
 ![]({{ site.baseurl }}/assets/images/blog/post-card.png "Post cards! Ha.")
 
