@@ -18,7 +18,7 @@
       <div class='blurb'>{{ site.data.contact.blurb }}</div>
     </div>
     <div class='right'>
-      <form action='https://formspree.io/f/benjamin.kostenbader@gmail.com'>
+      <form action='https://formspree.io/f/benjamin.kostenbader@gmail.com' method='POST'>
         {% for input in site.data.contact.form.inputs %}
           <input class="{{ input.width }}" type='{{ input.type }}' name="{{ input.name }}" placeholder="{{ input.placeholder }}" autocomplete="{{ input.autocomplete }}">
         {% endfor %}
