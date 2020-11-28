@@ -8,17 +8,21 @@ tags:
 - Featured
 ---
 
-I pay nothing for this site but URL domain fees. I know, you're jealous. I maintain that it isn't that hard, and that it's the best, and that developers should do this stuff for big ol' companies.
+You should use Ajax. It's bad practice these days to paginate a blog with buttons. I don't want to press buttons. I have high-speed internet everywhere. I want the internet to work for me.
 
-I'm also one of those guys who spends a lot of time [visualizing and manipulating data with WordPress]({% link _posts/0000-00-00-organizing-your-stuff-should-be-easy.md %}). It isn't surprising that I looked for that functionality when I was building out my own blog. `Blogs` are pretty standard things to sort and filter, after all, so it's a useful example.
+Coincidentally, you should also stop paying fees for a server to do these things for you. I pay nothing for this site but URL domain fees. I know, you're jealous. I maintain that it isn't that hard, and that it's the best, and that developers should do this stuff for big ol' companies. And I do it for big ol' companies from time to time, just to prove it! (Well, maybe also for money...)
+
+I'm also one of those guys who spends a lot of time [visualizing and manipulating data with WordPress]({% link _posts/0000-00-00-organizing-your-stuff-should-be-easy.md %}). It isn't surprising that I expected that functionality when I was building out my own blog. `Blogs` are pretty standard things to sort and filter, after all.
 
 ## How am I sorting, anyway?
 
-Sorting the thing isn't bad. It's JavaScript territory. I'm attaching the `blog`'s taxonomy (in this case, `tags`) to the post-card anyway. You saw it here:
+Sorting a thing isn't bad. It's JavaScript territory. I'm attaching the `blog`'s taxonomy (in this case, `tags`) to the post-card anyway. You see it here:
 
 ![]({{ site.baseurl }}/assets/images/blog/post-card.png "Post cards! Ha.")
 
-So by the time the HTML is outputting, I can grab the relevant info to filter `posts` by `tag` no problem.
+So by the time the HTML is outputting, I can grab the relevant info to filter `posts` by `tag` no problem. 
+
+> By the way, I used jQuery here. Not because you need to! But jQuery has `.ajax()` and it's a lot easier than `XMLHttpRequest()`.
 
 {% highlight html %}
 <!-- Filters -->
@@ -63,7 +67,7 @@ $('.filter').click(function(){
 
 ## But what if the blogs aren't on the page?
 
-The way Jekyll deals with posts is pretty standard. There's a plugin called `paginator`. It intakes how many blogs were output, and does the hard work of keeping track of it for you. You can [change the paginator settings](https://jekyllrb.com/docs/pagination/) in the config file. I can do similar things in Hugo or Eleventy. It looks more complex in a front-end framework, but this is good enough.
+The way Jekyll deals with posts is pretty standard. There's a plugin called `paginator`. It intakes how many blogs were output, and does the hard work of keeping track of it for you. You can [change the paginator settings](https://jekyllrb.com/docs/pagination/) in the config file. I can do similar things in Hugo or Eleventy. It looks a bit different in a front-end framework, but this is good enough for concepts.
 
 {% highlight rb %}
 # encapsulate all of these commands in { % % } for use in Jekyll templates
@@ -79,7 +83,7 @@ So `paginator` is doing a few cool things for us. It's outputting exactly the HT
 
 ## Paginator did its job too well
 
-I've asked paginator to leave six posts on the page and that's exactly what it did. When I `.hide()` a few of them, it's going to look pretty terrible. People will expect 6 `posts` to show up, unless there are no more posts in that category.
+I asked paginator to leave six posts on the page and that's exactly what it did. When I `.hide()` a few of them, it's going to look pretty terrible. People will expect 6 `posts` to show up, unless there are no more posts in that category.
 
 So what about this one we're filtering, `Static&nbsp;Sites`?  The only other post with that `tag` is one of the [first I ever wrote]({% link _posts/2020-05-17-paginate-with-jekyll.md %})! It's definitely not going to be in the HTML for page one, the most recent 6 `posts` of the whole blog. I need to go get it. Thus, `loadMorePosts();`
 

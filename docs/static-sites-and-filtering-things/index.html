@@ -35,8 +35,8 @@
 <meta property="og:title" content="How I Paginated This Blog" />
 <meta name="author" content="Benji" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I pay nothing for this site but URL domain fees. I know, you’re jealous. I maintain that it isn’t that hard, and that it’s the best, and that developers should do this stuff for big ol’ companies." />
-<meta property="og:description" content="I pay nothing for this site but URL domain fees. I know, you’re jealous. I maintain that it isn’t that hard, and that it’s the best, and that developers should do this stuff for big ol’ companies." />
+<meta name="description" content="You should use Ajax. It’s bad practice these days to paginate a blog with buttons. I don’t want to press buttons. I have high-speed internet everywhere. I want the internet to work for me." />
+<meta property="og:description" content="You should use Ajax. It’s bad practice these days to paginate a blog with buttons. I don’t want to press buttons. I have high-speed internet everywhere. I want the internet to work for me." />
 <link rel="canonical" href="https://www.monjibram.com/static-sites-and-filtering-things/" />
 <meta property="og:url" content="https://www.monjibram.com/static-sites-and-filtering-things/" />
 <meta property="og:site_name" content="Monjibram" />
@@ -45,7 +45,7 @@
 <meta property="article:published_time" content="2020-11-28T00:00:00-05:00" />
 <meta name="google-site-verification" content="OTG5c_uywRHQgQpvdcwgCYY02h8ofndgJq_kGPt1l_I" />
 <script type="application/ld+json">
-{"description":"I pay nothing for this site but URL domain fees. I know, you’re jealous. I maintain that it isn’t that hard, and that it’s the best, and that developers should do this stuff for big ol’ companies.","author":{"@type":"Person","name":"Benji"},"@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.monjibram.com/assets/images/Benji.jpg"},"name":"Benji"},"image":"https://www.monjibram.com/assets/images/pages.jpg","url":"https://www.monjibram.com/static-sites-and-filtering-things/","headline":"How I Paginated This Blog","dateModified":"2020-11-28T00:00:00-05:00","datePublished":"2020-11-28T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.monjibram.com/static-sites-and-filtering-things/"},"@context":"https://schema.org"}</script>
+{"description":"You should use Ajax. It’s bad practice these days to paginate a blog with buttons. I don’t want to press buttons. I have high-speed internet everywhere. I want the internet to work for me.","author":{"@type":"Person","name":"Benji"},"@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.monjibram.com/assets/images/Benji.jpg"},"name":"Benji"},"image":"https://www.monjibram.com/assets/images/pages.jpg","url":"https://www.monjibram.com/static-sites-and-filtering-things/","headline":"How I Paginated This Blog","dateModified":"2020-11-28T00:00:00-05:00","datePublished":"2020-11-28T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.monjibram.com/static-sites-and-filtering-things/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <meta property="og:type"             content="website" />
@@ -123,17 +123,23 @@
     </div>
     <h1 class='title'>How I Paginated This Blog</h1>
     <section class='content'>
-      <p>I pay nothing for this site but URL domain fees. I know, you’re jealous. I maintain that it isn’t that hard, and that it’s the best, and that developers should do this stuff for big ol’ companies.</p>
+      <p>You should use Ajax. It’s bad practice these days to paginate a blog with buttons. I don’t want to press buttons. I have high-speed internet everywhere. I want the internet to work for me.</p>
 
-<p>I’m also one of those guys who spends a lot of time <a href="/organizing-your-stuff-should-be-easy/">visualizing and manipulating data with WordPress</a>. It isn’t surprising that I looked for that functionality when I was building out my own blog. <code class="highlighter-rouge">Blogs</code> are pretty standard things to sort and filter, after all, so it’s a useful example.</p>
+<p>Coincidentally, you should also stop paying fees for a server to do these things for you. I pay nothing for this site but URL domain fees. I know, you’re jealous. I maintain that it isn’t that hard, and that it’s the best, and that developers should do this stuff for big ol’ companies. And I do it for big ol’ companies from time to time, just to prove it! (Well, maybe also for money…)</p>
+
+<p>I’m also one of those guys who spends a lot of time <a href="/organizing-your-stuff-should-be-easy/">visualizing and manipulating data with WordPress</a>. It isn’t surprising that I expected that functionality when I was building out my own blog. <code class="highlighter-rouge">Blogs</code> are pretty standard things to sort and filter, after all.</p>
 
 <h2 id="how-am-i-sorting-anyway">How am I sorting, anyway?</h2>
 
-<p>Sorting the thing isn’t bad. It’s JavaScript territory. I’m attaching the <code class="highlighter-rouge">blog</code>’s taxonomy (in this case, <code class="highlighter-rouge">tags</code>) to the post-card anyway. You saw it here:</p>
+<p>Sorting a thing isn’t bad. It’s JavaScript territory. I’m attaching the <code class="highlighter-rouge">blog</code>’s taxonomy (in this case, <code class="highlighter-rouge">tags</code>) to the post-card anyway. You see it here:</p>
 
 <p><img src="/assets/images/blog/post-card.png" alt="" title="Post cards! Ha." /></p>
 
 <p>So by the time the HTML is outputting, I can grab the relevant info to filter <code class="highlighter-rouge">posts</code> by <code class="highlighter-rouge">tag</code> no problem.</p>
+
+<blockquote>
+  <p>By the way, I used jQuery here. Not because you need to! But jQuery has <code class="highlighter-rouge">.ajax()</code> and it’s a lot easier than <code class="highlighter-rouge">XMLHttpRequest()</code>.</p>
+</blockquote>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="c">&lt;!-- Filters --&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"filter"</span> <span class="na">data-filter=</span><span class="s">"static-nbsp-sites"</span><span class="nt">&gt;</span>Static<span class="ni">&amp;nbsp;</span>Sites<span class="nt">&lt;/div&gt;</span>
@@ -174,7 +180,7 @@
 
 <h2 id="but-what-if-the-blogs-arent-on-the-page">But what if the blogs aren’t on the page?</h2>
 
-<p>The way Jekyll deals with posts is pretty standard. There’s a plugin called <code class="highlighter-rouge">paginator</code>. It intakes how many blogs were output, and does the hard work of keeping track of it for you. You can <a href="https://jekyllrb.com/docs/pagination/">change the paginator settings</a> in the config file. I can do similar things in Hugo or Eleventy. It looks more complex in a front-end framework, but this is good enough.</p>
+<p>The way Jekyll deals with posts is pretty standard. There’s a plugin called <code class="highlighter-rouge">paginator</code>. It intakes how many blogs were output, and does the hard work of keeping track of it for you. You can <a href="https://jekyllrb.com/docs/pagination/">change the paginator settings</a> in the config file. I can do similar things in Hugo or Eleventy. It looks a bit different in a front-end framework, but this is good enough for concepts.</p>
 
 <figure class="highlight"><pre><code class="language-rb" data-lang="rb"><span class="c1"># encapsulate all of these commands in { % % } for use in Jekyll templates</span>
 <span class="k">for</span> <span class="n">post</span> <span class="k">in</span> <span class="n">paginator</span><span class="p">.</span><span class="nf">posts</span>
@@ -190,7 +196,7 @@
 
 <h2 id="paginator-did-its-job-too-well">Paginator did its job too well</h2>
 
-<p>I’ve asked paginator to leave six posts on the page and that’s exactly what it did. When I <code class="highlighter-rouge">.hide()</code> a few of them, it’s going to look pretty terrible. People will expect 6 <code class="highlighter-rouge">posts</code> to show up, unless there are no more posts in that category.</p>
+<p>I asked paginator to leave six posts on the page and that’s exactly what it did. When I <code class="highlighter-rouge">.hide()</code> a few of them, it’s going to look pretty terrible. People will expect 6 <code class="highlighter-rouge">posts</code> to show up, unless there are no more posts in that category.</p>
 
 <p>So what about this one we’re filtering, <code class="highlighter-rouge">Static&amp;nbsp;Sites</code>?  The only other post with that <code class="highlighter-rouge">tag</code> is one of the <a href="/paginate-with-jekyll/">first I ever wrote</a>! It’s definitely not going to be in the HTML for page one, the most recent 6 <code class="highlighter-rouge">posts</code> of the whole blog. I need to go get it. Thus, <code class="highlighter-rouge">loadMorePosts();</code></p>
 
