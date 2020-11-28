@@ -6,29 +6,27 @@ categories:
 - Tutorials
 tags:
 - Featured
+hero: pages.webp
+image: assets/images/pages.webp
 ---
 
-You should use Ajax. It's bad practice these days to paginate a blog with buttons. I don't want to press buttons. I have high-speed internet everywhere. I want the internet to work for me.
+You should use Ajax. It's bad practice these days to paginate a blog with buttons. I don't want to press buttons. I have high-speed internet everywhere. I want the internet to work for me, and so do your readers.
 
-Coincidentally, you should also stop paying fees for a server to do these things for you. I pay nothing for this site but URL domain fees. I know, you're jealous. I maintain that it isn't that hard, and that it's the best, and that developers should do this stuff for big ol' companies. And I do it for big ol' companies from time to time, just to prove it! (Well, maybe also for money...)
+Coincidentally, you should also stop paying fees for a server to do these things for you. I pay nothing for this site but URL domain fees. I know, you're jealous. I maintain that it isn't that hard, and that [it's the best]({% link _posts/2020-05-16-jam-that-sucker.md %}), and that developers should do this stuff for big ol' companies. And I do it for big ol' companies from time to time, just to prove it! (Well, maybe also for money...)
 
 I'm also one of those guys who spends a lot of time [visualizing and manipulating data with WordPress]({% link _posts/0000-00-00-organizing-your-stuff-should-be-easy.md %}). It isn't surprising that I expected that functionality when I was building out my own blog. Blogs are pretty standard things to sort and filter, after all.
 
 ## How am I sorting, anyway?
 
-Sorting a thing isn't bad. It's JavaScript territory. I'm attaching the blog's taxonomy (in this case, `tags`) to the post-card anyway. You can see them here:
+Sorting a thing isn't bad. It's JavaScript territory. I'm attaching the blog's taxonomy (in this case, `tags`) to the post-card anyway. You can see them here. So by the time the HTML is outputting, I can grab the relevant info to filter `posts` by `tag` no problem. By the way, **I used jQuery here**. Not because you need to! But jQuery has `.ajax()` and it's a lot easier than `XMLHttpRequest()`. Grab it in CDN form [here](https://code.jquery.com/), and slap the generated HTML tag above your JS output.
 
-![]({{ site.baseurl }}/assets/images/blog/post-card.png "Post cards! Ha.")
-
-So by the time the HTML is outputting, I can grab the relevant info to filter `posts` by `tag` no problem. 
-
-> By the way, I used jQuery here. Not because you need to! But jQuery has `.ajax()` and it's a lot easier than `XMLHttpRequest()`.
+![Cards for each post, on the blog index page]({{ site.baseurl }}/assets/images/blog/post-card.png "Post cards! Ha.")
 
 {% highlight html %}
-<!-- Filters -->
+<!-- Example filter HTML -->
 <div class="filter" data-filter="static-nbsp-sites">Static&nbsp;Sites</div>
 
-<!-- Post Cards -->
+<!-- Example Post Card HTML -->
 <a href="/static-sites-and-filtering-things/" class="post-card" data-filter="static-nbsp-sitestutorials">
   <div class="left">
     <div class="tag-date">
@@ -97,10 +95,10 @@ var nextPage = 2;
 var totalPages = new Number ($(".post-flex").data("totalPages"));
 
 function loadMorePosts() {
-  // I make a pretty little loading function. Though it's so fast you never see it :)
+  // I make a pretty little loading function. though it's so fast you never see it :)
   $(".skeleton").addClass("active");
   
-  // that thing I keep writing about
+  // that thing I keep telling you about
   $.ajax({
     type: 'GET',
     // example, https://www.monjibram.com/blog/2
