@@ -79,9 +79,9 @@ So `paginator` is doing a few cool things for us. It's outputting exactly the HT
 
 ## Paginator did its job too well
 
-I've got a paginator that left six posts on the page and that's what it did. But when I `.hide()` a few of them, it's going to look pretty terrible. People will still expect 6 `posts` to show up, unless there are no more posts in that category.
+I've asked paginator to leave six posts on the page and that's exactly what it did. When I `.hide()` a few of them, it's going to look pretty terrible. People will expect 6 `posts` to show up, unless there are no more posts in that category.
 
-So what about this one we're filtering, `Static&nbsp;Sites`?  The only other post with that `tag` is one of the [first I ever wrote]({% link _posts/2020-05-17-paginate-with-jekyll.md %})! It's definitely not going to be on the first page. I need to go get it. Thus, `loadMorePosts();`
+So what about this one we're filtering, `Static&nbsp;Sites`?  The only other post with that `tag` is one of the [first I ever wrote]({% link _posts/2020-05-17-paginate-with-jekyll.md %})! It's definitely not going to be in the HTML for page one, the most recent 6 `posts` of the whole blog. I need to go get it. Thus, `loadMorePosts();`
 
 
 ## Go get more stuff
