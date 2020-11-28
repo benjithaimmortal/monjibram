@@ -12,11 +12,11 @@ You should use Ajax. It's bad practice these days to paginate a blog with button
 
 Coincidentally, you should also stop paying fees for a server to do these things for you. I pay nothing for this site but URL domain fees. I know, you're jealous. I maintain that it isn't that hard, and that it's the best, and that developers should do this stuff for big ol' companies. And I do it for big ol' companies from time to time, just to prove it! (Well, maybe also for money...)
 
-I'm also one of those guys who spends a lot of time [visualizing and manipulating data with WordPress]({% link _posts/0000-00-00-organizing-your-stuff-should-be-easy.md %}). It isn't surprising that I expected that functionality when I was building out my own blog. `Blogs` are pretty standard things to sort and filter, after all.
+I'm also one of those guys who spends a lot of time [visualizing and manipulating data with WordPress]({% link _posts/0000-00-00-organizing-your-stuff-should-be-easy.md %}). It isn't surprising that I expected that functionality when I was building out my own blog. Blogs are pretty standard things to sort and filter, after all.
 
 ## How am I sorting, anyway?
 
-Sorting a thing isn't bad. It's JavaScript territory. I'm attaching the `blog`'s taxonomy (in this case, `tags`) to the post-card anyway. You can see them here:
+Sorting a thing isn't bad. It's JavaScript territory. I'm attaching the blog's taxonomy (in this case, `tags`) to the post-card anyway. You can see them here:
 
 ![]({{ site.baseurl }}/assets/images/blog/post-card.png "Post cards! Ha.")
 
@@ -145,4 +145,4 @@ That last line used Jekyll's `paginator.total_pages`. That's pretty key.
 
 So I did a thing you're used to doing with backend code on a SSG. This wasn't and isn't a hard thing to do. You should do it on your blog!
 
-Clearly there are some other things to take into account before it goes critical and starts to feel like a natural page. Even writing this blog, I found issues with how the posts were displaying in `flex` with `justify-content: space between`. Did you find it? I could definitely solve a layout thing like that in a future blog, but until then I'll leave it!
+Clearly there are some other things to take into account before it goes critical and starts to feel like a natural page. Even writing this blog, I found issues with how the posts were displaying in `flex` with `justify-content: space between`. Did you find them too? I could definitely solve a layout thing like that in a future blog, but until then I'll leave it! Sleuth away 🕵️‍♂️
