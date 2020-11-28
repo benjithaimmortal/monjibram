@@ -1,4 +1,131 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://www.monjibram.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.monjibram.com/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2020-11-27T21:25:05-05:00</updated><id>https://www.monjibram.com/feed.xml</id><title type="html">Monjibram</title><subtitle>Benjamin Kostenbader is Front-End Developer at Top Hat. He is also a proud father, cyclist, and squash enthusiast.</subtitle><author><name>Benjamin Kostenbader</name></author><entry><title type="html">Organizing Your Stuff Is[n’t] Easy</title><link href="https://www.monjibram.com/organizing-your-stuff-should-be-easy/" rel="alternate" type="text/html" title="Organizing Your Stuff Is[n’t] Easy" /><published>2020-11-13T00:00:00-05:00</published><updated>2020-11-13T00:00:00-05:00</updated><id>https://www.monjibram.com/organizing-your-stuff-should-be-easy</id><content type="html" xml:base="https://www.monjibram.com/organizing-your-stuff-should-be-easy/">&lt;p&gt;But stuff rarely is, is it? This week we did a thing on a website. It required us to create or update something, depending on whether or not that thing exists. Simple enough, if you’re copy and pasting, but still time consuming when you’re writing DRY code.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://www.monjibram.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.monjibram.com/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2020-11-28T11:35:35-05:00</updated><id>https://www.monjibram.com/feed.xml</id><title type="html">Monjibram</title><subtitle>Benjamin Kostenbader is Front-End Developer at Top Hat. He is also a proud father, cyclist, and squash enthusiast.</subtitle><author><name>Benjamin Kostenbader</name></author><entry><title type="html">How I Paginated This Blog</title><link href="https://www.monjibram.com/static-sites-and-filtering-things/" rel="alternate" type="text/html" title="How I Paginated This Blog" /><published>2020-11-28T00:00:00-05:00</published><updated>2020-11-28T00:00:00-05:00</updated><id>https://www.monjibram.com/static-sites-and-filtering-things</id><content type="html" xml:base="https://www.monjibram.com/static-sites-and-filtering-things/">&lt;p&gt;I pay nothing for this site but URL domain fees. I know, you’re jealous. I maintain that it isn’t that hard, and that it’s the best, and that developers should do this stuff for big ol’ companies.&lt;/p&gt;
+
+&lt;p&gt;I’m also one of those guys who spends a lot of time &lt;a href=&quot;/organizing-your-stuff-should-be-easy/&quot;&gt;visualizing and manipulating data with WordPress&lt;/a&gt;. It isn’t surprising that I looked for that functionality when I was building out my own blog. &lt;code class=&quot;highlighter-rouge&quot;&gt;Blogs&lt;/code&gt; are pretty standard things to sort and filter, after all, so it’s a useful example.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-am-i-sorting-anyway&quot;&gt;How am I sorting, anyway?&lt;/h2&gt;
+
+&lt;p&gt;Sorting the thing isn’t bad. It’s JavaScript territory. I’m attaching the &lt;code class=&quot;highlighter-rouge&quot;&gt;blog&lt;/code&gt;’s taxonomy (in this case, &lt;code class=&quot;highlighter-rouge&quot;&gt;tags&lt;/code&gt;) to the post-card anyway. You saw it here:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/blog/post-card.png&quot; alt=&quot;&quot; title=&quot;Post cards! Ha.&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So by the time the HTML is outputting, I can grab the relevant info to filter &lt;code class=&quot;highlighter-rouge&quot;&gt;posts&lt;/code&gt; by &lt;code class=&quot;highlighter-rouge&quot;&gt;tag&lt;/code&gt; no problem.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Filters --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;filter&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-filter=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;static-nbsp-sites&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Static&lt;span class=&quot;ni&quot;&gt;&amp;amp;nbsp;&lt;/span&gt;Sites&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Post Cards --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/static-sites-and-filtering-things/&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post-card&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-filter=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;static-nbsp-sitestutorials&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tag-date&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tags&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Static&lt;span class=&quot;ni&quot;&gt;&amp;amp;nbsp;&lt;/span&gt;Sites, Tutorials&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;date&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;11/28/20&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;How I Paginated This Blog&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;shortcut&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;I pay nothing for this site but URL domain fees. I know, you’re jealous. I maintain that it isn’t that...&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;background-image: url(/assets/images/pages.jpg);&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;.filter&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// this is the 'return to unfiltered' state&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;hasClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;active&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// could easily make an unfilterCards() function for this, but it's so small in my case&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;.post-card&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;removeClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;active&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;// and this is where the filtering happens&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// this is where the transitions happen. the important thing is it uses .hide() and .show() on post cards&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;filterCards&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;// oh! this looks interesting... read on.&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;.post-card[data-filter*=&quot;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;]&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;totalPages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nextPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;loadMorePosts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;but-what-if-the-blogs-arent-on-the-page&quot;&gt;But what if the blogs aren’t on the page?&lt;/h2&gt;
+
+&lt;p&gt;The way Jekyll deals with posts is pretty standard. There’s a plugin called &lt;code class=&quot;highlighter-rouge&quot;&gt;paginator&lt;/code&gt;. It intakes how many blogs were output, and does the hard work of keeping track of it for you. You can &lt;a href=&quot;https://jekyllrb.com/docs/pagination/&quot;&gt;change the paginator settings&lt;/a&gt; in the config file. I can do similar things in Hugo or Eleventy. It looks more complex in a front-end framework, but this is good enough.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-rb&quot; data-lang=&quot;rb&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# encapsulate all of these commands in { % % } for use in Jekyll templates&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paginator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;posts&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# post-cards is the html that outputs the stuff above&lt;/span&gt;
+  &lt;span class=&quot;kp&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cards&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;html&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;endfor&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;So &lt;code class=&quot;highlighter-rouge&quot;&gt;paginator&lt;/code&gt; is doing a few cool things for us. It’s outputting exactly the HTML we need for that page, so we don’t need to load every &lt;code class=&quot;highlighter-rouge&quot;&gt;post&lt;/code&gt; in the site. It’s keeping track of how many &lt;code class=&quot;highlighter-rouge&quot;&gt;posts&lt;/code&gt; it output. It’s even making extra pages at &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog/2&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;/blog/3&lt;/code&gt; and so on. That last one’s especially important for my purposes.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You can see &lt;code class=&quot;highlighter-rouge&quot;&gt;paginator&lt;/code&gt; in action &lt;a href=&quot;/blog/3&quot;&gt;here&lt;/a&gt;, but the Ajax will make it act funny.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;paginator-did-its-job-too-well&quot;&gt;Paginator did its job too well&lt;/h2&gt;
+
+&lt;p&gt;I’ve got a paginator that left six posts on the page and that’s what it did. But when I &lt;code class=&quot;highlighter-rouge&quot;&gt;.hide()&lt;/code&gt; a few of them, it’s going to look pretty terrible. People will still expect 6 &lt;code class=&quot;highlighter-rouge&quot;&gt;posts&lt;/code&gt; to show up, unless there are no more posts in that category.&lt;/p&gt;
+
+&lt;p&gt;So what about this one we’re filtering, &lt;code class=&quot;highlighter-rouge&quot;&gt;Static&amp;amp;nbsp;Sites&lt;/code&gt;?  The only other post with that &lt;code class=&quot;highlighter-rouge&quot;&gt;tag&lt;/code&gt; is one of the &lt;a href=&quot;/paginate-with-jekyll/&quot;&gt;first I ever wrote&lt;/a&gt;! It’s definitely not going to be on the first page. I need to go get it. Thus, &lt;code class=&quot;highlighter-rouge&quot;&gt;loadMorePosts();&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;go-get-more-stuff&quot;&gt;Go get more stuff&lt;/h2&gt;
+
+&lt;p&gt;Ajax is how we go get more stuff on a living, breathing page:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nextPage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;totalPages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Number&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.post-flex&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;totalPages&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loadMorePosts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// I make a pretty little loading function. Though it's so fast you never see it :)&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.skeleton&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;active&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  
+  &lt;span class=&quot;c1&quot;&gt;// that thing I keep writing about&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ajax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// example, https://www.monjibram.com/blog/2&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/blog/&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nextPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// the response's body is simple HTML, so we can jQuery it&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;.post-card&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;each&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// put the posts at the end, and remove the skeleton loading function&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;.post-flex&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;.skeleton&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// hide cards we don't need&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;.filter.active&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nx&quot;&gt;filterCards&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;.filter.active&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;.filter.active&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+      &lt;span class=&quot;c1&quot;&gt;// iterate nextPage for the next time we need it&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;nextPage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nextPage&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;now-check-again-again-again&quot;&gt;Now check again… again… again…&lt;/h2&gt;
+
+&lt;p&gt;Now we can explain this line at the end of our initial filter function.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;.post-card[data-filter*=&quot;&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;filter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;]&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;totalPages&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nextPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;loadMorePosts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Unpacked…&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;As long as we haven’t hit 6 posts, the visible minimum, keep loading more&lt;/li&gt;
+  &lt;li&gt;Load 6 posts at a time, and keep checking them&lt;/li&gt;
+  &lt;li&gt;If we hit the last page, we did it all! You can stop now.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That last line used Jekyll’s &lt;code class=&quot;highlighter-rouge&quot;&gt;paginator.total_pages&lt;/code&gt;. That’s pretty key.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h2&gt;
+
+&lt;p&gt;So I did a thing you’re used to doing with backend code on a SSG. This wasn’t and isn’t a hard thing to do. You should do it on your blog!&lt;/p&gt;
+
+&lt;p&gt;Clearly there are some other things to take into account before it goes critical and starts to feel like a natural page. Even writing this blog, I found issues with how the posts were displaying in &lt;code class=&quot;highlighter-rouge&quot;&gt;flex&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;justify-content: space between&lt;/code&gt;. I could definitely solve a layout thing like that in a future blog.&lt;/p&gt;</content><author><name>Benji</name></author><category term="Static&amp;nbsp;Sites" /><category term="Tutorials" /><category term="Featured" /><summary type="html">I pay nothing for this site but URL domain fees. I know, you’re jealous. I maintain that it isn’t that hard, and that it’s the best, and that developers should do this stuff for big ol’ companies.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.monjibram.com/assets/images/pages.jpg" /><media:content medium="image" url="https://www.monjibram.com/assets/images/pages.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Organizing Your Stuff Is[n’t] Easy</title><link href="https://www.monjibram.com/organizing-your-stuff-should-be-easy/" rel="alternate" type="text/html" title="Organizing Your Stuff Is[n’t] Easy" /><published>2020-11-13T00:00:00-05:00</published><updated>2020-11-13T00:00:00-05:00</updated><id>https://www.monjibram.com/organizing-your-stuff-should-be-easy</id><content type="html" xml:base="https://www.monjibram.com/organizing-your-stuff-should-be-easy/">&lt;p&gt;But stuff rarely is, is it? This week we did a thing on a website. It required us to create or update something, depending on whether or not that thing exists. Simple enough, if you’re copy and pasting, but still time consuming when you’re writing DRY code.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;By the way, DRY means &lt;strong&gt;D&lt;/strong&gt;on’t &lt;strong&gt;R&lt;/strong&gt;epeat &lt;strong&gt;Y&lt;/strong&gt;ourself.&lt;/p&gt;
@@ -1170,63 +1297,4 @@ So at the store: apples cost $5, bananas cost $3, asian pears cost $15&lt;/p&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;so-there-you-have-it&quot;&gt;So there you have it&lt;/h2&gt;
-&lt;p&gt;JSON is cool. You’ll benefit by using it from time to time. Or all the time. That JSON is a cool guy. And there’s going to be a separate blog about data attributes. Because it needs to be explained, and I write blogs! That feels like a separate discussion. Check back soon.&lt;/p&gt;</content><author><name>Benji</name></author><category term="Tutorials" /><category term="Featured" /><summary type="html">Let’s talk about my best friend, JavaScript Object Notation. You probably call that jay-son. If you’re really particular or feeling a little bit French, maybe you call it jase-on. Whichever way you call it, you’re almost talking about an associative array.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.monjibram.com/assets/images/hash.webp" /><media:content medium="image" url="https://www.monjibram.com/assets/images/hash.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Pay for Web Development</title><link href="https://www.monjibram.com/why-you-should-pay-a-developer/" rel="alternate" type="text/html" title="Pay for Web Development" /><published>2020-05-17T08:09:00-04:00</published><updated>2020-05-17T08:09:00-04:00</updated><id>https://www.monjibram.com/why-you-should-pay-a-developer</id><content type="html" xml:base="https://www.monjibram.com/why-you-should-pay-a-developer/">&lt;p&gt;My first ‘official’ web project was for an old friend, a successful musician with a 5-year-old single page with some links. I was so confident in my delivery that I told him I’d do the project for free! This is bad business, but it wasn’t the worst part. After hours and hours of collaborative design ideation and development, &lt;em&gt;he went out and bought a subscription to a site generator&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Every developer you know has a similar story. There’s something ephemeral and subjective about web design and development. It’s not a physical product that you can be proud to walk home with, and the difference between success and failure feels technical and difficult to quantify.
-&lt;!-- It's usually when a client asks why they should pay for a custom site when other options are out there for $50 a month. --&gt;&lt;/p&gt;
-
-&lt;p&gt;It probably feels like that because small businesses are &lt;a href=&quot;http://paulgraham.com/ds.html&quot;&gt;long-term investments&lt;/a&gt;, and the impacts of marketing &lt;a href=&quot;https://www.sprk-d.com/blog/how-long-does-it-really-take-for-content-marketing-to-work&quot;&gt;don’t increase revenue immediately&lt;/a&gt;. There are actually plenty of ways to show how better development affects your business. I’ll list a few here.&lt;/p&gt;
-
-&lt;h2 id=&quot;time&quot;&gt;Time&lt;/h2&gt;
-
-&lt;p&gt;This is the most easily quantifiable value when it comes to your site. A quick search will tell you that 0.9 seconds will slice off &lt;a href=&quot;https://www.cloudflare.com/learning/performance/more/website-performance-conversion-rates/&quot;&gt;&lt;em&gt;a quarter&lt;/em&gt; of your user conversion rates&lt;/a&gt;. But skimming 0.9 seconds is rarely straightforward. Here’s a short list of custom troubleshooting thoughts that a web developer naturally has when it comes to speed:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Server calls&lt;/li&gt;
-  &lt;li&gt;Server allocation&lt;/li&gt;
-  &lt;li&gt;Caching: server-side and browser-side&lt;/li&gt;
-  &lt;li&gt;Session maintenance&lt;/li&gt;
-  &lt;li&gt;Content Delivery Networks&lt;/li&gt;
-  &lt;li&gt;Enqueuing and script bloat&lt;/li&gt;
-  &lt;li&gt;Browser support&lt;/li&gt;
-  &lt;li&gt;Webpacking, autoprefixing, and minification&lt;/li&gt;
-  &lt;li&gt;Limited redirection&lt;/li&gt;
-  &lt;li&gt;Image Optimization&lt;/li&gt;
-  &lt;li&gt;Preloading&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Sure, we developers think of all of these things on almost every site, but the true beauty of custom web development is that it’s straight up impossible to match all of that customization with a website generator. The premise alone means your site will be built on a server, with inevitable work-arounds for pre-compiling the styles you choose to your specifications.&lt;/p&gt;
-
-&lt;p&gt;That’s one of the reasons I say &lt;a href=&quot;/jam-that-sucker/&quot;&gt;WordPress probably isn’t for you&lt;/a&gt;. A big, multi-tool site is naturally going to be slower and clunkier.&lt;/p&gt;
-
-&lt;h2 id=&quot;accessibility&quot;&gt;Accessibility&lt;/h2&gt;
-
-&lt;p&gt;The common consensus is that 20% of people who use the internet have a form of disability. The most common accessibility issues come from mouse use and visibility. Without tools for screen readers and proper mapping and organization, your site will literally stop a fifth of your viewers from accessing the content.&lt;/p&gt;
-
-&lt;p&gt;Building a properly accessible site is notoriously difficult. Go to a site like &lt;a href=&quot;https://www.amazon.com&quot; target=&quot;_blank&quot;&gt;Amazon&lt;/a&gt; and try to navigate with only your keyboard. Now go to your favorite blog and try it. This level of accessibility and site architecture &lt;em&gt;requires&lt;/em&gt; a tailored approach.&lt;/p&gt;
-
-&lt;h2 id=&quot;money&quot;&gt;Money&lt;/h2&gt;
-
-&lt;p&gt;This blog started when that developer’s friend said “but why does it cost more than [WYSIWYG site generator].” But your long term costs will actually shrink when you do the job right the first time. Site generating services intentionally charge an extra few dollars more per month. They’re in it for the long game.&lt;/p&gt;
-
-&lt;p&gt;Compound that with licensed code that you may not reuse or download. Proprietary domain names that you can’t take with you. And generally terrible migrations. Check the fine print before you sign! It’s like renting an apartment - you’re not allowed to take it with you when you leave.&lt;/p&gt;
-
-&lt;p&gt;There are degrees of separation to be sure. Want a cheap site? Hire a new developer! But be forewarned: make sure that even that budget developer knows what she or he is doing. Development consultants charge incredibly high premiums for ‘cave dives’ into other developers’ code. Cheap code &lt;a href=&quot;https://en.wikipedia.org/wiki/Code_smell&quot;&gt;smells&lt;/a&gt; like bigger problems.&lt;/p&gt;
-
-&lt;h2 id=&quot;your-seongsu-style&quot;&gt;Your “Seongsu Style”&lt;/h2&gt;
-
-&lt;p&gt;When I was doing a very different kind of program development in Seoul, South Korea, I had the opportunity to work directly with a few of the country’s best interior designers and architects. They walked into hollow shells of construction sites and saw things that noone else could see. They came back with plans that brought out the best parts of a space. Everything they did seemed so … apparent! But without them it would have never been done.&lt;/p&gt;
-
-&lt;p&gt;You are a unique individual, with a unique business. Highlighting your value and talent is a web developer’s job. It might make perfect sense after it’s all done, but it took work and experience. The addage goes something like this: “You’re only paying me for 5 hours, but you’re asking me for 5 years’ experience.”&lt;/p&gt;
-
-&lt;p&gt;And there’s going to be something you want to change, just the eensiest, tiniest bit. If you haven’t contracted someone who can smooth that out, that little thing is going to bother you every time you visit your own site.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Remember, you will be your site’s top visitor. It’s about you after all!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;were-not-only-here-for-the-main-project&quot;&gt;We’re Not Only Here for the Main Project&lt;/h2&gt;
-
-&lt;p&gt;Hiring a professional to design and develop will make a huge difference in the lasting success of your site. It’s faster, more accessible, and often a more accurate representation of your business needs and goals.&lt;/p&gt;
-
-&lt;p&gt;Every situation is unique, and the choice is a major one. It’s a big decision, and one you need to make with all the facts. If you’re on the fence about it, &lt;a href=&quot;/contact/&quot;&gt;hire a consult&lt;/a&gt;! The fee for a recommendation will be significantly cheaper than the cost of fixing a mistake.&lt;/p&gt;</content><author><name>Benji</name></author><category term="Site&amp;nbsp;Generators" /><summary type="html">My first ‘official’ web project was for an old friend, a successful musician with a 5-year-old single page with some links. I was so confident in my delivery that I told him I’d do the project for free! This is bad business, but it wasn’t the worst part. After hours and hours of collaborative design ideation and development, he went out and bought a subscription to a site generator.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.monjibram.com/assets/images/code.webp" /><media:content medium="image" url="https://www.monjibram.com/assets/images/code.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;p&gt;JSON is cool. You’ll benefit by using it from time to time. Or all the time. That JSON is a cool guy. And there’s going to be a separate blog about data attributes. Because it needs to be explained, and I write blogs! That feels like a separate discussion. Check back soon.&lt;/p&gt;</content><author><name>Benji</name></author><category term="Tutorials" /><category term="Featured" /><summary type="html">Let’s talk about my best friend, JavaScript Object Notation. You probably call that jay-son. If you’re really particular or feeling a little bit French, maybe you call it jase-on. Whichever way you call it, you’re almost talking about an associative array.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://www.monjibram.com/assets/images/hash.webp" /><media:content medium="image" url="https://www.monjibram.com/assets/images/hash.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

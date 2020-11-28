@@ -152,13 +152,17 @@
         margin-bottom: 21px;
       }
     }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
 
     .highlighter-rouge {
       font-family: $mono-font;
       font-size: 16px;
       font-weight: 500;
       letter-spacing: -0.4px;
-      color: $orange;
+      color: $green;
     }
 
     .highlight .hll { background-color: #ffffcc }
