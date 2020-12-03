@@ -2,8 +2,8 @@
 title: How I Paginated This Blog
 date: 2020-11-28
 categories:
-- Static&nbsp;Sites
 - Tutorials
+- Static&nbsp;Sites
 tags:
 - Featured
 hero: pages.webp
