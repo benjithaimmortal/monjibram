@@ -3,7 +3,6 @@ title: Wordpress is a Framework
 date: 2020-06-20
 categories:
 - WordPress
-- CMS
 tags:
 - Featured
 hero: framework.webp

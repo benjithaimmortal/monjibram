@@ -2,7 +2,8 @@
 title: Pay for Web Development
 date: 2020/05/17 12:09:00 Z
 categories:
-- Site&nbsp;Generators
+- WordPress
+- Jamstack
 layout: post
 author: Benji
 hero: code.webp

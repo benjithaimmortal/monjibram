@@ -3,7 +3,7 @@ title: WP Custom Post Types but Free
 date: 2020-06-27
 categories:
 - Tutorials
-- WordPress
+- Jamstack
 tags:
 - Featured
 hero: custom-food-types.svg
