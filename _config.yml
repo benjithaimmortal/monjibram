@@ -68,7 +68,7 @@ defaults:
       type: "posts"
     values:
       layout: post
-      author: Benji
+      author: Benji Kostenbader
       hero: pages.jpg
       image: assets/images/pages.jpg
   -
@@ -78,7 +78,7 @@ defaults:
     values:
       layout: base
       image: assets/images/Benji.jpg
-      author: Benji
+      author: Benji Kostenbader
   -
     scope:
       path: assets/*
