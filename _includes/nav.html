@@ -1,5 +1,5 @@
 <div class='bar'>
-  <a href='{{ site.baseurl }}/' class='logo' aria-label="Navigate Home">
+  <div href='{{ site.baseurl }}/' class='logo' aria-label="Navigate Home">
     <svg width="90px" height="47px" viewBox="0 0 90 47" role="img">
       <title>Site Logo</title>
       <g class="full-logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -12,14 +12,15 @@
         <polygon class="eye" mask="url(#mask-4)" points="83 31.9183673 89 31.9183673 89 11.9183673 83 11.9183673"></polygon>
       </g>
     </svg>
-  </a>
+  </div>
+
   <nav>
-    <!-- {% if page.url == '{{ site.baseurl }}' %}
+    <!-- The home button for night moooods -->
+    {% if page.url == '/' %}
       <a href='{{ site.baseurl }}/' class='active link'>Home</a>
       {% else %}
       <a href='{{ site.baseurl }}/' class='link'>Home</a>
-    {% endif %} -->
-
+    {% endif %}
 
     {% for item in site.html_pages %}
       {% if (item.title) and (item.title != "Blog") and (item.url != "/") %}

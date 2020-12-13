@@ -2,12 +2,11 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-title: Benjamin Kostenbader
+title: Pittsburgh Jamstack & Wordpress Freelance
+logo: /assets/images/ian/Benji.png
 canonical_url: "https://www.monjibram.com/"
 hero-title: Hi! I&#146;m Benji.
 hero-text: >-
-  (Or Ben, or even 벤자민! 다 괜찮아.) 
-  <br><br>
   I'm Senior Front-End Developer at [Top Hat](https://www.builtbytophat.com/about), who currently lives in Pittsburgh, USA. When I'm not SOCIAL DISTANCING LIKE A PRO, I keep busy making beautiful things on computers, distance cycle, play squash, dad, and volunteer in the community.
   <br><br>
   I [write](/why-you-should-pay-a-developer) about computers, <a href='https://www.youtube.com/watch?v=G6qOvbLngVs' target='_blank'>talk</a> about computers, and sometimes I even sleep! You can see some of my recent code on <a href='https://www.mattress.org/' target='_blank'>Mattress Factory</a>, <a href='https://www.oldgermanbeer.com/' target='_blank'>Old German Beer</a>, and <a href='https://www.metamesh.org/' target='_blank'>MetaMesh</a>.
@@ -29,7 +28,7 @@ stack:
 
 <section class='home-sweet-home'>
   <div class='container-narrow'>
-    <img src='assets/images/ian/benji.png' alt='Hi there!' class='left'>
+    <img src='assets/images/ian/benji.png' itemprop="logo" alt='Hi there!' class='left'>
     <div class='right'>
       <h1 class='title'>{{ page.hero-title }}</h1>
       <div class='text'>{{ page.hero-text | markdownify }}</div>
@@ -59,34 +58,3 @@ stack:
 {% include blog-list.html %}
 
 {% include contact.html %}
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script>
-  $(function(){
-    $('.filter').each(function(){
-      var filter = $(this).data('filter');
-      if (!$('.post-card[data-filter*="' + filter + '"]').length) {
-        $(this).hide();
-      }
-    })
-
-    function filterCards(filter, btn) {
-      $('.filter').removeClass('active');
-      btn.addClass('active');
-      $('.post-card').hide();
-      $('.post-card[data-filter*="' + filter + '"]').show();
-    }
-    $('.filter').click(function(){
-      if ($(this).hasClass('active')) {
-        $('.post-card').show();
-        $(this).removeClass('active');
-      } else {
-        var filter = $(this).data('filter');
-        filterCards(filter, $(this));
-      }
-    })
-  });
-</script>
