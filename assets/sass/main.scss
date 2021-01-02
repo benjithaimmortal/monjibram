@@ -97,6 +97,7 @@ li {
     svg {
       width: 90%;
       height: auto;
+      z-index: 5;
       path, polygon {
         fill: $red;
       }
