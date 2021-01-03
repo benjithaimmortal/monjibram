@@ -1,21 +1,3 @@
-// @keyframes orbit {
-//   100% { transform:rotate(-360deg); }
-// }
-@keyframes orbit { 100% { transform:rotate(-360deg); } }
-
-
-// 0%   { left: 0; top: 0; }
-// 25%  { left: 10px; top: 5px; }
-// 50%  { left: 10px; top: 10px; }
-// 75%  { left: 5px; top: 10px; }
-// 100% { left: 0; top: 0; }
-
-// @keyframes orbit {
-//   0% { left: 0; top: 0; }
-//   50% { left: 5px; top: 5px; }
-//   100% { left: 0; top: 0; }
-// }
-
 .home-sweet-home {
   margin-top: 100px;
   margin-bottom: 195px;
@@ -27,55 +9,6 @@
   }
   .left {
     width: 47%;
-    position: relative;
-    .top-left {
-      animation: orbit 6s linear infinite;
-      transform-origin: 53% center;
-      top: 15%;
-      left: -6%;
-      width: 28%;
-      &::after {
-        padding-top: 95%;
-        background-color: $blue;
-        animation: orbit 6s linear reverse infinite;
-        border-radius: 70% 30% 30% 70% / 40% 60% 40% 60%;
-      }
-    }
-    .top-right {
-      animation: orbit 5s linear reverse infinite;
-      transform-origin: 54% center;
-      top: 15%;
-      right: 7%;
-      width: 17%;
-      &::after {
-        padding-top: 85%;
-        background-color: $red;
-        animation: orbit 5s linear infinite;
-        border-radius: 54% 46% 70% 30% / 56% 30% 70% 44%;
-      }
-    }
-    .bottom {
-      animation: orbit 7s linear infinite;
-      transform-origin: 52% center;
-      bottom: -5%;
-      left: 3%;
-      width: 40%;
-      &::after {
-        padding-top: 95%;
-        background-color: $red;
-        animation: orbit 7s linear reverse infinite;
-        border-radius: 70% 30% 30% 70% / 40% 60% 40% 60%;
-      }
-    }
-    .bubble {
-      position: absolute;
-      &::after {
-        content: '';
-        display: block;
-        position: relative;
-      }
-    }
-    img { width: 100%; }
   }
   .right {
     margin-bottom: 22px;
@@ -140,11 +73,9 @@
     }
   }
   .illy {
-    display: block;
     width: 55%;
-    object-fit: contain;
-    object-position: top center;
     margin: 0 auto 10px;
+    background: top center / contain no-repeat;
     &::after {
       content: '';
       display: inline-block;
@@ -152,7 +83,6 @@
       padding-top: 100%
     }
   }
-  .rando-bg-fill { fill: $white; }
   .name {
     text-align: center;
     font-size: 29px;
