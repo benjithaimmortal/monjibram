@@ -1,20 +1,5 @@
-// @keyframes orbit {
-//   100% { transform:rotate(-360deg); }
-// }
 @keyframes orbit { 100% { transform:rotate(-360deg); } }
 
-
-// 0%   { left: 0; top: 0; }
-// 25%  { left: 10px; top: 5px; }
-// 50%  { left: 10px; top: 10px; }
-// 75%  { left: 5px; top: 10px; }
-// 100% { left: 0; top: 0; }
-
-// @keyframes orbit {
-//   0% { left: 0; top: 0; }
-//   50% { left: 5px; top: 5px; }
-//   100% { left: 0; top: 0; }
-// }
 
 .home-sweet-home {
   margin-top: 100px;
@@ -209,6 +194,12 @@
       width: 100%;
       max-width: 375px;
       margin: 0 auto;
+    }
+    .left {
+      margin-bottom: 30px;
+      .bottom {
+        bottom: calc(30px - 5%);
+      }
     }
   }
   .the-stacks {
