@@ -102,7 +102,8 @@ body.night {
   .blog-index .tags,
   .blog-index .shortcut { color: $lightblue; }
   // blue
-  footer .inverse-social a { background-color: $blue; }
+  .blog-index .post-card:hover,
+  footer .inverse-social a { background-color: $altblue; }
   // darkblue
   // .blog-page .blog-index { background-color: $darkblue; }
   .the-stacks .rando-bg-fill { fill: $darkblue; }
@@ -122,6 +123,7 @@ body.night {
   }
   .blog-index .post-card {
     background-color: $darkblue;
+    transition: ease all .2s;
     // background-color: #395f78;
     // border: solid 1px $lightblue;
   }
