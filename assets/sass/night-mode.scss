@@ -56,7 +56,6 @@ body.no-dark {
 body::before, footer::before {
   content: '';
   display: inline-block;
-  position: absolute;
   z-index: 1;
   height: 100%;
   width: 100%;
@@ -72,7 +71,11 @@ body > div, body > footer, footer > div, footer > a {
   position: relative;
   z-index: 3;
 }
-body::before { background-color: #fff; }
+body::before {
+  position: fixed;
+  background-color: #fff;
+}
+footer::before { position: absolute; }
 
 // dark mode
 body.night {
@@ -103,13 +106,18 @@ body.night {
   .blog-index .shortcut { color: $lightblue; }
   // blue
   .blog-index .post-card:hover,
-  footer .inverse-social a { background-color: $altblue; }
+  footer .inverse-social a {
+    background-color: $altblue;
+    transition: ease all .2s;
+  }
+  footer .inverse-social a:hover { background-color: $lightblue; }
   // darkblue
   // .blog-page .blog-index { background-color: $darkblue; }
   .the-stacks .rando-bg-fill { fill: $darkblue; }
   .blog-page .blog-index .tabby-top path, .contact .tabby-top path { fill: $darkblue; }
   // grey
   .blog-index .filters,
+  .blog-post .content figure.highlight > pre,
   .blog-index { background-color: #1a1a1a;}
   .blog-index .tabby-top path { fill: #1a1a1a;}
   // red
