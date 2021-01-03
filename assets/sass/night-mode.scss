@@ -1,3 +1,12 @@
+// fade between screens is a neutral grey
+body { opacity: 0; }
+body.fadein {
+  opacity: 1;
+  transition-duration: .15s;
+}
+// base color for the 'background' before <body> loads
+html { background-color: #5c6e7e; }
+
 // don't do dark-mode on no-dark views
 body.no-dark {
   height: 100%;
@@ -97,11 +106,13 @@ body.night {
   .blog-index .tabby-top path { fill: $text; }
   // darkblue
   // .blog-page .blog-index { background-color: $darkblue; }
+  .the-stacks .rando-bg-fill { fill: $darkblue; }
   .blog-page .blog-index .tabby-top path, .contact .tabby-top path { fill: $darkblue; }
   // grey
+  .blog-index .filters,
   .blog-index { background-color: $text;}
   // red
-  .home-sweet-home .social a { background-color: $lightred; }
+  .home-sweet-home .social a { background-color: $red; }
   .contact .title { color: $lightred; }
   // special cases
   .blog-index .filter.active, .blog-index .filter:hover {

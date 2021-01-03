@@ -1,4 +1,3 @@
-
 $(function(){
   // set light mode from color preference
   lightMode = (window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'night' : '';
@@ -8,6 +7,9 @@ $(function(){
   }
   // add the class to body (light does nothing though)
   $('body').addClass(lightMode);
+  setTimeout(() => {
+    $('body').addClass('fadein');
+  }, 100);
 
   // hover on the lightswitch
   $('.logo, .inverse-logo').hover(function(){
@@ -28,3 +30,7 @@ $(function(){
     // $('.logo, .inverse-logo, .cloud').addClass('switched');
   })
 });
+
+$(window).bind('beforeunload', function(){
+  $(body).removeClass('fadein');
+})

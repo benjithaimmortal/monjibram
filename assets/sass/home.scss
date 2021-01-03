@@ -140,9 +140,11 @@
     }
   }
   .illy {
+    display: block;
     width: 55%;
+    object-fit: contain;
+    object-position: top center;
     margin: 0 auto 10px;
-    background: top center / contain no-repeat;
     &::after {
       content: '';
       display: inline-block;
@@ -150,6 +152,7 @@
       padding-top: 100%
     }
   }
+  .rando-bg-fill { fill: $white; }
   .name {
     text-align: center;
     font-size: 29px;
