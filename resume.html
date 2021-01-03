@@ -8,7 +8,20 @@ layout: none
 <!doctype html>
 <html>
   <head>
+    {% if jekyll.environment == 'production' %}
+      {% include analytics.html %}
+    {% endif %}
+    {% seo %}
+
     <meta charset="utf-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-418311-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-418311-3');
+    </script>
 
     <!-- favicons -->
     <link rel="apple-touch-icon"      sizes="57x57"   href="/assets/images/favicon/apple-icon-57x57.png">
@@ -29,22 +42,23 @@ layout: none
     <meta name="msapplication-TileImage" content="/assets/images/favicon/ms-icon-144x144.png">
     <meta name="theme-color"             content="#ffffff">
 
-    {% seo %}
-    <!-- <meta property=”og:url”              content=”https://www.monjibram.com/” />
+    <!-- facebook meta -->
+    <!-- <meta property=”og:url”              content=”https://www.monjibram.com/” /> -->
     <meta property="og:type"             content="website" />
     <meta property="og:description"      content="Benjamin Kostenbader is an award-winning co-developer of the Seongdong Global Experience Centers in Seoul, South Korea. He is also a proud father, software developer, cyclist, and squash enthusiast." />
     <meta property="og:image"            content="{{ site.baseurl }}/assets/images/SEO.jpg" />
     <meta property="og:image:type"       content="image/jpeg" />
     <meta property="og:image:alt"        content="Benjamin Kostenbader" />
-    <meta name="description"             content="Benjamin Kostenbader is an award-winning co-developer of the Seongdong Global Experience Centers in Seoul, South Korea. He is also a proud father, software developer, cyclist, and squash enthusiast.">
-    <title>{{ page.title }}</title> -->
 
+    <!-- seo meta -->
+    <meta name="description"             content="Benjamin Kostenbader is an award-winning co-developer of the Seongdong Global Experience Centers in Seoul, South Korea. He is also a proud father, software developer, cyclist, and squash enthusiast.">
+    <title>{{ page.title }}</title>
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 
     <!-- force mobile to use mobile viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body class="no-dark fadein">
+  <body>
     <div class="popup">
       <div class="popup-text">This looks cooler <br>on <a href="https://codepen.io/benjithaimmortal/full/dyPgwMv" target="_blank" rel="noopener noreferrer">CodePen</a></div>
       <div class="exit"><span></span><span></span></div>
@@ -62,8 +76,3 @@ layout: none
     });
   });
 </script>
-
-
-{% if jekyll.environment == 'production' %}
-  {% include analytics.html %}
-{% endif %}
