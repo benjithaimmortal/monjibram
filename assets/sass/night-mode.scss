@@ -2,7 +2,7 @@
 body { opacity: 0; }
 body.fadein {
   opacity: 1;
-  transition-duration: .15s;
+  transition-duration: .25s;
 }
 // base color for the 'background' before <body> loads
 html { background-color: #5c6e7e; }
@@ -36,19 +36,19 @@ body.no-dark {
   transition: ease all .3s;
 }
 .cloud.hover::before {
-  animation: hover 1s infinite;
+  animation: hover 2s infinite;
   // transform: translate(-10%, -55%);
   transform: translate(-70%, 10%);
 }
 .cloud.hover::after {
   // transform: translate(-40%, -25%);
   transform: translate(-30%, 25%);
-  animation: hover 1s infinite;
+  animation: hover 2s infinite;
   animation-delay: .2s;
 }
 .cloud.hover {
   transform: translate(10%, -65%);
-  animation: hover 1s infinite;
+  animation: hover 2s infinite;
   animation-delay: .1s;
 }
 
@@ -103,14 +103,14 @@ body.night {
   .blog-index .shortcut { color: $lightblue; }
   // blue
   footer .inverse-social a { background-color: $blue; }
-  .blog-index .tabby-top path { fill: $text; }
   // darkblue
   // .blog-page .blog-index { background-color: $darkblue; }
   .the-stacks .rando-bg-fill { fill: $darkblue; }
   .blog-page .blog-index .tabby-top path, .contact .tabby-top path { fill: $darkblue; }
   // grey
   .blog-index .filters,
-  .blog-index { background-color: $text;}
+  .blog-index { background-color: #1a1a1a;}
+  .blog-index .tabby-top path { fill: #1a1a1a;}
   // red
   .home-sweet-home .social a { background-color: $red; }
   .contact .title { color: $lightred; }
