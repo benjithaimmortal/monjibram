@@ -1,8 +1,10 @@
 // fade between screens is a neutral grey
-body { opacity: 0; }
+body {
+  opacity: 0;
+  transition: ease opacity .2s;
+}
 body.fadein {
   opacity: 1;
-  transition-duration: .25s;
 }
 // base color for the 'background' before <body> loads
 html { background-color: #5c6e7e; }
