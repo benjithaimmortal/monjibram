@@ -1,6 +1,8 @@
 footer {
+  position: relative;
   padding-top: 90px;
-  padding-bottom: 150px;
+  // padding-bottom: 150px;
+  padding-bottom: 100px;
   background-color: $red;
   display: flex;
   flex-direction: column;
@@ -13,6 +15,7 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     svg {
       width: 90%;
       height: auto;

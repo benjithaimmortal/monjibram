@@ -9,3 +9,19 @@
   </body>
   {% include footer.html %}
 </html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script src='/assets/scripts/base.js'></script>
+
+{% if page.url == "/blog/" %}
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+  <script src='/assets/scripts/blog.js'></script>
+
+{% elsif page.url == "/"%}
+  <script src='/assets/scripts/home.js'></script>
+{% endif %}
+
+{% if jekyll.environment == 'production' %}
+  {% include analytics.html %}
+{% endif %}
