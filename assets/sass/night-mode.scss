@@ -29,16 +29,16 @@ body.no-dark {
 .cloud.hover::before {
   animation: hover 1s infinite;
   // transform: translate(-10%, -55%);
-  transform: translate(-60%, 10%);
+  transform: translate(-70%, 10%);
 }
 .cloud.hover::after {
   // transform: translate(-40%, -25%);
-  transform: translate(-20%, 25%);
+  transform: translate(-30%, 25%);
   animation: hover 1s infinite;
   animation-delay: .2s;
 }
 .cloud.hover {
-  transform: translate(10%, -55%);
+  transform: translate(10%, -65%);
   animation: hover 1s infinite;
   animation-delay: .1s;
 }
