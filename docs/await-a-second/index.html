@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <meta charset="utf-8">
+
+  <!-- favicons -->
+  <link rel="apple-touch-icon"      sizes="57x57"   href="/assets/images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon"      sizes="60x60"   href="/assets/images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon"      sizes="72x72"   href="/assets/images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon"      sizes="76x76"   href="/assets/images/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon"      sizes="114x114" href="/assets/images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon"      sizes="120x120" href="/assets/images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon"      sizes="144x144" href="/assets/images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon"      sizes="152x152" href="/assets/images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon"      sizes="180x180" href="/assets/images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32"   href="/assets/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96"   href="/assets/images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16"   href="/assets/images/favicon/favicon-16x16.png">
+  <link rel="manifest"                              href="/assets/images/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/images/favicon/ms-icon-144x144.png">
+  <meta name="theme-color"             content="#ffffff">
+
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+
+  <!-- force mobile to use mobile viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Await a Second | Benji Kostenbader</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="Await a Second" />
+<meta name="author" content="Benji Kostenbader" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="It took me years and years to understand how browsers process time. It’s actually pretty easy. Let me help you out a little bit. I apologize beforehand for the dad puns along the way." />
+<meta property="og:description" content="It took me years and years to understand how browsers process time. It’s actually pretty easy. Let me help you out a little bit. I apologize beforehand for the dad puns along the way." />
+<link rel="canonical" href="https://www.monjibram.com/await-a-second/" />
+<meta property="og:url" content="https://www.monjibram.com/await-a-second/" />
+<meta property="og:site_name" content="Benji Kostenbader" />
+<meta property="og:image" content="https://www.monjibram.com/assets/images/await.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-01-03T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:image" content="https://www.monjibram.com/assets/images/await.jpg" />
+<meta property="twitter:title" content="Await a Second" />
+<meta name="twitter:site" content="@monjibram" />
+<meta name="twitter:creator" content="@Benji Kostenbader" />
+<meta property="fb:admins" content="benjithaimmortal" />
+<meta property="article:publisher" content="benjithaimmortal" />
+<meta name="google-site-verification" content="OTG5c_uywRHQgQpvdcwgCYY02h8ofndgJq_kGPt1l_I" />
+<script type="application/ld+json">
+{"description":"It took me years and years to understand how browsers process time. It’s actually pretty easy. Let me help you out a little bit. I apologize beforehand for the dad puns along the way.","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.monjibram.com/await-a-second/"},"image":"https://www.monjibram.com/assets/images/await.jpg","@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.monjibram.com/assets/images/ian/Benji.png"},"name":"Benji Kostenbader"},"author":{"@type":"Person","name":"Benji Kostenbader"},"url":"https://www.monjibram.com/await-a-second/","headline":"Await a Second","dateModified":"2021-01-03T00:00:00-05:00","datePublished":"2021-01-03T00:00:00-05:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <meta property="og:type"             content="website" />
+  <meta property="og:image:type"       content="image/jpeg" />
+  <meta property="og:image:alt"        content="Benjamin Kostenbader" />
+</head>
+  <body>
+    <div class='bar'>
+  <div href='/' class='logo' aria-label="Navigate Home">
+    <svg width="90px" height="47px" viewBox="0 0 90 47" role="img">
+      <title>Site Logo</title>
+      <g class="full-logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M4.12470513,7.7974 C2.11314103,7.7974 0.482551282,6.1239 0.482551282,4.0594 C0.482551282,1.9954 2.11314103,0.3219 4.12470513,0.3219 L14.9776026,0.3219 C16.9891667,0.3219 18.6197564,1.9954 18.6197564,4.0594 C18.6197564,6.1239 16.9891667,7.7974 14.9776026,7.7974 L4.12470513,7.7974 Z" class="toggleBackground" fill-opacity="0.4" mask="url(#mask-2)" transform="translate(71.000000, 0.918367)"></path>
+        <path d="M72.132849,7.89676344 C71.3772704,7.2155381 71,6.38261723 71,5.39706442 C71,4.41151162 71.3772704,3.58514549 72.132849,2.91843423 C72.8873897,2.25172298 73.8432797,1.91836735 75,1.91836735 C76.1567203,1.91836735 77.1120913,2.25172298 77.867151,2.91843423 C78.6216917,3.58514549 79,4.41151162 79,5.39706442 C79,6.41164539 78.6216917,7.25158921 77.867151,7.91830046 C77.1120913,8.58547991 76.1567203,8.91836735 75,8.91836735 C73.8432797,8.91836735 72.8873897,8.57798878 72.132849,7.89676344 Z" class="toggle-dot"></path>
+        <path d="M10.5018262,20.9121192 L5.43170197,20.9121192 L5.43170197,28.5282862 L10.9096056,28.5282862 C14.621302,28.5282862 16.4322042,27.2291045 16.4322042,24.6754719 C16.4322042,21.8976882 13.9875365,20.9121192 10.5018262,20.9121192 M10.63792,9.30844847 L5.43170197,9.30844847 L5.43170197,16.9251125 L10.1849434,16.9251125 C13.715851,16.9251125 15.5719503,15.4465105 15.5719503,13.0275673 C15.5719503,10.652858 13.8519449,9.30844847 10.63792,9.30844847 M22,24.899126 C22,29.5143522 19.1937546,32.9183673 10.9994978,32.9183673 L0,32.9183673 L0,4.91836735 L10.8192111,4.91836735 C18.4690924,4.91836735 21.0945489,8.05449458 21.0945489,12.3103833 C21.0945489,15.311821 19.2836468,17.3281868 16.0244248,18.4032174 C19.7366234,19.2093662 22,21.5840755 22,24.899126" class="bee"></path>
+        <path d="M35.1660662,14.9059854 C37.8741609,14.9059854 39.0728338,16.6537372 39.0728338,19.4314497 L39.0728338,19.7898482 L30.2832223,19.8345859 C30.5491563,17.2805618 32.2811747,14.9059854 35.1660662,14.9059854 L35.1660662,14.9059854 Z M42.6683601,26.8250961 C40.8038672,27.9892698 38.4513361,28.7065638 36.2760945,28.7065638 C32.6357534,28.7065638 30.3723595,26.4214628 30.1497628,23.0606693 L30.1497628,22.9264563 C30.1497628,22.9264563 43.5119618,22.7470085 43.5562842,22.7470085 C43.8227107,21.8512608 44,20.4171698 44,19.2972367 C44,14.233429 40.981649,10.9183673 35.5659522,10.9183673 C29.4396205,10.9183673 25,15.3985969 25,22.120184 C25,28.7065638 29.3504834,32.9183673 35.9210233,32.9183673 C38.3735258,32.9183673 40.7890931,32.4192937 42.6683601,31.5498916 L42.6683601,26.8250961 Z" class="eee" mask="url(#mask-4)"></path>
+        <path d="M60.6270503,10.9183673 C58.2154573,10.9183673 55.8468602,12.1972794 54.0811614,14.1829457 L54.0811614,11.6681925 L49,11.6681925 L49,31.9183673 L54.0811614,31.9183673 L54.0811614,17.4039638 C55.0719783,16.4334002 56.7082117,15.506397 58.4734328,15.506397 C60.7565157,15.506397 61.9188386,16.5210103 61.9188386,19.52129 L61.9188386,31.9183673 L67,31.9183673 L67,17.9330506 C67,13.5652699 64.6318807,10.9183673 60.6270503,10.9183673" class="enn" mask="url(#mask-4)"></path>
+        <polygon class="jay" mask="url(#mask-4)" points="72 47.9183673 78 47.9183673 78 11.9183673 72 11.9183673"></polygon>
+        <polygon class="eye" mask="url(#mask-4)" points="83 31.9183673 89 31.9183673 89 11.9183673 83 11.9183673"></polygon>
+      </g>
+    </svg>
+    <div class='cloud'></div>
+  </div>
+
+  <nav>
+    <!-- The home button for night moooods -->
+    
+      <a href='/' class='link'>Home</a>
+    
+
+    
+      
+    
+      
+        
+          <a href='/contact/' class='link'>Contact</a>
+          
+            
+              <!-- Blog be special -->
+              <a href='/blog' class='link'>Blog</a>
+            
+          
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href='/resume/' class='link'>Resume</a>
+          
+        
+      
+    
+      
+    
+      
+    
+  </nav>
+</div>
+    <div class='content await-a-second-page'>
+      <div class="blog-post">
+  <article class="article">
+    <div class='blog-info'>
+      <div class='datetime'>01/03/21</div>
+      
+      
+      <div class="cat" href="blog/categories/#Tutorials">Tutorials</div>
+      
+      <!-- 
+        <div class='auth'>By Benji Kostenbader</div>
+       -->
+    </div>
+    <h1 class='title'>Await a Second</h1>
+    <section class='content'>
+      <p>It took me years and years to understand how browsers process time. It’s actually pretty easy. Let me help you out a little bit. I apologize beforehand for the dad puns along the way.</p>
+
+<h2 id="time-after-time-things-change">Time after time, things change</h2>
+<p>Making things happen in a set amount of time might be one of the most important parts of web development, and as such it’s changed. What was true 10 years ago is no longer true. Stack Overflow is going to give you <em>many answers</em>. Idiomatic JS is going to give you <em>many answers</em>. There are many ways to skin this cat. I’m not going to tell you the best way. You might not even like my way. But my goal is, by the end, at least you’ll understand <em>what is happening</em> with my way. That’s the plan here.</p>
+
+<h2 id="this-is-cheating-and-you-should-too">This is cheating (and you should too)</h2>
+<p>JavaScript uses this handy dandy thing called <code class="highlighter-rouge">setTimeout()</code> which <code class="highlighter-rouge">sets</code> a <code class="highlighter-rouge">timeout</code> period. It’s not going to be pretty, but it will pause for a little while, then run the code inside. It’s super easy and cool, and you’ve probably used it before. If not, it looks like this:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="c1">// example one: anonymous function</span>
+  <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">finished anonymously</span><span class="dl">'</span><span class="p">);</span> <span class="c1">// things you'll do after the timeout</span>
+  <span class="p">},</span> <span class="mi">12345</span><span class="p">);</span> <span class="c1">// milliseconds before the function is run</span>
+
+  <span class="c1">// example two: separating concerns, naming your function</span>
+  <span class="kd">function</span> <span class="nx">finished</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">finished from finished()</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">finished</span><span class="p">,</span> <span class="mi">1234</span><span class="p">);</span>
+
+  <span class="c1">// but this code? It ran first.</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">too late, I ran</span><span class="dl">'</span><span class="p">);</span></code></pre></figure>
+
+<p>But the very same thing that makes timers great is their weakness: they don’t stop your code. Here’s the order of logs from the code above:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="dl">"</span><span class="s2">too late, I ran</span><span class="dl">"</span>           <span class="c1">// instantly</span>
+<span class="dl">"</span><span class="s2">finished from finished()</span><span class="dl">"</span>  <span class="c1">// after 1.234 seconds</span>
+<span class="dl">"</span><span class="s2">finished anonymously</span><span class="dl">"</span>      <span class="c1">// after 12.345 seconds</span></code></pre></figure>
+
+<blockquote>
+  <p><strong>Breakdown:</strong> Code outside of the blocks runs now, and code inside the blocks doesn’t affect other blocks.</p>
+</blockquote>
+
+<h2 id="wheels-within-wheels">Wheels within wheels</h2>
+<p>The only way you’re going to successfully chain these bad boys is by making a neat little stack of them. But that makes for a pretty nasty last-ditch end result:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js">  <span class="c1">// timing of the down transition</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">transitionOut</span><span class="p">();</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">resetTransition</span><span class="p">();</span>
+      <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="c1">// do the dance again</span>
+        <span class="nx">transitionIn</span><span class="p">();</span>
+        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="nx">resetTransition</span><span class="p">();</span>
+        <span class="p">},</span> <span class="mi">150</span><span class="p">);</span>
+      <span class="p">},</span> <span class="mi">780</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">150</span><span class="p">);</span>
+  <span class="p">},</span> <span class="mi">780</span><span class="p">);</span></code></pre></figure>
+
+<h2 id="remove-settimeout-with-cleartimeout">Remove setTimeout with clearTimeout</h2>
+<p>I could and may make a whole article about this, but <code class="highlighter-rouge">clearTimeout()</code> will <em>stop</em> a timeout from firing like this:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">let</span> <span class="nx">timmy</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">finished</span><span class="p">,</span> <span class="mi">1234</span><span class="p">);</span> <span class="c1">// never gonna happen</span>
+<span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timmy</span><span class="p">);</span>                    <span class="c1">// because we cleared it immediately</span></code></pre></figure>
+
+<p>Clearing a timeout is dead simple, except that <em>you must have access to that variable</em> <code class="highlighter-rouge">timmy</code> <em>at all times</em>. Take care to define <code class="highlighter-rouge">timmy</code> outside of the function you’re setting it, or it’ll be nigh unto useless.</p>
+
+<h2 id="promises-are-weird">Promises are weird</h2>
+<p>But what if I really want things to wait? I can always make a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>. Promises are best explained by defining them.</p>
+
+<p>Let’s say you run a muppet shop, and I want a muppet. So I come up to the register, show you the muppet I want, and swipe my credit card. Are we done? Can I walk out and leave?</p>
+
+<p>Noooope. You want to confirm that my card is valid. We stand there awkwardly for a few seconds. We make small-talk about how badly I want to leave your store and how badly you want me to leave too. My credit card data gets processed, authenticated, and approved.</p>
+
+<p><em>Ding!</em> Now I can leave. You try to hand me a receipt. I let it fall to the ground because I am not a hostage to your culture’s demands, nor do I want to sanitize my hands again. I let thoughts of maskless, unencumbered breathing carry me through the automatic doors, and into the great dystopian unknown.</p>
+
+<p><strong>That credit card transaction was a Promise!</strong> It stopped everything, waited for a fulfillment, and had two outcomes:</p>
+<ul>
+  <li>Accepted: take your item and get outta here</li>
+  <li>Errored: try again or we’re stuck</li>
+</ul>
+
+<h2 id="promises-are-built-into-ajax-and-thats-what-well-use-them-for">Promises are built into Ajax, and that’s what we’ll use them for</h2>
+<p>In fact, that promise example is probably based on a literal Promise. If the credit card machine runs on Node, 99% of the time it’s literally running an <code class="highlighter-rouge">XMLHttpRequest()</code> Promise:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// directly from jQuery docs</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">https://www.example.com/endpoint</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">data</span><span class="p">:</span> <span class="nx">yourCreditCardData</span>
+<span class="p">})</span>
+  <span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span> <span class="dl">"</span><span class="s2">woo, success!</span><span class="dl">"</span> <span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">fail</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span> <span class="dl">"</span><span class="s2">error</span><span class="dl">"</span> <span class="p">);</span>
+  <span class="p">})</span></code></pre></figure>
+
+<p>Promises use the following <em>very easy</em> result syntax:</p>
+<ul>
+  <li><code class="highlighter-rouge">.then(yourFunctionHere)</code> is a chain for what comes next</li>
+  <li><code class="highlighter-rouge">.done(yourFunctionHere)</code> is a similar chain for successful results</li>
+  <li><code class="highlighter-rouge">.success(yourFunctionHere)</code> is yet another one of those</li>
+  <li><code class="highlighter-rouge">.fail(yourFunctionHere)</code> is a chain for what to do if the Promise … fails</li>
+  <li><code class="highlighter-rouge">.always(yourFunctionHere)</code> happens on <em>either</em> success <em>or</em> error</li>
+</ul>
+
+<h2 id="and-thats-the-end-of-promises-i-promise">And that’s the end of Promises, I promise</h2>
+<p>Promises are GREAT for Ajax, and, honestly, that’s about all they’re great for. If the library you’re using doesn’t specifically say a function</p>
+
+<blockquote>
+  <p>returns a promise</p>
+</blockquote>
+
+<p>then I just ignore the potential headache that promises would bring. Promises are a confusing API that is difficult for experts, and difficult code is the enemy of readable code.</p>
+
+<h2 id="thanks-for-awaiting">Thanks for awaiting</h2>
+<p>You’ve been patient, and a treasure <code class="highlighter-rouge">await</code>s you. It’s wrapped in an <code class="highlighter-rouge">async</code> function (short for <em>asynchronous</em>). In fact, if you forget the <code class="highlighter-rouge">async</code> part, JS will throw a special error just for you.</p>
+
+<blockquote>
+  <p>Uncaught SyntaxError: await is only valid in async functions and async generators</p>
+</blockquote>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">Async functions</a> stop the whole show until any <code class="highlighter-rouge">await</code> calls inside are finished. That means that calling one of these will effectively pause your code for the predetermined time.</p>
+
+<p>Let’s say you’ve got a transition that takes 0.2 seconds. Once that transition is finished, you really need to do something right away. This was a problem I encountered while implementing the blink logic on this site.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// a shortcut for $(document).ready(async function(){...</span>
+<span class="nx">$</span><span class="p">(</span><span class="k">async</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="c1">// blink in</span>
+  <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">body</span><span class="dl">'</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">fadein</span><span class="dl">'</span><span class="p">);</span>
+  <span class="c1">// a one-liner pause for 200 ms</span>
+  <span class="k">await</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">anything</span> <span class="o">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">anything</span><span class="p">,</span> <span class="mi">200</span><span class="p">));</span>
+  <span class="c1">// after-transition logic</span>
+  <span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">html</span><span class="dl">'</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="dl">'</span><span class="s1">no-back</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Rewriting that pyramid jumble of callbacks above, we get something much more eloquent and readable.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="k">async</span> <span class="kd">function</span> <span class="nx">fullTransitionEffect</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">transitionOut</span><span class="p">();</span>   <span class="c1">// takes 780ms</span>
+  <span class="k">await</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="mi">780</span><span class="p">));</span> 
+
+  <span class="nx">resetTransition</span><span class="p">();</span> <span class="c1">// takes 150ms</span>
+  <span class="k">await</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="mi">150</span><span class="p">));</span> 
+  
+  <span class="nx">transitionIn</span><span class="p">();</span>    <span class="c1">// takes 780ms</span>
+  <span class="k">await</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="mi">780</span><span class="p">));</span> 
+
+  <span class="nx">resetTransition</span><span class="p">();</span> <span class="c1">// takes 150ms</span>
+  <span class="k">await</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="mi">150</span><span class="p">));</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="out-of-time">Out of time</h2>
+<p>Time is fleeting. There are so many ways to perceive it and manipulate it on a website:</p>
+
+<p>We could get into <code class="highlighter-rouge">Moment.JS</code>, a devilish and entirely necessary library for standardized date/timestamp formatting (or we could just use the <a href="https://en.wikipedia.org/wiki/ISO_8601">standard datetime stamp that the world decided on before I was born</a>). There’s plenty of room for time zone doom and gloom as well.</p>
+
+<p>Calendars are fun, too. Simple algorithms for events that fall on certain days a month may be one of the hardest things I’ve encountered.</p>
+
+<p>Or we could take another tack and look at <code class="highlighter-rouge">setTimeout</code>’s twins <code class="highlighter-rouge">setInterval()</code> and <code class="highlighter-rouge">removeInterval()</code>. Those were a big part of the <a href="https://oldgermanbeer.com">Old German Beer game</a>.</p>
+
+<p>Whatever we do must <code class="highlighter-rouge">await</code> more time from my busy schedule.</p>
+
+      <hr>
+
+      <div class='bio'>
+        <h2>About the Author:</h2>
+        <p><a href='/contact/'>Benji</a> is a professional web dude. He works at <a href='https://builtbytophat.com' target='_blank' rel='noopener noreferrer'>Top Hat</a> making cool web things for money (and sometimes beer).</p>
+      </div>
+      <div class='disclaimer'>
+        <strong>Disclaimer!</strong>
+        Photos on this blog are sometimes taken by me, but sometimes free for use with attribution from <a href='https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText' target='_blank' rel='noopener noreferrer'>Unsplash.com</a>.
+      </div>
+    </section>
+  </article>
+  <div class='outer-hero'>
+    <div class='hero' style="background-image: url(/assets/images/await.jpg)"></div>
+  </div>
+</div>
+    </div>
+  </body>
+  <footer>
+  <div href='/' class='inverse-logo' aria-label="Navigate Home">
+    <svg alt="Site Logo" width="90px" height="47px" viewBox="0 0 90 47" role="img">
+      <title>Site Logo</title>
+      <desc>Wow, I am truly amazed! You traversed my site in reader mode! Send me an email at hello@monjibram.com, I want to shake your hand someday.</desc>
+      <g class="full-logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M4.12470513,7.7974 C2.11314103,7.7974 0.482551282,6.1239 0.482551282,4.0594 C0.482551282,1.9954 2.11314103,0.3219 4.12470513,0.3219 L14.9776026,0.3219 C16.9891667,0.3219 18.6197564,1.9954 18.6197564,4.0594 C18.6197564,6.1239 16.9891667,7.7974 14.9776026,7.7974 L4.12470513,7.7974 Z" class="toggleBackground" fill-opacity="0.4" mask="url(#mask-2)" transform="translate(71.000000, 0.918367)"></path>
+        <path d="M72.132849,7.89676344 C71.3772704,7.2155381 71,6.38261723 71,5.39706442 C71,4.41151162 71.3772704,3.58514549 72.132849,2.91843423 C72.8873897,2.25172298 73.8432797,1.91836735 75,1.91836735 C76.1567203,1.91836735 77.1120913,2.25172298 77.867151,2.91843423 C78.6216917,3.58514549 79,4.41151162 79,5.39706442 C79,6.41164539 78.6216917,7.25158921 77.867151,7.91830046 C77.1120913,8.58547991 76.1567203,8.91836735 75,8.91836735 C73.8432797,8.91836735 72.8873897,8.57798878 72.132849,7.89676344 Z" class="toggle-dot"></path>
+        <path d="M10.5018262,20.9121192 L5.43170197,20.9121192 L5.43170197,28.5282862 L10.9096056,28.5282862 C14.621302,28.5282862 16.4322042,27.2291045 16.4322042,24.6754719 C16.4322042,21.8976882 13.9875365,20.9121192 10.5018262,20.9121192 M10.63792,9.30844847 L5.43170197,9.30844847 L5.43170197,16.9251125 L10.1849434,16.9251125 C13.715851,16.9251125 15.5719503,15.4465105 15.5719503,13.0275673 C15.5719503,10.652858 13.8519449,9.30844847 10.63792,9.30844847 M22,24.899126 C22,29.5143522 19.1937546,32.9183673 10.9994978,32.9183673 L0,32.9183673 L0,4.91836735 L10.8192111,4.91836735 C18.4690924,4.91836735 21.0945489,8.05449458 21.0945489,12.3103833 C21.0945489,15.311821 19.2836468,17.3281868 16.0244248,18.4032174 C19.7366234,19.2093662 22,21.5840755 22,24.899126" class="bee"></path>
+        <path d="M35.1660662,14.9059854 C37.8741609,14.9059854 39.0728338,16.6537372 39.0728338,19.4314497 L39.0728338,19.7898482 L30.2832223,19.8345859 C30.5491563,17.2805618 32.2811747,14.9059854 35.1660662,14.9059854 L35.1660662,14.9059854 Z M42.6683601,26.8250961 C40.8038672,27.9892698 38.4513361,28.7065638 36.2760945,28.7065638 C32.6357534,28.7065638 30.3723595,26.4214628 30.1497628,23.0606693 L30.1497628,22.9264563 C30.1497628,22.9264563 43.5119618,22.7470085 43.5562842,22.7470085 C43.8227107,21.8512608 44,20.4171698 44,19.2972367 C44,14.233429 40.981649,10.9183673 35.5659522,10.9183673 C29.4396205,10.9183673 25,15.3985969 25,22.120184 C25,28.7065638 29.3504834,32.9183673 35.9210233,32.9183673 C38.3735258,32.9183673 40.7890931,32.4192937 42.6683601,31.5498916 L42.6683601,26.8250961 Z" class="eee" mask="url(#mask-4)"></path>
+        <path d="M60.6270503,10.9183673 C58.2154573,10.9183673 55.8468602,12.1972794 54.0811614,14.1829457 L54.0811614,11.6681925 L49,11.6681925 L49,31.9183673 L54.0811614,31.9183673 L54.0811614,17.4039638 C55.0719783,16.4334002 56.7082117,15.506397 58.4734328,15.506397 C60.7565157,15.506397 61.9188386,16.5210103 61.9188386,19.52129 L61.9188386,31.9183673 L67,31.9183673 L67,17.9330506 C67,13.5652699 64.6318807,10.9183673 60.6270503,10.9183673" class="enn" mask="url(#mask-4)"></path>
+        <polygon class="jay" mask="url(#mask-4)" points="72 47.9183673 78 47.9183673 78 11.9183673 72 11.9183673"></polygon>
+        <polygon class="eye" mask="url(#mask-4)" points="83 31.9183673 89 31.9183673 89 11.9183673 83 11.9183673"></polygon>
+      </g>
+    </svg>
+  </div>
+  <div class='inverse-social'>
+    <a href="https://github.com/benjithaimmortal" class='git'><img src='/assets/images/ian/social-g.png' alt='GitHub' class='gitr'></a>
+    <a href='https://codepen.io/benjithaimmortal' class='face'><img src='/assets/images/ian/social-c.svg' alt='Facebook' class='penr'></a>
+    <a href='https://twitter.com/monjibram' class='twit'><img src='/assets/images/ian/social-t.svg' alt='Twitter' class='twitr'></a>
+    <a href='https://www.linkedin.com/in/benjamin-kostenbader-18499836/' class='linked'><img src='/assets/images/ian/social-l.svg' alt='LinkedIn' class='linkedr'></a>
+  </div>
+</footer>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+<script src='/assets/scripts/base.js'></script>
+
+
+
