@@ -116,7 +116,7 @@ Promises are GREAT for Ajax, and, honestly, that's about all they're great for. 
 
 > returns a promise
 
-then I just ignore the potential headache that promises would bring. Promises are a confusing API that is difficult for experts, and difficult code is the enemy of readable code.
+then I just ignore the potential headache that promises would bring. Promises are a confusing API that is difficult for experts, and difficult code is the enemy of readable code. So there's only one more case in which I'd use one.
 
 ## Thanks for awaiting
 You've been patient, and a treasure `await`s you. It's wrapped in an `async` function (short for _asynchronous_). In fact, if you forget the `async` part, JS will throw a special error just for you.
