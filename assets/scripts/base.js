@@ -12,7 +12,7 @@ $(async function(){
   // pause for 100 ms
   await new Promise(r => setTimeout(r, 100));
   // remove the background color on html
-  // $('html').css('background-color', 'unset');
+  $('html').addClass('no-back');
 
   // hover on the lightswitch
   $('.logo, .inverse-logo').hover(function(){
@@ -35,5 +35,6 @@ $(async function(){
 });
 
 $(window).bind('beforeunload', function(){
+  $('html').removeClass('no-back');
   $('body').removeClass('fadein');
 })

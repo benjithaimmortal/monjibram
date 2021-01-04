@@ -147,7 +147,7 @@ let game = {
 
 
 ### Woah wait a second...
-Yeah that last one took me a little while to figure out. The JQuery object `$('#shooter')` is just another object inside of the Object. So I could potentially just implement this variable after the document is ready, hope it doesn't change, and treat it like the selector itself:
+Yeah that last one took me a little while to figure out. The jQuery object `$('#shooter')` is just another object inside of the Object. So I could potentially just implement this variable after the document is ready, hope it doesn't change, and treat it like the selector itself:
 {% highlight js %}
 game.selectors.shoot.click(boom());
 {% endhighlight %}
