@@ -8,8 +8,6 @@ layout: post
 author: Benji
 hero: organize_and_update.jpg
 image: "/assets/images/organize_and_update.jpg"
-tags:
-- Featured
 
 ---
 But stuff rarely is, is it? This week we did a thing on a website. It required us to create or update something, depending on whether or not that thing exists. Simple enough, if you're copy and pasting, but still time consuming when you're writing DRY code.
