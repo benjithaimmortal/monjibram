@@ -95,6 +95,7 @@ body.night {
   // white
   .cloud::before, .cloud::after, .cloud { background-color: $white; }
   a,
+  .blog-post .content blockquote p,
   .blog-index .title { color: $white; }
   // lightblue
   .bar .logo svg path, .bar .logo svg polygon, 
