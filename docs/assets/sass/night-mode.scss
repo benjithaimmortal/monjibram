@@ -8,7 +8,8 @@ body.fadein {
 }
 // base color for the 'background' before <body> loads
 html { background-color: #5c6e7e; }
-html.no-back { background-color: unset !important; }
+html.no-back { background-color: $white; }
+html.no-back { background-color: $darkblue;}
 
 // don't do dark-mode on no-dark views
 body.no-dark {

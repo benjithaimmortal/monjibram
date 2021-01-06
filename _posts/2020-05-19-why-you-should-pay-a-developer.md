@@ -6,7 +6,8 @@ categories:
 - Jamstack
 layout: post
 author: Benji
-hero: code.webp
+hero_webp: code.webp
+hero: code
 image: assets/images/code.webp
 ---
 

@@ -130,10 +130,18 @@
     line-height: 1.17;
   }
   .right {
+    position: relative;
     width: 24%;
     background: center / cover no-repeat;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    picture {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
   }
   .post-card.skeleton {
     display: none;

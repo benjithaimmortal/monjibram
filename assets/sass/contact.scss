@@ -81,6 +81,11 @@
   }
   select {
     -moz-appearance: none;
+    -webkit-appearance:none;
+    // background: linear-gradient(45deg, rgba(255, 255, 255, 0) 40%, $text 40%, $text 50%, rgba(255, 255, 255, 0) 51%), linear-gradient(135deg, rgba(255, 255, 255, 0) 40%, $text 40%, $text 50%, rgba(255, 255, 255, 0) 51%);
+    // background-position: calc(100% - 23px) 14px, calc(100% - 16px) 14px;
+    // background-size: 8px 8px, 8px 8px;
+    // background-repeat: no-repeat;
     padding-left: 7px;
     &:focus, option {
       background-color: $white;

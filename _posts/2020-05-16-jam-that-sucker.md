@@ -8,7 +8,8 @@ tags:
 - Featured
 layout: post
 author: Benji
-hero: jam.webp
+hero_webp: jam.webp
+hero: jam
 image: assets/images/jam.webp
 ---
 

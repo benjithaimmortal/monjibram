@@ -6,8 +6,8 @@ categories:
 - Jamstack
 tags:
 - Featured
-hero: custom-food-types.svg
-image: assets/images/custom-food-types.svg
+hero: types
+image: assets/images/types.jpg
 ---
 
 Sometimes you're good at more than one type of thing. That's OK, you're human. We like to categorize things and study them logically to distinguish them from each other. We argue about definitions. We like tables. We like lists. We make Custom Types for everything.

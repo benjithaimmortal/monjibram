@@ -5,7 +5,8 @@ categories:
 - Tutorials
 layout: post
 author: Benji
-hero: pages.webp
+hero: pages
+hero_webp: pages.webp
 image: assets/images/pages.webp
 ---
 

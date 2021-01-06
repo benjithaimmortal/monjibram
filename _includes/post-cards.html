@@ -7,5 +7,11 @@
     <div class='title'>{{ post.title }}</div>
     <p class='shortcut'>{{ post.excerpt | strip_html | strip_newlines | truncatewords: 20 }}</p>
   </div>
-  <div class='right' style='background-image: url({{ site.baseurl }}/assets/images/{{ post.hero }});'></div>
+  <!-- <div class='right' style='background-image: url({{ site.baseurl }}/assets/images/{{ post.hero }});'></div> -->
+  <div class='right'>
+    <picture>
+      <source srcset='{{ site.baseurl }}/assets/images/{{ post.hero }}.webp' type='image/webp'>
+      <img src='{{ site.baseurl }}/assets/images/{{ post.hero }}.jpg' alt=''>
+    </picture>
+  </div>
 </a>

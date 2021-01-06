@@ -70,7 +70,7 @@ defaults:
     values:
       layout: post
       author: Benji Kostenbader
-      hero: pages.jpg
+      hero: pages
       image: assets/images/pages.jpg
   -
     scope:

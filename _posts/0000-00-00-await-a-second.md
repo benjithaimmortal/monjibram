@@ -5,7 +5,8 @@ categories:
 - Tutorials
 tags:
 - Featured
-hero: await.jpg
+hero: await
+hero_webp: await.webp
 image: assets/images/await.jpg
 ---
 

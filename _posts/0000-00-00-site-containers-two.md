@@ -5,7 +5,8 @@ categories:
 - Tutorials
 tags:
 - Featured
-hero: pretty-container.webp
+hero_webp: pretty-container.webp
+hero: pretty-container
 image: assets/images/pretty-container.webp
 ---
 

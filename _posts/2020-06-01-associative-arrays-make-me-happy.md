@@ -5,7 +5,8 @@ categories:
 - Tutorials
 tags:
 - Featured
-hero: hash.webp
+hero_webp: hash.webp
+hero: hash
 image: assets/images/hash.webp
 ---
 

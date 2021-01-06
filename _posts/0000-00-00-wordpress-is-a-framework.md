@@ -5,7 +5,8 @@ categories:
 - WordPress
 tags:
 - Featured
-hero: framework.webp
+hero_webp: framework.webp
+hero: framework
 image: assets/images/framework.webp
 ---
 

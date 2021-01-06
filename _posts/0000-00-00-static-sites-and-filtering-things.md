@@ -6,7 +6,8 @@ categories:
 - Static&nbsp;Sites
 tags:
 - Featured
-hero: pages.webp
+hero_webp: pages.webp
+hero: pages
 image: assets/images/pages.webp
 ---
 

@@ -4,7 +4,8 @@ date: 2020-06-13
 categories:
 - Tutorials
 - Jamstack
-hero: automation.webp
+hero_webp: automation.webp
+hero: automation
 image: assets/images/automation.webp
 sentence: I used Liquid to fill in this blockquote.
 ---
