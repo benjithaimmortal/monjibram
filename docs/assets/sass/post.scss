@@ -43,6 +43,8 @@
     margin-bottom: 32px;
   }
   .content {
+    // for ye olde super huge screens
+    overflow: hidden;
     p, ul, li, blockquote, dl, .highlight {
       + h2, + h3, + h4 {
         margin-top: 41px;
@@ -235,6 +237,7 @@
     // max-width: 390px;
   }
   .hero {
+    max-height: 675px;
     height: calc(100vh - 97px);
     width: calc(100% - 640px);
     position: fixed;
