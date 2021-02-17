@@ -146,7 +146,9 @@
       font-family: $mono-font;
     }
     figure.highlight {
-      width: 90vw;
+      // width: 90vw;
+      width: calc(50vw + 617px) ;
+      max-width: calc(90vw);
       > pre {
         overflow: auto;
         background-color: #eeea;

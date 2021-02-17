@@ -3,7 +3,7 @@
   {% include head.html %}
   <body>
     {% include nav.html %}
-    <div class='content {{ page.title | slugify }}-page'>
+    <div class='{{ page.title | slugify }}-page'>
       {{ content }}
     </div>
   </body>
