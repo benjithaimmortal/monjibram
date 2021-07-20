@@ -31,3 +31,6 @@ end
 # Performance-booster for watching directories on Windows
 gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
 
+
+# this might be a fun side project
+# gem "amp-jekyll"

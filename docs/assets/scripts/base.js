@@ -38,3 +38,14 @@ $(window).bind('beforeunload', function(){
   $('html').removeClass('no-back');
   $('body').removeClass('fadein');
 })
+
+
+$(window).bind("pageshow", function(event) {
+  if (event.originalEvent.persisted) { $('body').addClass('fadein'); }
+});
+
+console.log(['boop']);
+window.onpopstate = function(event) {
+  event.preventDefault();
+  alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
+};

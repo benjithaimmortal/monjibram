@@ -54,15 +54,15 @@ lang: en_US
 
 
 defaults:
-  # -
-  #   scope:
-  #     path: ""
-  #     type: "projects"
-  #   values:
-  #     layout: project
-  #     img: /assets/images/Hoi_An_Vietnam.jpg
-  #     title: A New, Default Place
-  #     date: "2020-06-11"
+  -
+    scope:
+      path: amp/*
+      type: "amp"
+    values:
+      layout: post
+      author: Benji Kostenbader
+      hero: pages
+      image: assets/images/pages.jpg
   -
     scope:
       path: ""
