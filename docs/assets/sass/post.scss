@@ -13,6 +13,7 @@
   .article {
     width: 90%;
     max-width: 600px;
+    z-index: 2;
   }
   .blog-info {
     display: flex;
@@ -28,12 +29,19 @@
     margin-right: auto;
   }
   .cat {
+    text-decoration: none;
     border-radius: 10px;
     border: solid 1px $border-color;
     height: 43px;
     padding: 9px 15px 0;
     color: $blue;
     margin-left: 15px;
+    &:hover {
+      border-color: $blue;
+      background-color: $blue;
+      color: $white;
+      transition-duration: .2s;
+    }
   }
   .title {
     font-size: 37px;

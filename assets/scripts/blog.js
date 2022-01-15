@@ -1,7 +1,7 @@
 $(function(){
   var nextPage = 1;
   var totalPages = new Number ($(".post-flex").data("totalPages"));
-  
+ 
   function scrollCheck(){
     if($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
       if (nextPage != totalPages) {
@@ -55,4 +55,12 @@ $(function(){
       }
     }
   })
+
+
+  var params = window.location.search;
+  if (params.length) {
+    var activeFilter = new URLSearchParams(params);
+    $('.filter[data-filter=' + activeFilter.get('filter') + ']').click();
+    console.log()
+  }
 });
