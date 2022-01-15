@@ -27,10 +27,11 @@ form:
       placeholder: What can I do for you?
       width: half
       options:
-        - Custom
-        - Design
+        - Custom Project
+        - Design Consulting
         - Development
-        - Operations
+        - Mentoring
+        - Operations and Site Maintenance
   textareas:
     - placeholder: Tell me more about your project
       name: Project_Details
