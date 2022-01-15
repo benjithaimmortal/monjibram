@@ -29,7 +29,18 @@ $mono-font: calling-code, mono;
   box-shadow: 0 0 0 2px $red;
 }
 *, *::before, *::after { box-sizing: border-box; }
-html { height: 100%; }
+html {
+  height: 100%;
+  scroll-snap-type: y proximity;
+}
+.bar, section, footer {
+  scroll-snap-align: start;
+  scroll-margin-top: 60px;
+}
+h1, h2, h3 {
+  scroll-snap-align: start;
+  scroll-margin-top: 30px;
+}
 html, body {
   margin: 0;
   // height: 100%;

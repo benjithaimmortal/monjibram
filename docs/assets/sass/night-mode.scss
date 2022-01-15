@@ -70,7 +70,7 @@ body::before, footer::before {
   // transform-origin: center left;
   transition: ease all .2s;
 }
-body > div, body > footer, footer > div, footer > a {
+body > div, body > section, body > footer, footer > div, footer > a {
   position: relative;
   z-index: 3;
 }

@@ -13,7 +13,7 @@ seo:
         {% assign categories = page.categories %}
       {% endif %}
       {% for category in categories %}
-      <div class="cat" href="{{site.baseurl}}blog/categories/#{{category|slugize}}">{{category}}</div>
+      <a class="cat" href="{{site.baseurl}}blog/categories/#{{category|slugize}}">{{category}}</a>
       {% endfor %}
       <!-- {% if page.author %}
         <div class='auth'>By {{ page.author }}</div>
