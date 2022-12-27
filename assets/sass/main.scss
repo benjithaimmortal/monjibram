@@ -17,6 +17,7 @@ $bg-color: $white;
 // text variables
 $font-fam: freight-sans-pro, sans-serif;
 $serif-font: freight-text-pro, Helvetica, serif;
+// $font-fam: $serif-font;
 $mono-font: calling-code, mono;
 
 /* general */
@@ -33,16 +34,18 @@ html {
   height: 100%;
   scroll-snap-type: y proximity;
 }
-.bar, section, footer {
+// .bar, 
+// section, 
+// footer,
+.snap {
   scroll-snap-align: start;
   scroll-margin-top: 60px;
 }
-.post-card {
-  scroll-snap-align: start;
-  scroll-margin-top: 100px;
-}
-h1, h2, h3 {
-  scroll-snap-align: start;
+.post-card {  scroll-margin-top: 100px; }
+// h3,
+// h2, 
+h1 { 
+  // scroll-snap-align: start;
   scroll-margin-top: 30px;
 }
 html, body {

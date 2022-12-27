@@ -152,6 +152,111 @@
     font-weight: 400;
   }
 }
+.testimonials {
+  margin-bottom: 184px;
+  .container-narrow {
+    :focus { box-shadow: unset !important; }
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-bottom: 150px;
+  }
+  .slider {
+    padding: 50px 5%;
+    max-width: calc(90% - 170px);
+    .slick-track {
+      display: flex !important;
+      align-items: stretch;
+      .slide {
+        height: inherit !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  .upper, .lower {
+    display: flex !important;
+    flex-wrap: wrap;
+  }
+  .upper {
+    height: calc(100%);
+    justify-content: center;
+    align-items: center;
+  }
+  .open-quote-block,
+  .close-quote-block {
+    width: 85px;
+    height: 85px;
+    font-size: 100px;
+    font-weight: 900;
+    font-family: $serif-font;
+    color: $red;
+    text-align: center;
+    line-height: 1.1;
+    display: block;
+  }
+  .open-quote-block { margin-bottom: auto; }
+  .close-quote-block { margin-top: auto; }
+  .quote {
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.1;
+    span, a {
+      color: $blue;
+      font-weight: 900;
+    }
+  }
+  .lower {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    .img-slider {
+      width: 150px;
+      &:nth-child(3n-2) img {
+        background-color: $red;
+        color: $white;
+        border-radius: 21% 79% 70% 30% / 56% 76% 24% 44%;
+      }
+      // &:nth-child(3n-1) .quote-block,
+      &:nth-child(3n-1) img {
+        background-color: $lightblue;
+        color: $red;
+        border-radius: 63% 37% 70% 30% / 28% 20% 80% 72%;
+      }
+      // &:nth-child(3n) .quote-block,
+      &:nth-child(3n) img {
+        background-color: $blue;
+        color: $lightblue;
+        border-radius: 81% 19% 28% 72% / 61% 48% 52% 39%;
+      }
+      img {
+        width: 150px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        filter: grayscale(100%);
+      }
+    }
+    .author-slider {
+      max-width: calc(80% - 150px);
+      margin-left: 5%;
+      .author {
+        font-weight: 600;
+        font-family: $serif-font;
+        em {
+          font-weight: 400;
+          font-family: $font-fam;
+        }
+        br { display: none; }
+      }
+    }
+  }
+}
 
 
 
@@ -182,6 +287,11 @@
       }
     }
   }
+  .testimonials {
+    .quote {
+      font-size: 28px;
+    }
+  }
 }
 
 @media (max-width: 651px) {
@@ -205,6 +315,51 @@
   .the-stacks {
     .container-wide {
       width: 90%;
+    }
+  }
+  .testimonials {
+    .container-narrow { padding-bottom: 170px; }
+    .open-quote-block, .close-quote-block {
+      width: 55px;
+    }
+    .slider {
+      max-width: calc(90% - 110px);
+      .quote {
+        font-size: 20px;
+      }
+    }
+    .lower {
+      width: 90%;
+      // left: 0;
+      // transform: unset;
+      .img-slider { width: 100px; }
+      .author-slider { max-width: calc(90% - 100px);}
+    }
+  }
+}
+
+@media (max-width: 501px) {
+  .testimonials {
+    .open-quote-block, .close-quote-block {
+      width: 35px;
+      height: 35px; 
+      font-size: 40px;
+    }
+    .slider {
+      max-width: calc(90% - 110px);
+      padding: 20px 5%;
+      .quote {
+        font-size: 16px;
+      }
+    }
+
+    .lower .author-slider .author {
+      span {
+        width: 0;
+        overflow: hidden;
+        display: block;
+      }
+      br { display: block; }
     }
   }
 }

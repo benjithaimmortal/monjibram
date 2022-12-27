@@ -1,4 +1,4 @@
-<section class='contact contact-{{ page.title | slugify }}'>
+<section class='contact snap contact-{{ page.title | slugify }}'>
 <!-- <section class='contact'> -->
   <svg class="tabby-top" width="297px" height="54px" viewBox="0 0 297 54">
     <g class="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-652.000000, 0)">
@@ -18,7 +18,7 @@
       <div class='blurb'>{{ site.data.contact.blurb }}</div>
     </div>
     <div class='right'>
-      <form action='https://formspree.io/f/benjamin.kostenbader@gmail.com' method='POST'>
+      <form action='https://formspree.io/f/mgedrowd' method='POST'>
         {% for input in site.data.contact.form.inputs %}
           <input class="{{ input.width }}" type='{{ input.type }}' name="{{ input.name }}" placeholder="{{ input.placeholder }}" autocomplete="{{ input.autocomplete }}">
         {% endfor %}

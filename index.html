@@ -7,9 +7,22 @@ logo: /assets/images/ian/Benji.png
 canonical_url: "https://www.monjibram.com/"
 hero-title: Hi! I&#146;m Benji.
 hero-text: >-
-  I'm Senior Front-End Developer at [Top Hat](https://www.builtbytophat.com/about), and I currently live in Pittsburgh, USA. When I'm not SOCIAL DISTANCING LIKE A PRO, I keep busy making beautiful things on computers, distance cycle, play squash, dad, and volunteer in the community.
+  I'm Senior Front-End Developer at [Top Hat](https://www.builtbytophat.com/about), and I currently live and work in Pittsburgh, USA. I keep busy making beautiful, complex things on computers, distance cycle, play squash, dad, and volunteer in the community.
   <br><br>
-  I [write](/why-you-should-pay-a-developer) about computers, <a href='https://www.youtube.com/watch?v=G6qOvbLngVs' target='_blank'>talk</a> about computers, and sometimes I even sleep! You can see some of my recent code on <a href='https://marondahomes.com/' target='_blank'>Maronda Homes</a>, <a href='https://www.telltellpoetry.com/' target='_blank'>Tell Tell Poetry</a>, <a href='https://millieshomemade.com/#map'>fun maps for Millie's</a> and <a href='https://teachstone.com/' target='_blank'>Teachstone</a>.
+  I'm a [WordCamp US speaker](https://us.wordcamp.org/2022/speaker/benjamin-kostenbader/). I [write](/static-sites-and-filtering-things/) about computers, <a href='https://www.youtube.com/watch?v=G6qOvbLngVs' target='_blank'>talk</a> about computers, and sometimes I even sleep! You can see some of my recent code on <a href='https://marondahomes.com/' target='_blank'>Maronda Homes</a>, <a href='https://www.telltellpoetry.com/' target='_blank'>Tell Tell Poetry</a>, <a href='https://jobs.fitt.co/'>Fitt Jobs</a> and <a href='https://teachstone.com/' target='_blank'>Teachstone</a>.
+testimonials:
+  - author: Ian George
+    title: Senior Graphic Designer, <br>Top Hat
+    img: /assets/images/ian.jpg
+    quote: Thanks to Benji,  <a href="https://www.covertocredits.com" target='_blank'>Cover to Credits</a> has a website that looks and functions beautifully where listeners can discover us. He even created a custom portal to play episodes that is automatically updated when we post!
+  - author: Nico Guidicessi
+    title: Design Team Lead, <br>Webstaurant 
+    img: /assets/images/nico.jpg
+    quote: Working alongside Benji is what every creative wishes the designer/developer relationship would be. Detail-oriented, thorough, and knowledgeable are just a few of the words that come to mind when describing his work ethic.
+  - author: Max Schubert
+    title: Director of Security and Quality, <br>Teachstone
+    img: /assets/images/max.jpg
+    quote: Full stack developers in a time of frontend and backend specialization are rare, and Ben is one of them. He knows what makes for a great web-based experience for customers - front-end technologies, visual layout, and effective web design.
 stack:
   - name: Design
     blurb: "UI / UX Consultation, Transitions, Animations, Typography, Color, Content Layout"
@@ -137,6 +150,34 @@ stack:
       <p class='blurb'>{{ role.blurb }}</p>
     </div>
     {% endfor %}
+  </div>
+</section>
+
+<section class='testimonials snap' id='testimonials'>
+  <div class='container-narrow'>
+    <div class='upper'>
+      <div class='open-quote-block'>&OpenCurlyDoubleQuote;</div>
+      <div class='slider'>
+        {% for t in page.testimonials %}
+          <div class='slide'>
+            <div class='quote'>{{ t.quote }}</div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class='close-quote-block'>&CloseCurlyDoubleQuote;</div>
+    </div>
+    <div class='lower'>
+      <div class='img-slider'>
+        {% for t in page.testimonials %}
+          <img src='{{ t.img }}' alt='{{ t.author }}'>
+        {% endfor %}
+      </div>
+      <div class='author-slider'>
+        {% for t in page.testimonials %}
+          <div class='author'>{{ t.author }}<span> &mdash; </span><em>{{ t.title }}</em></div>
+        {% endfor %}
+      </div>
+    </div>
   </div>
 </section>
 

@@ -102,10 +102,12 @@
     align-items: baseline;
     padding: 0 25px;
   }
+  .tags,
   .tag {
     font-weight: 600;
     color: $red;
     font-size: 16px;
+    font-family: $serif-font;
   }
   .date {
     font-weight: 400;
