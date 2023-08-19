@@ -1,13 +1,19 @@
 # For the contact section. Duh.
 title: Contact
-blurb: "<p>Sometimes the hardest part of the process is building up the courage to take that first step. Maybe you're nervous. <em>What if he doesn't like me?</em> you complain to your dearest friends. <em>My entire life hangs in the balance.</em></p>
-<p>Well let's cut to the chase. I do like you. I do want to be a part of your next big adventure. Together we can make sweet, sweet technical magic. So drop those deets in the box below and let's get started!</p>"
+blurb: "<p>I've built websites with millions of views, and I've built websites with millions of data points. I make things work right, and I make them work well. And I'm honest, ethical, and care about your needs.</p>
+<p>I want to be a part of your next big adventure. Together we can make your dreams come true. Fill out the box and let's get started!</p>"
 form:
   inputs:
     - placeholder: Name
       name: Name
       type: text
       autocomplete: name
+      width: half
+      required: true
+    - placeholder: Company
+      name: Company
+      type: text
+      autocomplete: company
       width: half
       required: true
     - placeholder: Email
@@ -22,16 +28,16 @@ form:
       autocomplete: tel
       width: half
       required: true
-  selects:
-    - name: Area
-      placeholder: What can I do for you?
-      width: half
-      options:
-        - Custom Project
-        - Design Consulting
-        - Development
-        - Mentoring
-        - Operations and Site Maintenance
+  # selects:
+  #   - name: Area
+  #     placeholder: What can I do for you?
+  #     width: half
+  #     options:
+  #       - Custom Project
+  #       - Design Consulting
+  #       - Development
+  #       - Mentoring
+  #       - Operations and Site Maintenance
   textareas:
     - placeholder: Tell me more about your project
       name: Project_Details

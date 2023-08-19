@@ -20,7 +20,7 @@
     <div class='right'>
       <form action='https://formspree.io/f/mgedrowd' method='POST'>
         {% for input in site.data.contact.form.inputs %}
-          <input class="{{ input.width }}" type='{{ input.type }}' name="{{ input.name }}" placeholder="{{ input.placeholder }}" autocomplete="{{ input.autocomplete }}">
+          <input class="{{ input.width }}" type='{{ input.type }}' name="{{ input.name }}" placeholder="{{ input.placeholder }}" autocomplete="{{ input.autocomplete }}" required>
         {% endfor %}
         {% for select in site.data.contact.form.selects %}
           <select name='{{ select.name }}' class='{{ select.width }}'>
