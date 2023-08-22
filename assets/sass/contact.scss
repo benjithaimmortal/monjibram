@@ -136,8 +136,11 @@
 }
 
 @media (min-width: 951px) {
+  .contact-page {
+    padding-top: 30px;
+  }
   .contact {
-    min-height: calc(100vh - 520px);
+    min-height: calc(100vh - 620px);
   }
 }
 @media (max-width: 651px) {
