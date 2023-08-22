@@ -135,6 +135,11 @@
   }
 }
 
+@media (min-width: 951px) {
+  .contact {
+    min-height: calc(100vh - 520px);
+  }
+}
 @media (max-width: 651px) {
   .contact .container-medium { width: 90%; }
 }
