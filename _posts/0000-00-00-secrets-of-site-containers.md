@@ -11,7 +11,7 @@ image: assets/images/containers.webp
 Big screens are getting bigger. Wider. Less expensive. Our web experience should be seamless, but our eyes can't adjust to giant blobby things. Containers to the rescue. But first, a digression about font-size and readability!
 
 <hr>
-<h4 style="margin: -25px 0 20px; line-height: 1.1; font-weight: 500;"><strong>Disclaimer!</strong> This page may scroll horizontally. It's ironic, because it's about site containers.</h4>
+<h4 style="margin: -5px 0 20px; line-height: 1.1; font-weight: 500; text-align: center;"><strong>Disclaimer!</strong> This page may scroll horizontally. It's ironic, because it's about site containers.</h4>
 <hr>
 
 ## There's a problem with your eyes
