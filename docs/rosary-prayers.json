@@ -1,0 +1,80 @@
+[
+  {
+    "begin": {
+      "prayerName": "Begin here",
+      "prayerText": "IN THE NAME of the Father, and of the Son, and of the Holy Spirit. Amen. (Genuflecting)"
+    },
+    "ac": { 
+      "prayerName": "Apostle's Creed",
+      "prayerText": "I BELIEVE IN GOD, the Father almighty, Creator of Heaven and earth. And in Jesus Christ, His only Son, our Lord, Who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate; was crucified, died, and was buried. He descended into Hell. The third day He rose again from the dead. He ascended into Heaven, and sits at the right hand of God, the Father almighty. He shall come again to judge the living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen."
+    },
+    "lp": {
+      "prayerName": "Lord's Prayer",
+      "prayerText": "OUR FATHER, Who art in Heaven, hallowed be Thy Name. Thy kingdom come, Thy will be done on earth as it is in Heaven. Give us this day our daily bread, and forgive us our trespasses, as we forgive those who trespass against us. And lead us not into temptation, but deliver us from evil. Amen."
+    },
+    "hm": {
+      "prayerName": "Hail Mary",
+      "prayerText": "HAIL MARY, full of grace, the Lord is with thee. Blessed art thou among women, and blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, pray for us sinners, now and at the hour of our death. Amen."
+    },
+    "gb": {
+      "prayerName": "Glory Be",
+      "prayerText": "GLORY BE to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning is now, and ever shall be, world without end. Amen."
+    },
+    "omj": {
+      "prayerName": "O My Jesus",
+      "prayerText": "O MY JESUS, forgive us our sins, save us from the fires of Hell; lead all souls to Heaven, especially those in most need of Thy mercy. Amen"
+    },
+    "hhq": {
+      "prayerName": "Hail Holy Queen",
+      "prayerText": "HAIL HOLY QUEEN, mother of mercy; our life, our sweetness, and our hope. To thee do we cry, poor banished children of Eve. To thee do we send up our sighs, mourning and weeping in this vale of tears. Turn, then, most gracious advocate, thine eyes of mercy toward us. And after this, our exile, show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary. Pray for us, O holy Mother of God, that we may be made worthy of the promises of Christ. Amen."
+    },
+    "ogw": {
+      "prayerName": "O God Whose",
+      "prayerText": "O GOD, WHOSE only-begotten Son by His life, death and resurrection, has purchased for us the rewards of eternal life; grant, we beseech Thee, that by meditating upon these mysteries of the Most Holy Rosary of the Blessed Virgin Mary, we may imitate what they contain and obtain what they promise, through the same Christ our Lord. Amen."
+    },
+    "mystery1": {
+      "prayerName": "Joyful Mysteries 1: The Annunciation of the Angel Gabriel to Mary.",
+      "prayerText": "In the sixth month, the angel Gabriel was sent from God to a town of Galilee called Nazareth, to a virgin betrothed to a man named Joseph, of the house of David, and the virgin’s name was Mary. - Luke 1:26-27<br><br>Fruit of the mystery: Humility."
+    },
+    "mystery2": {
+      "prayerName": "Joyful Mysteries 2: The Visitation of Mary to Elizabeth.",
+      "prayerText": "In those days Mary set out and traveled to the hill country in haste to a town of Judah, where she entered the house of Zechariah and greeted Elizabeth. - Luke 1:39-40<br><br>Fruit of the mystery: Love of Neighbor."
+    },
+    "mystery3": {
+      "prayerName": "Joyful Mysteries 3: The Birth of Jesus.",
+      "prayerText": "And she gave birth to her firstborn son. She wrapped him in swaddling clothes and laid him in a manger, because there was no room for them in the inn. - Luke 2:7<br><br>Fruit of the mystery: Poverty."
+    },
+    "mystery4": {
+      "prayerName": "Joyful Mysteries 4: The Presentation of Jesus in the Temple.",
+      "prayerText": "When the days were completed for their purification according to the law of Moses, they took him up to Jerusalem to present him to the Lord. - Luke 2:22<br><br>Fruit of the mystery: Obedience."
+    },
+    "mystery5": {
+      "prayerName": "Joyful Mysteries 5: The Finding of Jesus in the Temple.",
+      "prayerText": "After three days they found him in the temple, sitting in the midst of the teachers, listening to them and asking them questions. - Luke 2:46<br><br>Fruit of the mystery: Joy in Finding Jesus."
+    },
+    "mystery6": {
+      "prayerName": "Sorrowful Mysteries: 1",
+      "prayerText": "The Agony of Jesus in the Garden."
+    },
+    "mystery7": {
+      "prayerName": "Sorrowful Mysteries: 2",
+      "prayerText": "The Scourging at the Pillar."
+    },
+    "mystery8": {
+      "prayerName": "Sorrowful Mysteries: 3",
+      "prayerText": "The Crowning with Thorns."
+    },
+    "mystery9": {
+      "prayerName": "Sorrowful Mysteries: 4",
+      "prayerText": "The Carrying of the Cross."
+    },
+    "mystery10": {
+      "prayerName": "Sorrowful Mysteries: 5",
+      "prayerText": "The Crucifixion and Death of Jesus."
+    },
+    "mystery11": {
+      "prayerName": "Glorious Mysteries: 1",
+      "prayerText": "The Resurrection of Jesus."
+    }
+  }
+]
