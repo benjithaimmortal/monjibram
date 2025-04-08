@@ -31,6 +31,50 @@
     "ogw": {
       "prayerName": "O God Whose",
       "prayerText": "O GOD, WHOSE only-begotten Son by His life, death and resurrection, has purchased for us the rewards of eternal life; grant, we beseech Thee, that by meditating upon these mysteries of the Most Holy Rosary of the Blessed Virgin Mary, we may imitate what they contain and obtain what they promise, through the same Christ our Lord. Amen."
+    },
+    "mystery1": {
+      "prayerName": "Joyful Mysteries: 1",
+      "prayerText": "The Annunciation of the Angel Gabriel to Mary."
+    },
+    "mystery2": {
+      "prayerName": "Joyful Mysteries: 2",
+      "prayerText": "The Visitation of Mary to Elizabeth."
+    },
+    "mystery3": {
+      "prayerName": "Joyful Mysteries: 3",
+      "prayerText": "The Nativity of Jesus."
+    },
+    "mystery4": {
+      "prayerName": "Joyful Mysteries: 4",
+      "prayerText": "The Presentation of Jesus in the Temple."
+    },
+    "mystery5": {
+      "prayerName": "Joyful Mysteries: 5",
+      "prayerText": "The Finding of Jesus in the Temple."
+    },
+    "mystery6": {
+      "prayerName": "Sorrowful Mysteries: 1",
+      "prayerText": "The Agony of Jesus in the Garden."
+    },
+    "mystery7": {
+      "prayerName": "Sorrowful Mysteries: 2",
+      "prayerText": "The Scourging at the Pillar."
+    },
+    "mystery8": {
+      "prayerName": "Sorrowful Mysteries: 3",
+      "prayerText": "The Crowning with Thorns."
+    },
+    "mystery9": {
+      "prayerName": "Sorrowful Mysteries: 4",
+      "prayerText": "The Carrying of the Cross."
+    },
+    "mystery10": {
+      "prayerName": "Sorrowful Mysteries: 5",
+      "prayerText": "The Crucifixion and Death of Jesus."
+    },
+    "mystery11": {
+      "prayerName": "Glorious Mysteries: 1",
+      "prayerText": "The Resurrection of Jesus."
     }
   }
 ]
